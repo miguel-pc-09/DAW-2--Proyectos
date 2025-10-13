@@ -1,0 +1,134 @@
+
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+
+.container,
+main,
+.footer{
+  max-width: 980px;         
+  margin-inline: auto;       
+  padding: 0 16px;          
+}
+
+
+.festival{
+  margin: 0 0 8px;
+  font-size: 44px;           
+  color: rgb(48, 156, 189); 
+}
+
+.subtitulo{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+
+#foto-portada{
+  width: 100%;
+  max-width: 980px;   
+  height: auto;
+  display: block;
+  margin: 12px 0 28px;
+  border-radius: 6px;
+}
+
+
+.imagenes h2{
+  margin: 22px 0 14px;
+}
+
+
+.imagenes-evento{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 22px;                              
+  margin: 0 0 22px;
+}
+
+.tarjeta-foto{ margin: 0; }
+
+.tarjeta-foto img{
+  width: 100%;
+  aspect-ratio: 4 / 3;      
+  object-fit: cover;        
+  border-radius: 6px;
+  display: block;
+}
+
+
+.lead p{
+  margin: 10px 0 24px;
+  text-align: justify;
+}
+
+
+.puntos-clave .seccion-titulo{
+  margin: 22px 0 10px;
+}
+.puntos-clave ol{
+  padding-left: 1.25rem;
+  margin: 0 0 24px;
+}
+
+
+.programacion h2{
+  margin: 26px 0 10px;
+}
+
+.tabla-programa{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;          
+}
+
+
+.tabla-programa thead th{
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid #eee;
+}
+.tabla-programa thead th:last-child{
+  text-align: right;     
+}
+
+
+.tabla-programa td{
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+
+.tabla-programa td:last-child{
+  text-align: right;
+  white-space: nowrap;   
+}
+
+
+h3{ margin: 28px 0 10px; }
+
+.lista-testimonios{
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+
+.footer{
+  margin: 28px auto 40px;
+  padding: 0 16px;
+  color: #444;
+}
+.footer a{
+  color: #2b7bbf;
+  text-decoration: none;
+}
+.footer a:hover{ text-decoration: underline; }
