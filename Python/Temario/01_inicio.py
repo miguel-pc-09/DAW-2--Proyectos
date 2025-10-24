@@ -228,12 +228,20 @@ print("---- Operadores ----- ")
 a = 10
 b = 3
 suma = a + b               # Suma: 13
+print(suma)
 resta = a - b              # Resta: 7
+print(resta)
 multiplicacion = a * b     # Multiplicación: 30
+print(multiplicacion)
 division = a / b           # División 3.333 (periodo en este caso float)
+print(division)
 division_entera = a // b   # División entera: 3
+print(division_entera)
 modulo = a % b             # Módulo:1
+print(modulo)
 potencia = a ** b          # Potencia: 10^3 = 1000  
+print(potencia)
+
 
 """
 Operadores comparación: 
@@ -249,8 +257,39 @@ print("Operadores de comparacion")
 a = 10
 b = 5
 igual = a == b  #¿a es igual a b? -> flase
+print(igual)
 diferente = a != b # ¿a es distinto de b? -> true
+print(diferente)
 mayor_que = a > b #¿a es mayor que b? -> true
+print(mayor_que)
 menor_que = a < b #¿a es menor que b? -> false
+print(menor_que)
 mayor_o_igual = a >= b #¿a es mayor o igual que b? -> true 
+print(mayor_o_igual)
 menor_o_igual = a <= b #¿a es menor o igual que b? -> false
+print(menor_o_igual)
+
+print("")
+
+"""
+Operadores lógicos
+    and : Obtiene como resultado true todas las condiciones de la sentencia son verdaderas. En caso contrario false. 
+        A diferencia del operador & es que si la primera condición es false el resto no se evalúa
+
+    or  : Obtiene como resultado true si una de las condiciones de la sentencia es verdaderas. En caso contrario, el resultado es false.
+        A diferencia del operador & es que la primera condicion es true el resto no se evalúa 
+
+    not : Obtiene el valor booleano inverso del booleano indicado
+"""
+#Operadores lógicos
+print("--- Operadores lógicos ---- ")
+a = True
+b = False
+resultado_and = a and b  # AND lógico: true si ambos son True
+print(resultado_and)
+resultado_or = a or b    # OR lógico: True si al menos uno es True
+print(resultado_or)
+resultado_not_a = not a  # NOT lógico: invierte el valor de a
+print(resultado_not_a)
+
+print("")
