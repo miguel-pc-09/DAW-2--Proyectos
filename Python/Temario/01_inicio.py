@@ -90,6 +90,7 @@ print("")
 
 
 #list: lista ORDENADA y DINÁMICA para poder guardar diferentes datos
+print("----- LIST ------")
 my_list = list()
 my_other_list = []
 
@@ -102,6 +103,7 @@ my_other_list = [37, 1.90, "Miguel", "Perucha"]   # No hace falta que siempre gu
 
 
 # tuple: lista ORDENADA y EXTÁTICA para poder guardar diferentes datos. 
+print(("--- Tuple ------- "))
 my_tuple = tuple()       # Estas son sus dos formas de definirlo
 my_other_tuple = ()
 
@@ -155,8 +157,9 @@ print("")
 
 # strip(): permite eliminar espacios en blanco de un string pasado por parámetros 
 print("--- strip() ------  ")
+nombre = input("Introduce tu nombre: ")
 nombre_limpio = nombre.strip()
-print(nombre)
+print(nombre_limpio)
 print("")
 
 
