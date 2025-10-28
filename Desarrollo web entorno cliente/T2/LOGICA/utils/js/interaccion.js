@@ -44,7 +44,7 @@ if (nombre != null && nombre.length > 0) {
   Swal.fire({
     title: `${nombre}`,
     text: "Nombre introducido correctamenet",
-    icon: "success",
+    icon: "success", // Cambiamos el icono por el success para que salga el logo de confirmacion
   });
 } else {
   Swal.fire({
@@ -53,3 +53,4 @@ if (nombre != null && nombre.length > 0) {
     text: "Por favor introduce nombre correcto !",
   });
 }
+// el de introducir nombre necesita la parte de las promesas.
