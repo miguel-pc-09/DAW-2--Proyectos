@@ -45,6 +45,40 @@ if (confirmacion2) {
 // Más cosas que podemos hacer
 // Tamaño con -> length
 // Recorrer y mostrar. Tenemos dos opciones el bucle for y foreach
+// For: desde la posicion 0; hasta lista punto leg; con incremento de 1. haz un log de lista[en posicion index]
+/* for (let index = 0; index < lista.length; index++) {
+  console.log(lista[index]);
+} */
+
+//                             tipo de variable : la lista
+// foreach: antes haciamos for(String item : lista){que pasaba con la iteracion }
+// Aqui se escribe con la funcion de flecha. es una funcion que se escribe muy rapida
+// public void nombre(param1, param2){}
+// function nombre(param1, param2){}
+// Aqui la escribes tal cual la estas viendo. (los parametros )=> {lo que quieres que se ejecute}. Y lo normal y corriente es que vaya asociada a una variable
+// let var = (p1, p2) => {cuerpo}
+// Se puede seguir escribiendo igual poniendo FORIN y FOROF, pero no se usa ni uno ni otro
+//       iterando      lo que recorres
+/* for (const element of object) {
+    
+} */
+/*
+1º ponemos la lista que queremos recorrer en este caso(lista) y ejecutamos con (.) la funcion foreach lista.foreach. La funcion nos pide 3 parametros un VALOR, un INDICE y un ARRAY y que queremos que se ejecute
+*/
+// value:string -> el valor en la posicion que te toque nos sacara el nombre de la posicion en este caso los nombres
+// index: la posicion en la que esta
+// array: el array que estoy ejecutando
+lista.forEach((item, index, array) => {
+  // No hace falta que le demos parametros, si queremos 1 se lo pedimos, 1 item, 2 index, 3 array
+  // El cuerpo se ejecuta una vez por cada elemento de la lista (por cada iteracion )
+  // Tambien podemos trabajar por ejemplo q quiero aquellos nombres que cullo numero de letras sean 5
+  if (item.length == 5) {
+    console.log(`Ejecutando vuelta ${index} con valor ${item} `); // sacara los valores cullo nombre sea igual a 5 y su posicion
+  }
+  /* console.log(
+    `Ejecutando vuelta ${index} con valor ${item} `
+  ); */ // Da una vuelta por cada elemento
+});
 
 // Lo llamamos
-console.log(lista);
+// console.log(lista);
