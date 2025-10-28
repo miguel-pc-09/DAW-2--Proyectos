@@ -73,6 +73,7 @@ lista.forEach((item, index, array) => {
   // El cuerpo se ejecuta una vez por cada elemento de la lista (por cada iteracion )
   // Tambien podemos trabajar por ejemplo q quiero aquellos nombres que cullo numero de letras sean 5
   if (item.length == 5) {
+    // mas de 5, item.length > 5
     console.log(`Ejecutando vuelta ${index} con valor ${item} `); // sacara los valores cullo nombre sea igual a 5 y su posicion
   }
   /* console.log(

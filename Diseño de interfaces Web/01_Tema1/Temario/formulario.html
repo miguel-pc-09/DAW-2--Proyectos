@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>       
+        <meta charset="utf-8">
+        <title>Ejemplo del uso de Formularios</title>
+    </head>
+    <body>
+        <form>
+		<p>Nombre: <input type="text" name="nombre" size="40"></p>
+		<p> Contraseña:<input type="password" name="contrasena"></p>
+		<p>Año de nacimiento: <input type="number" name="anio" min="1900" max="2200" ></p>
+		<p>Fecha de contrato: <input type="date" name="fecha" min="2022-01-01">
+		<p>Hora de fichar: <input type="time" name="hora" min="09:00">
+		<p> Me gusta:
+			<input type="checkbox" name="gustos"> Teatro
+			<input type="checkbox" name="gustos"> Cine
+			<input type="checkbox" name="gustos"> Montaña
+		<p>Edad:
+  			<input type="radio" name="edad" value="menor"> Menor de edad
+			<input type="radio" name="edad" value="adulto" > Adulto
+			<input type="radio" name="edad" value="abuelo" > ABuelo
+		</p>
+		<p>Elige un color: <input type="color" name="colorElegido">
+		<p>Indique su nivel:<input type="range" name="rango" min="1" max="10">
+		<p> Provincia: 
+		<select name="menu">
+			<option>Madrid</option>
+			<option>Valencia</option>
+			<option>Sevilla</option>
+			<option>Salamanca</option>
+		</select>
+		</p>
+		<p> Dime tu opinión:
+			<p><textarea name="texto" rows="4" cols="70">Escribe lo que quieras</textarea></p>
+		</p>
+		<p>
+			<input type="submit" value="Enviar Datos secretos">
+			<input type="reset" value="Borrar">
+		</p>
+		</form>
+		
+		
+    </body>
+</html>
