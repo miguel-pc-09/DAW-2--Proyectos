@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="formulario" method="get">
+      <h2>Formulario de Venta</h2>
+
+      <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre" required />
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" name="correo" id="correo" required />
+
+      <label for="edad">Edad:</label>
+      <input type="text" name="edad" id="edad" required />
+
+      <label for="genero">Sexo: </label>
+      <select id="genero">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="No contesta">No contesta</option>
+      </select>
+
+      <label for="comentario">Comentario</label>
+      <textarea rows="7" cols="30" name="comentario" id="comentario"></textarea>
+
+      <label for="estado">Estado Civil:</label>
+      <label
+        ><input
+          type="radio"
+          name="estado"
+          id="estado1"
+          value="Soltero"
+        />Soltero</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="estado"
+          id="estado2"
+          value="Casado"
+        />Casado</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="estado"
+          id="estado3"
+          value="Divorciado"
+        />Divorciado</label
+      >
+
+      <label for="fecha">Fecha de nacimiento:</label>
+      <input type="date" name="fecha" id="fecha" required />
+
+      <label for="archivo">Cargar Archivo:</label>
+      <input type="file" name="archivo" id="archivo" />
+
+      <button type="reset">Restablecer Formulario</button>
+      <button type="submit">Enviar</button>
+
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
