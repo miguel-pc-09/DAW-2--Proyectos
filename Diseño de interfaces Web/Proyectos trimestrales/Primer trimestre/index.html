@@ -2,98 +2,71 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMOS Candles</title>
+    <meta name="author" content="Nombre del Autor" />
 
-    <!-- Estilos (un único CSS para todo el proyecto) -->
-    <link rel="stylesheet" href="./css/estilos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./images/icon.png" />
+
+    <title>LUMOS Candles</title>
   </head>
   <body>
-    <!-- =================== ENCABEZADO =================== -->
-    <header class="encabezado">
-      <!-- Logo + nombre + frase corta -->
-      <div class="bloque_marca">
-        <img
+    <header>
+      
+    <!-- Contenedor Principal -->
+    <div id="contenedor">
+      <!-- Titulo de la cabecera-->
+      <header id="cabecera">
+        <div id="logo">
+          <img
           class="logo"
           src="./images/logo.png"
           alt="Logo de LUMOS Candles"
           width="20%"
         />
-        <div class="marca_textos">
-          <h1 class="titulo_sitio">LUMOS Candles</h1>
-          <p class="frase_sitio">
-            Velas artesanales inspiradas en películas y libros.
-          </p>
+        <div>
+          <h1>LUMOS Candles</h1>
         </div>
-      </div>
+          
+        </div>
+      </header>
 
-      <!-- Barra de navegación con enlaces a las otras páginas -->
-      <nav class="barra_navegacion" aria-label="Navegación principal">
-        <a class="enlace_nav" href="./producto.html"> producto</a>
-        <a class="enlace_nav" href="./contacto.html">Formulario de contacto</a>
+      <!-- Menú de Navegación -->
+      <nav id="menu">
+        <!--enlaces de navegación-->
+        <ul>
+          <li><a href="producto.html">Producto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
       </nav>
-    </header>
+      
+      
+      </header>
 
-    <!-- =================== CONTENIDO =================== -->
-    <main class="contenido">
-      <!-- Tres imágenes relacionadas con la tienda -->
-      <section class="galeria" aria-labelledby="titulo-galeria">
-        <h2 id="titulo-galeria" class="sr-solo-lectores">Galería de velas</h2>
-
-        <!-- Sugerencia: usa <figure> para poder añadir un pie opcional -->
-        <figure class="item_galeria">
-          <img
-            src="./images/lechuza.png"
-            alt="Vela temática lechuza encendida"
-            class="img_galeria"
-            width="30%"
-          />
-        </figure>
-
-        <figure class="item_galeria">
-          <img
-            src="./images/gandalf.png"
-            alt="Vela temática baston gandalf"
-            class="img_galeria"
-            width="30%"
-          />
-        </figure>
-
-        <figure class="item_galeria">
-          <img
-            src="./images/alien.png"
-            alt="Vela huevo de alien verde"
-            class="img_galeria"
-            width="30%"
-          />
-        </figure>
-        <figure class="item_galeria">
-          <img
-            src="./images/frank.png"
-            alt="Vela frankenstein"
-            class="img_galeria"
-            width="30%"
-          />
-        </figure>
-      </section>
-
-      <!-- Texto introductorio breve -->
-      <section class="intro" aria-labelledby="titulo-intro">
-        <h2 id="titulo-intro" class="sr-solo-lectores">Texto introductorio</h2>
-        <p class="intro_texto">
+      <!-- Sección de Contenido -->
+      <main id="contenido">
+        <h2>Ejemplos de Diseños</h2>
+        <p>
           Aquí encontrarás velas de distintos tipos y olores, inspiradas en
           películas y libros. Todas son artesanales, hechas con amor. Si aun así
           no encuentras tu favorita, háznoslo saber en el formulario y te
           ayudaremos.
         </p>
-      </section>
-    </main>
 
-    <!-- =================== PIE DE PÁGINA =================== -->
-    <footer class="pie">
+        <!-- Contenedor de imágenes en fila -->
+        <div class="galeria">
+          <img src="images/lechuza.png" alt="Lechuza harry potter" />
+          <img src="images/alien.png" alt="Huevo de Alien" />
+          <img src="images/frank.png" alt="El monstruo Frankenstein" />
+          <img src="images/huevo.png" alt="Huevo dragon Game of throne" />
+          <img src="images/gandalf.png" alt="Baston de gandalf el blanco" />
+        </div>
+      </main>
+
+      <!-- Pie de Página -->
+      <footer class="pie">
       <p>© 2025 LUMOS Candles · Hecho a mano en España</p>
       <ul class="redes">
         <li><a href="http://www.tiktok.com">Instagram</a></li>
@@ -102,5 +75,6 @@
         <li><a href="mailto:hola@lumoscandles.es">hola@lumoscandles.es</a></li>
       </ul>
     </footer>
+    
   </body>
 </html>

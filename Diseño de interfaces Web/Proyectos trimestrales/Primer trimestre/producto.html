@@ -1,9 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" type="image/png" href="./images/icon.png" />
+    <title>Lechuza Harry Potter - LUMOS Candles</title>
   </head>
-  <body></body>
+
+  <body>
+    <!-- Cabecera: logo + nombre (sin menú) -->
+    <div id="contenedor">
+      <header id="cabecera">
+        <div id="logo">
+          <img
+            class="logo"
+            src="./images/logo.png"
+            alt="Logo de LUMOS Candles"
+          />
+          <h1>LUMOS Candles</h1>
+        </div>
+      </header>
+
+      <!-- Contenido principal de la ficha -->
+      <main id="producto">
+        <!-- Hero del producto: título + imagen principal -->
+        <section class="vela_producto">
+          <h1>Lechuza Harry Potter</h1>
+          <img src="./images/lechuza.png" alt="Vela lechuza Harry Potter" />
+        </section>
+
+        <!-- Descripción breve del producto -->
+        <section class="bloque_descripcion">
+          <p>
+            Disfruta de esta vela artesanal con forma de lechuza. Mide
+            20&nbsp;cm y puedes elegir entre aromas <strong>vainilla</strong>,
+            <strong>fresa</strong> o <strong>caramelo</strong>. Cera vegetal y
+            mecha de algodón. Ilumina tus estancias y añade un toque mágico a tu
+            decoración.
+          </p>
+        </section>
+
+        <!-- Proceso de fabricación (tus fotos irán aquí) -->
+        <section class="proceso_fabricacion">
+          <h2>Cómo la fabricamos</h2>
+
+          <div class="grid_proceso">
+            <figure class="paso">
+              <img
+                src="./images/molde_lechuza.jpg"
+                alt="Molde de silicona bivalvo con forma de lechuza"
+              />
+              <figcaption>
+                Molde bivalvo de silicona con guía para la mecha.
+              </figcaption>
+            </figure>
+
+            <figure class="paso">
+              <img
+                src="./images/paso_cera.jpg"
+                alt="Vertiendo cera caliente en el molde"
+              />
+              <figcaption>
+                Vertemos la cera vegetal a baja temperatura.
+              </figcaption>
+            </figure>
+
+            <figure class="paso">
+              <img
+                src="./images/paso_desmolde.jpg"
+                alt="Desmolde y acabado de la vela"
+              />
+              <figcaption>
+                Desmoldamos, repasamos plumas y damos el acabado.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </main>
+
+      <!-- Pie de página -->
+      <footer class="pie">
+        <p>© 2025 LUMOS Candles · Hecho a mano en España</p>
+        <ul class="redes">
+          <li><a href="https://www.instagram.com">Instagram</a></li>
+          <li><a href="https://www.tiktok.com">TikTok</a></li>
+          <li><a href="https://www.facebook.com">Facebook</a></li>
+          <li>
+            <a href="mailto:hola@lumoscandles.es">hola@lumoscandles.es</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
 </html>

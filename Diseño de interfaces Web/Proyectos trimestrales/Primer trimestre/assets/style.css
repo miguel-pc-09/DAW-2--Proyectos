@@ -1,0 +1,253 @@
+/* ------ Fondo general --------- */
+/* Imagen fija de fondo con efecto completo */
+body {
+  background-image: url('../images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;          
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #e6e6e6;              
+}
+
+/* ------------- CONTENEDOR PRINCIPAL ---------------- */
+/* Centra el contenido y deja margen  */
+#contenedor {
+  width: 85%;
+  margin: 40px auto;
+  padding: 10px 0;
+}
+
+/* ------- CABECERA (logo + nombre) ------------- */
+#cabecera {
+  text-align: center;
+  margin-bottom: 45px;        /* separa del menú */
+}
+
+/* Alinea logo y texto del nombre */
+#logo {
+  display: flex;
+  align-items: center;       /*los centra dentro de su caja*/
+  justify-content: center;  /*los deja en el centro */
+  gap: 55px;       /* separacion entre logo y nombre */
+}
+
+/* Ajusta el tamaño del logo */
+#logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Título principal "LUMOS Candles" */
+#logo h1 {
+  font-size: 2.5rem;            /* más grande */
+  letter-spacing: 1px;
+  color: #e4bf72;             
+  margin-top: 10px;             /* baja un poco el texto */
+}
+
+/* ---------- MENÚ DE NAVEGACIÓN ------------------ */
+#menu {
+  margin-bottom: 40px;        /* baja el menú */
+}
+
+#menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0);    /* barra semitransparente */
+  border-radius: 13px;
+  padding: 30px 90px;
+  gap: 70px;                  /* espacio entre enlaces */
+}
+
+/* Enlaces del menú */
+#menu a {
+  color: #e4bf72;             /* dorado visible */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.7rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#menu a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #e4bf72;             /* dorado al pasar el ratón */
+}
+
+/* ------- SECCIÓN PRINCIPAL (título + texto + galería) --------  */
+#contenido {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Subtítulo "Ejemplos de Diseños" */
+#contenido h2 {
+  color: #e4bf72;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+/*  Párrafo introductorio */
+#contenido p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 35px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ------  IMÁGENES -------- */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;                  /* separación entre imágenes */
+}
+
+.galeria img {
+  width: 200px;               /* tamaño un poco mayor */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por encima */
+.galeria img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+/* ------ PIE DE PÁGINA ------ */
+.pie {
+  text-align: center;
+  padding: 25px 0;
+  color: #e6e6e6;
+  border-top: none;           /* elimina la línea blanca */
+  margin-top: 40px;
+}
+
+/* Texto © */
+.pie p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* Lista de redes sociales */
+.pie ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Enlaces de redes y correo */
+.pie a {
+  color: #e4bf72;             /* dorado visible */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.pie a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #e4bf72;
+}
+
+/*----- PÁGINA PRODUCTO ---------- */
+/* Contenedor del main de la ficha: ajusta respiración vertical */
+#producto{
+  display: block;                 /* estructura simple */
+  margin-top: 8px;                /* separa un poco del header */
+}
+
+/* ---------- HERO del producto (título + imagen) ---------- */
+.vela_producto{
+  display: flex;                  /* apila en columna y centra */
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;                      /* separación entre título e imagen */
+  margin: 8px auto 18px;
+  text-align: center;
+}
+
+/* Título principal de la vela */
+.vela_producto h1{
+  color: #e4bf72;                 /* dorado cálido */
+  font-size: clamp(22px, 3.6vw, 32px); /* responsivo */
+  letter-spacing: .5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5); /* mejora contraste sobre fondo */
+  margin: 0;
+}
+
+/* Imagen principal de la vela */
+.vela_producto img{
+  width: clamp(240px, 32vw, 360px);     /* crece bien en pantallas grandes */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.45);
+}
+
+/* ---------- Bloque de descripción corto ---------- */
+.bloque_descripcion{
+  max-width: 900px;               /* ancho de lectura cómodo */
+  margin: 0 auto 22px;            /* centrado + aire inferior */
+  background: rgba(0,0,0,.35);    /* panel semitransparente */
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.bloque_descripcion p{
+  color: #f4f0e6;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+/* ---------- Sección de fabricación ---------- */
+.proceso_fabricacion{
+  max-width: 1100px;
+  margin: 0 auto 14px;
+  padding-top: 6px;
+}
+.proceso_fabricacion h2{
+  text-align: center;
+  color: #e4bf72;
+  font-size: clamp(18px, 2.4vw, 26px);
+  margin-bottom: 10px;
+}
+
+/* Rejilla de 3 pasos (responsive) */
+.grid_proceso{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+  gap: 16px;
+}
+
+/* Tarjeta de cada paso */
+.paso{
+  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+.paso img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;              /* recorte elegante manteniendo proporción */
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.4);
+  margin-bottom: 8px;
+}
+.paso figcaption{
+  color: #eae6da;
+  font-size: .95rem;
+  line-height: 1.45;
+}
