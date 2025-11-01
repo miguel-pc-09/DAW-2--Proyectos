@@ -408,5 +408,12 @@ button[type="submit"]:active {
   color: #eadfb9;              /* un dorado algo más suave que los legend */
   font-weight: 600;
 }
-
+/* Alinear checkbox y texto en una línea */
+.terminos {
+  display: flex;               /* coloca input y label en una fila */
+  align-items: center;         /* los centra verticalmente */
+  gap: 10px;                   /* espacio entre la casilla y el texto */
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
 
