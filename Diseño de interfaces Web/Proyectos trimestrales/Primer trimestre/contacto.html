@@ -74,13 +74,22 @@
           <option value="05">Game of throne</option></select
         ><br /><br />
 
-        <label for="genero">Esencia de la vela:</label><br />
-        <input type="radio" name="olor" id="olor1" value="vainilla" />
-        <label for="hombre">Vainilla</label><br />
-        <input type="radio" name="olor" id="olor2" value="fresa" />
-        <label for="mujer">Fresa</label><br />
-        <input type="radio" name="olor" id="olor3" value="caramelo" />
-        <label for="otro">Caramelo</label><br /><br />
+        <label for="genero">Esencia de la vela:</label>
+
+        <div class="opciones-olor">
+          <label class="radio-inline">
+            <input type="radio" name="olor" value="vainilla" /> Vainilla
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="olor" value="fresa" /> Fresa
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" name="olor" value="caramelo" /> Caramelo
+          </label>
+        </div>
+        <br /><br />
 
         <label for="experiencia">Datos a añdir: </label><br />
         <textarea

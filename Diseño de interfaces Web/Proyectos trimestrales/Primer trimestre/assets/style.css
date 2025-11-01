@@ -392,5 +392,21 @@ button[type="submit"]:active {
 .pie {
   margin-top: 50px;
 }
+/* Grupo de radios en línea para “Olor de la vela” */
+.opciones-olor{
+  display: flex;               /* pone los radios en fila */
+  gap: 22px;                   /* separación entre opciones */
+  align-items: center;
+  flex-wrap: wrap;             /* si no cabe, pasa a la línea siguiente */
+  margin: 6px 0 14px;
+}
+
+.radio-inline{
+  display: inline-flex;        /* texto e input alineados */
+  align-items: center;
+  gap: 8px;
+  color: #eadfb9;              /* un dorado algo más suave que los legend */
+  font-weight: 600;
+}
 
 
