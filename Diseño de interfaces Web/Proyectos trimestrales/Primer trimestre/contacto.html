@@ -10,64 +10,104 @@
     <title>Document</title>
   </head>
   <body>
-    <form id="formulario" method="get">
-      <h2>Formulario de Venta</h2>
+    <h1>FORMULARIO DE COMPRA</h1>
+    <form id="formulario" action="index.html" method="get">
+      <!--Cuerpo del correo y contraseña-->
+      <fieldset>
+        <legend>
+          <span style="color: #e4bf72">Registro</span>
+        </legend>
+        <label for="correo">Correo Electronico: </label><br />
+        <input type="email" id="correo" name="correo" value="" required /><br />
 
-      <label for="nombre">Nombre: </label>
-      <input type="text" name="nombre" id="nombre" required />
+        <label for="contraseña">Contraseña:</label><br />
+        <input
+          type="password"
+          name="contraseña"
+          id="contraseña"
+          value=""
+          required
+        />
+      </fieldset>
+      <!--Cuerpo de datos personales-->
+      <fieldset>
+        <legend>
+          <span style="color: #e4bf72">Datos Personales</span>
+        </legend>
+        <label for="nombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" value="" required /><br />
 
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" name="correo" id="correo" required />
+        <label for="apellido1">Primer Apellido:</label><br />
+        <input
+          type="text"
+          id="apellido1"
+          name="apellido1"
+          value=""
+          required
+        /><br />
 
-      <label for="edad">Edad:</label>
-      <input type="text" name="edad" id="edad" required />
+        <label for="apellido2">Segundo Apellido:</label><br />
+        <input
+          type="text"
+          id="apellido2"
+          name="apellido2"
+          value=""
+          required
+        /><br />
 
-      <label for="genero">Sexo: </label>
-      <select id="genero">
-        <option value="Masculino">Masculino</option>
-        <option value="Femenino">Femenino</option>
-        <option value="No contesta">No contesta</option>
-      </select>
+        <label for="dni">DNI:</label><br />
+        <input type="text" id="dni" name="dni" value="" required /><br />
 
-      <label for="comentario">Comentario</label>
-      <textarea rows="7" cols="30" name="comentario" id="comentario"></textarea>
+        <label for="telefono">Numero de telefono: </label><br />
+        <input type="tel" name="telefono" id="telefono" required /><br /><br />
+      </fieldset>
+      <fieldset>
+        <legend style="color: #e4bf72">Datos del producto</legend>
 
-      <label for="estado">Estado Civil:</label>
-      <label
-        ><input
-          type="radio"
-          name="estado"
-          id="estado1"
-          value="Soltero"
-        />Soltero</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="estado"
-          id="estado2"
-          value="Casado"
-        />Casado</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="estado"
-          id="estado3"
-          value="Divorciado"
-        />Divorciado</label
-      >
+        <label for="pais">Tipo de Vela:</label><br />
+        <select name="pais" id="pais">
+          <option value="00">selecciona</option>
+          <option value="01">Lechuza</option>
+          <option value="02">Frankenstein</option>
+          <option value="03">Alien</option>
+          <option value="04">Gandalf</option>
+          <option value="05">Game of throne</option></select
+        ><br /><br />
 
-      <label for="fecha">Fecha de nacimiento:</label>
-      <input type="date" name="fecha" id="fecha" required />
+        <label for="genero">Olor de la vela:</label><br />
+        <input type="radio" name="olor" id="olor1" value="vainilla" />
+        <label for="hombre">Vainilla</label><br />
+        <input type="radio" name="olor" id="olor2" value="fresa" />
+        <label for="mujer">Fresa</label><br />
+        <input type="radio" name="olor" id="olor3" value="caramelo" />
+        <label for="otro">Caramelo</label><br /><br />
 
-      <label for="archivo">Cargar Archivo:</label>
-      <input type="file" name="archivo" id="archivo" />
+        <label for="experiencia">Datos a añdir: </label><br />
+        <textarea
+          name="experiencia"
+          id="experiencia"
+          cols="30"
+          rows="10"
+        ></textarea
+        ><br />
+      </fieldset>
 
-      <button type="reset">Restablecer Formulario</button>
-      <button type="submit">Enviar</button>
+      <input type="checkbox" name="terminos" id="terminos" />
+      <label for="terminos">Acepto los téminos y condiciones</label><br /><br />
 
-      <script src="script.js"></script>
+      <button type="submit" style="color: blue">Enviar</button>
     </form>
+    <!-- Pie de página -->
+    <footer class="pie">
+      <p>© 2025 LUMOS Candles · Hecho a mano en España</p>
+      <ul class="redes">
+        <li><a href="https://www.instagram.com">Instagram</a></li>
+        <li><a href="https://www.tiktok.com">TikTok</a></li>
+        <li><a href="https://www.facebook.com">Facebook</a></li>
+        <li>
+          <a href="mailto:hola@lumoscandles.es">hola@lumoscandles.es</a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
