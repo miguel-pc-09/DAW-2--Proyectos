@@ -1,334 +1,322 @@
-/* ------ Fondo general --------- */
-/* Imagen fija de fondo con efecto completo */
+/* ------------------------------------------------------ */
+/* ----------------------  INDEX  ------------------------ */
+/* ------------------------------------------------------ */
+
+/* ---------- HEADER (logo + brand + nav) ---------- */
 body {
   background-image: url('../images/fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;          
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #e6e6e6;              
+  color: #eae6da;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0; /* Fondo general de toda la web y estilo base del texto */
 }
 
-/* ------------- CONTENEDOR PRINCIPAL ---------------- */
-/* Centra el contenido y deja margen  */
 #contenedor {
   width: 85%;
-  margin: 40px auto;
-  padding: 10px 0;
+  margin: 40px auto; /* Centra el contenido y deja margen alrededor */
 }
 
-/* ------- CABECERA (logo + nombre) ------------- */
 #cabecera {
   text-align: center;
-  margin-bottom: 45px;        /* separa del menú */
+  margin-bottom: 30px; /* Centra la cabecera y la separa del contenido */
 }
 
-/* Alinea logo y texto del nombre */
 #logo {
   display: flex;
-  align-items: center;       /*los centra dentro de su caja*/
-  justify-content: center;  /*los deja en el centro */
-  gap: 55px;       /* separacion entre logo y nombre */
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Coloca el logo y el título en una fila centrada con separación */
 }
 
-/* Ajusta el tamaño del logo */
 #logo img {
   width: 150px;
-  height: auto;
+  height: auto; /* Tamaño fijo del logo */
 }
 
-/* Título principal "LUMOS Candles" */
 #logo h1 {
-  font-size: 2.5rem;            /* más grande */
-  letter-spacing: 1px;
-  color: #e4bf72;             
-  margin-top: 10px;             /* baja un poco el texto */
+  color: #e4bf72;
+  font-size: 34px;
+  margin: 0;
+  letter-spacing: 1px; /* Título principal de la tienda en dorado */
 }
 
-/* ---------- MENÚ DE NAVEGACIÓN ------------------ */
+/* ---------- Nav ---------- */
 #menu {
-  margin-bottom: 40px;        /* baja el menú */
+  margin-top: 50px;
+  margin-bottom: 35px; /* Espaciado arriba y abajo del menú */
+  background-color: #241f12c9;
+  border-radius: 8px;
+
 }
 
 #menu ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
-  background-color: rgba(0, 0, 0, 0);    /* barra semitransparente */
-  border-radius: 13px;
-  padding: 30px 90px;
-  gap: 70px;                  /* espacio entre enlaces */
+  gap: 60px;
+  padding: 0;
+  margin: 0; /* Quita viñetas y centra los enlaces */
 }
 
-/* Enlaces del menú */
 #menu a {
-  color: #e4bf72;             /* dorado visible */
+  color: #e4bf72;
   font-weight: bold;
   text-decoration: none;
-  font-size: 1.7rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-size: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Enlaces del menú en dorado */
 }
 
 #menu a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px #e4bf72;             /* dorado al pasar el ratón */
+  color: white;
+  text-shadow: 0 0 6px #e4bf72; /* Efecto brillante al pasar el ratón */
 }
 
-/* ------- SECCIÓN PRINCIPAL (título + texto + galería) --------  */
+/* ---------- CONTENIDO PRINCIPAL ---------- */
 #contenido {
   text-align: center;
-  padding: 20px;
+  padding: 10px; /* Centra el texto y añade un poco de espacio interno */
 }
 
-/* Subtítulo "Ejemplos de Diseños" */
 #contenido h2 {
   color: #e4bf72;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-bottom: 15px; /* Subtítulo en dorado */
 }
 
-/*  Párrafo introductorio */
 #contenido p {
-  font-size: 1rem;
-  color: #f0f0f0;
-  margin-bottom: 35px;
+  color: #ffffff;
+  font-size: 18px;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+  margin: 0 auto 30px auto; /* Texto principal centrado y limitado de ancho */
 }
 
-/* ------  IMÁGENES -------- */
+/* ---------- Galería ---------- */
 .galeria {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;                  /* separación entre imágenes */
+  gap: 25px; /* Coloca las imágenes en fila con espacio entre ellas */
 }
 
 .galeria img {
-  width: 200px;               /* tamaño un poco mayor */
+  width: 200px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tamaño y sombra de cada imagen */
 }
 
-/* Efecto al pasar el ratón por encima */
 .galeria img:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7); /* Efecto al pasar el ratón sobre las imágenes */
 }
 
-/* ------ PIE DE PÁGINA ------ */
+/* ---------- FOOTER ---------- */
 .pie {
   text-align: center;
-  padding: 25px 0;
-  color: #e6e6e6;
-  border-top: none;           /* elimina la línea blanca */
-  margin-top: 40px;
+  color: #eae6da;
+  margin-top: 30px;
+  padding: 25px 0; /* Pie de página centrado con separación superior */
 }
 
-/* Texto © */
 .pie p {
   margin-bottom: 10px;
-  font-size: 0.95rem;
+  font-size: 15px; /* Texto del pie con tamaño más pequeño */
 }
 
-/* Lista de redes sociales */
-.pie ul {
+.pie .redes {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 25px;
+  padding: 0;
+  margin: 0; /* Enlaces de redes sociales centrados */
 }
 
-/* Enlaces de redes y correo */
 .pie a {
-  color: #e4bf72;             /* dorado visible */
+  color: #e4bf72;
   font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Enlaces del pie en dorado */
 }
 
-/* Efecto al pasar el ratón */
 .pie a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px #e4bf72;
-}
-/*--------------------------------------------------------------*/
-/*-------------PÁGINA PRODUCTO -------------------------------- */
-/*--------------------------------------------------------------*/
-/* Contenedor del main de la ficha: ajusta respiración vertical */
-#producto{
-  display: block;                 /* estructura simple */
-  margin-top: 8px;                /* separa un poco del header */
-}
-
-/* ---------- HERO del producto (título + imagen) ---------- */
-.vela_producto{
-  display: flex;                  /* apila en columna y centra */
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;                      /* separación entre título e imagen */
-  margin: 8px auto 18px;
-  text-align: center;
-}
-
-/* Título principal de la vela */
-.vela_producto h1{
-  color: #e4bf72;                 /* dorado cálido */
-  font-size: clamp(22px, 3.6vw, 32px); /* responsivo */
-  letter-spacing: .5px;
-  text-shadow: 0 2px 8px rgba(0,0,0,.5); /* mejora contraste sobre fondo */
-  margin: 0;
-}
-
-/* Imagen principal de la vela */
-.vela_producto img{
-  width: clamp(240px, 32vw, 360px);     /* crece bien en pantallas grandes */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.45);
-}
-
-/* ---------- Bloque de descripción corto ---------- */
-.bloque_descripcion{
-  max-width: 900px;               /* ancho de lectura cómodo */
-  margin: 0 auto 22px;            /* centrado + aire inferior */
-  background: rgba(0,0,0,.35);    /* panel semitransparente */
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 16px 18px;
-}
-.bloque_descripcion p{
-  color: #f4f0e6;
-  line-height: 1.6;
-  text-align: center;
-  margin: 0;
-}
-
-/* ---------- Sección de fabricación ---------- */
-.proceso_fabricacion{
-  max-width: 1100px;
-  margin: 0 auto 14px;
-  padding-top: 6px;
-}
-.proceso_fabricacion h2{
-  text-align: center;
-  color: #e4bf72;
-  font-size: clamp(18px, 2.4vw, 26px);
-  margin-bottom: 10px;
-}
-
-/* Rejilla de 3 pasos (responsive) */
-.grid_proceso{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
-  gap: 16px;
-}
-
-/* Tarjeta de cada paso */
-.paso{
-  background: rgba(0,0,0,.28);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-}
-.paso img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;              
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.4);
-  margin-bottom: 8px;
-}
-.paso figcaption{
-  color: #eae6da;
-  font-size: .95rem;
-  line-height: 1.45;
-}
-/* ------------ Bloque de compra (precio + botón) ------------- */
-.compra{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  margin: 18px auto 8px;
-}
-
-/* Texto “Precio” */
-.precio{
-  font-size: clamp(18px, 2.2vw, 22px);
-  color:#eae6da;
-  margin:0;
-}
-.precio span{
-  color:#e4bf72;                 /* dorado para la cifra */
-  font-weight:700;
-}
-
-/* Botón comprar en dorado */
-.btn-comprar{
-  display:inline-block;
-  padding: 10px 22px;
-  border-radius: 10px;
-  background:#e4bf72;            /* dorado de la web */
-  color:#1a1205;                 /* texto oscuro para contraste */
-  font-weight:700;
-  text-decoration:none;
-  letter-spacing:.2px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.35);
-  transition: transform .12s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-}
-.btn-comprar:hover{
-  background:#fff1c4;            /* dorado más claro al pasar */
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(0,0,0,.45);
-}
-.btn-comprar:active{
-  transform: translateY(0);
+  color: white;
+  text-shadow: 0 0 6px #e4bf72; /* Efecto brillante en los enlaces al pasar el ratón */
 }
 
 /* ------------------------------------------------------ */
-/* ---------------- PÁGINA CONTACTO / FORMULARIO ------------ */
-/* ------------------------------------------------------*/
-/* Centrar el formulario y su contenido */
+/* ---------------------  PRODUCTO  ---------------------- */
+/* ------------------------------------------------------ */
+
+/* ---------- CABECERA (compartida con index) ---------- */
+/* Ya definida arriba, se usa igual aquí */
+
+/* ---------- Sección principal del producto ---------- */
+#producto {
+  text-align: center;
+  padding: 10px; /* Contenedor principal del producto */
+}
+
+.vela_producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px; /* Título y foto en columna centrados */
+}
+
+.vela_producto h1 {
+  color: #e4bf72;
+  font-size: 30px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  margin: 0; /* Nombre del producto en dorado */
+}
+
+.vela_producto img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5); /* Imagen principal con sombra y bordes redondeados */
+}
+
+/* ---------- Descripción del producto ---------- */
+.bloque_descripcion {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+  padding: 20px; /* Panel con fondo semitransparente para la descripción */
+}
+
+.bloque_descripcion p {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0; /* Texto blanco dentro de la descripción */
+}
+
+/* ---------- Proceso de fabricación ---------- */
+.proceso_fabricacion {
+  max-width: 1100px;
+  margin: 0 auto 30px auto; /* Contenedor del proceso de creación */
+}
+
+.proceso_fabricacion h2 {
+  color: #e4bf72;
+  font-size: 26px;
+  margin-bottom: 15px; /* Título de la sección en dorado */
+}
+
+.grid_proceso {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Coloca los pasos uno al lado del otro */
+}
+
+.paso {
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  padding: 10px;
+  width: 30%;
+  text-align: center; /* Caja individual de cada paso */
+}
+
+.paso img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  margin-bottom: 8px; /* Imagen dentro de cada paso */
+}
+
+.paso figcaption {
+  color: #eae6da;
+  font-size: 15px;
+  line-height: 1.4; /* Texto descriptivo del paso */
+}
+
+/* ---------- Bloque de compra ---------- */
+.compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px; /* Precio y botón centrados en columna */
+}
+
+.precio {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0; /* Texto del precio */
+}
+
+.precio span {
+  color: #e4bf72;
+  font-weight: bold; /* Valor numérico del precio en dorado */
+}
+
+.btn-comprar {
+  background: #e4bf72;
+  color: #1a1205;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease; /* Botón comprar dorado con sombra */
+}
+
+.btn-comprar:hover {
+  background: #fff1c4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6); /* Aclara el botón y eleva al pasar el ratón */
+}
+
+.btn-comprar:active {
+  transform: translateY(0); /* Vuelve a su posición al hacer clic */
+}
+
+/* ---------- FOOTER (compartido) ---------- */
+/* Igual que el de index */
+
+/* ------------------------------------------------------ */
+/* --------------------- CONTACTO ------------------------ */
+/* ------------------------------------------------------ */
+
+/* ---------- Título principal ---------- */
+h1 {
+  text-align: center;
+  color: #e4bf72;
+  font-size: 34px;
+  margin: 35px 0 20px 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Título principal del formulario */
+}
+
+/* ---------- Formulario ---------- */
 form {
   width: 70%;
   max-width: 800px;
-  margin: 40px auto;
-  padding: 25px 35px;
-  background: rgba(0, 0, 0, 0.4);        /* fondo semitransparente */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 30px auto;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  padding: 25px 35px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Estructura general del formulario */
 }
 
-/* Título principal */
-h1 {
-  text-align: center;
-  color: #e4bf72;                        /* dorado cálido */
-  font-size: clamp(26px, 4vw, 36px);
-  margin-top: 40px;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-/* Campos del formulario */
 label {
   display: block;
+  color: #eadfb9;
   font-weight: bold;
-  color: #e8d9a3;                        /* dorado más suave */
-  margin: 8px 0 4px;
+  margin: 8px 0 4px 0; /* Estilo de las etiquetas del formulario */
 }
 
-/* Campos de texto, email, select, etc. */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -337,83 +325,84 @@ select,
 textarea {
   width: 100%;
   padding: 8px;
-  margin-bottom: 10px;
   border: none;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255,255,255,0.9);
+  font-size: 16px;
   color: #222;
-  font-size: 1rem;
+  margin-bottom: 10px; /* Campos de texto uniformes */
 }
 
-/* Fieldset y legend */
+textarea {
+  max-width: 640px;
+  height: 140px;
+  resize: vertical; /* Área de texto más estrecha y baja */
+}
+
 fieldset {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 8px;
   padding: 15px 20px;
-  margin-bottom: 18px;
-}
-legend {
-  font-weight: bold;
-  color: #e4bf72;                        /* igual que el resto de títulos */
+  margin-bottom: 18px; /* Agrupación de campos con borde suave */
 }
 
-/* Radio buttons y checkbox */
+legend {
+  color: #e4bf72;
+  font-weight: bold; /* Título del bloque (leyenda) en dorado */
+}
+
 input[type="radio"],
 input[type="checkbox"] {
-  accent-color: #e4bf72;                 /* color dorado */
-  margin-right: 5px;
+  accent-color: #e4bf72;
+  margin-right: 5px; /* Cambia el color de radios y checks a dorado */
 }
 
-/* Botón Enviar */
-button[type="submit"] {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 25px;
-  border-radius: 10px;
-  background: #e4bf72;                   /* dorado Lumos */
-  color: #1a1205;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-}
-button[type="submit"]:hover {
-  background: #fff1c4;                   /* dorado claro al pasar */
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.5);
-}
-button[type="submit"]:active {
-  transform: translateY(0);
-}
-
-/* Ajuste general del pie en esta página */
-.pie {
-  margin-top: 50px;
-}
-/* Grupo de radios en línea para “Olor de la vela” */
-.opciones-olor{
-  display: flex;               /* pone los radios en fila */
-  gap: 22px;                   /* separación entre opciones */
+.opciones-olor {
+  display: flex;
   align-items: center;
-  flex-wrap: wrap;             /* si no cabe, pasa a la línea siguiente */
-  margin: 6px 0 14px;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 6px 0 10px; /* Grupo de radios para olores en fila */
 }
 
-.radio-inline{
-  display: inline-flex;        /* texto e input alineados */
+.radio-inline {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #eadfb9;              /* un dorado algo más suave que los legend */
-  font-weight: 600;
-}
-/* Alinear checkbox y texto en una línea */
-.terminos {
-  display: flex;               /* coloca input y label en una fila */
-  align-items: center;         /* los centra verticalmente */
-  gap: 10px;                   /* espacio entre la casilla y el texto */
-  margin-top: 10px;
-  margin-bottom: 18px;
+  color: #eadfb9;
+  font-weight: 600; /* Texto junto a cada radio */
 }
 
+.terminos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 18px 0; /* Casilla de aceptación en línea con texto */
+}
+
+button[type="submit"] {
+  background: #e4bf72;
+  color: #1a1205;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease; /* Botón enviar centrado en dorado */
+}
+
+button[type="submit"]:hover {
+  background: #fff1c4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.5); /* Efecto al pasar el ratón sobre el botón */
+}
+
+button[type="submit"]:active {
+  transform: translateY(0); /* Efecto de pulsar el botón */
+}
+
+/* ---------- FOOTER (compartido) ---------- */
