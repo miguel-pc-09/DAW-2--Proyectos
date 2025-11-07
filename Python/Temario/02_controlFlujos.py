@@ -239,3 +239,28 @@ numeros.clear()
     # Recorrer los elementos: se utiliza una estructura for
 for i in numeros:
     print(i)
+
+""" Es como se trata de una estructura no ordenada, no se puede acceder a los datos
+directamente, sino que tan solo se puede hacer un recorrido de los mismos. En el
+caso de querer hacer un acceso directo, tendríamos que convertir el conjunto en
+lista o tupla para poder accederlo, utilizando el método list() o tuple() 
+"""
+
+""" Además de las operaciones normales, sobre los conjuntos también se puede operar
+para realizar uniones: """
+
+# Unión: Se obtiene un set con los valores de dos conjuntos, eliminando aquellos datos que están duplicados.
+# Intersección: se obtiene un set con los valroes duplicados de dos conjuntos eliminando aquellos que no lo son.
+# Diferencia: se obtiene un set con los valores que están en el conjunto A pero en el B
+# Diferencia simétrica: se obtiene un set con los valores que están en el conjunto A y B pero obviando los comunes. 
+# ejemplo de todo esto: 
+conjunto1 = {1,2,3,4,5}
+conjunto2 = {3,4,5,6,7,}
+#{1234567}
+conjuntoUnion = conjunto1.union(conjunto2)
+# {345}
+conjuntoInters = conjunto1.intersection(conjunto2)
+# {12}
+conjuntoDif = conjunto1.difference(conjunto2)
+# {1267}
+conjuntoDif = conjunto1.symmetric_difference(conjunto2)
