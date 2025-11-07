@@ -1,0 +1,4 @@
+Portatil, 799.99, 5
+Telefono, 299.99, 10
+Tablet, 199.99, 40
+Auriculares, 49.90, 25
