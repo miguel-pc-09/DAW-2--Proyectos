@@ -1,6 +1,6 @@
 # Definición de la clase Producto
 class Producto:
-    # Constructor de la clase: inicializa los atributos del producto
+    # Constructor de la clase: inicializa los atributos del producto: __init__ es el constructor
     def __init__(self, nombre, descripcion, precio):
         self.nombre = nombre          # Nombre del producto
         self.descripcion = descripcion # Descripción del producto
