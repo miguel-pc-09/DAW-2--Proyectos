@@ -14,7 +14,7 @@ from io import open
             #   "w" escritura,"si vamos agregar informacion" 1º usaremos este 
             #   append, "Para agregar informacion a un archivo que ya existe y tiene informacion "
 
-                     # 1º "w"// 2º y 3º "r" //  4º "a"
+                     #⏬ 1º "w"// 2º y 3º "r" //  4º "a"⏬
 archivo_texto = open ("archivo.txt", "a") # solo con esto al ejecutar se crea automaticamente lo crea. CREACION Y APERTURA
                                         
 
