@@ -14,7 +14,9 @@ from io import open
             #   "w" escritura,"si vamos agregar informacion" 1º usaremos este 
             #   append, "Para agregar informacion a un archivo que ya existe y tiene informacion "
 
-archivo_texto = open ("archivo.txt", "r") # solo con esto al ejecutar se crea automaticamente lo crea. CREACION Y APERTURA
+                     # 1º "w"// 2º y 3º "r" //  4º "a"
+archivo_texto = open ("archivo.txt", "a") # solo con esto al ejecutar se crea automaticamente lo crea. CREACION Y APERTURA
+                                        
 
 # EScribir dentro del archivo 
 #Creamos una variable con un contenido
@@ -30,7 +32,7 @@ archivo_texto = open ("archivo.txt", "r") # solo con esto al ejecutar se crea au
 # ===== DESCOMENTAR PARA USAR ==== 
 """ archivo_texto.close() """
 
-# ====================== COMO ABRIRLO EN MODO LECUTRA R =======================================
+# ====================== 2º COMO ABRIRLO EN MODO LECUTRA R =======================================
 # Mantenemos la linea 9 y 17 pero cambiando la W por la R, con esto le decimos que abriremos el archivo que ya existe en modo lectura
 # para esto podemos crear una variable, y dentro de esta variable guardaremos lo que se lee dentro del archivo
 # ===== DESCOMENTAR PARA USAR ==== 
@@ -47,21 +49,39 @@ archivo_texto = open ("archivo.txt", "r") # solo con esto al ejecutar se crea au
 """ print(texto) """
 
 
-# ====================== COMO ABRIRLO EN MODO LECUTRA R  radlines()=======================================
+# ====================== 3º COMO ABRIRLO EN MODO LECUTRA R  radlines()=======================================
 """ Lo mantenemos con "r" es decir lineas 9 y 17 iguales. Comentamos lo anterior  """
 # Creamos una variable 
-lineas_texto = archivo_texto.readlines()
+# ===== DESCOMENTAR PARA USAR ==== 
+""" lineas_texto = archivo_texto.readlines() """
 
 # Como la informacion guardada cerramos
-archivo_texto.close()
+# ===== DESCOMENTAR PARA USAR ==== 
+""" archivo_texto.close() """
 
 # podemos decir que nos imprima veremos que muestra una lista [' Estupendo dia para estudiar Python \n', ' el sabado']
-print(lineas_texto)
+# ===== DESCOMENTAR PARA USAR ==== 
+""" print(lineas_texto) """
 # Como podemos acceder a la primera linea por ejemplo  -> Estupendo dia para estudiar Python 
-print(lineas_texto[0])
-print(lineas_texto[1])    # ->  con un salto de linea entre las dos => el sabado
+# ===== DESCOMENTAR PARA USAR ==== 
+""" print(lineas_texto[0]) """
+""" print(lineas_texto[1])  """   # ->  con un salto de linea entre las dos => el sabado
 
 # Tambien podemos usar el metodo for para recorrer los elementos de la lista o con condicionales buscar un elemento concreto 
 
 
-# ====================== COMO ABRIRLO PARA AGREGAR INFORMACION R  radlines() 13:52=======================================
+# ====================== 4º COMO ABRIRLO PARA AGREGAR INFORMACION a  append 13:52=======================================
+# Al metodo Open le tenemos que pasar una "a" como parte del argumento 
+# Esto abre el archivo en modo extension, abrir o añadir. 
+# Usamos ese archivo junto con el metodo write, dentro de (escribir lo que queramos)
+archivo_texto.write("\n siempre es una buena ocasion para estudiar Python")    # metemos \n para que escriba en la siguiente linea
+
+# Y ya podemos cerrar el archivo
+archivo_texto.close()
+
+# Guardamos y si ejecutamos veremos lo siguiente 
+"""  
+Estupendo dia para estudiar Python 
+ el sabado
+ siempre es una buena ocasion para estudiar Python 
+"""
