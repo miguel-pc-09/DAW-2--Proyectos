@@ -14,8 +14,8 @@ from io import open
             #   "w" escritura,"si vamos agregar informacion" 1º usaremos este 
             #   append, "Para agregar informacion a un archivo que ya existe y tiene informacion "
 
-                     #⏬ 1º "w"// 2º y 3º "r" //  4º "a"⏬
-archivo_texto = open ("archivo.txt", "a") # solo con esto al ejecutar se crea automaticamente lo crea. CREACION Y APERTURA
+                     #⏬ 1º "w"// 2º y 3º "r" //  4º "a"⏬ // 5º "r" // 6º "r+"
+archivo_texto = open ("archivo.txt", "r+") # solo con esto al ejecutar se crea automaticamente lo crea. CREACION Y APERTURA
                                         
 
 # EScribir dentro del archivo 
@@ -93,6 +93,61 @@ Estupendo dia para estudiar Python
  siempre es una buena ocasion para estudiar Python 
 """
 
-# ========================🥳🙈🙉🙊 SEGUNDA PARTE, NO CREO QUE SEA NECESARIO 🥳🙈🙉🙊===================
+# ========================🥳🙈🙉🙊 5º SEGUNDA PARTE, NO CREO QUE SEA NECESARIO 🥳🙈🙉🙊===================
 """ Como manejar un, Punteros de texto.  """
 # Lo primero es el import lo dejamos igual pero la linea de open debemos cambiar de "a" que tenia a "r" modo lectura
+# pediremos que imprima el archivo de texto 
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" print(archivo_texto.read()) """
+# no podria hacer otro print porque el cursor ya se situo al final. 
+#print(archivo_texto.read())
+# Si no indicamos nada por defecto se situa al comienzo del archivo, 📍Comienzo del texto...... y cuando termina se va al final ...estudiar Python📍
+# En python esto se puede modificar para situnarnos donde queramos. Con el METODO SEEK(PARAMETROS DONDE QUEREMOS QUE SE POSICIONE). EJEMPLO seek(5) se colocara en la posicion 5
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" archivo_texto.seek(0) """  # Con esta instrucion ahora si podemos hacer otro read del fichero
+""" archivo_texto.seek(11) """ # Comienza en dia......
+""" print(archivo_texto.read()) """
+""" archivo_texto.seek(0)  """  # volvemos a ponerlo en cero y ahora en read ejecutamos 11
+# No lo podemos con el metodo sekk, tambien se podria con el read pero seria distinta. seek se posiciona el puntero en el caracter ese
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" print(archivo_texto.read(11)) """ # Solo leera hasta que llegue al 11 -> Estupendo
+
+# ===== Como decirle por ejemplo que comienze en medio ===== 
+# Utilizaremos el metodo seek y dentro len. 
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" archivo_texto.seek(len(archivo_texto.read())/2) """ # como len nos devuelve la longitud de caracteres que tiene pues todo ello lo dividimos entre 2
+
+# Ahora hacemos un print para que nos saque la mitad
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" print(archivo_texto.read()) """ # salto de linea y texto siempre es una buena ocasion para estudiar Python
+
+# Tambioen podemos usar el metodo readline para que salte la primera linea y lea el resto 
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" archivo_texto.seek(len(archivo_texto.readline())) """
+""" print(archivo_texto.read())  """  # Desde "el sabado...... Python"
+
+
+# ========================🥳🙈🙉🙊 6º Como hacer que se abra tanto para leer como para escribir a la vez  🥳🙈🙉🙊===================
+# Se consigue poniendo "r+" -> Lectura y escritura 
+
+# Ahora se puede usar write 
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" archivo_texto.write("Comienzo del texto") """ # Si no le indicamos nada sobre el cursor, por defecto el puntero estara en la posicion 0
+                                          # Lo que tambien hace es reemplazar lo que estuviera y ocupe el siguiente texto 
+# Si esto lo usamos junto con el metodo readline, podemos manipular por lineas. "Comentamos el write"
+# ===== 🤪⏬ DESCOMENTAR PARA USAR ⏬🤪==== 
+""" print(archivo_texto.readlines()) """ # Nos devolvera uina lista ['Comienzo del textoa estudiar Python \n', ' el sabado\n', ' siempre es una buena ocasion para estudiar Python'] 
+                                                        # Los saltos de lineas los representa con \n
+        # comentamos el print este ultimo 
+# Podemos incluir dentro de esa lista, una linea en mitad de ese documento
+# Creamos una variable
+lista_texto = archivo_texto.readlines()
+
+lista_texto[1] = " Esta linea ha sido incluida desde el exterior \n"
+
+archivo_texto.seek(0)
+
+# El metodo writelines nos pide por parametro una lista. 
+archivo_texto.writelines(lista_texto)
+
+archivo_texto.close()
