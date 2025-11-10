@@ -68,6 +68,9 @@ if (confirmacion2) {
 // value:string -> el valor en la posicion que te toque nos sacara el nombre de la posicion en este caso los nombres
 // index: la posicion en la que esta
 // array: el array que estoy ejecutando
+lista.forEach((item) => {
+  console.log(item);
+});
 lista.forEach((item, index, array) => {
   // No hace falta que le demos parametros, si queremos 1 se lo pedimos, 1 item, 2 index, 3 array
   // El cuerpo se ejecuta una vez por cada elemento de la lista (por cada iteracion )
