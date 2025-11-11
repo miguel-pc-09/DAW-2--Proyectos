@@ -7,7 +7,7 @@ alert("Promedio de calificaciones");
 // Array donde guardaremos las 5 notas
 const notas = [];
 
-// --- Función para calcular el promedio con forEach ---
+//  Función para calcular el promedio con forEach
 function calcularPromedio(lista) {
   let suma = 0;
   lista.forEach((n) => {
@@ -27,18 +27,23 @@ while (notas.length < 5) {
 
   // Convertimos a número y validamos rango 0..10
   const nota = parseFloat(entrada);
-
+  // si es numero y mayor o igual a cero y menoro o igual a 10 se guarda
   if (!isNaN(nota) && nota >= 0 && nota <= 10) {
     notas.push(nota);
   } else {
-    alert("Debes introducir un número entre 0 y 10.");
+    alert("Debes introducir un número entre 0 y 10."); // En caso de no ser numero
   }
 }
 
 // Si hay al menos una nota, calculamos y mostramos
 if (notas.length > 0) {
   const promedio = calcularPromedio(notas);
-  const estado = promedio >= 5 ? "APROBADO" : "SUSPENDIDO";
+  let estado;
+  if (promedio >= 5) {
+    estado = "APROBADO";
+  } else {
+    estado = "SUSPENDIDO";
+  }
 
   // Mensaje con detalle (sin SweetAlert)
   let mensaje = "Notas:\n";
@@ -50,9 +55,6 @@ if (notas.length > 0) {
   mensaje += "Estado: " + estado;
 
   alert(mensaje);
-
-  // Si quieres usar SweetAlert sencillo:
-  // Swal.fire("Promedio: " + promedio + "\nEstado: " + estado);
 } else {
   alert("No se introdujeron calificaciones.");
 }
