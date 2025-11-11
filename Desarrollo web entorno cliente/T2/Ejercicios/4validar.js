@@ -52,3 +52,63 @@ if (contraseña === null) {
   }
 }
 // No me genera los saltos correctamente
+
+// ------- Con funciones quedaria asi (descomentar para usar) -------
+/* alert("Validador de contraseñas");
+
+// --- FUNCIONES DE VALIDACIÓN ---
+// Comprueba si tiene longitud suficiente
+function comprobarLongitud(texto) {
+  return texto.length >= 8;
+}
+
+// Comprueba si contiene al menos un número
+function comprobarNumero(texto) {
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto[i];
+    if (c >= "0" && c <= "9") {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Comprueba si contiene al menos una letra
+function comprobarLetra(texto) {
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto[i];
+    if ((c >= "A" && c <= "Z") || (c >= "a" && c <= "z")) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// --- PROGRAMA PRINCIPAL ---
+const contraseña = prompt("Introduce una contraseña:");
+
+if (contraseña === null) {
+  alert("Operación cancelada.");
+} else {
+  // Llamamos a las funciones
+  const tieneLongitud = comprobarLongitud(contraseña);
+  const tieneNumero = comprobarNumero(contraseña);
+  const tieneLetra = comprobarLetra(contraseña);
+
+  // Si cumple todo → válida
+  if (tieneLongitud && tieneNumero && tieneLetra) {
+    alert("Contraseña válida ✅");
+  } else {
+    // Si falla algo, construimos un solo mensaje con todo
+    let mensaje = "Contraseña no válida. Faltan:\n";
+    if (!tieneLongitud) mensaje += "- Al menos 8 caracteres\n";
+    if (!tieneNumero)   mensaje += "- Al menos un número\n";
+    if (!tieneLetra)    mensaje += "- Al menos una letra\n";
+
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: mensaje,
+    });
+  }
+} */
