@@ -34,3 +34,4 @@ if ($total1 > $total2) {
     echo "Empate.";
     
 }
+?>
