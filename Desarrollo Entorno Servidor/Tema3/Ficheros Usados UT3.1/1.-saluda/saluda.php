@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-  </head>
-  <body>
-    Hola <?= $_GET['nombre'] ?>,
-    que tengas un buen día.
-  </body>
+</head>
+
+<body>
+    Hola <?= $_REQUEST['nombre'] ?>,
+    que tengas un buen día. <br>
+    la clave <?php echo $_REQUEST['pass']?>
+</body>
+
 </html>
