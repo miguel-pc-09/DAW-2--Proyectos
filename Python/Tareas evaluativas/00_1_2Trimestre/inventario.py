@@ -8,7 +8,7 @@ def por_defecto():
         {"nombre": "Telefono", "precio": 299.99, "cantidad": 8},
         {"nombre": "Tablet", "precio": 199.99, "cantidad": 0},
         {"nombre": "Auriculares", "precio": 43.55, "cantidad": 3},
-        {"nombre": "Ratón", "precio": 72.00, "cantidad": 13},
+        {"nombre": "Raton", "precio": 72.00, "cantidad": 13},
     ]
     archivo_texto = open("inventario.txt", "w")               # abro en escritura: crea/sobrescribe
     lineas = [f"{p['nombre']},{p['precio']},{p['cantidad']}\n" for p in productos]
