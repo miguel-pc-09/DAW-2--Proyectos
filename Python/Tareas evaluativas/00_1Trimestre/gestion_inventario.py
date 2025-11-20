@@ -7,10 +7,10 @@ ARCHIVO = "inventario.txt"
 
 # Leer productos desde archivo inventario.txt
 # Si el archivo no existe se debe crear con un inventario inicial predeterminado
-def inicializar_archivo():          # define una funcion llamada inicializar_archivo
-    # yo quiero trabajar con comas y espacios: "Portatil, 799.99, 5"
-    if not os.path.exists(ARCHIVO): # si no existe el archivo cuyo nombre esta en la variable ARCHIVO 
-        with open(ARCHIVO, "w") as f: # abrelo en modo escritura con codificacion por defecto y llama a ese manejador f. A diferencia de java o C# aqui con w vale. 
+def inicializar_archivo():                                          # define una funcion llamada inicializar_archivo
+   
+    if not os.path.exists(ARCHIVO):                                 # si no existe el archivo cuyo nombre esta en la variable ARCHIVO 
+        with open(ARCHIVO, "w") as f:                               # modo escritura con codificacion por defecto y llama a ese manejador f. A diferencia de java o C# aqui con w vale. 
             f.write("Portatil, 799.99, 5\n")
             f.write("Telefono, 299.99, 10\n")
             f.write("Tablet, 199.99, 0\n")
@@ -28,16 +28,16 @@ def inicializar_archivo():          # define una funcion llamada inicializar_arc
 
 # mostrar el inventario
 # imprimir los productos (nombre, precio y cantidad)
-def cargar_inventario():  # Defino la funcion cargar_inventario 
-    productos = []         # creo una lista vacia donde voy a ir metiendo cada producto (como diccionario)
+def cargar_inventario():                                            # Defino la funcion cargar_inventario 
+    productos = []                                                  # creo una lista vacia donde voy a ir metiendo cada producto (como diccionario)
     with open(ARCHIVO, "r") as f:
         for linea in f:
-            linea = linea.strip()                 # limpio espacios/saltos al inicio/fin
-            if linea == "":                       # si hay una linea vacia, la salto
+            linea = linea.strip()                                   # limpio espacios/saltos al inicio/fin
+            if linea == "":                                         # si hay una linea vacia, la salto
                 continue
             # ahora separo por coma porque mi formato es "Nombre, precio, cantidad"
             partes = linea.split(",")
-            nombre = partes[0].strip()            # quito espacios sobrantes por si acaso
+            nombre = partes[0].strip()                              # quito espacios sobrantes por si acaso
             precio = partes[1].strip()
             cantidad = partes[2].strip()
             productos.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
@@ -75,7 +75,7 @@ def mostrar_inventario(lista):
     for p in lista:
         precio = float(p["precio"])
         cantidad = int(p["cantidad"])
-        # imprimo sencillo con espacios porque estoy en nivel basico
+        
         print(str(i) + "    " + p["nombre"] + "            " + str(round(precio, 2)) + "         " + str(cantidad))
         i = i + 1
     if i == 1:
@@ -89,7 +89,7 @@ def actualizar_cantidad(lista):
     numero = int(input("\nNº del producto a actualizar: "))
     indice = numero - 1
     nueva = int(input("Nueva cantidad (entero >= 0): "))
-    lista[indice]["cantidad"] = str(nueva)  # mantengo como texto para escribir igual en el .txt
+    lista[indice]["cantidad"] = str(nueva)                                # mantengo como texto para escribir igual en el .txt
     guardar_inventario(lista)
     print("Cantidad actualizada y guardada.\n")
 
@@ -123,7 +123,7 @@ def menu():
                         print(f" {p['nombre']} (cantidad: {p['cantidad']})")
             case "4":
                 actualizar_cantidad(productos)
-                productos = cargar_inventario()  # vuelvo a cargar del archivo despues de guardar
+                productos = cargar_inventario()                             # vuelvo a cargar del archivo despues de guardar
             case "5":
                 print("¡Hasta pronto!")
                 break
