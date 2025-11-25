@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title> Fuentes web.</title>
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+	
+	/* usar una fuente descargada*/
+    @font-face {
+      font-family: "Mystery Quest";
+      src: url("mystery-quest.woff2");
+    }
+
+    .import {
+      font-family: "Indie Flower", serif;
+      font-size: 150%;
+    }
+
+    .local {
+      font-family: "Mystery Quest", serif;
+      font-size: 150%;
+    }
+  </style>
+</head>
+<body>
+  <p class="import">Esto es un párrafo con fuente web Indie Flower al 150% alojada en Google Fonts.</p>
+  <p class="local">Esto es un párrafo con fuente web Mystery Quest al 150% alojada localmente.</p>
+</body>
+</html>

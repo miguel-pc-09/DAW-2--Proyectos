@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>caption-side (2). Tablas. CSS. </title>
+ 
+  <style>
+    table {
+      border: blue 1px solid;
+	  border-collapse: separate; /* probar collapse */
+    }
+    td {
+      border: red 1px solid;
+	  padding: 20px;
+    }
+    caption {
+      caption-side: bottom; /* probar top */
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <caption>Esto es la leyenda</caption>
+    
+      <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+      </tr>
+      <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+      </tr>
+   
+  </table>
+</body>
+</html>
