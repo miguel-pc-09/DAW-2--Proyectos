@@ -25,11 +25,10 @@ class Banca {
       puntosBancaContainer.textContent = this.puntos;
 
       let tiempo = setInterval(() => {
-        if (this.puntos < 17 && this.baraja.lenght > 0) {
+        if (this.puntos < 17 && this.baraja.length > 0) {
           const carta = this.baraja.shift();
           this.puntos += Number(carta.valor);
 
-          // Agregar carta
           let imagenCarta = document.createElement("img");
           imagenCarta.src = carta.imagen;
           imagenCarta.style.width = "90px";
@@ -128,7 +127,7 @@ class BlackJack {
 
   crearBaraja() {
     const numeraciones = [
-      "A",
+      "1",
       "2",
       "3",
       "4",
@@ -142,42 +141,53 @@ class BlackJack {
       "Q",
       "K",
     ];
-    const palos = ["Corazones", "Diamantes", "Tréboles", "Picas"];
+
+    const palos = [
+      { nombre: "Corazones", letra: "C" },
+      { nombre: "Diamantes", letra: "D" },
+      { nombre: "Picas", letra: "P" },
+      { nombre: "Tréboles", letra: "T" },
+    ];
 
     for (let palo of palos) {
       for (let valor of numeraciones) {
-        const numeracion = valor;
-        let valorNumerico = isNaN(valor)
-          ? valor === "A"
-            ? 1
-            : 11
-          : Number(valor);
-        const imagen = `./utils/img/cards/${numeracion}${palo.charAt(0)}.png`;
-        this.baraja.push(new Carta(numeracion, valorNumerico, palo, imagen));
+        let valorNumerico;
+        if (valor === "1") {
+          valorNumerico = 11;
+        } else if (valor === "J" || valor === "Q" || valor === "K") {
+          valorNumerico = 10;
+        } else {
+          valorNumerico = Number(valor);
+        }
+
+        const imagen = `./utils/img/${valor}${palo.letra}.png`;
+        this.baraja.push(new Carta(valor, valorNumerico, palo.nombre, imagen));
       }
     }
   }
 
   barajearMazo() {
     this.baraja = _.shuffle(this.baraja);
-    this.baraja.unshift(
-      new Carta("Baraja", 0, "Cartas", `./utils/img/cards/0B.png`)
-    );
     turnoBanca = true;
   }
 
   resultados() {
     if (finPartida) {
       if (banca.puntos > 21) {
-        alert("El ganador fue JUGADOR");
+        // La banca se pasa -> gana el jugador
+        alertaVictoriaJugador();
       } else if (player.puntos > 21) {
-        alert("El ganador fue BANCA");
+        // El jugador se pasa -> gana la banca
+        alertaDerrotaJugador();
       } else if (banca.puntos > player.puntos) {
-        alert("El ganador fue BANCA");
+        // La banca tiene más puntos
+        alertaDerrotaJugador();
       } else if (player.puntos > banca.puntos) {
-        alert("El ganador fue JUGADOR");
+        // El jugador tiene más puntos
+        alertaVictoriaJugador();
       } else {
-        alert("EMPATE");
+        // Mismo número de puntos
+        alertaEmpate();
       }
     }
   }
