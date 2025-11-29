@@ -1,0 +1,202 @@
+/* Bloque: ajustes globales de la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/blackjack.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+
+/* contenedor general de la mesa */
+#contenedor {
+  background-color: rgba(0, 104, 31, 0.6);
+  margin-top: 20px;
+  width: 80%;
+  height: 80vh;
+  min-width: fit-content;
+  min-height: fit-content;
+  padding: 15px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*filas superior y inferior  */
+#contenedorBanca,
+#contenedorJugador {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  border: 8px solid rgb(255, 255, 255);
+  border-radius: 16px;
+  border-right: none;
+  border-left: none;
+}
+
+/* Ajuste para banca */
+#contenedorBanca {
+  border-bottom: none;
+  border-right: 8px solid rgb(255, 255, 255);
+  border-left: 8px solid rgb(255, 255, 255);
+}
+
+/* Ajuste para juagdor */
+#contenedorJugador {
+  border-top: none;
+  border-right: 8px solid rgb(255, 255, 255);
+  border-left: 8px solid rgb(255, 255, 255);
+}
+
+/* contenedor de botones  */
+#contenedorBotonera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin: 10px 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  height: 10vh;      
+  width: 60%;       
+  padding: 8px;      
+}
+
+/* panel de datos banca/jugador */
+#datosBanca,
+#datosJugador {
+  align-items: center;
+  text-align: center;
+  width: 20%;
+  min-width: 130px;
+  height: 30vh;
+  min-height: fit-content;
+  border-radius: 8px;
+}
+
+/* nombre de banca y jugador */
+.bancaNombre,
+#nombreJugador {
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 6px;
+  font-weight: bolder;
+  height: 40px;
+  color: #000000;
+  border-radius: 8px;
+}
+
+recuadro de puntos banca/jugador */
+.puntajeBanca,
+.puntajeJugador {
+  color: rgb(255, 255, 255);
+  height: fit-content;
+  border: solid 3px rgb(255, 255, 255);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* numero de los puntos */
+#puntosBanca,
+#puntosJugador {
+  font-size: 50px;
+}
+
+/* texto debajo del numero */
+.puntos {
+  font-size: 30px;
+}
+
+/* tapetes donde se colocan las cartas */
+#tapeteBanca,
+#tapeteJugador {
+  width: 75%;
+  height: 30vh;
+  min-height: fit-content;
+  padding: 15px;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* estilo de las cartas en los tapetes */
+#tapeteBanca img,
+#tapeteJugador img {
+  width: 90px;
+  border-radius: 6px;
+  transition: transform 0.9s ease, box-shadow 0.3s ease;
+}
+
+#tapeteBanca img:hover,
+#tapeteJugador img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+#botonPedirCarta {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 104, 31, 0.904);
+  border: ridge 2px rgb(255, 255, 255);
+}
+
+#botonPedirCarta:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 189, 57, 0.904);
+  border: ridge 4px rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+
+#botonMePlanto {
+  color: rgb(255, 255, 255);
+  background-color: rgba(138, 0, 0, 0.904);
+  border: ridge 2px rgb(255, 255, 255);
+}
+
+#botonMePlanto:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(235, 86, 86, 0.904);
+  border: ridge 4px rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+
+#botonOtraPartida {
+  color: rgb(255, 255, 255);
+  background-color: rgba(41, 99, 224, 0.904);
+  border: ridge 2px rgb(255, 255, 255);
+}
+
+#botonOtraPartida:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(86, 138, 235, 0.904);
+  border: ridge 4px rgb(255, 255, 255);
+  font-weight: bolder;
+}
