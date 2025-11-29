@@ -5,10 +5,6 @@ class Carta {
     this.palo = palo;
     this.imagen = imagen;
   }
-
-  toString() {
-    return `Carta: ${this.numeracion} de ${this.palo}\nValor: ${this.valor}`;
-  }
 }
 
 class Banca {
@@ -18,36 +14,41 @@ class Banca {
   }
 
   sacarCartasBanca() {
-    if (turnoBanca) {
-      const tapeteBanca = document.querySelector("#tapeteBanca");
-      const puntosBancaContainer = document.querySelector("#puntosBanca");
+    if (!turnoBanca) return;
 
-      puntosBancaContainer.textContent = this.puntos;
+    const tapeteBanca = document.querySelector("#tapeteBanca");
+    const puntosBancaContainer = document.querySelector("#puntosBanca");
 
-      let tiempo = setInterval(() => {
-        if (this.puntos < 17 && this.baraja.length > 0) {
-          const carta = this.baraja.shift();
-          this.puntos += Number(carta.valor);
+    puntosBancaContainer.textContent = this.puntos;
 
-          let imagenCarta = document.createElement("img");
-          imagenCarta.src = carta.imagen;
-          imagenCarta.style.width = "90px";
-          tapeteBanca.appendChild(imagenCarta);
+    const robarCarta = () => {
+      if (this.puntos < 17 && this.baraja.length > 0) {
+        const carta = this.baraja.shift();
+        this.puntos += Number(carta.valor);
 
-          puntosBancaContainer.textContent = this.puntos;
-          console.log(`Puntos acumulados de Banca: ${this.puntos}`);
-        } else {
-          clearInterval(tiempo);
-          turnoPlayer = true;
-          turnoBanca = false;
+        const imagenCarta = document.createElement("img");
+        imagenCarta.src = carta.imagen;
+        imagenCarta.style.width = "90px";
+        tapeteBanca.appendChild(imagenCarta);
 
-          if (this.puntos > 21) {
-            finPartida = true;
-            blackJack.resultados();
-          }
+        puntosBancaContainer.textContent = this.puntos;
+        console.log(`Puntos acumulados de Banca: ${this.puntos}`);
+
+        // vuelve a robar después de 1000 ms
+        setTimeout(robarCarta, 900);
+      } else {
+        turnoPlayer = true;
+        turnoBanca = false;
+
+        if (this.puntos > 21) {
+          finPartida = true;
+          blackJack.resultados();
         }
-      }, 500);
-    }
+      }
+    };
+
+    // retraso usando setTimeout
+    setTimeout(robarCarta, 900);
   }
 }
 
@@ -174,19 +175,14 @@ class BlackJack {
   resultados() {
     if (finPartida) {
       if (banca.puntos > 21) {
-        // La banca se pasa -> gana el jugador
         alertaVictoriaJugador();
       } else if (player.puntos > 21) {
-        // El jugador se pasa -> gana la banca
         alertaDerrotaJugador();
       } else if (banca.puntos > player.puntos) {
-        // La banca tiene más puntos
         alertaDerrotaJugador();
       } else if (player.puntos > banca.puntos) {
-        // El jugador tiene más puntos
         alertaVictoriaJugador();
       } else {
-        // Mismo número de puntos
         alertaEmpate();
       }
     }

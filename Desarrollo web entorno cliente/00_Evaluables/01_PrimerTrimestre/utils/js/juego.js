@@ -1,7 +1,7 @@
-//todo JUEGO CON FUNCIONES
-let turnoBanca = false; //cambia a true al acabar de barajear el blacJack
-let turnoPlayer = false; //cambia a true al acabar de jugar la banca
-let finPartida = false; // cambia true cuando boton plantarse
+// JUEGO CON FUNCIONES
+let turnoBanca = false;
+let turnoPlayer = false;
+let finPartida = false;
 
 let blackJack = new BlackJack();
 
@@ -16,7 +16,6 @@ function limpiarTablero() {
   document.querySelector("#puntosPlayer").textContent = "0";
   document.querySelector("#puntosBanca").textContent = "0";
 
-  // ESTA PARTE ES CHAT...porque me sacaba 2 cada vez que repetia partida
   const oneMoreButton = document.querySelector("#oneMore");
   const stopButton = document.querySelector("#stop");
   const partidaNueva = document.querySelector("#jugarMas");
@@ -24,6 +23,7 @@ function limpiarTablero() {
   stopButton.replaceWith(stopButton.cloneNode(true));
   partidaNueva.replaceWith(partidaNueva.cloneNode(true));
 }
+
 function iniciarJuego() {
   limpiarTablero();
   blackJack.crearBaraja();
@@ -34,6 +34,7 @@ function iniciarJuego() {
 
   jugarBanca();
 }
+
 function jugarBanca() {
   banca.sacarCartasBanca();
   jugarJugador();
@@ -44,6 +45,7 @@ function jugarJugador() {
   player.plantarse();
   player.jugarOtra();
 }
+
 window.onload = function () {
   iniciarJuego();
 };
