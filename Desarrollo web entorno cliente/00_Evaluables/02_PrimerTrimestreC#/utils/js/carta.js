@@ -1,3 +1,4 @@
+/* Clase Carta  */
 class Carta {
   constructor(valor, palo, puntos, rutaImagen) {
     this.valor = valor;
