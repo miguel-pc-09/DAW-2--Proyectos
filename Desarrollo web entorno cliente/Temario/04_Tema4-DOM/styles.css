@@ -1,0 +1,13 @@
+/*
+  Estilos simples para ver cambios en el DOM
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#contenedor {
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px dashed #999;
+}
