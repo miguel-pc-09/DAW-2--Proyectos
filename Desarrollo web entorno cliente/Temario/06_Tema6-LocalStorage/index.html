@@ -2,27 +2,51 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tema 6 - LocalStorage</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <h1>Tema 6 - LocalStorage</h1>
+    <div class="container py-4">
+      <h1 class="mb-3">Tema 6 - LocalStorage</h1>
 
-    <p>
-      En este tema trabajo con LocalStorage para guardar información en el
-      navegador.
-    </p>
+      <p>
+        En este tema se trabaja con <strong>localStorage</strong>, que permite
+        guardar información en el navegador.
+      </p>
 
-    <input type="text" id="inputNombre" placeholder="Introduce tu nombre" />
+      <p class="text-muted">
+        Los datos guardados no se borran al cerrar la página.
+      </p>
 
-    <button id="btnGuardar">Guardar</button>
-    <button id="btnCargar">Cargar</button>
-    <button id="btnBorrar">Borrar</button>
+      <hr />
 
-    <p id="salida"></p>
+      <div class="mb-3">
+        <input
+          type="text"
+          id="inputNombre"
+          class="form-control"
+          placeholder="Introduce tu nombre"
+        />
+      </div>
+
+      <div class="mb-3">
+        <button id="btnGuardar" class="btn btn-primary me-2">Guardar</button>
+        <button id="btnCargar" class="btn btn-secondary me-2">Cargar</button>
+        <button id="btnBorrar" class="btn btn-danger">Borrar</button>
+      </div>
+
+      <p id="salida"></p>
+    </div>
 
     <!-- JS al final -->
-    <script src="./script.js"></script>
+    <script src="./utils/script.js"></script>
   </body>
 </html>
