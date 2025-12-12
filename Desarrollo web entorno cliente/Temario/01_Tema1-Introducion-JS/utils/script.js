@@ -1,59 +1,70 @@
 /*
   TEMA 1 - INTRODUCCIÓN A JAVASCRIPT
   --------------------------------
-  En este archivo practico los conceptos básicos de JavaScript:
+  Apuntes del profesor:
   - Qué es JavaScript
-  - Cómo mostrar mensajes
-  - Uso de alert, prompt y console.log
+  - Dónde se ejecuta
+  - Cómo se enlaza con HTML
+  - Primeras instrucciones
+  - alert, prompt y console.log
 */
 
 /*
-  JavaScript es un lenguaje de programación que se ejecuta en el navegador
-  y permite que las páginas web sean interactivas.
+  JavaScript es un lenguaje de programación que se ejecuta
+  principalmente en el navegador.
+  Nos permite añadir lógica a las páginas web.
 */
 
 /* =========================
-   1) alert()
+   1) PRIMERA PRUEBA
    =========================
-   alert muestra un mensaje emergente en pantalla.
-   Se suele usar para pruebas o mensajes simples.
+   Si este alert aparece, significa que el JS está bien enlazado.
 */
 
-alert("Hola, esto es JavaScript funcionando en el navegador");
+alert("JavaScript está funcionando correctamente");
 
 /* =========================
    2) console.log()
    =========================
-   console.log muestra información en la consola del navegador.
-   Es muy útil para depurar y ver valores.
+   Sirve para mostrar información en la consola del navegador.
+   Es fundamental para depurar y comprobar valores.
 */
 
-console.log("Este mensaje se muestra en la consola");
+console.log("Mensaje mostrado en la consola");
 
 /* =========================
-   3) prompt()
+   3) VARIABLES
    =========================
-   prompt muestra una ventana donde el usuario puede escribir un valor.
-   El valor que devuelve siempre es un texto (string).
+   En JavaScript puedo guardar información en variables.
 */
 
-const nombre = prompt("Introduce tu nombre");
+let mensaje = "Hola desde una variable";
+console.log(mensaje);
+
+/* =========================
+   4) prompt()
+   =========================
+   prompt muestra una ventana donde el usuario puede escribir datos.
+   Siempre devuelve texto (string) o null si se pulsa cancelar.
+*/
+
+let nombre = prompt("Introduce tu nombre");
 
 /*
-  Compruebo si el usuario ha escrito algo.
-  Si pulsa cancelar, prompt devuelve null.
+  El profesor explica que siempre hay que comprobar
+  lo que devuelve prompt.
 */
 
-if (nombre !== null && nombre !== "") {
-  alert("Bienvenido " + nombre);
-  console.log("El usuario se llama: " + nombre);
-} else {
+if (nombre === null || nombre === "") {
   alert("No has introducido ningún nombre");
-  console.log("El usuario no ha introducido nombre");
+  console.log("El usuario no ha escrito nombre");
+} else {
+  alert("Bienvenido " + nombre);
+  console.log("Nombre introducido:", nombre);
 }
 
 /* =========================
-   4) Comentarios
+   5) COMENTARIOS
    =========================
    - // comentario de una línea
    - /* comentario de varias líneas */
