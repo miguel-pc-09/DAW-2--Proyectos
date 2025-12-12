@@ -1,27 +1,37 @@
 /*
   TEMA 3 - OBJETOS
   ----------------
-  Aquí practico:
+  Apuntes del profesor:
   - Qué es un objeto
-  - Objetos literales
   - Propiedades y métodos
+  - Objeto literal
   - Uso de this
-  - Funciones constructoras
+  - Modificar objetos
+  - Función constructora
   - Arrays de objetos
 */
 
 /* =========================
    1) ¿QUÉ ES UN OBJETO?
    =========================
-   Un objeto agrupa información relacionada.
-   Se compone de:
-   - Propiedades (datos)
-   - Métodos (funciones)
+   Un objeto es una estructura que permite agrupar datos
+   relacionados bajo un mismo nombre.
+
+   Un objeto está formado por:
+   - Propiedades: datos
+   - Métodos: funciones
+*/
+
+/*
+  Ejemplo de objeto de la vida real:
+  Una persona tiene nombre, edad y puede saludar.
 */
 
 /* =========================
    2) OBJETO LITERAL
-   ========================= */
+   =========================
+   Es la forma más simple de crear un objeto.
+*/
 
 const persona = {
   nombre: "Miguel",
@@ -29,53 +39,68 @@ const persona = {
   ciudad: "Guadalajara",
   mayorEdad: true,
 
-  // Método dentro del objeto
   saludar: function () {
     console.log("Hola, me llamo " + this.nombre);
   },
 };
 
 console.log(persona);
+
+/*
+  Acceso a propiedades:
+  - objeto.propiedad
+*/
+
 console.log("Nombre:", persona.nombre);
 console.log("Edad:", persona.edad);
 
-// Llamo al método
+/*
+  Llamada a método
+*/
 persona.saludar();
 
-/*
-  this hace referencia al propio objeto.
-  En este caso this.nombre es persona.nombre
+/* =========================
+   3) THIS
+   =========================
+   this hace referencia al objeto que está usando el método.
+   El profesor insiste mucho en esto.
 */
 
+console.log("Uso de this:", persona.nombre);
+
 /* =========================
-   3) MODIFICAR PROPIEDADES
-   ========================= */
+   4) MODIFICAR OBJETOS
+   =========================
+   Las propiedades se pueden modificar y añadir.
+*/
 
 persona.edad = 22;
-persona.ciudad = "Madrid";
-
-console.log("Edad actualizada:", persona.edad);
-console.log("Ciudad actualizada:", persona.ciudad);
-
-/*
-  También puedo añadir propiedades nuevas
-*/
 persona.email = "miguel@email.com";
+
+console.log("Edad modificada:", persona.edad);
 console.log("Email añadido:", persona.email);
 
-/* =========================
-   4) ACCESO CON CORCHETES
-   =========================
-   Útil cuando el nombre de la propiedad es variable
+/*
+  También se pueden borrar propiedades con delete
 */
 
-const propiedad = "nombre";
-console.log("Acceso con corchetes:", persona[propiedad]);
+delete persona.mayorEdad;
+console.log(persona);
 
 /* =========================
-   5) FUNCIÓN CONSTRUCTORA
+   5) ACCESO CON CORCHETES
    =========================
-   Sirve para crear varios objetos del mismo tipo
+   Se usa cuando el nombre de la propiedad es variable.
+*/
+
+let propiedad = "ciudad";
+console.log("Ciudad:", persona[propiedad]);
+
+/* =========================
+   6) FUNCIÓN CONSTRUCTORA
+   =========================
+   Sirve para crear varios objetos del mismo tipo.
+   Se usa la palabra clave new.
 */
 
 function Alumno(nombre, edad, curso) {
@@ -96,7 +121,7 @@ function Alumno(nombre, edad, curso) {
 }
 
 /*
-  Uso new para crear objetos a partir del constructor
+  Creación de objetos a partir del constructor
 */
 
 const alumno1 = new Alumno("Ana", 20, "DAW");
@@ -106,9 +131,9 @@ alumno1.mostrarInfo();
 alumno2.mostrarInfo();
 
 /* =========================
-   6) ARRAYS DE OBJETOS
+   7) ARRAYS DE OBJETOS
    =========================
-   Muy común para listas de usuarios, productos, etc.
+   Muy usados para listas de usuarios, productos, etc.
 */
 
 const alumnos = [
@@ -117,17 +142,16 @@ const alumnos = [
   new Alumno("Sofía", 23, "DAW"),
 ];
 
-console.log(alumnos);
-
 /*
   Recorro el array con un bucle
 */
+
 for (let i = 0; i < alumnos.length; i++) {
   alumnos[i].mostrarInfo();
 }
 
 /* =========================
-   7) EJEMPLO PRÁCTICO
+   8) EJEMPLO PRÁCTICO (EXAMEN)
    =========================
    Buscar alumnos mayores de 20 años
 */
@@ -139,3 +163,10 @@ for (let i = 0; i < alumnos.length; i++) {
     console.log(alumnos[i].nombre);
   }
 }
+
+/*
+  El profesor recalca:
+  - Los objetos organizan mejor el código
+  - Permiten trabajar con estructuras más reales
+  - Son clave para proyectos grandes
+*/
