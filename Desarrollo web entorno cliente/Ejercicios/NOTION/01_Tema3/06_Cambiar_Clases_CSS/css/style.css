@@ -1,0 +1,17 @@
+/* Estilo inicial */
+.caja {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  text-align: center;
+  line-height: 100px;
+  margin-bottom: 10px;
+}
+
+/* Estilo alternativo */
+.caja-activa {
+  background-color: lightcoral;
+  border: 2px solid red;
+  color: white;
+}
