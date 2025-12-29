@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+img {
+  width: 300px;
+  margin: 20px 0;
+}
+
+.botones {
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
