@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+input {
+  width: 350px;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#mensaje {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.galeria {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tarjeta {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tarjeta img {
+  width: 200px;
+  display: block;
+  margin-bottom: 10px;
+}
