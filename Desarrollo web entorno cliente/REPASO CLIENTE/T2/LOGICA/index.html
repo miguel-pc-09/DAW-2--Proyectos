@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Pegar los links de bootstrap o librerias que vengan desde afuera -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.js"></script>
+    <!-- INCRUSTAR CODIGO JS AQUI O EN EL BODY -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container m-4">
+      <h1>Primera pagina en DWEC</h1>
+      <p>Esta pagina es para poder explicar JS con htmls</p>
+
+      <p>
+        En este caso vamos a explicar la interacion entre JS y el DOM de HTML
+      </p>
+      <div class="row">
+        <!-- row fila -->
+        <!-- En css usamos #id{} -->
+        <!-- En css otra forma .clase{} -->
+        <!-- En css por tag tag{} -->
+        <button class="col btn btn-primary" id="botonAgregar">Agregar</button
+        ><!-- col columna, dividira en 1/3 la fila -->
+        <!-- Boostrap el maximo son doce entre la suma de todos en caso de poner col-6 a otro col-5 -->
+        <!-- poniendo btn botstrap lo transforma a un tipo de boton y ademas podemos meterle color -->
+        <button class="col btn btn-success" id="botonEliminar">Eliminar</button>
+        <button class="col btn btn-danger" id="botonVaciar">Vaciar</button>
+        <!-- Creamos un boton para usuarios -->
+        <button class="col btn btn-warning" id="botonUsuarios">Usuarios</button>
+      </div>
+      <!-- Vamos a crear un filtrado y gestionarlo desde interaccion_dom -->
+      <div class="row">
+        <div class="col">
+          <input
+            class="form-control"
+            placeholder="Introduce el nombre"
+            id="inputNombre"
+          />
+          <!-- Vamos a crear un usuario utilizando el input anterior -->
+          <input
+            class="form-control"
+            placeholder="Introduce el Apellido: "
+            id="inputApellido"
+          />
+          <input
+            class="form-control"
+            placeholder="Introduce el Correo"
+            id="inputCorreo"
+          />
+          <!-- Para la fecha metemos un type="Date" -->
+          <input
+            class="form-control"
+            placeholder="Introduce la fecha"
+            id="inputFecha"
+            type="date"
+          />
+        </div>
+        <div class="col">
+          <!--  <select></select> -->
+          <ul class="list-group" id="listaUsuarios"></ul>
+        </div>
+      </div>
+
+      <!-- mt-4 con esto en la clase da un margen -->
+      <div class="mt-4">
+        <ul class="list-group" id="lista">
+          <!-- <li class="list-group-item">Dato 1</li>
+          <li class="list-group-item">Dato 2</li>
+          <li class="list-group-item">Dato 3</li>
+          <li class="list-group-item">Dato 4</li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- INCRUSTAR CODIGO JS AQUI O EN EL BODY 
+     Podemos inscrutar tantos script como necesitemos.-->
+    <!-- <script src="./utils/js/index.js">
+      // Aqui podemos escribir codigo js NADA RECOMENDABLE
+      // Mejor usar un archivo externo
+          // Creamos la carpeta UTILS y dentro de ella el otra carpeta llamada JS y aqui dentro el fichero.js
+    </script> -->
+    <!-- <script src="./utils/js/interaccion.js"></script> -->
+    <!-- <script src="./utils/js/listas.js"></script> -->
+    <!-- Cargamos los usuarios o la clase usuario antes -->
+    <script src="utils/js/usuario.js"></script>
+    <script src="utils/js/interaccion_dom.js"></script>
+  </body>
+</html>
