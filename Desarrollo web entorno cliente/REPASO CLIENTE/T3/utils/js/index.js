@@ -15,6 +15,8 @@ if (estilo != null) {
   // Tenemos dos clases aplicadas, classList y className
   bEstilo.classList.remove("btn-primary");
   bEstilo.classList.add(estilo);
+  // Como se crea una cookie
+  // name=asdasd;value=asdasd;expiration=1232423 (lo mas interesante de la cookie es el expiration. Podemos hacer que llegado un tiempo se autodestruya.)
 }
 
 // Ahora añadir evento a los botones. Y todo manual
