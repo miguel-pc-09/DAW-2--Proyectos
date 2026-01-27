@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Vamos a comenzar creando un main container y dentro unos input con placeholder con una clase(que sera
+     de bootstrap), y la unica que tendra algo distinto sera la pass que tendra type pass. Y unos ID para llevarlo
+     a JS -->
+    <main class="container mt-4">
+      <input
+        placeholder="Introduce Nombre"
+        class="form-control"
+        id="inputNombre"
+      />
+      <input
+        placeholder="Introduce Apellido"
+        class="form-control"
+        id="inputApellido"
+      />
+      <input
+        placeholder="Introduce Contrasela"
+        type="pass"
+        class="form-control"
+        id="inputPass"
+      />
+      <!-- Tambien crearemos unos botones -->
+      <div class="mt-4">
+        <button class="btn btn-primary" id="btnAgregar">Agregar</button>
+        <button class="btn btn-primary" id="btnEliminar">Eliminar</button>
+        <button class="btn btn-primary" id="btnObtener">Obtener</button>
+        <button class="btn btn-primary" id="btnEstilo">Estilo</button>
+      </div>
+
+      <!-- el p lo sacaremos mediante js con su tag porque no tenemos otro p -->
+      <p class="mt-4"></p>
+    </main>
+    <script src="utils/js/index.js"></script>
+    <!-- Aqui en este caso podemos ponerlo debajo del index. En este caso porque cargamos el usuario cuando le damos al boton. Otra cosa seria que usuario tuviera que cargarse antes porque tiene los datos -->
+    <script src="utils/js/usuario.js"></script>
+  </body>
+</html>
