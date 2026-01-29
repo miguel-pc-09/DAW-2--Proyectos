@@ -1,9 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 15</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <h1>Ejercicio 15</h1>
+    <div class="container py-5">
+      <h1 class="mb-4">Conversor de Unidades</h1>
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs" id="tabsConversor" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="tab-long"
+            data-bs-toggle="tab"
+            data-bs-target="#pane-long"
+            type="button"
+            role="tab"
+          >
+            Longitud
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="tab-peso"
+            data-bs-toggle="tab"
+            data-bs-target="#pane-peso"
+            type="button"
+            role="tab"
+          >
+            Peso
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="tab-temp"
+            data-bs-toggle="tab"
+            data-bs-target="#pane-temp"
+            type="button"
+            role="tab"
+          >
+            Temperatura
+          </button>
+        </li>
+      </ul>
+
+      <!-- Contenido de Tabs -->
+      <div class="tab-content border border-top-0 p-4">
+        <!-- Longitud -->
+        <div
+          class="tab-pane fade show active"
+          id="pane-long"
+          role="tabpanel"
+          aria-labelledby="tab-long"
+        >
+          <h5 class="mb-3">Conversor de Longitud</h5>
+
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Valor</label>
+              <input
+                type="number"
+                class="form-control"
+                id="long-valor"
+                placeholder="Ej: 100"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">De</label>
+              <select class="form-select" id="long-de">
+                <option value="m" selected>Metros</option>
+                <option value="km">Kilómetros</option>
+                <option value="mi">Millas</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">A</label>
+              <select class="form-select" id="long-a">
+                <option value="m">Metros</option>
+                <option value="km" selected>Kilómetros</option>
+                <option value="mi">Millas</option>
+              </select>
+            </div>
+
+            <div class="col-md-2 d-grid">
+              <button class="btn btn-primary" id="long-convertir">
+                Convertir
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-3" id="long-resultado"></div>
+        </div>
+
+        <!-- Peso -->
+        <div
+          class="tab-pane fade"
+          id="pane-peso"
+          role="tabpanel"
+          aria-labelledby="tab-peso"
+        >
+          <h5 class="mb-3">Conversor de Peso</h5>
+
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Valor</label>
+              <input
+                type="number"
+                class="form-control"
+                id="peso-valor"
+                placeholder="Ej: 70"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">De</label>
+              <select class="form-select" id="peso-de">
+                <option value="kg" selected>Kilogramos</option>
+                <option value="lb">Libras</option>
+                <option value="oz">Onzas</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">A</label>
+              <select class="form-select" id="peso-a">
+                <option value="kg">Kilogramos</option>
+                <option value="lb" selected>Libras</option>
+                <option value="oz">Onzas</option>
+              </select>
+            </div>
+
+            <div class="col-md-2 d-grid">
+              <button class="btn btn-primary" id="peso-convertir">
+                Convertir
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-3" id="peso-resultado"></div>
+        </div>
+
+        <!-- Temperatura -->
+        <div
+          class="tab-pane fade"
+          id="pane-temp"
+          role="tabpanel"
+          aria-labelledby="tab-temp"
+        >
+          <h5 class="mb-3">Conversor de Temperatura</h5>
+
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Valor</label>
+              <input
+                type="number"
+                class="form-control"
+                id="temp-valor"
+                placeholder="Ej: 25"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">De</label>
+              <select class="form-select" id="temp-de">
+                <option value="c" selected>Celsius</option>
+                <option value="f">Fahrenheit</option>
+                <option value="k">Kelvin</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">A</label>
+              <select class="form-select" id="temp-a">
+                <option value="c">Celsius</option>
+                <option value="f" selected>Fahrenheit</option>
+                <option value="k">Kelvin</option>
+              </select>
+            </div>
+
+            <div class="col-md-2 d-grid">
+              <button class="btn btn-primary" id="temp-convertir">
+                Convertir
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-3" id="temp-resultado"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="utils/index.js"></script>
+  </body>
 </html>
