@@ -1,9 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 18</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container py-5" style="max-width: 900px">
+      <h1 class="mb-4">Calculadora de IMC</h1>
+
+      <div class="row g-4">
+        <!-- FORM -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Introduce tus datos</h5>
+
+              <form id="formImc" novalidate>
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="peso"
+                    placeholder="Peso"
+                    min="1"
+                    step="0.1"
+                  />
+                  <label for="peso">Peso (kg)</label>
+                  <div class="invalid-feedback">
+                    Introduce un peso válido (ej: 70).
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="altura"
+                    placeholder="Altura"
+                    min="0.5"
+                    step="0.01"
+                  />
+                  <label for="altura">Altura (m)</label>
+                  <div class="invalid-feedback">
+                    Introduce una altura válida (ej: 1.75).
+                  </div>
+                </div>
+
+                <div class="d-grid">
+                  <button class="btn btn-primary" type="submit">
+                    Calcular IMC
+                  </button>
+                </div>
+              </form>
+
+              <div id="resultado" class="mt-3"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCORDION -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title mb-3">Categorías del IMC</h5>
+
+              <div class="accordion" id="accordionImc">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#c1"
+                    >
+                      Bajo peso (IMC &lt; 18.5)
+                    </button>
+                  </h2>
+                  <div
+                    id="c1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#accordionImc"
+                  >
+                    <div class="accordion-body">
+                      Indica que el peso está por debajo de lo recomendado.
+                      Puede deberse a dieta insuficiente, metabolismo o factores
+                      de salud. Si es tu caso, conviene revisar hábitos y
+                      consultar a un profesional si es necesario.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#c2"
+                    >
+                      Normal (18.5 - 24.9)
+                    </button>
+                  </h2>
+                  <div
+                    id="c2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionImc"
+                  >
+                    <div class="accordion-body">
+                      Rango considerado saludable en la mayoría de adultos.
+                      Mantener una alimentación equilibrada y actividad física
+                      regular ayuda a conservarlo.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#c3"
+                    >
+                      Sobrepeso (25.0 - 29.9)
+                    </button>
+                  </h2>
+                  <div
+                    id="c3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionImc"
+                  >
+                    <div class="accordion-body">
+                      Puede aumentar el riesgo de problemas de salud. Suele
+                      recomendarse mejorar alimentación, aumentar actividad
+                      física y revisar hábitos.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#c4"
+                    >
+                      Obesidad (IMC ≥ 30)
+                    </button>
+                  </h2>
+                  <div
+                    id="c4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionImc"
+                  >
+                    <div class="accordion-body">
+                      Implica un riesgo mayor para la salud. Lo recomendable es
+                      consultar con un profesional para un plan personalizado
+                      (alimentación, ejercicio y seguimiento).
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-muted small mt-3 mb-0">
+                Nota: El IMC es una referencia general y no distingue masa
+                muscular vs grasa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="utils/js/index.js"></script>
+  </body>
 </html>
