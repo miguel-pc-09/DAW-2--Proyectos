@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game FP · Trivial/Tabú (DAW)</title>
+
+    <!-- Bootstrap (para grid, botones, progress, etc.) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css (animaciones suaves) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Ionic Icons (iconos) -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="./utils/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Barra superior (tipo tu captura) -->
+    <header class="barra-superior">
+      <div
+        class="container-fluid px-4 d-flex align-items-center justify-content-between h-100"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <ion-icon name="checkbox-outline" class="icono-top"></ion-icon>
+          <span class="titulo-top">Tabú + Trivial · DAW</span>
+        </div>
+
+        <!-- Mini tabs arriba a la derecha -->
+        <div class="d-flex gap-2">
+          <button id="btnModoTabuTop" class="btn btn-sm btn-outline-light">
+            Tabú
+          </button>
+          <button id="btnModoTrivialTop" class="btn btn-sm btn-outline-light">
+            Trivial
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="zona-fondo">
+      <div class="container-xxl py-4">
+        <div class="marco-central animate__animated animate__fadeIn">
+          <div class="p-4 p-md-5">
+            <!-- Título grande (tipo profe) -->
+            <div class="text-center mb-4">
+              <h1 class="titulo-principal">GAME FP · TRIVIAL/TABÚ</h1>
+              <p class="subtitulo-principal">
+                Elige la asignatura, el modo de juego, genera una carta y juega
+                con el tiempo.
+              </p>
+            </div>
+
+            <!-- BLOQUE CONTROLES (como la tarjeta del profe) -->
+            <section class="tarjeta-controles">
+              <div class="row g-3 align-items-end">
+                <!-- Asignatura -->
+                <div class="col-12 col-lg-6">
+                  <label class="etiqueta-seccion"
+                    >ASIGNATURA / TIPO DE CARTAS</label
+                  >
+                  <select id="selectAsignatura" class="form-select select-pro">
+                    <option value="entorno_cliente">ENTORNO CLIENTE</option>
+                    <option value="interfaces_web">INTERFACES WEB</option>
+                    <option value="sostenibilidad">SOSTENIBILIDAD</option>
+                    <option value="ipe2">IPE2</option>
+                    <option value="digitalizacion">DIGITALIZACIÓN</option>
+                    <option value="entorno_servidor">ENTORNO SERVIDOR</option>
+                    <option value="ingles">INGLÉS</option>
+                    <option value="python">PYTHON</option>
+                    <option value="despliegue">DESPLIEGUE</option>
+                  </select>
+                </div>
+
+                <!-- Modo -->
+                <div class="col-12 col-lg-6">
+                  <label class="etiqueta-seccion">MODO DE JUEGO</label>
+                  <div class="tabs-modo">
+                    <button id="btnModoTabu" class="tab-modo activo">
+                      TABÚ
+                    </button>
+                    <button id="btnModoTrivial" class="tab-modo">
+                      TRIVIAL
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 align-items-center mt-2">
+                <!-- Tiempo -->
+                <div class="col-12 col-lg-3">
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-2"
+                  >
+                    <span class="etiqueta-mini">TIEMPO</span>
+                    <span id="txtTiempo" class="badge-tiempo">01:30</span>
+                  </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="col-12 col-lg-9">
+                  <div
+                    class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start"
+                  >
+                    <button id="btnGenerar" class="btn btn-verde btn-lg">
+                      Generar carta
+                    </button>
+                    <button
+                      id="btnReiniciarTiempo"
+                      class="btn btn-outline-verde btn-lg"
+                    >
+                      Reiniciar tiempo
+                    </button>
+                    <button
+                      id="btnComprobar"
+                      class="btn btn-outline-gris btn-lg"
+                    >
+                      Comprobar
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Barra de progreso tiempo -->
+              <div class="mt-3">
+                <div class="progress progress-tiempo">
+                  <div
+                    id="barraTiempo"
+                    class="progress-bar barra-tiempo"
+                    style="width: 100%"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Equipos / Puntuación (fila tipo profe) -->
+              <div class="equipos-box mt-4">
+                <div class="etiqueta-seccion mb-2">EQUIPOS / PUNTUACIÓN</div>
+
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                  <input
+                    id="inputEquipo"
+                    type="text"
+                    class="form-control input-equipo"
+                    placeholder="Nombre del equipo"
+                  />
+                  <button id="btnAñadirEquipo" class="btn btn-outline-verde">
+                    Añadir
+                  </button>
+                  <button id="btnReiniciarPuntos" class="btn btn-outline-rojo">
+                    Reiniciar
+                  </button>
+                </div>
+
+                <div id="listaEquipos" class="lista-equipos mt-3"></div>
+                <p class="texto-ayuda mt-2">
+                  Tip: haz clic en un equipo para seleccionarlo. Puedes sumar +1
+                  o borrar equipos.
+                </p>
+              </div>
+            </section>
+
+            <!-- TARJETA GRANDE (como la de abajo del profe) -->
+            <section class="tarjeta-carta mt-4">
+              <div class="row g-3">
+                <!-- Columna izquierda -->
+                <div class="col-12 col-lg-6">
+                  <div class="bloque-carta">
+                    <div class="cabecera-bloque">
+                      <div>
+                        <div class="mini-titulo">PALABRA OBJETIVO</div>
+                        <div id="txtModoActivo" class="mini-sub">Modo Tabú</div>
+                      </div>
+                    </div>
+
+                    <div id="contenedorPrincipal" class="contenido-principal">
+                      <div class="texto-grande-placeholder">
+                        Pulsa “Generar carta”
+                      </div>
+                      <div class="texto-pequeño-placeholder">
+                        Selecciona una asignatura para empezar.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div class="col-12 col-lg-6">
+                  <div class="bloque-carta">
+                    <div class="cabecera-bloque">
+                      <div>
+                        <div id="tituloLateral" class="mini-titulo">
+                          PALABRAS PROHIBIDAS
+                        </div>
+                        <div id="subtituloLateral" class="mini-sub">
+                          Temporizador parado
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="contenedorLateral" class="contenido-lateral">
+                      <p class="texto-lateral">
+                        Temporizador parado. Pulsa
+                        <strong>Generar carta</strong> para iniciar una nueva
+                        ronda.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pista / estado -->
+              <div class="mt-3">
+                <p id="txtEstado" class="texto-estado">Modo Tabú activado.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Librerías JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.js"></script>
+
+    <!-- Bootstrap JS (opcional, pero útil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- TU APP (módulo) -->
+    <script type="module" src="./utils/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivial</title>
+
+    <link rel="stylesheet" href="utils/css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6CoIi6UEM..."
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM..."
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <header>
+        <h1>Trivial FP DAW</h1>
+        <p class="subtitle">
+          Elige categoría y dificultad. Pulsa recargar para traer preguntas y
+          luego empieza la ronda.
+        </p>
+      </header>
+
+      <main class="panel">
+        <div class="controls">
+          <div class="field-group">
+            <label for="categoria">Categoría (OpenTDB)</label>
+            <select id="categoria">
+              <option value="">Cargando categorías...</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="dificultad">Dificultad</label>
+            <select id="dificultad">
+              <option value="">Cualquiera</option>
+              <option value="easy">Fácil</option>
+              <option value="medium" selected>Media</option>
+              <option value="hard">Difícil</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <div>
+              <span class="timer-label">Tiempo</span>
+              <div id="contenedor_tiempo" class="timer">
+                <span class="timer-value" id="valor_tiempo">01:30</span>
+              </div>
+
+              <div class="marcador" id="marcador">
+                Puntos: 0 | Pregunta: 0/0
+              </div>
+            </div>
+
+            <div>
+              <button id="boton_generar" class="btn-primary">
+                Generar pregunta
+              </button>
+
+              <button
+                id="boton_reiniciar"
+                class="btn-secondary"
+                style="margin-left: 0.3rem"
+              >
+                Reiniciar tiempo
+              </button>
+
+              <button
+                id="boton_comprobar"
+                class="btn-secondary"
+                style="margin-left: 0.3rem"
+              >
+                Comprobar
+              </button>
+
+              <button
+                id="boton_recargar"
+                class="btn-secondary"
+                style="margin-left: 0.3rem"
+              >
+                Recargar preguntas
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section id="zona_tarjeta" class="card">
+          <div>
+            <div class="card-title" id="titulo_tarjeta">Pregunta trivial</div>
+            <div id="contenido_tarjeta" class="card-word">
+              Pulsa “Recargar preguntas”
+            </div>
+            <div id="meta_tarjeta" class="card-meta">
+              Esperando configuración del usuario
+            </div>
+          </div>
+
+          <div>
+            <p class="status" id="texto_estado">
+              Temporizador parado. Pulsa
+              <strong>Recargar preguntas</strong> para traer preguntas del
+              servidor.
+            </p>
+          </div>
+
+          <div class="historial">
+            <div class="historial-titulo">Historial (últimas 5 partidas)</div>
+            <ul id="lista_historial" class="historial-lista"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="utils/js/index.js"></script>
+  </body>
+</html>

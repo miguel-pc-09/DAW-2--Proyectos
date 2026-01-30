@@ -1,0 +1,351 @@
+/* =========================================================
+   ESTILOS - Tabú + Trivial (Tema Verde)
+   Autor: Miguel (comentarios como si lo hubieras hecho tú)
+   ========================================================= */
+
+/* Paleta verde (puedes cambiarla a tu gusto) */
+:root {
+  --verde-1: #0b3d2e;   /* barra superior */
+  --verde-2: #0f5b41;   /* botones */
+  --verde-3: #15a36b;   /* acento */
+  --verde-4: #22c55e;   /* highlights */
+  --fondo-1: #070b14;   /* fondo general */
+  --fondo-2: #0b1220;   /* paneles */
+  --borde: rgba(148, 163, 184, 0.18);
+  --texto: #e5e7eb;
+  --texto-suave: rgba(229, 231, 235, 0.75);
+  --sombra: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background:
+    radial-gradient(900px 500px at 50% 0%, rgba(34, 197, 94, 0.14), transparent 60%),
+    radial-gradient(600px 300px at 20% 20%, rgba(21, 163, 107, 0.12), transparent 60%),
+    var(--fondo-1);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.app-navbar {
+  background: linear-gradient(90deg, var(--verde-1), var(--verde-2));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 0;
+}
+
+.nav-icon {
+  font-size: 20px;
+  color: #d1fae5;
+}
+
+.nav-title {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Toggle modo tipo “pastilla” */
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.mode-btn {
+  padding: 6px 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* ---------------- CONTENEDOR PRINCIPAL ---------------- */
+.app-shell {
+  max-width: 1200px;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  box-shadow: var(--sombra);
+  padding: 18px;
+}
+
+.panel-titulo {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.subtitulo-card {
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.divisor {
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+/* Labels */
+.label-suave {
+  color: var(--texto-suave);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ayuda-suave {
+  color: rgba(229, 231, 235, 0.65);
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+/* Select e inputs (verdes) */
+.select-verde,
+.input-verde {
+  background: rgba(10, 18, 32, 0.65) !important;
+  border: 1px solid rgba(34, 197, 94, 0.25) !important;
+  color: var(--texto) !important;
+}
+
+.select-verde:focus,
+.input-verde:focus {
+  box-shadow: 0 0 0 0.2rem rgba(34, 197, 94, 0.18) !important;
+  border-color: rgba(34, 197, 94, 0.45) !important;
+}
+
+/* Botones verdes “a lo pro” */
+.btn-verde {
+  background: linear-gradient(180deg, var(--verde-2), var(--verde-1));
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  font-weight: 800;
+}
+
+.btn-verde:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline-verde {
+  border-color: rgba(34, 197, 94, 0.55);
+  color: rgba(209, 250, 229, 0.95);
+}
+
+.btn-outline-verde:hover {
+  background: rgba(34, 197, 94, 0.16);
+}
+
+/* Tiempo */
+.tiempo-box {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.tiempo-valor {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #d1fae5;
+}
+
+.progress-verde {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+}
+
+.progress-verde .progress-bar {
+  background: linear-gradient(90deg, var(--verde-3), var(--verde-4));
+}
+
+/* Estado inferior */
+.estado {
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(229, 231, 235, 0.85);
+  font-size: 13px;
+}
+
+/* ---------------- LISTA EQUIPOS ---------------- */
+.lista-equipos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 220px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.equipo-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.equipo-item.seleccionado {
+  border-color: rgba(34, 197, 94, 0.65);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.12);
+}
+
+.equipo-nombre {
+  font-weight: 800;
+}
+
+.equipo-puntos {
+  color: rgba(209, 250, 229, 0.9);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.equipo-btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-weight: 900;
+}
+
+.equipo-btn:hover {
+  background: rgba(34, 197, 94, 0.14);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+/* ---------------- TARJETA GRANDE (tipo profe) ---------------- */
+.card-grande {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.16);
+  padding: 14px;
+}
+
+@media (max-width: 992px) {
+  .card-grande {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-lado {
+  border-radius: 14px;
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(10, 18, 32, 0.30);
+  padding: 12px;
+}
+
+.card-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: rgba(229, 231, 235, 0.65);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.card-principal {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.texto-grande-muted {
+  font-size: 32px;
+  font-weight: 950;
+  letter-spacing: 0.5px;
+  color: rgba(229, 231, 235, 0.25);
+}
+
+.card-secundaria {
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.texto-suave {
+  color: rgba(229, 231, 235, 0.75);
+  margin: 0;
+}
+
+/* Etiquetas (palabras prohibidas) */
+.tag-prohibida {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  background: rgba(34, 197, 94, 0.10);
+  color: rgba(209, 250, 229, 0.95);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Opciones del trivial */
+.opcion-trivial {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.opcion-trivial:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 197, 94, 0.30);
+}
+
+.opcion-trivial .letra {
+  font-weight: 950;
+  color: rgba(209, 250, 229, 0.90);
+  margin-right: 6px;
+}
+
+/* Marcados */
+.opcion-trivial.seleccionada {
+  border-color: rgba(34, 197, 94, 0.55);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.opcion-trivial.correcta {
+  border-color: rgba(34, 197, 94, 0.85);
+  background: rgba(34, 197, 94, 0.18);
+}
+
+.opcion-trivial.incorrecta {
+  border-color: rgba(239, 68, 68, 0.85);
+  background: rgba(239, 68, 68, 0.14);
+}
+
+/* Texto final ayuda */
+.ayuda-final {
+  color: rgba(229, 231, 235, 0.75);
+  font-size: 13px;
+}
+
+/* “Peligro” cuando queden pocos segundos */
+.peligro {
+  color: #fecaca !important;
+}
