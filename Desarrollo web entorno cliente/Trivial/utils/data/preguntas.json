@@ -1,0 +1,478 @@
+{
+  "js": [
+    {
+      "id": 1,
+      "question": "¿Qué es JavaScript principalmente en el contexto del desarrollo web?",
+      "options": [
+        { "id": "a", "text": "Un sistema gestor de bases de datos", "correct": false },
+        { "id": "b", "text": "Un lenguaje de marcado para definir la estructura de la web", "correct": false },
+        { "id": "c", "text": "Un lenguaje de programación para añadir interactividad a las páginas web", "correct": true },
+        { "id": "d", "text": "Un servidor web para alojar sitios", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Cuál de las siguientes sentencias se usa para agrupar múltiples caminos de ejecución según el valor de una expresión?",
+      "options": [
+        { "id": "a", "text": "if", "correct": false },
+        { "id": "b", "text": "for", "correct": false },
+        { "id": "c", "text": "switch", "correct": true },
+        { "id": "d", "text": "while", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Dónde se ejecuta normalmente JavaScript en una página web?",
+      "options": [
+        { "id": "a", "text": "En el servidor únicamente", "correct": false },
+        { "id": "b", "text": "En el navegador del usuario", "correct": true },
+        { "id": "c", "text": "En el sistema operativo", "correct": false },
+        { "id": "d", "text": "En la base de datos", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Cuál es la forma correcta de mostrar un mensaje emergente en el navegador?",
+      "options": [
+        { "id": "a", "text": "echo(\"Hola\");", "correct": false },
+        { "id": "b", "text": "alert(\"Hola\");", "correct": true },
+        { "id": "c", "text": "message(\"Hola\");", "correct": false },
+        { "id": "d", "text": "popup(\"Hola\");", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué palabra clave se usa para declarar una variable cuyo valor cambiará a lo largo del programa?",
+      "options": [
+        { "id": "a", "text": "const", "correct": false },
+        { "id": "b", "text": "static", "correct": false },
+        { "id": "c", "text": "let", "correct": true },
+        { "id": "d", "text": "define", "correct": false }
+      ]
+    }
+  ],
+
+  "py": [
+    {
+      "id": 1,
+      "question": "¿Qué palabra se usa en Python para definir una función?",
+      "options": [
+        { "id": "a", "text": "func", "correct": false },
+        { "id": "b", "text": "def", "correct": true },
+        { "id": "c", "text": "function", "correct": false },
+        { "id": "d", "text": "define", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Cómo se escribe un comentario de una línea en Python?",
+      "options": [
+        { "id": "a", "text": "// comentario", "correct": false },
+        { "id": "b", "text": "# comentario", "correct": true },
+        { "id": "c", "text": "<!-- comentario -->", "correct": false },
+        { "id": "d", "text": "/* comentario */", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué imprime este código? print(type(10))",
+      "options": [
+        { "id": "a", "text": "<class 'str'>", "correct": false },
+        { "id": "b", "text": "<class 'int'>", "correct": true },
+        { "id": "c", "text": "<class 'float'>", "correct": false },
+        { "id": "d", "text": "<class 'bool'>", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué estructura se usa para repetir mientras una condición sea verdadera?",
+      "options": [
+        { "id": "a", "text": "while", "correct": true },
+        { "id": "b", "text": "repeat", "correct": false },
+        { "id": "c", "text": "loop", "correct": false },
+        { "id": "d", "text": "foreach", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Cómo se accede al último elemento de una lista llamada lista?",
+      "options": [
+        { "id": "a", "text": "lista[last]", "correct": false },
+        { "id": "b", "text": "lista[-1]", "correct": true },
+        { "id": "c", "text": "lista[end]", "correct": false },
+        { "id": "d", "text": "lista[0]", "correct": false }
+      ]
+    }
+  ],
+
+  "interfaces": [
+    {
+      "id": 1,
+      "question": "¿Qué significa UI en desarrollo?",
+      "options": [
+        { "id": "a", "text": "Unidad de Internet", "correct": false },
+        { "id": "b", "text": "Interfaz de usuario", "correct": true },
+        { "id": "c", "text": "Uso interno", "correct": false },
+        { "id": "d", "text": "Usuario invisible", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué propiedad CSS centra el texto horizontalmente?",
+      "options": [
+        { "id": "a", "text": "text-align: center;", "correct": true },
+        { "id": "b", "text": "align-text: center;", "correct": false },
+        { "id": "c", "text": "text-center: true;", "correct": false },
+        { "id": "d", "text": "justify: center;", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué propiedad CSS se usa para hacer un contenedor flex?",
+      "options": [
+        { "id": "a", "text": "display: flex;", "correct": true },
+        { "id": "b", "text": "position: flex;", "correct": false },
+        { "id": "c", "text": "flex: display;", "correct": false },
+        { "id": "d", "text": "layout: flex;", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué hace responsive en una web?",
+      "options": [
+        { "id": "a", "text": "Que funcione solo en PC", "correct": false },
+        { "id": "b", "text": "Que se adapte a móviles y pantallas distintas", "correct": true },
+        { "id": "c", "text": "Que tenga animaciones siempre", "correct": false },
+        { "id": "d", "text": "Que no use CSS", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué significa UX?",
+      "options": [
+        { "id": "a", "text": "Experiencia de usuario", "correct": true },
+        { "id": "b", "text": "Usuario extra", "correct": false },
+        { "id": "c", "text": "Uso externo", "correct": false },
+        { "id": "d", "text": "Unidad de experiencia", "correct": false }
+      ]
+    }
+  ],
+
+  "server": [
+    {
+      "id": 1,
+      "question": "¿Qué método HTTP se usa normalmente para obtener datos?",
+      "options": [
+        { "id": "a", "text": "GET", "correct": true },
+        { "id": "b", "text": "POST", "correct": false },
+        { "id": "c", "text": "PUT", "correct": false },
+        { "id": "d", "text": "DELETE", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué código significa 'Recurso no encontrado'?",
+      "options": [
+        { "id": "a", "text": "200", "correct": false },
+        { "id": "b", "text": "301", "correct": false },
+        { "id": "c", "text": "404", "correct": true },
+        { "id": "d", "text": "500", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué es una API REST?",
+      "options": [
+        { "id": "a", "text": "Un tipo de base de datos", "correct": false },
+        { "id": "b", "text": "Un estilo de arquitectura para servicios web", "correct": true },
+        { "id": "c", "text": "Un lenguaje de marcado", "correct": false },
+        { "id": "d", "text": "Un programa antivirus", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Para qué sirve JSON normalmente en backend/frontend?",
+      "options": [
+        { "id": "a", "text": "Para intercambiar datos", "correct": true },
+        { "id": "b", "text": "Para dar estilos", "correct": false },
+        { "id": "c", "text": "Para crear tablas HTML", "correct": false },
+        { "id": "d", "text": "Para compilar Java", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué hace un servidor web?",
+      "options": [
+        { "id": "a", "text": "Guarda contraseñas en el navegador", "correct": false },
+        { "id": "b", "text": "Responde peticiones HTTP y devuelve recursos", "correct": true },
+        { "id": "c", "text": "Cambia el color del CSS", "correct": false },
+        { "id": "d", "text": "Ejecuta solo código en el cliente", "correct": false }
+      ]
+    }
+  ],
+
+  "ingles": [
+    {
+      "id": 1,
+      "question": "¿Cuál es la traducción de 'deadline'?",
+      "options": [
+        { "id": "a", "text": "Descanso", "correct": false },
+        { "id": "b", "text": "Fecha límite", "correct": true },
+        { "id": "c", "text": "Reunión", "correct": false },
+        { "id": "d", "text": "Vacaciones", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué significa 'I am learning'?",
+      "options": [
+        { "id": "a", "text": "Aprendí", "correct": false },
+        { "id": "b", "text": "Estoy aprendiendo", "correct": true },
+        { "id": "c", "text": "Aprenderé", "correct": false },
+        { "id": "d", "text": "Yo enseño", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cómo se forma normalmente el pasado simple de verbos regulares?",
+      "options": [
+        { "id": "a", "text": "Añadiendo -ed", "correct": true },
+        { "id": "b", "text": "Añadiendo -ing", "correct": false },
+        { "id": "c", "text": "Añadiendo -s", "correct": false },
+        { "id": "d", "text": "No cambia nunca", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Cuál es la forma correcta para 'he' en presente simple?",
+      "options": [
+        { "id": "a", "text": "He go", "correct": false },
+        { "id": "b", "text": "He goes", "correct": true },
+        { "id": "c", "text": "He going", "correct": false },
+        { "id": "d", "text": "He gone", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué significa 'schedule' en un contexto de trabajo?",
+      "options": [
+        { "id": "a", "text": "Horario/planificación", "correct": true },
+        { "id": "b", "text": "Zapato", "correct": false },
+        { "id": "c", "text": "Ventana", "correct": false },
+        { "id": "d", "text": "Comida", "correct": false }
+      ]
+    }
+  ],
+
+  "sos": [
+    {
+      "id": 1,
+      "question": "¿Qué es la economía circular?",
+      "options": [
+        { "id": "a", "text": "Producir y tirar sin reciclar", "correct": false },
+        { "id": "b", "text": "Reutilizar, reparar y reciclar para reducir residuos", "correct": true },
+        { "id": "c", "text": "Usar solo plástico", "correct": false },
+        { "id": "d", "text": "Gastar más energía", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué acción suele reducir más residuos en general?",
+      "options": [
+        { "id": "a", "text": "Reutilizar", "correct": true },
+        { "id": "b", "text": "Comprar más", "correct": false },
+        { "id": "c", "text": "Tirar sin separar", "correct": false },
+        { "id": "d", "text": "Duplicar envases", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué es la huella de carbono?",
+      "options": [
+        { "id": "a", "text": "La marca del pie en el suelo", "correct": false },
+        { "id": "b", "text": "Emisiones asociadas a una actividad", "correct": true },
+        { "id": "c", "text": "El gasto de agua", "correct": false },
+        { "id": "d", "text": "El ruido de una ciudad", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué significa 'reducir' en las 3R/7R?",
+      "options": [
+        { "id": "a", "text": "Usar más recursos", "correct": false },
+        { "id": "b", "text": "Consumir menos y generar menos residuos", "correct": true },
+        { "id": "c", "text": "Tirar más rápido", "correct": false },
+        { "id": "d", "text": "Cambiar de color el envase", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué práctica ayuda a alargar la vida de un producto?",
+      "options": [
+        { "id": "a", "text": "Repararlo", "correct": true },
+        { "id": "b", "text": "Tirarlo al primer fallo", "correct": false },
+        { "id": "c", "text": "Cambiarlo por moda", "correct": false },
+        { "id": "d", "text": "Comprar 2 por si acaso", "correct": false }
+      ]
+    }
+  ],
+
+  "dj": [
+    {
+      "id": 1,
+      "question": "¿Qué es la digitalización en una empresa?",
+      "options": [
+        { "id": "a", "text": "Cambiar el logo", "correct": false },
+        { "id": "b", "text": "Pasar procesos a herramientas digitales para mejorar eficiencia", "correct": true },
+        { "id": "c", "text": "Comprar más papel", "correct": false },
+        { "id": "d", "text": "Trabajar sin internet", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué es un KPI?",
+      "options": [
+        { "id": "a", "text": "Una contraseña", "correct": false },
+        { "id": "b", "text": "Un indicador clave para medir resultados", "correct": true },
+        { "id": "c", "text": "Un programa de dibujo", "correct": false },
+        { "id": "d", "text": "Un tipo de servidor", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Para qué sirve un CRM normalmente?",
+      "options": [
+        { "id": "a", "text": "Gestionar clientes y relaciones", "correct": true },
+        { "id": "b", "text": "Crear videojuegos", "correct": false },
+        { "id": "c", "text": "Reparar ordenadores", "correct": false },
+        { "id": "d", "text": "Hacer presentaciones", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué ventaja tiene automatizar tareas repetitivas?",
+      "options": [
+        { "id": "a", "text": "Se tarda más", "correct": false },
+        { "id": "b", "text": "Reduce errores y ahorra tiempo", "correct": true },
+        { "id": "c", "text": "Obliga a imprimir todo", "correct": false },
+        { "id": "d", "text": "Hace la web más lenta", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué es la nube (cloud) en informática?",
+      "options": [
+        { "id": "a", "text": "Guardar datos en servidores accesibles por internet", "correct": true },
+        { "id": "b", "text": "Guardar datos solo en un USB", "correct": false },
+        { "id": "c", "text": "Un antivirus", "correct": false },
+        { "id": "d", "text": "Un tipo de monitor", "correct": false }
+      ]
+    }
+  ],
+
+  "ipe": [
+    {
+      "id": 1,
+      "question": "¿Cuál es el primer paso en un proceso de empleabilidad eficiente?",
+      "options": [
+        { "id": "a", "text": "Enviar currículums", "correct": false },
+        { "id": "b", "text": "Hacer entrevistas", "correct": false },
+        { "id": "c", "text": "Conocerse a uno mismo (habilidades, intereses y objetivos)", "correct": true },
+        { "id": "d", "text": "Aceptar cualquier trabajo", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué documento resume la formación y experiencia profesional de una persona?",
+      "options": [
+        { "id": "a", "text": "Carta de presentación", "correct": false },
+        { "id": "b", "text": "Currículum vitae", "correct": true },
+        { "id": "c", "text": "Contrato laboral", "correct": false },
+        { "id": "d", "text": "Nómina", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué significa adaptar el currículum a una oferta concreta?",
+      "options": [
+        { "id": "a", "text": "Mentir sobre la experiencia", "correct": false },
+        { "id": "b", "text": "Cambiar el diseño sin modificar el contenido", "correct": false },
+        { "id": "c", "text": "Destacar lo más relacionado con el puesto", "correct": true },
+        { "id": "d", "text": "Usar siempre el mismo modelo", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué herramienta digital es más útil para buscar empleo actualmente?",
+      "options": [
+        { "id": "a", "text": "Facebook personal", "correct": false },
+        { "id": "b", "text": "WhatsApp", "correct": false },
+        { "id": "c", "text": "Portales de empleo y LinkedIn", "correct": true },
+        { "id": "d", "text": "Juegos online", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Por qué es importante prepararse antes de una entrevista?",
+      "options": [
+        { "id": "a", "text": "Para hablar más que el entrevistador", "correct": false },
+        { "id": "b", "text": "Para improvisar mejor", "correct": false },
+        { "id": "c", "text": "Para responder con seguridad y coherencia", "correct": true },
+        { "id": "d", "text": "No es importante", "correct": false }
+      ]
+    }
+  ],
+
+  "ds": [
+    {
+      "id": 1,
+      "question": "¿Para qué se usa normalmente Docker?",
+      "options": [
+        { "id": "a", "text": "Para diseñar logos", "correct": false },
+        { "id": "b", "text": "Para crear contenedores y ejecutar apps aisladas", "correct": true },
+        { "id": "c", "text": "Para editar vídeos", "correct": false },
+        { "id": "d", "text": "Para escribir CSS", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué significa CI/CD?",
+      "options": [
+        { "id": "a", "text": "Copia interna / copia directa", "correct": false },
+        { "id": "b", "text": "Integración continua y despliegue continuo", "correct": true },
+        { "id": "c", "text": "Código inmediato / código diario", "correct": false },
+        { "id": "d", "text": "Control interno de datos", "correct": false }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué es desplegar una aplicación?",
+      "options": [
+        { "id": "a", "text": "Borrarla del servidor", "correct": false },
+        { "id": "b", "text": "Publicarla para que funcione en un entorno (servidor)", "correct": true },
+        { "id": "c", "text": "Cambiarle el color", "correct": false },
+        { "id": "d", "text": "Hacerla offline siempre", "correct": false }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué es un entorno de producción?",
+      "options": [
+        { "id": "a", "text": "Donde pruebo cosas sin importar", "correct": false },
+        { "id": "b", "text": "Donde la aplicación está funcionando para usuarios reales", "correct": true },
+        { "id": "c", "text": "Una carpeta local", "correct": false },
+        { "id": "d", "text": "Un editor de texto", "correct": false }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué es un backup?",
+      "options": [
+        { "id": "a", "text": "Un archivo temporal", "correct": false },
+        { "id": "b", "text": "Una copia de seguridad", "correct": true },
+        { "id": "c", "text": "Una contraseña", "correct": false },
+        { "id": "d", "text": "Una actualización", "correct": false }
+      ]
+    }
+  ]
+}
