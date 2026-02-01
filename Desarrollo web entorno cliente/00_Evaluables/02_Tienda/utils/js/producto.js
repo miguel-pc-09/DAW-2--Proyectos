@@ -1,11 +1,13 @@
 class Producto {
+  id;
   imagen;
   nombre;
   precio;
   marca;
 
   /* constructor */
-  constructor(imagen, nombre, precio, marca) {
+  constructor(id, imagen, nombre, precio, marca) {
+    this.id = id;
     this.imagen = imagen;
     this.nombre = nombre;
     this.precio = precio;
@@ -13,6 +15,9 @@ class Producto {
   }
 
   /* getters */
+  getId() {
+    return this.id;
+  }
   getImagen() {
     return this.imagen;
   }
@@ -27,6 +32,9 @@ class Producto {
   }
 
   /* setters */
+  setId(id) {
+    this.id = id;
+  }
   setImagen(imagen) {
     this.imagen = imagen;
   }

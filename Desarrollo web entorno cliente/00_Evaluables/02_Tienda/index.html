@@ -83,7 +83,7 @@
       <div class="row g-3 mt-3">
         <!-- parte de los productos -->
         <div class="col-8 text-center" id="productos">
-          <h6>Productos</h6>
+          <h6><strong>Productos</strong></h6>
           <div
             class="row row-cols-1 row-cols-md-4 g-4"
             id="lista-productos"
@@ -91,10 +91,37 @@
         </div>
         <!-- parte del carrito -->
         <div class="col-4 text-center" id="carrito">
-          <h6>Carrito</h6>
+          <h6><strong>Carrito</strong></h6>
+          <!--  cabecera Producto y Precio -->
+          <div
+            class="d-flex justify-content-between fw-bold border-bottom pb-2 mb-2"
+          >
+            <span>Producto</span>
+            <span>Precio</span>
+          </div>
+          <!-- lista para el carrito -->
+          <ul class="list-group text-start" id="lista-carrito"></ul>
+          <!-- Total -->
+          <div class="mt-3 fw-bold" id="total-carrito">Total: 0</div>
+          <!-- boton compra y eliminar-->
+          <div class="d-flex justify-content-center gap-2 mt-2">
+            <button
+              class="btn btn-success w-50 mt-2 col-2"
+              id="btnComprarCarrito"
+            >
+              Comprar
+            </button>
+            <button
+              class="btn btn-danger w-50 mt-2 col-2"
+              id="btnEliminarCarrito"
+            >
+              Eliminar cesta
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <script src="utils/js/producto.js"></script>
     <script src="utils/js/index.js"></script>
   </body>
 </html>
