@@ -61,7 +61,7 @@ header h1 {
   margin-bottom: 16px;
 }
 
-/* select */
+/* select de asignaturas */
 .field-group label {
   display: block;
   font-size: 12px;
@@ -119,15 +119,6 @@ header h1 {
 
 #contenedor_tiempo.peligro .timer-value {
   color: rgba(254,202,202,0.95);
-}
-
-/* marcador */
-.marcador {
-  margin-top: 10px;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
 }
 
 /* botones */
@@ -188,21 +179,21 @@ header h1 {
   color: #16a34a;
 }
 
-/* pregunta */
+/* pregunta (clase que mete el JS) */
 .pregunta {
   font-weight: 900;
   font-size: 18px;
   margin-bottom: 12px;
 }
 
-/* opciones */
+/* opciones (clase que mete el JS) */
 .opciones {
   display: grid;
   gap: 12px;
   margin-top: 12px;
 }
 
-/* boton de opcion */
+/* boton de opcion (clase que mete el JS) */
 .opcion {
   text-align: left;
   border: 1px solid rgba(0,0,0,0.12);
@@ -230,34 +221,4 @@ header h1 {
 .opcion.incorrecta {
   border-color: rgba(239,68,68,0.9);
   background: rgba(239,68,68,0.16);
-}
-
-/* historial */
-.historial {
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 12px;
-}
-
-.historial-titulo {
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.55);
-  margin-bottom: 8px;
-}
-
-.historial-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 6px;
-}
-
-.historial-lista li {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.06);
-  color: rgba(0,0,0,0.75);
-  font-size: 14px;
 }

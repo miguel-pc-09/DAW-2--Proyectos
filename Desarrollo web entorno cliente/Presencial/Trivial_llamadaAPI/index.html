@@ -24,25 +24,27 @@
       <header>
         <h1>Trivial FP DAW</h1>
         <p class="subtitle">
-          Elige tu asignatura y comienza el juego. Intenta acabar antes de
-          tiempo.
+          Elige categoría y dificultad. Pulsa recargar para traer preguntas y
+          luego empieza la ronda.
         </p>
       </header>
 
       <main class="panel">
         <div class="controls">
           <div class="field-group">
-            <label for="asignatura">Asignatura</label>
-            <select id="asignatura">
-              <option value="js">JavaScript</option>
-              <option value="py">Python</option>
-              <option value="interfaces">Interfaces</option>
-              <option value="server">Servidor</option>
-              <option value="ingles">Inglés</option>
-              <option value="sos">Sostenibilidad</option>
-              <option value="dj">Digitalización</option>
-              <option value="ipe">IPE</option>
-              <option value="ds">Despliegue</option>
+            <label for="categoria">Categoría (OpenTDB)</label>
+            <select id="categoria">
+              <option value="">Cargando categorías...</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="dificultad">Dificultad</label>
+            <select id="dificultad">
+              <option value="">Cualquiera</option>
+              <option value="easy">Fácil</option>
+              <option value="medium" selected>Media</option>
+              <option value="hard">Difícil</option>
             </select>
           </div>
 
@@ -51,6 +53,10 @@
               <span class="timer-label">Tiempo</span>
               <div id="contenedor_tiempo" class="timer">
                 <span class="timer-value" id="valor_tiempo">01:30</span>
+              </div>
+
+              <div class="marcador" id="marcador">
+                Puntos: 0 | Pregunta: 0/0
               </div>
             </div>
 
@@ -74,6 +80,14 @@
               >
                 Comprobar
               </button>
+
+              <button
+                id="boton_recargar"
+                class="btn-secondary"
+                style="margin-left: 0.3rem"
+              >
+                Recargar preguntas
+              </button>
             </div>
           </div>
         </div>
@@ -82,18 +96,24 @@
           <div>
             <div class="card-title" id="titulo_tarjeta">Pregunta trivial</div>
             <div id="contenido_tarjeta" class="card-word">
-              Pulsa “Generar pregunta”
+              Pulsa “Recargar preguntas”
             </div>
             <div id="meta_tarjeta" class="card-meta">
-              Selecciona una asignatura para empezar
+              Esperando configuración del usuario
             </div>
           </div>
 
           <div>
             <p class="status" id="texto_estado">
-              Temporizador parado. Pulsa <strong>Generar pregunta</strong> para
-              iniciar una nueva ronda.
+              Temporizador parado. Pulsa
+              <strong>Recargar preguntas</strong> para traer preguntas del
+              servidor.
             </p>
+          </div>
+
+          <div class="historial">
+            <div class="historial-titulo">Historial (últimas 5 partidas)</div>
+            <ul id="lista_historial" class="historial-lista"></ul>
           </div>
         </section>
       </main>

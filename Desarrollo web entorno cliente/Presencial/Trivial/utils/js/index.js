@@ -1,140 +1,171 @@
+// ----------- VARIABLES DEL JUEGO ----------
+// Guardo las preguntas
+let preguntas = null;
+
+// Para guardar la pregunta que sale en pantalla
+let pregunta_actual = null;
+
+// Para saber si ya se comprobado la respuesta
+let respuesta_mostrada = false;
+
+// Para guardar la opcion que se click
+let opcion_seleccionada = null;
+
+// Tiempo inicial
+let segundos = 90;
+
+// setInterval del temporizador
+let intervalo = null;
+
 // ------ SELECTORES --------
-const selector_categoria = document.querySelector("#categoria");
-const selector_dificultad = document.querySelector("#dificultad");
-const boton_generar = document.querySelector("#boton_generar");
-const boton_reiniciar = document.querySelector("#boton_reiniciar");
-const boton_comprobar = document.querySelector("#boton_comprobar");
-const boton_recargar = document.querySelector("#boton_recargar");
+const select_asignatura = document.querySelector("#asignatura");
+
+const btn_generar = document.querySelector("#boton_generar");
+const btn_reiniciar = document.querySelector("#boton_reiniciar");
+const btn_comprobar = document.querySelector("#boton_comprobar");
+
 const contenedor_tiempo = document.querySelector("#contenedor_tiempo");
 const valor_tiempo = document.querySelector("#valor_tiempo");
+
 const titulo_tarjeta = document.querySelector("#titulo_tarjeta");
 const contenido_tarjeta = document.querySelector("#contenido_tarjeta");
 const meta_tarjeta = document.querySelector("#meta_tarjeta");
 const texto_estado = document.querySelector("#texto_estado");
-const marcador = document.querySelector("#marcador");
-const lista_historial = document.querySelector("#lista_historial");
 
-// ----------- VARIABLES DEL JUEGO ----------
-let lista_preguntas = [];
-let indice_pregunta = 0;
-let respuesta_correcta = "";
-let respuesta_seleccionada = "";
-let respuesta_mostrada = false;
-let puntos = 0;
+// ------ CARGAR JSON ----------
+async function cargar_preguntas() {
+  const respuesta = await fetch("utils/data/preguntas.json");
+  preguntas = await respuesta.json();
 
-// Tiempo inicial
-let segundos = 90;
-let intervalo = null;
-
-// Al cargar la página, la aplicación debe realizar una petición HTTP a la API de Open Trivia
-function construir_url_api() {
-  let url = "https://opentdb.com/api.php?amount=10&type=multiple";
-
-  // Elementos opcionales
-  // Permitir elegir categoría o dificultad antes de obtener las preguntas (usando los parámetros de la API).
-
-  let categoria = selector_categoria ? selector_categoria.value : "";
-  let dificultad = selector_dificultad ? selector_dificultad.value : "";
-
-  if (categoria) url += "&category=" + categoria;
-  if (dificultad) url += "&difficulty=" + dificultad;
-
-  return url;
+  texto_estado.textContent =
+    "Preguntas cargadas. Pulsa Generar pregunta para empezar.";
 }
 
-// Debe gestionarse correctamente el flujo asíncrono usando promesas:
-// Puedes usar .then() y .catch() o la sintaxis async/await .
-// Se debe mostrar un mensaje de error en caso de que falle la petición.
+// ------ TIEMPO (contador) --------
+// Conversor de segundos
+function formato_tiempo(seg) {
+  let min = String(Math.floor(seg / 60)).padStart(2, "0");
+  let s = String(seg % 60).padStart(2, "0");
+  return min + ":" + s;
+}
 
-function cargar_preguntas_desde_api() {
-  texto_estado.textContent = "Cargando preguntas...";
-  contenido_tarjeta.textContent = "Cargando...";
-  titulo_tarjeta.textContent = "Pregunta trivial";
+// Estilo del tiempo
+function pintar_tiempo() {
+  valor_tiempo.textContent = formato_tiempo(segundos);
 
-  // Reinicio estado del juego
-  lista_preguntas = [];
-  indice_pregunta = 0;
-  puntos = 0;
+  if (segundos <= 15 && segundos > 0) {
+    contenedor_tiempo.classList.add("peligro");
+  } else {
+    contenedor_tiempo.classList.remove("peligro");
+  }
+}
 
-  respuesta_correcta = "";
-  respuesta_seleccionada = "";
-  respuesta_mostrada = false;
+// Temporizador si estaba corriendo
+function parar_tiempo() {
+  clearInterval(intervalo);
+  intervalo = null;
+}
 
+// Arranca una ronda nueva
+function iniciar_tiempo() {
   parar_tiempo();
   segundos = 90;
   pintar_tiempo();
-  pintar_marcador();
 
-  fetch(construir_url_api())
-    .then((respuesta) => {
-      if (!respuesta.ok) {
-        throw new Error("HTTP " + respuesta.status);
-      }
-      return respuesta.json();
-    })
-    .then((datos_json) => {
-      if (datos_json.response_code !== 0) {
-        throw new Error("response_code " + datos_json.response_code);
-      }
+  intervalo = setInterval(() => {
+    segundos--;
 
-      lista_preguntas = datos_json.results;
+    if (segundos <= 0) {
+      segundos = 0;
+      parar_tiempo();
+      pintar_tiempo();
+
+      // Marcar la ronda como temrinada
+      respuesta_mostrada = true;
 
       texto_estado.textContent =
-        "Preguntas cargadas. Pulsa Generar pregunta para empezar.";
-      contenido_tarjeta.textContent = "Pulsa “Generar pregunta”";
-      meta_tarjeta.textContent = "Configuración aplicada correctamente.";
-      pintar_marcador();
-    })
-    .catch((error) => {
-      texto_estado.textContent =
-        "Error al cargar preguntas. Pulsa Recargar preguntas.";
-      contenido_tarjeta.textContent = "No se pudieron cargar preguntas.";
-      meta_tarjeta.textContent = "Fallo en la petición al servidor.";
-    });
+        "Se acabó el tiempo. Pulsa Generar pregunta para otra ronda.";
+    } else {
+      pintar_tiempo();
+    }
+  }, 1000);
 }
 
-// Las preguntas recibidas deben mostrarse en pantalla junto con sus posibles respuestas.
-function pintar_pregunta_en_pantalla(pregunta) {
-  contenido_tarjeta.innerHTML = "";
+// Reinicio el tiempo
+function reiniciar_tiempo() {
+  parar_tiempo();
+  segundos = 90;
+  pintar_tiempo();
+}
+
+// ------- LOGICA DEL JUEGO -----
+// Pregunta aleatoria de una asignatura
+function obtener_pregunta_aleatoria(asignatura) {
+  if (!preguntas) return null;
+
+  let lista = preguntas[asignatura];
+
+  if (!lista || lista.length === 0) return null;
+
+  let pos = Math.floor(Math.random() * lista.length);
+  return lista[pos];
+}
+
+// Limpio la tarjeta cuando no hay ronda o no hay preguntas
+function limpiar_ronda_visual() {
+  pregunta_actual = null;
   respuesta_mostrada = false;
-  respuesta_seleccionada = "";
+  opcion_seleccionada = null;
 
-  // Guardamos correcta para comprobar luego
-  respuesta_correcta = pregunta.correct_answer;
+  titulo_tarjeta.textContent = "Pregunta trivial";
+  meta_tarjeta.textContent = "Selecciona la respuesta correcta";
+  contenido_tarjeta.innerHTML = "";
+}
 
-  // Enunciado
-  let nodo_pregunta = document.createElement("div");
-  nodo_pregunta.classList.add("pregunta");
-  nodo_pregunta.textContent = pregunta.question;
-  contenido_tarjeta.appendChild(nodo_pregunta);
+// Genero en la tarjeta una pregunta y sus opciones
+function pintar_pregunta(p) {
+  pregunta_actual = p;
+  respuesta_mostrada = false;
+  opcion_seleccionada = null;
 
-  // Opciones de respuesta
-  let opciones = [];
-  pregunta.incorrect_answers.forEach((resinc) => opciones.push(resinc));
-  opciones.push(pregunta.correct_answer);
+  titulo_tarjeta.textContent = "Pregunta trivial";
+  meta_tarjeta.textContent = "Selecciona la respuesta correcta";
+  contenido_tarjeta.innerHTML = "";
 
+  // Texto de la pregunta
+  let texto_pregunta = document.createElement("div");
+  texto_pregunta.classList.add("pregunta");
+  texto_pregunta.textContent = p.question;
+  contenido_tarjeta.appendChild(texto_pregunta);
+
+  // Contenedor de opciones
   let contenedor_opciones = document.createElement("div");
   contenedor_opciones.classList.add("opciones");
 
-  let letras = ["A", "B", "C", "D"];
-
-  opciones.forEach((texto, posicion) => {
+  // Creo un boton por cada opcion
+  p.options.forEach((op) => {
     let boton = document.createElement("button");
     boton.type = "button";
     boton.classList.add("opcion");
-    boton.dataset.valor = texto; // Guardamos el valor de la respuesta con dataset
-    boton.textContent = letras[posicion] + ") " + texto;
+    boton.dataset.id = op.id;
+    boton.textContent = op.id + ") " + op.text;
 
-    // El usuario podrá elegir una respuesta y recibir retroalimentación
     boton.addEventListener("click", () => {
       if (respuesta_mostrada) return;
-      respuesta_seleccionada = texto;
-      contenedor_opciones.querySelectorAll(".opcion").forEach((b) => {
-        b.classList.remove("seleccionada");
+
+      opcion_seleccionada = op.id;
+
+      // Para eliminar la clase seleccionada
+      contenedor_opciones.querySelectorAll(".opcion").forEach((btn) => {
+        btn.classList.remove("seleccionada");
       });
+
+      // Marcacion de la que se selecciona
       boton.classList.add("seleccionada");
+
       texto_estado.textContent = "Opción seleccionada. Pulsa Comprobar.";
     });
+
     contenedor_opciones.appendChild(boton);
   });
 
@@ -144,152 +175,90 @@ function pintar_pregunta_en_pantalla(pregunta) {
     "Ronda activa. Elige una opción y pulsa Comprobar.";
 }
 
-// Elementos opcionales
-// Añadir marcador de puntuación.
-function pintar_marcador() {
-  if (!marcador) return;
-  let total = lista_preguntas.length || 0;
-  marcador.textContent =
-    "Puntos: " + puntos + " | Pregunta: " + indice_pregunta + "/" + total;
-}
+// Comparo la opcion del usuario con la correcta
+function comprobar_respuesta() {
+  if (!pregunta_actual || respuesta_mostrada) return;
 
-// Elementos opcionales
-// Implementar temporizador para responder cada pregunta.
-function pintar_tiempo() {
-  // Convierte los segundos a formato MM:SS (sin padStart)
-  let minutos = Math.floor(segundos / 60);
-  let resto_segundos = segundos % 60;
-
-  if (minutos < 10) minutos = "0" + minutos;
-  if (resto_segundos < 10) resto_segundos = "0" + resto_segundos;
-
-  valor_tiempo.textContent = minutos + ":" + resto_segundos;
-
-  // Si quedan 15 segundos o menos, lo pongo en rojo
-  if (segundos <= 15 && segundos > 0)
-    contenedor_tiempo.classList.add("peligro");
-  else contenedor_tiempo.classList.remove("peligro");
-}
-
-function parar_tiempo() {
-  clearInterval(intervalo);
-  intervalo = null;
-}
-
-function iniciar_tiempo() {
-  parar_tiempo();
-  segundos = 90;
-  pintar_tiempo();
-  intervalo = setInterval(() => {
-    segundos--;
-    if (segundos <= 0) {
-      segundos = 0;
-      pintar_tiempo();
-      parar_tiempo();
-      respuesta_mostrada = true;
-      texto_estado.textContent =
-        "Se acabó el tiempo. Pulsa Generar pregunta para seguir.";
-    } else {
-      pintar_tiempo();
-    }
-  }, 1000);
-}
-
-// El usuario recibe si ha acertado o no.
-function comprobar_respuesta_usuario() {
-  if (respuesta_mostrada) {
-    texto_estado.textContent = "Ya has comprobado esta pregunta.";
-  } else if (!respuesta_seleccionada) {
+  if (!opcion_seleccionada) {
     texto_estado.textContent = "Selecciona una respuesta primero.";
-  } else {
-    let contenedor_opciones = contenido_tarjeta.querySelector(".opciones");
-
-    contenedor_opciones.querySelectorAll(".opcion").forEach((boton) => {
-      let valor = boton.dataset.valor;
-
-      if (valor === respuesta_correcta) {
-        boton.classList.add("correcta");
-      } else if (valor === respuesta_seleccionada) {
-        boton.classList.add("incorrecta");
-      }
-    });
-    if (respuesta_seleccionada === respuesta_correcta) {
-      puntos++;
-      texto_estado.textContent = "Correcto";
-    } else {
-      texto_estado.textContent = "Incorrecto";
-    }
-
-    respuesta_mostrada = true;
-    parar_tiempo();
-    pintar_marcador();
+    return;
   }
-}
 
-// Elementos opcionales
-// Mostrar una pantalla final de resultados.
-function mostrar_resultado_final() {
-  titulo_tarjeta.textContent = "Resultado final";
-  contenido_tarjeta.textContent =
-    "Has conseguido " + puntos + " puntos de " + lista_preguntas.length + ".";
-  texto_estado.textContent =
-    "Partida terminada. Pulsa Recargar preguntas para jugar otra.";
+  let contenedor_opciones = contenido_tarjeta.querySelector(".opciones");
+  if (!contenedor_opciones) return;
 
-  guardar_historial_localStorage();
-}
+  let opcion_correcta = pregunta_actual.options.find(
+    (op) => op.correct === true,
+  );
+  if (!opcion_correcta) return;
 
-// Elementos opcionales
-// Guardar historial de puntuaciones en localStorage.
-function guardar_historial_localStorage() {
-  let historial = JSON.parse(localStorage.getItem("historial_trivial") || "[]");
-  historial.unshift({
-    fecha: new Date().toLocaleString(),
-    puntos: puntos,
-    total: lista_preguntas.length,
-  });
+  let boton_correcto = contenedor_opciones.querySelector(
+    `[data-id="${opcion_correcta.id}"]`,
+  );
 
-  historial = historial.slice(0, 5);
-  localStorage.setItem("historial_trivial", JSON.stringify(historial));
-}
+  let boton_usuario = contenedor_opciones.querySelector(
+    `[data-id="${opcion_seleccionada}"]`,
+  );
 
-// Permite volver a cargar nuevas preguntas, ya sea con un botón o una opción de recarga.
-function generar_siguiente_pregunta() {
-  if (lista_preguntas.length === 0) {
-    texto_estado.textContent =
-      "No hay preguntas cargadas. Pulsa Recargar preguntas.";
-  } else if (indice_pregunta >= lista_preguntas.length) {
-    mostrar_resultado_final();
+  if (opcion_seleccionada === opcion_correcta.id) {
+    boton_usuario.classList.add("correcta");
+    texto_estado.textContent = "Correcto ";
   } else {
-    titulo_tarjeta.textContent = "Pregunta trivial";
-    meta_tarjeta.textContent = "Selecciona la respuesta correcta";
-
-    pintar_pregunta_en_pantalla(lista_preguntas[indice_pregunta]);
-    indice_pregunta++;
-    pintar_marcador();
-    iniciar_tiempo();
+    boton_usuario.classList.add("incorrecta");
+    if (boton_correcto) boton_correcto.classList.add("correcta");
+    texto_estado.textContent = "Incorrecto ";
   }
-}
 
-// ------ EVENTOS --------
-boton_recargar.addEventListener("click", () => {
-  cargar_preguntas_desde_api();
-});
+  // Evito que se pueda volver a comprobar esta pregunta
+  respuesta_mostrada = true;
 
-boton_generar.addEventListener("click", () => {
-  generar_siguiente_pregunta();
-});
-
-boton_comprobar.addEventListener("click", () => {
-  comprobar_respuesta_usuario();
-});
-
-boton_reiniciar.addEventListener("click", () => {
+  // Cuando acierto o fallo paro el contador
   parar_tiempo();
-  segundos = 90;
-  pintar_tiempo();
+}
+
+// Esto crea una ronda nueva
+function nueva_ronda() {
+  let asignatura = select_asignatura.value;
+  let pregunta = obtener_pregunta_aleatoria(asignatura);
+
+  if (!pregunta) {
+    limpiar_ronda_visual();
+    texto_estado.textContent = "No hay preguntas para esta asignatura.";
+    reiniciar_tiempo();
+    return;
+  }
+
+  // Paro el tiempo anterior y empiezo una nueva pregunta
+  parar_tiempo();
+  pintar_pregunta(pregunta);
+  iniciar_tiempo();
+}
+
+// ---- EVENTOS ----------
+
+// Generar pregunta
+btn_generar.addEventListener("click", () => {
+  nueva_ronda();
+});
+
+// Reinicia el tiempo
+btn_reiniciar.addEventListener("click", () => {
+  reiniciar_tiempo();
   texto_estado.textContent = "Tiempo reiniciado.";
 });
 
-// ------- INICIO ----------
+// Comprueba la opcion seleccionada
+btn_comprobar.addEventListener("click", () => {
+  comprobar_respuesta();
+});
+
+// Cambio de asignatura
+select_asignatura.addEventListener("change", () => {
+  texto_estado.textContent =
+    "Categoría cambiada. Pulsa Generar pregunta para sacar una de esta asignatura.";
+});
+
+// ------- INICIO con ejecucion automatica ----------
+
 pintar_tiempo();
-cargar_preguntas_desde_api();
+cargar_preguntas();
