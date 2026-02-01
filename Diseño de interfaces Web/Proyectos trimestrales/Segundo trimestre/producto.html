@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LUMOS Candles - Producto</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <div class="page-overlay">
+      <!-- CABECERA -->
+      <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+          >
+            <img
+              src="images/logo.png"
+              alt="Logo LUMOS"
+              width="48"
+              height="48"
+            />
+            <span class="brand-title">LUMOS Candles</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav align-items-lg-center gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="producto.html">Producto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <a
+                  class="btn btn-sm btn-cart"
+                  href="compra.html"
+                  title="Ir a compra"
+                  >🛒</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="container pb-5">
+        <!-- Producto -->
+        <section class="panel p-4 mb-4">
+          <div class="row align-items-center g-4">
+            <div class="col-12 col-lg-5">
+              <img
+                src="images/lechuza.png"
+                alt="Lechuza Harry Potter"
+                class="product-img"
+              />
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <h1 class="section-title mb-2">Lechuza Harry Potter</h1>
+
+              <p class="mb-3">
+                Disfruta de esta vela artesanal con forma de lechuza. Puedes
+                elegir entre aromas
+                <strong>Vainilla</strong>, <strong>Fresa</strong> o
+                <strong>Caramelo</strong>. Cera vegetal y mecha de algodón.
+                Ideal para decorar y regalar.
+              </p>
+
+              <p class="fs-4 mb-4">
+                <span class="section-title">Precio:</span> 16,90 €
+              </p>
+
+              <div class="d-flex flex-wrap gap-2">
+                <a href="compra.html" class="btn btn-outline-light">
+                  Añadir al carrito (acceso compra)
+                </a>
+                <a href="compra.html" class="btn btn-warning">Comprar ahora</a>
+              </div>
+
+              <p class="mt-3 mb-0 small text-secondary">
+                * En esta práctica el carrito es un acceso visual a la compra
+                (sin JS).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cómo lo fabricamos -->
+        <section class="text-center mb-3">
+          <h2 class="section-title">Cómo la fabricamos</h2>
+        </section>
+
+        <section class="row g-4 mb-5">
+          <div class="col-12 col-md-4">
+            <div class="panel p-3 step-card h-100 text-center">
+              <img src="images/moldeFigura1.png" alt="Paso 1" class="w-100" />
+              <p class="mt-3 mb-0">Molde de silicona con guía para la mecha.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="panel p-3 step-card h-100 text-center">
+              <img src="images/ceraCaliente.png" alt="Paso 2" class="w-100" />
+              <p class="mt-3 mb-0">
+                Vertemos la cera vegetal a baja temperatura.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="panel p-3 step-card h-100 text-center">
+              <img src="images/Desmoldar.png" alt="Paso 3" class="w-100" />
+              <p class="mt-3 mb-0">
+                Desmoldamos, repasamos y damos el acabado final.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer py-4 mt-5">
+        <div class="container text-center">
+          <div class="mb-2">© 2025 LUMOS Candles · Hecho a mano en España</div>
+
+          <div
+            class="d-flex flex-column flex-md-row justify-content-center gap-3"
+          >
+            <div>
+              <span class="section-title">Síguenos en:</span>
+              <a href="#" class="ms-2">Instagram</a>
+              <a href="#" class="ms-2">TikTok</a>
+              <a href="#" class="ms-2">Facebook</a>
+            </div>
+
+            <div>
+              <span class="section-title">Contacto:</span>
+              <a href="mailto:hola@lumoscandles.es" class="ms-2"
+                >hola@lumoscandles.es</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+  </body>
+</html>
