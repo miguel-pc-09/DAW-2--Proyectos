@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- La propiedad align-items establece la forma en que se alinean los elementos en la dirección secundaria.
+  Los posibles valores de la propiedad align-items son:
+	-flex-start: los elementos se sitúan al principio de la dirección secundaria (es decir, arriba si la dirección secundaria es vertical)
+	-flex-end: los elementos se sitúan al final de la dirección secundaria (es decir, abajo si la dirección secundaria es vertical)
+	center: los elementos se sitúan en el centro de la dirección secundaria (es decir, en medio si la dirección secundaria es vertical)
+	-stretch: todos los elementos toman el mismo tamaño en la dirección secundaria
+	-baseline: los elementos se alinean en la dirección secundaria según la primera línea de texto. Para distinguirlo del valor flex-start, en el último párrafo del ejemplo siguiente se ha aumentado el tamaño del texto.
+	  -->
+    <style>
+	div { display: flex; align-items: flex-end;}
+	p { flex: initial; border: black 1px solid; margin: 2px; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- El tamaño de los elementos flexibles viene determinado en principio por su contenido. Si hay espacio suficiente en la dirección principal, los elementos se ensanchan para mostrar todo su contenido en una sola línea.
+  La propiedad flex-basis establece el tamaño inicial del elemento, antes de que se reparta en su caso el espacio libre.
+
+	Los posibles valores de la propiedad flex-basis son:
+
+	content: el tamaño inicial viene determinado por el contenido del elemento.
+	auto: el tamaño inicial viene determinado por las propiedades width y/o height.
+	tamaño: indica el tamaño inicial exacto.
+	  -->
+    <style>
+    
+	div { display: flex; }
+    p { flex-basis: 15%; border: black 1px solid; margin: 2px; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p class="primero">Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>

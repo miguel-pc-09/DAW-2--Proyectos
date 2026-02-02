@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Factor de compresión de los elementos flexibles: flex-shrink
+La propiedad flex-shrink, que toma valores enteros, indica la proporción en que se estrechan los elementos cuando su contenido no cabe en el espacio disponible en en la dirección principal.
+Si todos los elementos toman el mismo valor, el espacio se reparte a partes iguales.
+	  -->
+    <style>
+	div { display: flex; }
+    p { flex-shrink: 1; border: black 1px solid; margin: 2px; }
+	p.menor { flex-shrink: 2; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p class="menor">Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>

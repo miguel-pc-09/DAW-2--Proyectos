@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>min-width y max-width</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @media screen and (max-width: 800px) {
+      html {
+        background-color: lightblue;
+      }
+    }
+
+    @media screen and (min-width: 801px) and (max-width: 900px) {
+      html {
+        background-color: lightcoral;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      html {
+        background-color: lightgreen;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>El color de fondo de esta página cambia según el ancho de la pantalla:</p>
+  <ul>
+    <li>si es menor de 800px, el color es azul</li>
+    <li>desde 800px hasta 900px, el color es rojo</li>
+    <li>si es mayor o igual a 900px, el color es verde</li>
+  </ul>
+
+  <p>El ancho actual es <strong><span id="size"></span>px</strong></p>
+
+  <script>
+    var ancho = window.innerWidth;
+    var texto = document.getElementById("size");
+    texto.textContent = ancho;
+    window.onresize = function () {
+      var ancho = window.innerWidth;
+      var texto = document.getElementById("size");
+      texto.textContent = ancho;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- La propiedad flex-direction define la dirección principal, es decir, la dirección en la que se colocan los elementos flexibles en los contenedores.	
+  Los posibles valores de la propiedad flex-direction son:
+  -row: los elementos se colocan horizontalmente de izquierda a derecha
+  -row-reverse: los elementos se colocan horizontalmente de derecha a izquierda
+  -column: los elementos se colocan verticalmente de arriba abajo.
+  -column-reverse: los elementos se colocan verticalmente de abajo arriba.
+  -->
+    <style>
+    
+	div { display:flex; flex-direction: column-reverse; 
+	      margin-bottom: 5px; background-color: #eee; }
+
+	p { width: 100px; border: black 1px solid; margin: 2px; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>

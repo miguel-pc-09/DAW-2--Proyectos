@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Los elementos flexibles se muestran en el mismo orden en el que se encuentran en el código fuente de la página web, pero la propiedad order permite cambiar ese orden. A la propiedad order se le pueden dan valores enteros positivos o negativos. El valor predeterminado de un elemento es 0.
+
+En el ejemplo siguiente se ha dado la clase "primero" al cuarto párrafo, por lo que este se muestra en primer lugar..
+	  -->
+    <style>
+    
+	div { display: flex; }
+    p { width: 100px; border: black 1px solid; margin: 2px; }
+    p.primero { order: -1; color:red; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p class="primero">Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>flexbox1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- La propiedad justify-content establece la forma en que se reparte el espacio libre disponible en la dirección principal.
+	  flex-start: los elementos se sitúan al principio de la dirección principal, es decir, el espacio disponible se sitúa al final.
+	  flex-end: los elementos se sitúan al final de la dirección principal, es decir, el espacio disponible se sitúa al principio
+	  center: los elementos se sitúan en el centro de la dirección principal, es decir, el espacio disponible se reparte entre el principio y el final.
+	  space-between: el espacio disponible se reparte entre los elementos
+	  space-around: el espacio disponible se reparte entre los elementos y en los extremos
+	  -->
+    <style>
+	div { display: flex; justify-content: center;}
+	p { flex: initial; border: black 1px solid; margin: 2px; }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+
+  <div>
+    <p>Primer Parrafo</p>
+    <p>Segundo Parrafo</p>
+    <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+    <p>Cuarto parrafo</p>
+  </div>
+</body>
+</html>
