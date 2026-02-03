@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Planner Studio - Inicio</title>
 
-    <!-- favicon -->
     <link rel="icon" type="image/png" href="./images/favicon.png" />
 
-    <!-- bootstrap -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,158 +20,255 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- css propio -->
+    <!-- CSS mínimo  -->
     <link rel="stylesheet" href="assets/style.css" />
   </head>
 
   <body>
-    <div class="page-overlay">
-      <!-- cabecera (bootstrap navbar) -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
-        <div class="container">
-          <!-- logo + nombre -->
-          <a
-            class="navbar-brand d-flex align-items-center gap-2"
-            href="index.html"
-          >
-            <img src="images/logo.png" alt="Logo" width="48" height="48" />
-            <span class="brand-title">Planner Studio</span>
-          </a>
+    <!-- NAVBAR -->
+    <!-- bg-body-tertiary: fondo suave -->
+    <!-- shadow-sm: sombra pequeña para que no quede plana -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <!-- container: centra y pone márgenes laterales -->
+      <!-- py-2: padding arriba/abajo  -->
+      <div class="container py-2">
+        <!-- d-flex: pone logo y texto en la misma línea -->
+        <!-- align-items-center: lo deja centrado verticalmente -->
+        <!-- gap-2: separa un poco el logo del texto -->
+        <!-- fw-bold: texto en negrita -->
+        <a
+          class="navbar-brand d-flex align-items-center gap-2 fw-bold"
+          href="index.html"
+        >
+          <!-- rounded-2: bordes un pelín redondeados al logo -->
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            width="42"
+            height="42"
+            class="rounded-2"
+          />
+          Planner Studio
+        </a>
 
-          <!-- boton burger -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Abrir menú"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <!-- Botón hamburguesa -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <!-- menu -->
-          <div class="collapse navbar-collapse justify-content-end" id="menu">
-            <ul class="navbar-nav align-items-lg-center gap-lg-2">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="producto.html">Producto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
-              </li>
+        <!-- justify-content-end: mando el menú a la derecha -->
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+          <!-- align-items-lg-center:  centra los items verticalmente -->
+          <!-- gap-lg-2: deja un hueco entre opciones -->
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="producto.html">Producto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
 
-              <!-- carrito  -->
-              <li class="nav-item ms-lg-2">
-                <a
-                  class="btn btn-sm btn-cart"
-                  href="compra.html"
-                  title="Ir a compra"
-                  >🛒</a
-                >
-              </li>
-            </ul>
-          </div>
+            <!-- ms-lg-2: en pantallas grandes margen a la izquierda para separarlo del resto -->
+            <li class="nav-item ms-lg-2">
+              <!-- btn-sm: botón pequeñito  -->
+              <a
+                class="btn btn-outline-dark btn-sm"
+                href="compra.html"
+                title="Ir a compra"
+                >🛒</a
+              >
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <!-- contenido -->
-      <main class="container pb-5">
-        <!-- imagen principal -->
-        <section class="mb-4">
+    <!-- CONTENIDO -->
+    <!-- py-4: padding arriba/abajo para que el contenido no quede pegado -->
+    <main class="container py-4">
+      <!-- HERO -->
+      <!-- mb-4: espacio abajo  -->
+      <section class="mb-4">
+        <!-- ratio-21x9: fuerza una proporción tipo banner -->
+        <!-- rounded-4: esquinas más redondeadas -->
+        <!-- overflow-hidden: para que la imagen no se salga de las esquinas  -->
+        <!-- shadow-sm: sombra suave -->
+        <!-- border: borde finito -->
+        <div
+          class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-sm border"
+        >
+          <!-- img-cover lo hago en mi CSS  -->
           <img
             src="images/intro.png"
             alt="Imagen general de la tienda"
-            class="hero-img"
+            class="img-cover"
           />
-        </section>
+        </div>
+      </section>
 
-        <!-- intro (panel con estilos propios) -->
-        <section class="panel p-4 mb-5 text-center">
-          <h1 class="section-title mb-3">
+      <!-- INTRO (card Bootstrap) -->
+      <!-- border-0: le quito el borde por defecto de la card -->
+      <!-- shadow-sm: sombra suave -->
+      <!-- rounded-4: esquinas redondeadas -->
+      <!-- mb-4: espacio abajo -->
+      <section class="card border-0 shadow-sm rounded-4 mb-4">
+        <!-- p-4: padding para que el texto no quede pegado -->
+        <!-- text-center: centrado -->
+        <div class="card-body p-4 text-center">
+          <!-- display-6: tamaño grande para el título -->
+          <!-- fw-bold: negrita -->
+          <!-- mb-3: margen debajo del título -->
+          <h1 class="display-6 fw-bold mb-3">
             Agendas y planners para organizar tu vida
           </h1>
-          <p class="mb-0">
+
+          <!-- text-secondary: color gris de Bootstrap -->
+          <!-- mb-0: quito margen para que quede más pegado -->
+          <p class="text-secondary mb-0">
             Aquí encontrarás agendas tipo “día por página”, planners semanales,
             cuadernos y packs de pegatinas. Diseños bonitos, hojas resistentes y
             pestañas para ir rápido a cada mes. Si buscas algo concreto,
             escríbenos y te ayudamos.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <!-- bloques (bootstrap grid) -->
-        <section class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="panel p-3 h-100 text-center">
-              <h3 class="section-title fs-5">Agendas día vista</h3>
-              <img
-                src="images/diaVista.png"
-                alt="Agenda día vista"
-                class="img-fluid rounded-3 border mt-2"
-              />
-              <p class="mt-3 mb-0">
+      <!-- BLOQUES (cards Bootstrap) -->
+      <!-- g-4: separación entre columnas/filas del grid -->
+      <section class="row g-4">
+        <div class="col-12 col-md-4">
+          <!-- h-100: hace que todas las cards tengan la misma altura -->
+          <!-- border-0: sin borde -->
+          <!-- shadow-sm: sombra suave -->
+          <!-- rounded-4: esquinas redondeadas -->
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <!-- p-3: padding -->
+            <!-- text-center: centrado -->
+            <div class="card-body p-3 text-center">
+              <!-- h5: tamaño de título correcto -->
+              <!-- fw-bold: negrita -->
+              <!-- mb-3: espacio abajo -->
+              <h3 class="h5 fw-bold mb-3">Agendas día vista</h3>
+
+              <!-- ratio-4x3:  todas las imágenes queden iguales -->
+              <!-- rounded-4 + overflow-hidden + border: queda limpio y uniforme -->
+              <div class="ratio ratio-4x3 rounded-4 overflow-hidden border">
+                <img
+                  src="images/diaVista.png"
+                  alt="Agenda día vista"
+                  class="img-cover"
+                />
+              </div>
+
+              <!-- text-secondary: gris -->
+              <!-- mt-3: margen arriba -->
+              <!-- mb-0: sin margen abajo -->
+              <p class="text-secondary mt-3 mb-0">
                 Un día por página, con espacios para notas y prioridades.
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="col-12 col-md-4">
-            <div class="panel p-3 h-100 text-center">
-              <h3 class="section-title fs-5">Pestañas por meses</h3>
-              <img
-                src="images/meses.png"
-                alt="Pestañas por meses"
-                class="img-fluid rounded-3 border mt-2"
-              />
-              <p class="mt-3 mb-0">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <div class="card-body p-3 text-center">
+              <h3 class="h5 fw-bold mb-3">Pestañas por meses</h3>
+              <div class="ratio ratio-4x3 rounded-4 overflow-hidden border">
+                <img
+                  src="images/meses.png"
+                  alt="Pestañas por meses"
+                  class="img-cover"
+                />
+              </div>
+              <p class="text-secondary mt-3 mb-0">
                 Meses con pestañas que sobresalen para ir más rápido.
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="col-12 col-md-4">
-            <div class="panel p-3 h-100 text-center">
-              <h3 class="section-title fs-5">Pegatinas y extras</h3>
-              <img
-                src="images/pegatinas.png"
-                alt="Pegatinas y extras"
-                class="img-fluid rounded-3 border mt-2"
-              />
-              <p class="mt-3 mb-0">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <div class="card-body p-3 text-center">
+              <h3 class="h5 fw-bold mb-3">Pegatinas y extras</h3>
+              <div class="ratio ratio-4x3 rounded-4 overflow-hidden border">
+                <img
+                  src="images/pegatinas.png"
+                  alt="Pegatinas y extras"
+                  class="img-cover"
+                />
+              </div>
+              <p class="text-secondary mt-3 mb-0">
                 Packs de pegatinas, separadores, bolsillos y marcapáginas.
               </p>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+    </main>
 
-      <!-- footer -->
-      <footer class="footer py-4 mt-5">
-        <div class="container text-center">
-          <div class="mb-2">© 2025 Planner Studio · Hecho a mano en España</div>
+    <!-- FOOTER -->
+    <!-- border-top: línea arriba -->
+    <!-- bg-body-tertiary: fondo suave -->
+    <!-- mt-5:  separación arriba -->
+    <footer class="border-top bg-body-tertiary mt-5">
+      <!-- py-4: padding para que el footer no quede pegado -->
+      <!-- text-center: centrado -->
+      <div class="container py-4 text-center">
+        <!-- text-secondary: gris -->
+        <!-- mb-2: margen abajo -->
+        <div class="text-secondary mb-2">
+          © 2025 Planner Studio · Hecho a mano en España
+        </div>
 
-          <div
-            class="d-flex flex-column flex-md-row justify-content-center gap-3"
-          >
-            <div>
-              <span class="section-title">Síguenos en:</span>
-              <a href="#" class="ms-2">Instagram</a>
-              <a href="#" class="ms-2">TikTok</a>
-              <a href="#" class="ms-2">Facebook</a>
-            </div>
+        <!-- flex-column: en móvil va una debajo de otra -->
+        <!-- flex-md-row: en md ya se pone en fila -->
+        <!-- justify-content-center: centrado -->
+        <!-- gap-3: separación entre bloques -->
+        <div
+          class="d-flex flex-column flex-md-row justify-content-center gap-3"
+        >
+          <div>
+            <!-- fw-semibold: seminegrita -->
+            <span class="fw-semibold">Síguenos en:</span>
 
-            <div>
-              <span class="section-title">Contacto:</span>
-              <a href="mailto:hola@plannerstudio.es" class="ms-2"
-                >hola@plannerstudio.es</a
-              >
-            </div>
+            <!-- ms-2: margen izquierda para separar -->
+            <!-- link-secondary: color de enlace gris -->
+            <!-- text-decoration-none: quito el subrayado -->
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >Instagram</a
+            >
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >TikTok</a
+            >
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >Facebook</a
+            >
+          </div>
+
+          <div>
+            <span class="fw-semibold">Contacto:</span>
+            <a
+              href="mailto:hola@plannerstudio.es"
+              class="ms-2 link-secondary text-decoration-none"
+            >
+              hola@plannerstudio.es
+            </a>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

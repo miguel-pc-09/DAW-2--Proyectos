@@ -1,172 +1,20 @@
-:root {
-  --gold: #d6b46b;
-  --gold-strong: #f0d28a;
-
-  /* tema claro */
-  --text: #2f2f2f;
-  --muted: #6a6a6a;
-
-  --bg1: #f4f2ee;
-  --bg2: #eae7e2;
-
-  --panel: rgba(255, 255, 255, 0.78);
-  --border: rgba(0, 0, 0, 0.08);
-  --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* base */
+/* Fondo general de la web */
+/* Uso un degradado muy suave para no depender de colores fuertes */
+/*  esto es solo un detalle visual */
 body {
-  min-height: 100vh;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  min-height: 100vh; /* así el fondo cubre toda la pantalla aunque haya poco contenido */
+  background: linear-gradient(
+    180deg,
+    #f8f9fa 0%,
+    #e9ecef 100%
+  ); /* tonos claros */
 }
 
-/* overlay (lo dejo limpio para que el fondo se vea bonito) */
-.page-overlay {
-  min-height: 100vh;
-  background: transparent;
-}
-
-/* navbar */
-.brand-title {
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* links del menu */
-.nav-link {
-  color: var(--muted) !important;
-  opacity: 1;
-  font-weight: 500;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--gold) !important;
-}
-
-/* boton carrito */
-.btn-cart {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: transparent;
-  border-radius: 10px;
-}
-
-.btn-cart:hover {
-  background: var(--gold);
-  color: #111;
-}
-
-/* titulos */
-.section-title {
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* paneles */
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-/* texto dentro de panel */
-.panel p,
-.panel li,
-.panel small {
-  color: var(--muted);
-}
-
-/* imagen principal (index) */
-.hero-img {
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-}
-
-/* imagen producto */
-.product-img {
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-/* arreglo para que el resto de imagenes no se deformen */
-img:not(.hero-img):not(.product-img) {
-  height: auto;
-  max-width: 100%;
-}
-
-/* cards de pasos */
-.step-card img {
-  height: 170px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  display: block;
-}
-
-/* botones (mantengo tu btn-warning pero lo hago marca) */
-.btn-gold {
-  background: var(--gold) !important;
-  border: none !important;
-  color: #111 !important;
-  font-weight: 700;
-  border-radius: 10px;
-}
-
-.btn-gold:hover {
-  background: #c9a857 !important;
-}
-
-/* btn outline para el "añadir" */
-.btn-outline-secondary {
-  border: 1px solid var(--gold) !important;
-  color: var(--gold) !important;
-  background: transparent !important;
-  border-radius: 10px !important;
-  font-weight: 700;
-}
-
-.btn-outline-secondary:hover {
-  background: var(--gold) !important;
-  color: #111 !important;
-}
-
-/* formularios */
-.form-control,
-.form-select {
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.18);
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 0.2rem rgba(214, 180, 107, 0.25);
-}
-
-/* footer */
-.footer {
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-}
-
-.footer a {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
+/* Clase auxiliar para imágenes */
+/* Se usa junto a los ratio de Bootstrap */
+/* Sirve para que las imágenes se adapten al contenedor sin deformarse */
+.img-cover {
+  width: 100%;       
+  height: 100%;      
+  object-fit: cover; 
 }

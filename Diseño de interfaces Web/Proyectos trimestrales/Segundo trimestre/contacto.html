@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Planner Studio - Contacto</title>
 
-    <!-- bootstrap -->
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,144 +20,196 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- css propio -->
+    <!-- CSS mínimo  -->
     <link rel="stylesheet" href="assets/style.css" />
   </head>
 
   <body>
-    <div class="page-overlay">
-      <!-- cabecera -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
-        <div class="container">
-          <a
-            class="navbar-brand d-flex align-items-center gap-2"
-            href="index.html"
-          >
-            <img src="images/logo.png" alt="Logo" width="48" height="48" />
-            <span class="brand-title">Planner Studio</span>
-          </a>
+    <!-- NAVBAR -->
+    <!-- bg-body-tertiary: fondo suave -->
+    <!-- shadow-sm: sombra pequeña para que no quede plana -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <!-- container: centra y pone márgenes laterales -->
+      <!-- py-2: padding arriba/abajo  -->
+      <div class="container py-2">
+        <!-- d-flex: pone logo y texto en la misma línea -->
+        <!-- align-items-center: lo deja centrado verticalmente -->
+        <!-- gap-2: separa un poco el logo del texto -->
+        <!-- fw-bold: texto en negrita -->
+        <a
+          class="navbar-brand d-flex align-items-center gap-2 fw-bold"
+          href="index.html"
+        >
+          <!-- rounded-2: bordes un pelín redondeados al logo -->
+          <img
+            src="images/logo.png"
+            alt="Logo"
+            width="42"
+            height="42"
+            class="rounded-2"
+          />
+          Planner Studio
+        </a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Abrir menú"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <!-- Botón hamburguesa -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse justify-content-end" id="menu">
-            <ul class="navbar-nav align-items-lg-center gap-lg-2">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="producto.html">Producto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item ms-lg-2">
-                <a
-                  class="btn btn-sm btn-cart"
-                  href="compra.html"
-                  title="Ir a compra"
-                  >🛒</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <!-- justify-content-end: mando el menú a la derecha -->
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+          <!-- align-items-lg-center:  centra los items verticalmente -->
+          <!-- gap-lg-2: deja un hueco entre opciones -->
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="producto.html">Producto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contacto.html">Contacto</a>
+            </li>
 
-      <main class="container pb-5">
-        <!-- formulario (estructura bootstrap) -->
-        <section class="panel p-4 mx-auto" style="max-width: 820px">
-          <h1 class="section-title text-center mb-4">Formulario de Contacto</h1>
-
-          <form>
-            <!-- fila nombre/apellidos -->
-            <div class="row g-3">
-              <div class="col-12 col-md-6">
-                <label class="form-label">Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tu nombre"
-                  required
-                />
-              </div>
-
-              <div class="col-12 col-md-6">
-                <label class="form-label">Apellidos</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tus apellidos"
-                  required
-                />
-              </div>
-            </div>
-
-            <!-- email -->
-            <div class="mt-3">
-              <label class="form-label">Dirección de correo electrónico</label>
-              <input
-                type="email"
-                class="form-control"
-                placeholder="nombre@correo.com"
-                required
-              />
-            </div>
-
-            <!-- mensaje -->
-            <div class="mt-3">
-              <label class="form-label">Texto para añadir algo más</label>
-              <textarea
-                class="form-control"
-                rows="5"
-                placeholder="Escribe aquí tu mensaje..."
-                required
-              ></textarea>
-            </div>
-
-            <!-- boton -->
-            <div class="text-center mt-4">
-              <button type="submit" class="btn btn-warning btn-gold px-5">
-                Enviar
-              </button>
-            </div>
-          </form>
-        </section>
-      </main>
-
-      <!-- footer -->
-      <footer class="footer py-4 mt-5">
-        <div class="container text-center">
-          <div class="mb-2">© 2025 Planner Studio · Hecho a mano en España</div>
-
-          <div
-            class="d-flex flex-column flex-md-row justify-content-center gap-3"
-          >
-            <div>
-              <span class="section-title">Síguenos en:</span>
-              <a href="#" class="ms-2">Instagram</a>
-              <a href="#" class="ms-2">TikTok</a>
-              <a href="#" class="ms-2">Facebook</a>
-            </div>
-
-            <div>
-              <span class="section-title">Contacto:</span>
-              <a href="mailto:hola@plannerstudio.es" class="ms-2"
-                >hola@plannerstudio.es</a
+            <!-- ms-lg-2: en pantallas grandes margen a la izquierda para separarlo del resto -->
+            <li class="nav-item ms-lg-2">
+              <!-- btn-sm: botón pequeñito  -->
+              <a
+                class="btn btn-outline-dark btn-sm"
+                href="compra.html"
+                title="Ir a compra"
+                >🛒</a
               >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <!-- py-4: padding arriba/abajo para que el contenido no quede pegado -->
+    <main class="container py-4">
+      <section class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+              <h1 class="h4 fw-bold text-center mb-4">
+                Formulario de contacto
+              </h1>
+
+              <form>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Tu nombre"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Apellidos</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Tus apellidos"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <label class="form-label">Correo electrónico</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="nombre@correo.com"
+                    required
+                  />
+                </div>
+
+                <div class="mt-3">
+                  <label class="form-label">Mensaje</label>
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Escribe aquí tu mensaje..."
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-warning fw-bold px-5">
+                    Enviar
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <!-- border-top: línea arriba -->
+    <!-- bg-body-tertiary: fondo suave -->
+    <!-- mt-5:  separación arriba -->
+    <footer class="border-top bg-body-tertiary mt-5">
+      <!-- py-4: padding para que el footer no quede pegado -->
+      <!-- text-center: centrado -->
+      <div class="container py-4 text-center">
+        <!-- text-secondary: gris -->
+        <!-- mb-2: margen abajo -->
+        <div class="text-secondary mb-2">
+          © 2025 Planner Studio · Hecho a mano en España
+        </div>
+
+        <!-- flex-column: en móvil va una debajo de otra -->
+        <!-- flex-md-row: en md ya se pone en fila -->
+        <!-- justify-content-center: centrado -->
+        <!-- gap-3: separación entre bloques -->
+        <div
+          class="d-flex flex-column flex-md-row justify-content-center gap-3"
+        >
+          <div>
+            <!-- fw-semibold: seminegrita -->
+            <span class="fw-semibold">Síguenos en:</span>
+
+            <!-- ms-2: margen izquierda para separar -->
+            <!-- link-secondary: color de enlace gris -->
+            <!-- text-decoration-none: quito el subrayado -->
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >Instagram</a
+            >
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >TikTok</a
+            >
+            <a href="#" class="ms-2 link-secondary text-decoration-none"
+              >Facebook</a
+            >
+          </div>
+
+          <div>
+            <span class="fw-semibold">Contacto:</span>
+            <a
+              href="mailto:hola@plannerstudio.es"
+              class="ms-2 link-secondary text-decoration-none"
+            >
+              hola@plannerstudio.es
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
