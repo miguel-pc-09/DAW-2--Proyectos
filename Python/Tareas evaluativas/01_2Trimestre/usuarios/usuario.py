@@ -1,7 +1,7 @@
 """ Clase padre de cliente y eentradores o otros """
 
 class Usuario:
-    def __inti__(self, nombre, correo):
+    def __init__(self, nombre, correo):
         self.nombre = nombre
         self.correo = correo
         
