@@ -1,27 +1,24 @@
 from usuarios.usuario import Usuario
 
+# Cliente del centro deportivo.
+# Un cliente puede tener varias reservas 
 class Cliente(Usuario):
+
+    # Constructor del cliente
     def __init__(self, nombre, correo):
         super().__init__(nombre, correo)
 
-        # Lista donde voy a guardar las reservas del cliente
-        self.reservas = []
-    
+        # Lista donde guardo todas las reservas de este cliente
+        self._reservas = []
+
+    # Devuelve el tipo de usuario 
+    def get_tipo(self) -> str:
+        return "Cliente"
+
+    # Añade una reserva a la lista del cliente
     def anadir_reserva(self, reserva):
-         # Metodo para añadir una reserva a la lista del cliente
-        self.reservas.append(reserva)
-        
-    def mostrar_info(self):
-        # Muestro la informacion basica del usuario
-        super().mostrar_info()
-        # muestro cuantas reservas tiene el cliente
-        print(f"Reservas: {len(self.reservas)}")
-        
-    def mostrar_reservas(self):
-        # metodo para mostrar todas las reservas del cliente
-        if not self.reservas:
-            print("Este cliente no tiene reservas.")
-        else:
-            print("Reservas del cliente:")
-            for reserva in self.reservas:
-                print(reserva)
+        self._reservas.append(reserva)
+
+    # Devuelve todas las reservas del cliente
+    def get_reservas(self):
+        return self._reservas

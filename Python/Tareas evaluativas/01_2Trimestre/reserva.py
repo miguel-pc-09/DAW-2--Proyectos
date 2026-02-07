@@ -1,19 +1,21 @@
-# Une un cliente con una actividad concreta.
-# Guarda el precio final en el momento de la reserva.
-
+# Reserva:
+# Une un cliente con una actividad y guarda el precio final calculado (RF3/RF4).
+# El cliente no mete el precio, solo reserva.
 class Reserva:
+
+    # cliente: el cliente que reserva
+    # actividad: la actividad reservada
     def __init__(self, cliente, actividad):
-        self.cliente = cliente
-        self.actividad = actividad
+        self._cliente = cliente
+        self._actividad = actividad
 
-        # El precio final se calcula al crear la reserva
-        self.precio_final = actividad.calcular_precio()
+        # Precio final calculado automáticamente usando polimorfisnmo
+        self._precio_final = actividad.calcular_precio()
 
-    def __str__(self):
-        # Esto sirve para mostrar la reserva de forma clara por consola
-        return (
-            f"Actividad: {self.actividad.nombre} | "
-            f"Precio: {self.precio_final} | "
-            f"Plazas: {self.actividad.plazas_ocupadas}/"
-            f"{self.actividad.plazas_maximas}"
-        )
+    # Getter de la actividad
+    def get_actividad(self):
+        return self._actividad
+
+    # Getter del precio final
+    def get_precio_final(self) -> float:
+        return self._precio_final

@@ -1,20 +1,18 @@
-# Hereda de Actividad y añade el tipo de clase (yoga, pilates, etc).
-# El precio final aqui es el mismo que el precio base.
-
 from actividades.actividad import Actividad
 from actividades.tipo_clase import TipoClase
 
-
+# Clase colectiva:
+# - Actividad grupal
+# - Precio final = precio base 
+# - Aforo limitado
 class ClaseColectiva(Actividad):
-    def __init__(self, nombre, precio, tipo_clase):
-        # Tope de plazas en colectivas
-        super().__init__(nombre, precio, plazas_maximas=5)
-        self.tipo_clase = tipo_clase
 
-    def calcular_precio(self):
-        return self.precio
+    # tipo: tipo de clase 
+    # precio_base: precio base
+    # plazas_max: aforo
+    def __init__(self, tipo: TipoClase, precio_base: float, plazas_max: int):
+        super().__init__(tipo, precio_base, plazas_max)
 
-    def mostrar_info(self):
-        super().mostrar_info()
-        # Si es Enum, .name saca YOGA/PILATES/...
-        print(f"Tipo de clase: {self.tipo_clase.name}")
+    # Para clase colectiva, el precio final siempre es el base
+    def calcular_precio(self) -> float:
+        return self.get_precio_base()

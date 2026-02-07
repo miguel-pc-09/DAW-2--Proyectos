@@ -1,9 +1,6 @@
-# Enum con los tipos de clases colectivas.
-# Se usa para que el usuario elija por numero y no escriba texto a mano.
-
 from enum import Enum
 
-
+# Tipos de clases/actividades que existen en el centro.
 class TipoClase(Enum):
     YOGA = 1
     PILATES = 2

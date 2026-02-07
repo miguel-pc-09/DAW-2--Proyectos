@@ -1,20 +1,24 @@
-# Hereda de Actividad, pero es para una persona o grupos muy reducidos.
-# Por eso le ponemos menos plazas (por ejemplo 3) y un recargo al precio.
-
 from actividades.actividad import Actividad
+from actividades.tipo_clase import TipoClase
 
+# Entrenamiento personal:
+# - Actividad individual o grupo muy reducido
+# - Tiene recargo adicional
+# - El precio final se calcula con un porcentaje extra 
 class EntrenamientoPersonal(Actividad):
-    def __init__(self, nombre, precio, recargo_porcentaje):
-        # En personal ponemos un maximo mas bajo, por ejemplo 3
-        super().__init__(nombre, precio, plazas_maximas=3)
-        self.recargo_porcentaje = recargo_porcentaje
 
-    def calcular_precio(self):
-        # Precio final = precio base + recargo %
-        return self.precio + (self.precio * self.recargo_porcentaje / 100)
+    # tipo: tipo de clase 
+    # precio_base: precio base
+    # plazas_max: plazas muy limitadas
+    # porcentaje_extra: porcentaje que se suma al precio base 
+    def __init__(self, tipo: TipoClase, precio_base: float, plazas_max: int, porcentaje_extra: float):
+        super().__init__(tipo, precio_base, plazas_max)
+        self._porcentaje_extra = float(porcentaje_extra)
 
-    def mostrar_info(self):
-        # Muestro lo basico y luego el recargo y el precio final
-        super().mostrar_info()
-        print(f"Recargo: {self.recargo_porcentaje}%")
-        print(f"Precio final: {self.calcular_precio()}")
+    # Getter del porcentaje 
+    def get_porcentaje_extra(self) -> float:
+        return self._porcentaje_extra
+
+    # Calcula el precio final aplicando el porcentaje extra
+    def calcular_precio(self) -> float:
+        return self.get_precio_base() * (1 + (self._porcentaje_extra / 100))

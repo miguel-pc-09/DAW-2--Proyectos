@@ -1,146 +1,182 @@
-# Aqui arranca el programa y saco el menu.
-# La logica fuerte esta en sistema.py, aqui solo controlo opciones y pido datos.
-
-from sistema import SistemaReservas
-from actividades.clase_colectiva import ClaseColectiva
+from sistema import SistemaReserva
 from actividades.entrenamiento_personal import EntrenamientoPersonal
-from actividades.tipo_clase import TipoClase
+from actividades.clase_colectiva import ClaseColectiva
+from actividades.actividad import SinPlazasException
 
+from utils import (
+    pedir_texto,
+    pedir_int,
+    pedir_float,
+    pedir_especialidad_entrenador,
+    pedir_tipo_clase,
+    pedir_tipo_actividad,
+)
 
+# Imprime el menú principal
 def mostrar_menu():
-    print("\n--- FITLIFE RESERVAS ---")
-    print("1. Crear cliente")
-    print("2. Crear entrenador")
-    print("3. Crear clase colectiva")
-    print("4. Crear entrenamiento personal")
-    print("5. Hacer reserva (cliente -> actividad)")
-    print("6. Ver reservas de un cliente")
-    print("7. Ver actividades")
-    print("0. Salir")
+    print("\n============================")
+    print("   GIMNASIO - MENÚ PRINCIPAL")
+    print("============================")
+    print("1) Crear cliente")
+    print("2) Crear entrenador")
+    print("3) Listar usuarios")
+    print("4) Listar actividades")
+    print("5) Crear actividad")
+    print("6) Reservar actividad")
+    print("7) Ver reservas de un cliente")
+    print("0) Salir")
 
 
-def elegir_tipo_clase():
-    print("\nTipos de clase colectiva:")
-    print("1. Yoga")
-    print("2. Pilates")
-    print("3. Zumba")
-    print("4. Spinning")
+# Lista clientes y entrenadores creados
+def listar_usuarios(sistema: SistemaReserva):
+    print("\n--- CLIENTES ---")
+    clientes = sistema.get_clientes()
+    if len(clientes) == 0:
+        print("No hay clientes.")
+    else:
+        for c in clientes:
+            print(f"- {c.get_nombre()} ({c.get_email()})")
 
-    opcion = int(input("Elige una opcion (1-4): "))
-    return TipoClase(opcion)
+    print("\n--- ENTRENADORES ---")
+    entrenadores = sistema.get_entrenadores()
+    if len(entrenadores) == 0:
+        print("No hay entrenadores.")
+    else:
+        for e in entrenadores:
+            print(f"- {e.get_nombre()} ({e.get_email()}) | Especialidad: {e.get_especialidad()}")
 
 
-def elegir_cliente(sistema):
-    if not sistema.clientes:
+# Lista todas las actividades del sistema con ocupación y tipo
+def listar_actividades(sistema: SistemaReserva):
+    acts = sistema.get_actividades()
+
+    print("\n--- ACTIVIDADES DISPONIBLES ---")
+    for i, a in enumerate(acts, start=1):
+        # Para mostrar si es colectiva o personal miro el tipo de objeto
+        if isinstance(a, EntrenamientoPersonal):
+            tipo_txt = f"Personal (+{a.get_porcentaje_extra():.0f}%)"
+        else:
+            tipo_txt = "Colectiva"
+
+        print(
+            f"{i}) {a.get_nombre()} | {tipo_txt} | Base: {a.get_precio_base():.2f}€ | Ocupación: {a.estado_ocupacion()}"
+        )
+
+
+# Pide elegir un cliente por número
+def elegir_cliente(sistema: SistemaReserva):
+    clientes = sistema.get_clientes()
+    if len(clientes) == 0:
         print("No hay clientes creados.")
         return None
 
-    print("\nClientes:")
-    for i, c in enumerate(sistema.clientes, start=1):
-        print(f"{i}. {c.nombre} - {c.correo}")
+    print("\n--- ELIGE CLIENTE ---")
+    for i, c in enumerate(clientes, start=1):
+        print(f"{i}) {c.get_nombre()} ({c.get_email()})")
 
-    idx = int(input("Elige cliente: ")) - 1
-    if idx < 0 or idx >= len(sistema.clientes):
-        print("Opcion no valida.")
-        return None
-
-    return sistema.clientes[idx]
+    idx = pedir_int("Cliente: ", 1, len(clientes))
+    return clientes[idx - 1]
 
 
-def elegir_actividad(sistema):
-    if not sistema.actividades:
-        print("No hay actividades creadas.")
-        return None
+# Muestra todas las reservas de un cliente (RF5)
+def ver_reservas_cliente(cliente):
+    reservas = cliente.get_reservas()
 
-    print("\nActividades:")
-    for i, a in enumerate(sistema.actividades, start=1):
-        print(f"{i}. {a.nombre} | Plazas: {a.plazas_ocupadas}/{a.plazas_maximas}")
+    print(f"\n--- RESERVAS DE {cliente.get_nombre()} ---")
+    if len(reservas) == 0:
+        print("Este cliente no tiene reservas.")
+        return
 
-    idx = int(input("Elige actividad: ")) - 1
-    if idx < 0 or idx >= len(sistema.actividades):
-        print("Opcion no valida.")
-        return None
+    for r in reservas:
+        act = r.get_actividad()
 
-    return sistema.actividades[idx]
+        # Tipo de actividad para mostrar
+        if isinstance(act, EntrenamientoPersonal):
+            tipo_txt = f"Personal (+{act.get_porcentaje_extra():.0f}%)"
+        else:
+            tipo_txt = "Colectiva"
+
+        print(
+            f"- {act.get_nombre()} | {tipo_txt} | Precio final: {r.get_precio_final():.2f}€ | Ocupación: {act.estado_ocupacion()}"
+        )
 
 
+# Programa principal
 def main():
-    sistema = SistemaReservas()
+    sistema = SistemaReserva()
 
     while True:
         mostrar_menu()
+        opcion = pedir_int("Elige una opción: ", 0, 7)
 
-        try:
-            opcion = int(input("Elige una opcion: "))
-        except ValueError:
-            print("Tienes que meter un numero.")
-            continue
-
+        # Salir
         if opcion == 0:
-            print("Cerrando programa...")
+            print("Saliendo...")
             break
 
-        elif opcion == 1:
-            nombre = input("Nombre del cliente: ")
-            correo = input("Correo del cliente: ")
+        # Crear cliente
+        if opcion == 1:
+            nombre = pedir_texto("Nombre del cliente: ")
+            correo = pedir_texto("Correo del cliente: ")
             sistema.crear_cliente(nombre, correo)
             print("Cliente creado.")
 
+        # Crear entrenador
         elif opcion == 2:
-            nombre = input("Nombre del entrenador: ")
-            correo = input("Correo del entrenador: ")
-            especialidad = input("Especialidad del entrenador: ")
+            nombre = pedir_texto("Nombre del entrenador: ")
+            correo = pedir_texto("Correo del entrenador: ")
+            especialidad = pedir_especialidad_entrenador()
             sistema.crear_entrenador(nombre, correo, especialidad)
             print("Entrenador creado.")
 
+        # Listar usuarios
         elif opcion == 3:
-            nombre = input("Nombre de la actividad: ")
-            precio = float(input("Precio base: "))
-            tipo = elegir_tipo_clase()
+            listar_usuarios(sistema)
 
-            actividad = ClaseColectiva(nombre, precio, tipo)
-            sistema.anadir_actividad(actividad)
-            print("Clase colectiva creada.")
-
+        # Listar actividades
         elif opcion == 4:
-            nombre = input("Nombre del entrenamiento: ")
-            precio = float(input("Precio base: "))
-            recargo = float(input("Recargo en porcentaje (ej: 20): "))
+            listar_actividades(sistema)
 
-            actividad = EntrenamientoPersonal(nombre, precio, recargo)
-            sistema.añadir_actividad(actividad)
-            print("Entrenamiento personal creado.")
-
+        # Crear actividad (colectiva o personal)
         elif opcion == 5:
-            cliente = elegir_cliente(sistema)
-            if cliente is None:
-                continue
+            tipo_act = pedir_tipo_actividad()
+            tipo_clase = pedir_tipo_clase()
+            precio_base = pedir_float("Precio base: ", 0.01)
+            plazas_max = pedir_int("Plazas máximas: ", 1, 9999)
 
-            actividad = elegir_actividad(sistema)
-            if actividad is None:
-                continue
+            # Si es colectiva
+            if tipo_act == 1:
+                sistema.crear_actividad_colectiva(tipo_clase, precio_base, plazas_max)
+                print("Actividad colectiva creada.")
+            else:
+                # Si es personal, pido porcentaje extra
+                porcentaje = pedir_float("Porcentaje extra (ej: 20): ", 0.0)
+                sistema.crear_actividad_personal(tipo_clase, precio_base, plazas_max, porcentaje)
+                print("Entrenamiento personal creado.")
 
-            reserva = sistema.crear_reserva(cliente, actividad)
-            if reserva is not None:
-                print("Reserva creada:")
-                print(reserva)
-
+        # Reservar actividad
         elif opcion == 6:
             cliente = elegir_cliente(sistema)
             if cliente is None:
                 continue
 
-            cliente.mostrar_reservas()
+            listar_actividades(sistema)
+            acts = sistema.get_actividades()
+            idx_act = pedir_int("Elige actividad: ", 1, len(acts)) - 1
 
+            try:
+                reserva = sistema.reservar(cliente, idx_act)
+                print(f"Reserva hecha. Precio final: {reserva.get_precio_final():.2f}€")
+            except SinPlazasException as e:
+                # RF6: si no hay plazas, muestro el error y no revienta el programa
+                print(f"Error: {e}")
+
+        # Ver reservas de un cliente
         elif opcion == 7:
-            if not sistema.actividades:
-                print("No hay actividades creadas.")
-            else:
-                for a in sistema.actividades:
-                    a.mostrar_info()
-
-        else:
-            print("Opcion no valida.")
+            cliente = elegir_cliente(sistema)
+            if cliente is None:
+                continue
+            ver_reservas_cliente(cliente)
 
 
 if __name__ == "__main__":
