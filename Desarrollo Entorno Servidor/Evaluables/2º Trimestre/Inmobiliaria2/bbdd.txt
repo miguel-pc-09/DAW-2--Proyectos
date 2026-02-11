@@ -1,14 +1,20 @@
-CREATE TABLE usuario (
+-- Base de datos de la práctica
+CREATE DATABASE IF NOT EXISTS inmobiliaria;
+USE inmobiliaria;
+
+-- Tabla usuarios
+CREATE TABLE IF NOT EXISTS usuario (
   usuario_id INT(5) NOT NULL AUTO_INCREMENT,
   nombres VARCHAR(35) NOT NULL,
   correo VARCHAR(100) NOT NULL,
   clave VARCHAR(80) NOT NULL,
-  tipo_usuario VARCHAR(20),
+  tipo_usuario VARCHAR(20) NOT NULL,
   PRIMARY KEY (usuario_id)
 );
 
-CREATE TABLE pisos (
-  Codigo_piso INT PRIMARY KEY,
+-- Tabla pisos
+CREATE TABLE IF NOT EXISTS pisos (
+  Codigo_piso INT NOT NULL,
   calle VARCHAR(40) NOT NULL,
   numero INT NOT NULL,
   piso INT NOT NULL,
@@ -19,10 +25,12 @@ CREATE TABLE pisos (
   precio FLOAT NOT NULL,
   imagen VARCHAR(100) NOT NULL,
   usuario_id INT(5),
+  PRIMARY KEY (Codigo_piso),
   FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
 );
 
-CREATE TABLE comprados (
+-- Tabla comprados (mínimo)
+CREATE TABLE IF NOT EXISTS comprados (
   usuario_comprador INT(5),
   Codigo_piso INT,
   Precio_final FLOAT NOT NULL,

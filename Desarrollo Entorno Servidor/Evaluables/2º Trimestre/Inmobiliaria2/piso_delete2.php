@@ -1,22 +1,37 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "rootroot", "inmobiliaria");
+require("conexion.php");
 
-if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
+// Código a borrar
+$Codigo_piso = isset($_REQUEST["Codigo_piso"]) ? trim(strip_tags($_REQUEST["Codigo_piso"])) : "";
+$Codigo_piso = mysqli_real_escape_string($conexion, $Codigo_piso);
 
-$Codigo_piso = mysqli_real_escape_string($conn, $_POST["Codigo_piso"]);
+// Delete
+$sql = "DELETE FROM pisos WHERE Codigo_piso = $Codigo_piso";
+?>
+<!DOCTYPE html>
+<html lang="es">
 
-$sql = "DELETE FROM pisos WHERE Codigo_piso=$Codigo_piso";
+<head>
+    <meta charset="UTF-8">
+    <title>Borrar piso</title>
+</head>
 
-if (mysqli_query($conn, $sql)) {
-    echo "Piso borrado correctamente.";
+<body>
+
+    <h1>Borrar piso</h1>
+
+    <?php
+if (mysqli_query($conexion, $sql)) {
+  echo "<p>Piso borrado correctamente.</p>";
 } else {
-    echo "Error: " . mysqli_error($conn);
+  echo "<p>Error al borrar: " . mysqli_error($conexion) . "</p>";
 }
 
-mysqli_close($conn);
+mysqli_close($conexion);
 ?>
 
-<br>
-<a href="indice.php">Volver al menú</a>
+    <a href="indice.php">Volver al menú</a>
+
+</body>
+
+</html>

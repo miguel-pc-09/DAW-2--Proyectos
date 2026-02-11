@@ -1,43 +1,55 @@
-<!-- Resultado -->
+<?php
+require("conexion.php");
+
+// Recogemos el texto
+$texto = isset($_REQUEST["texto"]) ? trim(strip_tags($_REQUEST["texto"])) : "";
+$texto = mysqli_real_escape_string($conexion, $texto);
+
+// Consulta
+$sql = "SELECT usuario_id, nombres, correo, tipo_usuario
+        FROM usuario
+        WHERE nombres LIKE '%$texto%' OR correo LIKE '%$texto%'
+        ORDER BY usuario_id DESC";
+
+$result = mysqli_query($conexion, $sql);
+?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>Resultado búsqueda</title>
+    <meta charset="UTF-8">
+    <title>Resultado búsqueda usuarios</title>
 </head>
 
 <body>
-    <h1>Resultados</h1>
+
+    <h1>Resultados de búsqueda</h1>
 
     <?php
-  $conn = mysqli_connect('localhost', 'root', 'rootroot', 'inmobiliaria');
+if ($result && mysqli_num_rows($result) > 0) {
+  echo "<table border='1' cellpadding='6'>";
+  echo "<tr><th>ID</th><th>Nombre</th><th>Correo</th><th>Tipo</th></tr>";
 
-  if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $row["usuario_id"] . "</td>";
+    echo "<td>" . $row["nombres"] . "</td>";
+    echo "<td>" . $row["correo"] . "</td>";
+    echo "<td>" . $row["tipo_usuario"] . "</td>";
+    echo "</tr>";
   }
 
-  $texto = mysqli_real_escape_string($conn, $_POST['texto']);
+  echo "</table>";
+} else {
+  echo "<p>No se encontraron usuarios.</p>";
+}
 
-  $sql = "SELECT usuario_id, nombres, correo, tipo_usuario
-          FROM usuario
-          WHERE nombres LIKE '%$texto%' OR correo LIKE '%$texto%'";
+mysqli_close($conexion);
+?>
 
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-    echo "<ul>";
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo "<li>ID: ".$row['usuario_id']." | ".$row['nombres']." | ".$row['correo']." | ".$row['tipo_usuario']."</li>";
-    }
-    echo "</ul>";
-  } else {
-    echo "No se encontraron usuarios.";
-  }
-
-  mysqli_close($conn);
-  ?>
-
+    <br>
     <a href="indice.php">Volver al menú</a>
+
 </body>
 
 </html>

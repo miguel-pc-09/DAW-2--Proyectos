@@ -1,22 +1,24 @@
-<?php
-$conn = mysqli_connect("localhost", "root", "rootroot", "inmobiliaria");
+<!DOCTYPE html>
+<html lang="es">
 
-if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar piso</title>
+</head>
 
-$Codigo_piso = mysqli_real_escape_string($conn, $_POST["Codigo_piso"]);
+<body>
 
-$sql = "DELETE FROM pisos WHERE Codigo_piso=$Codigo_piso";
+    <h1>Buscar piso</h1>
 
-if (mysqli_query($conn, $sql)) {
-    echo "Piso borrado correctamente.";
-} else {
-    echo "Error: " . mysqli_error($conn);
-}
+    <form method="post" action="piso_search2.php">
+        <label>Buscar (calle, zona o CP):</label><br>
+        <input type="text" name="texto" required>
+        <input type="submit" value="Buscar">
+    </form>
 
-mysqli_close($conn);
-?>
+    <br>
+    <a href="indice.php">Volver al menú</a>
 
-<br>
-<a href="indice.php">Volver al menú</a>
+</body>
+
+</html>

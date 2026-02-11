@@ -13,7 +13,6 @@
     <form method="post" action="piso_delete2.php">
         <label>Código del piso:</label><br>
         <input type="number" name="Codigo_piso" required><br><br>
-
         <input type="submit" value="Borrar piso">
     </form>
 

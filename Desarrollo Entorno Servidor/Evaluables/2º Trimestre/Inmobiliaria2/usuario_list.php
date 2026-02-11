@@ -1,38 +1,46 @@
-<!-- Listar -->
+<?php
+require("conexion.php");
+
+$sql = "SELECT usuario_id, nombres, correo, tipo_usuario FROM usuario ORDER BY usuario_id DESC";
+$result = mysqli_query($conexion, $sql);
+?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
     <title>Listar usuarios</title>
 </head>
 
 <body>
+
     <h1>Lista de usuarios</h1>
 
     <?php
-  $conn = mysqli_connect('localhost', 'root', 'rootroot', 'inmobiliaria');
+if ($result && mysqli_num_rows($result) > 0) {
+  echo "<table border='1' cellpadding='6'>";
+  echo "<tr><th>ID</th><th>Nombre</th><th>Correo</th><th>Tipo</th></tr>";
 
-  if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $row["usuario_id"] . "</td>";
+    echo "<td>" . $row["nombres"] . "</td>";
+    echo "<td>" . $row["correo"] . "</td>";
+    echo "<td>" . $row["tipo_usuario"] . "</td>";
+    echo "</tr>";
   }
 
-  $sql = "SELECT usuario_id, nombres, correo, tipo_usuario FROM usuario";
-  $result = mysqli_query($conn, $sql);
+  echo "</table>";
+} else {
+  echo "<p>No hay usuarios.</p>";
+}
 
-  if (mysqli_num_rows($result) > 0) {
-    echo "<ul>";
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo "<li>ID: ".$row['usuario_id']." | ".$row['nombres']." | ".$row['correo']." | ".$row['tipo_usuario']."</li>";
-    }
-    echo "</ul>";
-  } else {
-    echo "No hay usuarios.";
-  }
+mysqli_close($conexion);
+?>
 
-  mysqli_close($conn);
-  ?>
-
+    <br>
     <a href="indice.php">Volver al menú</a>
+
 </body>
 
 </html>

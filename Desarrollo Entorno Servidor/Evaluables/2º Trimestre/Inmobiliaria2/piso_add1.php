@@ -39,10 +39,10 @@
         <label>Precio:</label><br>
         <input type="number" step="0.01" name="precio" required><br><br>
 
-        <label>Imagen:</label><br>
+        <label>Imagen (nombre o ruta):</label><br>
         <input type="text" name="imagen" required><br><br>
 
-        <label>ID usuario:</label><br>
+        <label>ID usuario (vendedor):</label><br>
         <input type="number" name="usuario_id" required><br><br>
 
         <input type="submit" value="Crear piso">

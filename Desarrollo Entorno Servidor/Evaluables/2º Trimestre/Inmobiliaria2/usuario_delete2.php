@@ -1,22 +1,37 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', 'rootroot', 'inmobiliaria');
+require("conexion.php");
 
-if (!$conn) {
-  die("Conexión fallida: " . mysqli_connect_error());
-}
+// Recogemos el id
+$usuario_id = isset($_REQUEST["usuario_id"]) ? trim(strip_tags($_REQUEST["usuario_id"])) : "";
+$usuario_id = mysqli_real_escape_string($conexion, $usuario_id);
 
-$usuario_id = mysqli_real_escape_string($conn, $_POST['usuario_id']);
+// Borrado
+$sql = "DELETE FROM usuario WHERE usuario_id = $usuario_id";
+?>
+<!DOCTYPE html>
+<html lang="es">
 
-$sql = "DELETE FROM usuario WHERE usuario_id=$usuario_id";
+<head>
+    <meta charset="UTF-8">
+    <title>Borrar usuario</title>
+</head>
 
-if (mysqli_query($conn, $sql)) {
-  echo "Usuario borrado correctamente.";
+<body>
+
+    <h1>Borrar usuario</h1>
+
+    <?php
+if (mysqli_query($conexion, $sql)) {
+  echo "<p>Usuario borrado correctamente.</p>";
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo "<p>Error al borrar: " . mysqli_error($conexion) . "</p>";
 }
 
-mysqli_close($conn);
+mysqli_close($conexion);
 ?>
 
-<br>
-<a href="indice.php">Volver al menú</a>
+    <a href="indice.php">Volver al menú</a>
+
+</body>
+
+</html>
