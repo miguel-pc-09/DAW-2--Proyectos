@@ -47,7 +47,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     echo "<td>" . $fila["metros"] . "</td>";
     echo "<td>" . $fila["zona"] . "</td>";
     echo "<td>" . $fila["precio"] . "</td>";
-    echo "<td>" . $fila["imagen"] . "</td>";
+    echo "<td><img src='" . $fila["imagen"] . "' width='140'></td>";
     echo "<td>" . $fila["usuario_id"] . "</td>";
     echo "</tr>";
   }

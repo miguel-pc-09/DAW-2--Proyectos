@@ -39,8 +39,23 @@
         <label>Precio:</label><br>
         <input type="number" step="0.01" name="precio" required><br><br>
 
-        <label>Imagen (nombre o ruta):</label><br>
-        <input type="text" name="imagen" required><br><br>
+        <label>Imagen:</label><br>
+
+        <select name="imagen" required>
+            <option value="">-- Selecciona una imagen --</option>
+            <option value="img/1.jpg">1.jpg</option>
+            <option value="img/2.avif">2.avif</option>
+            <option value="img/3.webp">3.webp</option>
+            <option value="img/4.webp">4.webp</option>
+            <option value="img/5.jpg">5.jpg</option>
+            <option value="img/6.jpg">6.jpg</option>
+            <option value="img/7.jpg">7.jpg</option>
+            <option value="img/8.jpeg">8.jpeg</option>
+            <option value="img/9.avif">9.avif</option>
+            <option value="img/10.avif">10.avif</option>
+        </select>
+
+        <br><br>
 
         <label>ID usuario (vendedor):</label><br>
         <input type="number" name="usuario_id" required><br><br>
