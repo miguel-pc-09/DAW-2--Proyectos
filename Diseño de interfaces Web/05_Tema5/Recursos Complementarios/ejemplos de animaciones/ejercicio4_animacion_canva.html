@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Animación con Canvas</h1>
+    <canvas id="miCanvas" width="300" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById('miCanvas');
+        const ctx = canvas.getContext('2d');
+        let x = 0;
+        let velocidad = 2;
+
+        function animar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.beginPath();
+            ctx.arc(x, 100, 20, 0, Math.PI * 2);
+            ctx.fillStyle = '#999999';
+            ctx.fill();
+
+            x += velocidad;
+
+            if (x > canvas.width + 20 || x < -20) {
+                velocidad = -velocidad;
+            }
+
+            requestAnimationFrame(animar);
+        }
+
+        animar();
+    </script>
+</body>
+</html>
+

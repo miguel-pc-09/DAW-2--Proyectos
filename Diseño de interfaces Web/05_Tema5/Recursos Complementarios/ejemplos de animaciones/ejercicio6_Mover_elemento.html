@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Mover elemento</title>
+    <style>
+        .pelota {
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            border-radius: 50%; /* Hace que sea circular */
+            margin: 100px;
+            transition: transform 0.5s ease; /* Suavizar el movimiento */
+        }
+        
+        /* Al hacer hover, la pelota se mueve a la derecha */
+        .pelota:hover {
+            transform: translateX(200px); /* Mueve 200px a la derecha */
+            /* También podríamos usar: translate(200px, 50px) para mover en X e Y */
+        }
+    </style>
+</head>
+<body>
+    <div class="pelota"></div>
+    <p>Pasa el mouse sobre la pelota para que ruede</p>
+</body>
+</html>

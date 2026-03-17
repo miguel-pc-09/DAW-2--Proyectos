@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Animación que rebota</title>
+    <style>
+        .cuadrado-que-rebota {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 50px;
+            
+            /* Aplicar la animación */
+            animation-name: rebotar; /* Nombre de la animación */
+            animation-duration: 1s; /* Duración de un ciclo */
+            animation-iteration-count: infinite; /* Repetir infinitamente */
+            /* También: animation: rebotar 1s infinite; forma abreviada */
+        }
+        
+        /* Definimos la animación "rebotar" */
+        @keyframes rebotar {
+            0% { transform: translateY(0); } /* Posición inicial */
+            50% { transform: translateY(100px); } /* Mitad: baja 100px */
+            100% { transform: translateY(0); } /* Final: vuelve arriba */
+        }
+    </style>
+</head>
+<body>
+    <div class="cuadrado-que-rebota"></div>
+    <p>El cuadrado rebota automáticamente</p>
+</body>
+</html>
