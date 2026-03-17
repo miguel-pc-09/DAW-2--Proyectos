@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Cambio de color</title>
+    <style>
+        /* Estilo del cuadro */
+        .mi-cuadro {
+            width: 150px;
+            height: 150px;
+            background-color: blue; /* Color inicial */
+            margin: 50px auto; /* Centrar el cuadro */
+            transition: background-color 1s ease; /* Suavizar el cambio durante 1 segundo */
+        }
+        
+        /* Cuando el mouse pasa por encima del cuadro */
+        .mi-cuadro:hover {
+            background-color: red; /* Cambia a rojo */
+        }
+    </style>
+</head>
+<body>
+    <div class="mi-cuadro"></div>
+    <p style="text-align: center;">Pasa el mouse sobre el cuadro azul</p>
+</body>
+</html>
