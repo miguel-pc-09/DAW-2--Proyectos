@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selector universal</title>
+
+    <style>
+      /* Selector universal: se aplica a todos los elementos del documento */
+      * {
+        color: red; /* todos los textos se pondrán rojos por defecto */
+      }
+
+      /* Selector de tipo: se aplica a todos los <h3> */
+      h3 {
+        color: blue; /* sobrescribe el color rojo del selector universal */
+      }
+    </style>
+  </head>
+  <body>
+    <p>Esto es un párrafo &lt;p&gt;.</p>
+    <!-- Resultado: texto rojo (hereda * y no hay otro estilo que lo sobrescriba) -->
+
+    <h3>Esto es un encabezado &lt;h3&gt;.</h3>
+    <!-- Resultado: texto azul (el selector h3 sobrescribe el color rojo del selector universal) -->
+  </body>
+</html>

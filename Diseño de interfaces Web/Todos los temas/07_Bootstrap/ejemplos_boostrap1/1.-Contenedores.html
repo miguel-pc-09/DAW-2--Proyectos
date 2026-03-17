@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Título del documento -->
+    <title>Ejemplos Bootstrap</title>
+
+    <!-- Configuración básica -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie-edge" />
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3.2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      /* Borde para visualizar límites de columnas */
+      .conborde {
+        border: 1px solid black;
+      }
+
+      /* Colores para diferenciar filas */
+      .uno {
+        background-color: mediumturquoise;
+      }
+      .dos {
+        background-color: greenyellow;
+      }
+      .tres {
+        background-color: hotpink;
+      }
+      .cuatro {
+        background-color: red;
+      }
+      .cinco {
+        background-color: coral;
+      }
+      .seis {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Ejemplo distribución de columnas (máximo 12 columnas virtuales):</h3>
+
+    <!-- container:
+             Contenedor centrado con ancho máximo según breakpoint
+        -->
+    <div class="container">
+      <!--
+                row:
+                Cada fila se divide en 12 columnas virtuales.
+                La suma de las col-* debe ser 12 para ocupar todo el ancho.
+            -->
+      <div class="row uno">
+        <!-- 12 columnas de 1 unidad cada una (1x12 = 12) -->
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+        <div class="col-1 conborde">1</div>
+      </div>
+
+      <!-- 2 + 4 + 6 = 12 -->
+      <div class="row dos">
+        <div class="col-2 conborde">2</div>
+        <div class="col-4 conborde">4</div>
+        <div class="col-6 conborde">6</div>
+      </div>
+
+      <!-- 4 + 4 + 4 = 12 -->
+      <div class="row tres">
+        <div class="col-4 conborde">4</div>
+        <div class="col-4 conborde">4</div>
+        <div class="col-4 conborde">4</div>
+      </div>
+
+      <!-- 5 + 7 = 12 -->
+      <div class="row cuatro">
+        <div class="col-5 conborde">5</div>
+        <div class="col-7 conborde">7</div>
+      </div>
+
+      <!-- 6 + 6 = 12 -->
+      <div class="row cinco">
+        <div class="col-6 conborde">6</div>
+        <div class="col-6 conborde">6</div>
+      </div>
+
+      <!-- 12 = ancho completo -->
+      <div class="row seis">
+        <div class="col-12 conborde">12</div>
+      </div>
+    </div>
+
+    <br />
+
+    <h3>Otro ejemplo (uso de breakpoints):</h3>
+
+    <!--
+            col-xl-*:
+            Solo aplica cuando el viewport ≥1200px.
+            Antes de ese tamaño, las columnas se comportan como col-12
+            (ocupan todo el ancho, mobile-first).
+        -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 conborde uno">Uno</div>
+        <div class="col-xl-2 conborde dos">Dos</div>
+        <div class="col-xl-2 conborde tres">Tres</div>
+      </div>
+    </div>
+
+    <br />
+
+    <h3>El mismo ejemplo usando container-fluid</h3>
+
+    <!--
+            container-fluid:
+            Ocupa el 100% del ancho del viewport en todos los tamaños.
+            No tiene ancho máximo como container.
+        -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-8 conborde uno">Uno</div>
+        <div class="col-xl-2 conborde dos">Dos</div>
+        <div class="col-xl-2 conborde tres">Tres</div>
+      </div>
+    </div>
+  </body>
+</html>

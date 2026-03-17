@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad compuesta flex-flow permite definir simultáneamente:
+    1. flex-direction: dirección principal de los elementos flexibles
+    2. flex-wrap: si los elementos se colocan en una sola línea o se envuelven en varias
+
+    Ejemplo usado:
+      flex-flow: wrap row-reverse;
+      - wrap: los elementos que no caben en la fila se envuelven a la siguiente línea
+      - row-reverse: los elementos se alinean horizontalmente de derecha a izquierda
+    Nota: el orden de los valores no importa; flex-flow reconoce automáticamente cuál es dirección y cuál es envoltura
+  -->
+
+    <style>
+      /* Contenedor flexible en línea con dirección invertida horizontal y wrap */
+      div {
+        display: inline-flex; /* Convierte el div en contenedor flexible en línea */
+        flex-flow: wrap row-reverse; /* Dirección horizontal invertida y permite que los elementos se envuelvan en varias filas */
+        margin-bottom: 5px; /* Separación vertical entre contenedores */
+        background-color: #eee; /* Fondo gris claro para ver el contenedor */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        width: 100px; /* Ancho fijo de 100px */
+        border: black 1px solid; /* Borde negro para diferenciar cada párrafo */
+        margin: 2px; /* Separación entre párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

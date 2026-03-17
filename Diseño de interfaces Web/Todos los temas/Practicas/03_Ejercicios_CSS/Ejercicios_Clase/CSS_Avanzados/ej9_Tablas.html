@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>caption-side (2). Tablas. CSS.</title>
+
+    <style>
+      table {
+        border: blue 1px solid;
+        border-collapse: separate; /* probar collapse */
+      }
+      td {
+        border: red 1px solid;
+        padding: 20px;
+      }
+      caption {
+        caption-side: bottom; /* probar top */
+      }
+      /* POSICIÓN DE LA LEYENDA (caption-side):
+         Define dónde se coloca el texto de la leyenda (<caption>) respecto a la tabla.
+         
+         Valor Actual: 'bottom' (Abajo). La leyenda se muestra debajo de la tabla.
+         (La nota 'probar top' sugiere cambiarlo para ver la leyenda encima de la tabla).
+        */
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <caption>
+        Esto es la leyenda
+      </caption>
+
+      <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+      </tr>
+      <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- inline-flex: el contenedor se comporta como un elemento en línea 
+       (ocupa sólo el espacio horizontal necesario y puede colocarse junto a otros elementos en la misma línea) -->
+
+    <style>
+      /* El contenedor div se convierte en un contenedor flexible en línea */
+      div {
+        display: inline-flex; /* Flexbox en línea: los elementos hijos se distribuyen horizontalmente */
+        margin-bottom: 5px; /* Separación vertical entre los divs */
+        background-color: #eee; /* Color gris claro de fondo para ver el contenedor */
+      }
+
+      /* Cada párrafo dentro del div */
+      p {
+        width: 100px; /* Ancho fijo de 100px */
+        border: black 1px solid; /* Borde negro de 1px alrededor de cada párrafo */
+        margin: 10px; /* Separación entre los párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible en línea -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible en línea -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

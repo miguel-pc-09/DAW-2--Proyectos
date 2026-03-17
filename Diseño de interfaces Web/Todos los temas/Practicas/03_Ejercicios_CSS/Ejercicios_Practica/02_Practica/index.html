@@ -1,0 +1,127 @@
+<!doctype html>
+<!-- Define el tipo de documento como HTML5 -->
+<html lang="en">
+  <head>
+    <!-- Codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8" />
+
+    <!-- Hace que la web sea responsive en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compatibilidad con versiones antiguas de Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Ejercicio Práctico FLEX</title>
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <!-- Importación de la fuente Lobster desde Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Contenedor principal de toda la página -->
+    <div class="container">
+      <!-- Cabecera de la página -->
+      <header>
+        <!-- Título principal -->
+        <h1>Ejemplo de Maquetación con Grid</h1>
+
+        <!-- Subtítulo -->
+        <h4>Práctica Flex UEM</h4>
+      </header>
+
+      <!-- Contenedor central que agrupa menú, contenido y artículo 
+       1. Clases de contenedor / layout
+
+      Se usan para organizar secciones grandes de la página, controlar anchura, márgenes y alineación.
+
+      .container         → contenedor principal de toda la página.
+      .content-wrapper / .wrapper → contenedor interno para agrupar varias secciones.
+      .row / .column     → filas y columnas en Grid o Flexbox.
+      .header, .footer, .main, .sidebar → bloques semánticos.-->
+
+      <div class="content_wrapper">
+        <!-- Menú de navegación lateral -->
+        <nav>
+          <div>Inicio</div>
+          <div>Galería</div>
+          <div>Productos</div>
+          <div>Clientes</div>
+          <div>Sobre nosotros</div>
+          <div>Contacto</div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main>
+          <!-- Imagen principal -->
+          <img src="img/img1.jpg" />
+
+          <!-- Texto descriptivo -->
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure harum
+            dolore expedita recusandae omnis obcaecati praesentium numquam,
+            labore ad libero placeat saepe nemo possimus. Eligendi, magni culpa?
+            Voluptate, eligendi eum.
+          </p>
+        </main>
+
+        <!-- Artículo lateral -->
+        <article>
+          <!-- Imagen del artículo -->
+          <img src="img/img2.jpg" />
+
+          <!-- Título del artículo -->
+          <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        </article>
+      </div>
+
+      <!-- Sección de artículos inferiores -->
+      <div class="articles">
+        <!-- Primer artículo -->
+        <article>
+          <img src="img/img3.jpg" />
+          <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        </article>
+
+        <!-- Segundo artículo -->
+        <article>
+          <img src="img/img4.jpg" />
+          <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        </article>
+
+        <!-- Tercer artículo -->
+        <article>
+          <img src="img/img5.jpg" />
+          <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        </article>
+      </div>
+
+      <!-- Pie de página -->
+      <footer>
+        <!-- Dirección -->
+        <address>
+          <p>C/ Madrid</p>
+          <p>Villaviciosa</p>
+        </address>
+
+        <!-- Texto de copyright -->
+        <div class="copyright">
+          Todas las fotos están descargadas para la misma práctica
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="social">
+          <img src="img/snapchat.jpg" />
+          <img src="img/facebook.jpg" />
+          <img src="img/twitter.jpg" />
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

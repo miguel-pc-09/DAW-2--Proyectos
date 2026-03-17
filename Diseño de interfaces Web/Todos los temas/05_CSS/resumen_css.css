@@ -1,0 +1,225 @@
+/* ===================================================== */
+/* GUÍA CSS BÁSICO – CHULETA COMPLETA                   */
+/* ===================================================== */
+
+/* ===================================================== */
+/* 1. RESET / NORMALIZACIÓN                              */
+/* ===================================================== */
+
+/* Selector universal: afecta a todos los elementos */
+* {
+  box-sizing: border-box;   /* El padding y el borde no aumentan el tamaño total del elemento */
+  margin: 0;                /* Elimina los márgenes por defecto de todos los elementos */
+  padding: 0;               /* Elimina el relleno por defecto de todos los elementos */
+}
+
+/* Documento HTML */
+html {
+  font-size: 100%;          /* Tamaño base del texto (16px por defecto en la mayoría de navegadores) */
+}
+
+/* ===================================================== */
+/* 2. ESTILOS GLOBALES                                   */
+/* ===================================================== */
+
+/* Estilos base de toda la página */
+body {
+  font-family: Arial, sans-serif;  /* Fuente principal legible */
+  font-size: 16px;                 /* Tamaño de texto base */
+  color: #333;                     /* Color general del texto (oscuro para buena lectura) */
+  background-color: #f0f0f0;       /* Fondo de la página */
+  line-height: 1.5;                /* Altura de línea para mejorar legibilidad */
+}
+
+/* ===================================================== */
+/* 3. LAYOUT (ESTRUCTURA CLÁSICA)                        */
+/* ===================================================== */
+
+/* Contenedor principal */
+.contenedor {
+  width: 400px;            /* Ancho fijo */
+  max-width: 90%;          /* Adaptable a pantallas pequeñas */
+  margin: 60px auto;       /* Centrado horizontal + margen superior */
+  padding: 20px;           /* Espacio interno dentro del contenedor */
+  background-color: #fff;  /* Fondo del contenedor */
+  border: 2px solid #ccc;  /* Borde visible */
+  border-radius: 15px;     /* Bordes redondeados */
+}
+
+/* Secciones internas */
+.section {
+  margin-bottom: 20px;     /* Separación vertical entre secciones */
+}
+
+/* ===================================================== */
+/* 4. POSICIONAMIENTO BÁSICO                              */
+/* ===================================================== */
+
+/* Posicionamiento relativo */
+.relative {
+  position: relative;      /* Permite que los hijos se posicionen respecto a este elemento */
+}
+
+/* Posicionamiento absoluto */
+.absolute {
+  position: absolute;      /* Se posiciona respecto al primer contenedor relativo padre */
+  top: 0;                  /* Posición arriba del contenedor relativo */
+  left: 0;                 /* Posición izquierda del contenedor relativo */
+}
+
+/* Posicionamiento fijo */
+.fixed {
+  position: fixed;         /* Fijo en pantalla, permanece al hacer scroll */
+  bottom: 0;               /* Posición inferior de la pantalla */
+  right: 0;                /* Posición derecha de la pantalla */
+}
+
+/* EJEMPLO VISUAL DE POSICIONAMIENTO
+-----------------------------------
+<div class="contenedor relative">
+  <p>Contenedor relativo</p>
+  <div class="absolute" style="width:100px;height:50px;background:#f99;">Absoluto</div>
+  <div class="fixed" style="width:100px;height:50px;background:#9f9;">Fijo</div>
+</div>
+- .relative: contenedor de referencia para el absoluto
+- .absolute: se coloca encima del contenedor relativo, top-left
+- .fixed: permanece en la esquina inferior derecha de la ventana
+*/
+
+/* ===================================================== */
+/* 5. COMPONENTES                                        */
+/* ===================================================== */
+
+/* Cabecera */
+.header {
+  margin-bottom: 20px;     /* Separación inferior de otros elementos */
+  text-align: center;      /* Centrado del contenido dentro de la cabecera */
+}
+
+/* Caja genérica */
+.box {
+  padding: 15px;           /* Espacio interior */
+  border: 1px solid #ccc;  /* Borde simple */
+  background-color: #fafafa; /* Fondo gris claro */
+}
+
+/* ===================================================== */
+/* 6. TIPOGRAFÍA                                         */
+/* ===================================================== */
+
+/* Títulos grandes */
+h1 {
+  font-size: 28px;         /* Tamaño grande para títulos principales */
+}
+
+h2 {
+  font-size: 22px;         /* Tamaño mediano para subtítulos */
+}
+
+h3 {
+  font-size: 18px;         /* Tamaño más pequeño para secciones menores */
+}
+
+/* Párrafos */
+p {
+  font-size: 14px;         /* Tamaño estándar para lectura de texto */
+  color: #555;             /* Gris medio para no cansar la vista */
+}
+
+/* Título personalizado dentro del contenido */
+.titulo {
+  font-weight: bold;       /* Negrita */
+  text-align: center;      /* Centrado horizontal */
+}
+
+/* ===================================================== */
+/* 7. FORMULARIOS                                        */
+/* ===================================================== */
+
+/* Formulario completo */
+form {
+  width: 100%;             /* Ocupa todo el ancho del contenedor padre */
+}
+
+/* Etiquetas de los campos */
+label {
+  display: block;          /* Cada etiqueta en una línea nueva */
+  margin-bottom: 5px;      /* Espacio inferior entre label y campo */
+  font-size: 14px;         /* Tamaño del texto de la etiqueta */
+}
+
+/* Campos de entrada (input, select, textarea) */
+input,
+select,
+textarea {
+  width: 100%;             /* Ocupa todo el ancho del contenedor */
+  padding: 10px;           /* Espacio interior */
+  margin-bottom: 15px;     /* Espacio entre campos */
+  border: 1px solid #ccc;  /* Borde gris */
+  border-radius: 5px;      /* Bordes redondeados */
+  font-size: 14px;         /* Tamaño de texto */
+}
+
+/* Campo enfocado */
+input:focus {
+  outline: none;           /* Elimina borde azul por defecto en algunos navegadores */
+  border-color: #666;      /* Resalta borde cuando el campo está activo */
+}
+
+/* ===================================================== */
+/* 8. BOTONES                                            */
+/* ===================================================== */
+
+/* Botón genérico */
+button {
+  padding: 10px 15px;      /* Espacio interno */
+  border: none;            /* Sin borde */
+  border-radius: 5px;      /* Bordes redondeados */
+  background-color: #007bff; /* Color azul por defecto */
+  color: white;            /* Texto blanco */
+  cursor: pointer;         /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Hover del botón */
+button:hover {
+  background-color: #0056b3; /* Cambio de color al pasar el cursor */
+}
+
+/* ===================================================== */
+/* 9. FOOTER                                             */
+/* ===================================================== */
+
+/* Pie de página */
+footer {
+  margin-top: 20px;        /* Separación superior */
+  text-align: center;      /* Centrado del contenido */
+}
+
+/* Texto del footer */
+.footer-text {
+  font-size: 12px;         /* Tamaño pequeño */
+  color: #777;             /* Gris suave */
+}
+
+/* ===================================================== */
+/* 10. UTILIDADES                                        */
+/* ===================================================== */
+
+/* Centrado de texto */
+.text-center {
+  text-align: center;      /* Centrado horizontal */
+}
+
+/* Márgenes reutilizables */
+.mt-10 {
+  margin-top: 10px;        /* Margen superior de 10px */
+}
+
+.mt-20 {
+  margin-top: 20px;        /* Margen superior de 20px */
+}
+
+/* Ocultar elementos */
+.hidden {
+  display: none;           /* No se muestra en pantalla */
+}

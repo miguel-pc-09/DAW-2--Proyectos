@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>background 2</title>
+
+    <style>
+      html {
+        /* Establece un color de fondo y una imagen de fondo combinados */
+        /* background: lightgreen; */ /* color de fondo solo (comentado) */
+        background: lightgreen url("./fondos/caballo.svg");
+        /* lightgreen → color de fondo base que se verá detrás de la imagen si la imagen tiene transparencias */
+        /* url("./fondos/caballo.svg") → imagen de fondo que se superpone sobre el color */
+
+        font-size: 170%; /* tamaño de fuente relativo (1.7 veces el tamaño base del navegador) */
+        font-weight: bold; /* texto en negrita */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Párrafo que se verá sobre el color y la imagen de fondo -->
+    <p>
+      Este ejemplo tiene como imagen de fondo la silueta de un caballo y tiene
+      color de fondo.
+    </p>
+  </body>
+</html>

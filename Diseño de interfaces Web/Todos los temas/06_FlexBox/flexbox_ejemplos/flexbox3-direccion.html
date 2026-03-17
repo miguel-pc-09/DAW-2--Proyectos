@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad flex-direction define la dirección principal del contenedor flexible, 
+    es decir, la dirección en la que se colocan los elementos hijos (flex items).
+
+    Valores posibles:
+    - row: elementos en fila de izquierda a derecha (por defecto)
+    - row-reverse: elementos en fila de derecha a izquierda
+    - column: elementos en columna de arriba abajo
+    - column-reverse: elementos en columna de abajo arriba
+  -->
+
+    <style>
+      /* Contenedor flexible con dirección invertida verticalmente */
+      div {
+        display: flex; /* Convierte el div en un contenedor flexible */
+        flex-direction: column-reverse; /* Los párrafos se colocan verticalmente, de abajo hacia arriba */
+        margin-bottom: 5px; /* Separación entre contenedores div */
+        background-color: #eee; /* Fondo gris claro para visualizar el contenedor */
+      }
+
+      /* Cada párrafo dentro del contenedor */
+      p {
+        width: 100px; /* Ancho fijo de 100px */
+        border: black 1px solid; /* Borde negro para diferenciar los párrafos */
+        margin: 2px; /* Separación entre párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

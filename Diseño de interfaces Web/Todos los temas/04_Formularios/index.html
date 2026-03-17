@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo de Formulario</title>
+    <!-- Título de la página -->
+  </head>
+  <body>
+    <!-- Formulario que envía los datos a procesar.php mediante POST -->
+    <form action="procesar.php" method="POST">
+      <!-- Campo de texto para el nombre -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" />
+      <br /><br />
+
+      <!-- Campo de contraseña -->
+      <label for="pass">Contraseña:</label>
+      <input type="password" id="pass" />
+      <br /><br />
+
+      <!-- Campo numérico para año de nacimiento -->
+      <label for="anio">Año de nacimiento:</label>
+      <input type="number" id="anio" />
+      <br /><br />
+
+      <!-- Campo de fecha -->
+      <label for="fecha">Fecha de contrato:</label>
+      <input type="date" id="fecha" />
+      <br /><br />
+
+      <!-- Campo de hora -->
+      <label for="hora">Hora de fichar:</label>
+      <input type="time" id="hora" />
+      <br /><br />
+
+      <!-- Checkboxes para seleccionar aficiones -->
+      <label>Me gusta:</label>
+      <input type="checkbox" id="teatro" value="teatro" />
+      <label for="teatro">Teatro</label>
+
+      <input type="checkbox" id="cine" value="cine" />
+      <label for="cine">Cine</label>
+
+      <input type="checkbox" id="montana" value="montana" />
+      <label for="montana">Montaña</label>
+      <br /><br />
+
+      <!-- Radios para seleccionar edad (solo se puede elegir uno) -->
+      <label>Edad:</label>
+      <input type="radio" id="menor" name="edad" value="menor" />
+      <label for="menor">Menor de edad</label>
+
+      <input type="radio" id="adulto" name="edad" value="adulto" />
+      <label for="adulto">Adulto</label>
+
+      <input type="radio" id="abuelo" name="edad" value="abuelo" />
+      <label for="abuelo">Abuelo</label>
+      <br /><br />
+
+      <!-- Selector de color -->
+      <label for="color">Elige un color:</label>
+      <input type="color" id="color" />
+      <br /><br />
+
+      <!-- Rango (slider) para indicar nivel -->
+      <label for="nivel">Indique su nivel:</label>
+      <input type="range" id="nivel" />
+      <br /><br />
+
+      <!-- Selector desplegable -->
+      <label for="provincia">Provincia:</label>
+      <select id="provincia">
+        <option value="madrid">Madrid</option>
+        <option value="barcelona">Barcelona</option>
+        <option value="sevilla">Sevilla</option>
+        <option value="valencia">Valencia</option>
+      </select>
+      <br /><br />
+
+      <!-- Área de texto para opiniones -->
+      <label for="opinion">Dime tu opinión:</label>
+      <br />
+      <textarea
+        id="opinion"
+        rows="5"
+        cols="40"
+        placeholder="Escribe lo que quieras"
+      ></textarea>
+      <br /><br />
+
+      <!-- Botones de envío y borrado -->
+      <input type="submit" value="Enviar Datos secretos" />
+      <!-- Envía los datos al servidor -->
+      <input type="reset" value="Borrar" />
+      <!-- Borra todos los campos -->
+    </form>
+  </body>
+</html>

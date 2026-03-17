@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    En Flexbox, el tamaño de los elementos flexibles (flex items) viene determinado inicialmente por su contenido.
+    La propiedad flex-basis permite definir **el tamaño inicial del elemento** antes de repartir el espacio sobrante en el contenedor.
+
+    Valores posibles:
+    - content: el tamaño se determina según el contenido del elemento
+    - auto: el tamaño se determina según width/height si existen
+    - <tamaño específico>: por ejemplo, 100px, 15%, etc.
+  -->
+
+    <style>
+      /* Contenedor flexible en bloque */
+      div {
+        display: flex; /* Convierte el div en contenedor flexible; los hijos se alinean horizontalmente por defecto */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        flex-basis: 15%; /* Tamaño inicial del párrafo: ocupa 15% del ancho del contenedor */
+        border: black 1px solid; /* Borde negro para diferenciar los elementos */
+        margin: 2px; /* Separación entre los párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p class="primero">Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

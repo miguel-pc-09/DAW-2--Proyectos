@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo de Imágenes - Bootstrap</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JS Bundle (incluye Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="p-4">
+    <h3>Ejemplos de Imágenes con Bootstrap</h3>
+
+    <div class="container mb-4">
+      <!-- Fila 1: Imagen redondeada -->
+      <div class="row align-items-center mb-3">
+        <div class="col-4">Imagen redondeada:</div>
+        <div class="col-8">
+          <!-- Clase "rounded" agrega bordes redondeados -->
+          <img src="img/img1.jpg" class="rounded" alt="Imagen redondeada" />
+        </div>
+      </div>
+
+      <!-- Fila 2: Imagen en círculo -->
+      <div class="row align-items-center mb-3">
+        <div class="col-4">Imagen redondeada (círculo):</div>
+        <div class="col-8">
+          <!-- Clase "rounded-circle" convierte la imagen en un círculo -->
+          <img
+            src="img/img1.jpg"
+            class="rounded-circle"
+            alt="Imagen circular"
+          />
+        </div>
+      </div>
+
+      <!-- Fila 3: Imagen como miniatura -->
+      <div class="row align-items-center mb-3">
+        <div class="col-4">Imagen con "img-thumbnail":</div>
+        <div class="col-8">
+          <!-- Clase "img-thumbnail" agrega borde y padding estilo miniatura -->
+          <img
+            src="img/img1.jpg"
+            class="img-thumbnail"
+            alt="Imagen miniatura"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Imagen fluida -->
+    <h4>Imagen fluida:</h4>
+    <!-- Clase "img-fluid" hace que la imagen se adapte al ancho del contenedor -->
+    <img src="img/img2.jpg" class="img-fluid mb-3" alt="Imagen fluida" />
+
+    <!-- Imagen no fluida -->
+    <h4>Imagen NO fluida:</h4>
+    <!-- Sin clases especiales, mantiene su tamaño original -->
+    <img src="img/img2.jpg" alt="Imagen no fluida" />
+  </body>
+</html>

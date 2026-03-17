@@ -1,0 +1,158 @@
+/* Selector universal: elimina márgenes y rellenos por defecto
+   y hace que el padding y el borde se incluyan en el tamaño total */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+  font-family: Georgia, "Times New Roman", serif; /* Fuente principal */
+  background-color: #fff; /* Fondo blanco */
+  color: #555; /* Color del texto gris oscuro */
+}
+
+/* Contenedor principal que centra el contenido */
+.container {
+  width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+  margin: auto; /* Centrado horizontal */
+}
+
+/* Cabecera */
+header {
+  text-align: center; /* Texto centrado */
+  padding: 25px 0; /* Espacio arriba y abajo */
+  border-bottom: 1px solid #aaa; /* Línea separadora inferior---border: grosor  tipo  color;
+  Tipos de líneas (border-style):
+   - solid  → línea continua
+   - dotted → línea punteada (puntos)
+   - dashed → línea discontinua (rayas)
+   - double → línea doble
+   - groove → efecto 3D con relieve hacia dentro
+   - ridge  → efecto 3D con relieve hacia fuera
+   - inset  → borde hundido
+   - outset → borde elevado
+   - none   → sin borde
+   - hidden → borde oculto (similar a none, usado en tablas)
+   
+   Bordes por lado:
+   - border-top        → borde superior
+   - border-right      → borde derecho
+   - border-bottom     → borde inferior
+   - border-left       → borde izquierdo
+
+   Propiedades individuales del borde:
+   - border-*-width    → grosor del borde
+   - border-*-style    → estilo del borde
+   - border-*-color    → color del borde
+   */
+}
+
+/* Título principal */
+header h1 {
+  font-family: "Lobster", cursive; /* Fuente decorativa */
+  font-size: 32px; /* Tamaño grande */
+}
+
+/* Subtítulo */
+header h4 {
+  font-size: 14px; /* Tamaño pequeño */
+  font-style: italic; /* Cursiva */
+  margin-top: 5px; /* Separación respecto al h1 */
+}
+
+/* Contenedor central con menú, main y artículo */
+.content_wrapper {
+  margin-top: 60px; /* Separación respecto a la cabecera y línea de  border-bottom: 1px solid #aaa */
+  display: grid; /* Uso de CSS Grid */
+  grid-template-columns: 160px 2fr 1fr; /* Menú, contenido principal y artículo */
+  gap: 30px; /* Espacio entre columnas */
+  align-items: stretch; /* Igualar altura de los elementos */
+}
+
+/* Menú lateral */
+nav {
+  font-style: italic; /* Texto en cursiva */
+}
+
+/* Elementos del menú */
+nav div {
+  margin-bottom: 15px; /* Separación entre opciones */
+  cursor: pointer; /* Cursor tipo enlace */
+}
+
+/* Estilo común para main y el artículo lateral */
+main,
+.content_wrapper article {
+  border: 1px solid #bbb; /* Borde gris */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interior */
+  text-align: center; /* Texto centrado */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Elementos en columna */
+}
+
+/* Imágenes del main y del artículo lateral */
+main img,
+.content_wrapper article img {
+  width: 100%; /* Ocupan todo el ancho */
+  height: 240px; /* Altura fija */
+  object-fit: cover; /* Recorte proporcional */
+  border-radius: 15px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Separación inferior */
+}
+
+/* Texto del main */
+main p {
+  font-style: italic; /* Texto en cursiva */
+}
+
+/* Título del artículo lateral */
+.content_wrapper article h2 {
+  font-family: "Lobster", cursive; /* Fuente decorativa */
+  font-size: 18px; /* Tamaño medio */
+}
+
+/* Contenedor de los artículos inferiores */
+.articles {
+  margin-top: 30px; /* Separación respecto a la zona superior */
+  display: grid; /* Uso de Grid */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+  gap: 25px; /* Espacio entre artículos */
+}
+
+/* Artículos inferiores */
+.articles article {
+  border: 1px solid #bbb; /* Borde gris */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interior */
+  text-align: center; /* Texto centrado */
+}
+
+/* Imágenes de los artículos inferiores */
+.articles img {
+  width: 100%; /* Ocupan todo el ancho */
+  height: 200px; /* Altura fija */
+  object-fit: cover; /* Mantiene proporción */
+  border-radius: 15px; /* Bordes redondeados */
+  margin-bottom: 15px; /* Separación inferior */
+}
+
+/* Pie de página */
+footer {
+  margin: 40px 0 20px; /* Separación superior e inferior */
+  padding-top: 15px; /* Espacio interior superior */
+  border-top: 1px solid #aaa; /* Línea separadora ---- border-top        → borde superior*/
+  display: flex; /* Flexbox */
+  justify-content: space-between; /* Elementos separados */
+  align-items: center; /* Alineación vertical */
+  font-style: italic; /* Texto en cursiva */
+  font-size: 14px; /* Tamaño pequeño */
+}
+
+/* Iconos de redes sociales */
+.social img {
+  width: 32px; /* Tamaño de los iconos */
+  margin-left: 10px; /* Separación entre iconos */
+}

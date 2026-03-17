@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selector clase</title>
+
+    <style>
+      /* Selector de clase: se aplica a todos los elementos que tengan class="aviso" */
+      .aviso {
+        color: red; /* texto en rojo */
+        border: green 3px dotted; /* borde verde punteado de 3px */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>h3 sin estilo</h3>
+    <!-- Resultado: h3 normal, sin color ni borde, porque no tiene la clase "aviso" -->
+
+    <p>
+      Esto es un párrafo sin clase
+      <span class="aviso">pero</span>
+      con un &lt;span&gt; de clase "aviso" (en la palabra "pero").
+    </p>
+    <!-- Resultado:
+       - El texto "pero" está rojo y con borde verde punteado (solo el span tiene la clase)
+       - El resto del párrafo no se ve afectado -->
+
+    <p class="aviso">Esto es un párrafo &lt;p&gt; de clase "aviso".</p>
+    <!-- Resultado: 
+       - Todo el párrafo se pone rojo y con borde verde punteado 
+       - La clase afecta al elemento <p> completo -->
+
+    <h3 class="aviso">Esto es una &lt;h3&gt; de clase "aviso".</h3>
+    <!-- Resultado:
+       - El h3 se vuelve rojo y con borde verde punteado
+       - La clase funciona igual en cualquier tipo de elemento -->
+  </body>
+</html>

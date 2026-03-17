@@ -1,0 +1,278 @@
+﻿<!doctype html>
+<!-- Declara que el documento usa HTML5 -->
+
+<html lang="es">
+  <!-- El atributo lang="es" indica que el idioma principal es español,
+         útil para buscadores, navegadores y lectores de pantalla -->
+
+  <head>
+    <meta charset="utf-8" />
+    <!-- Codificación UTF-8 para mostrar correctamente tildes, eñes y caracteres especiales. Idioma que quiere que utilice el teclado-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hace la página responsive, ajustándose al ancho del dispositivo -->
+
+    <title>Portfolio de Gema</title>
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+
+    <meta
+      name="description"
+      content="Portfolio de Gema, estudiante de 2º DAW con ganas de aprender y mejorar."
+    />
+    <!-- Breve descripción usada por motores de búsqueda (SEO) -->
+
+    <meta name="robots" content="index, follow" />
+    <!-- Permite a buscadores indexar la página y seguir los enlaces -->
+
+    <meta name="theme-color" content="#0f9f" />
+    <!-- Define el color de la barra superior en algunos navegadores móviles -->
+
+    <link rel="icon" type="image/jpg" href="playa.jpg" />
+    <!-- Favicon: pequeño icono que aparece en la pestaña del navegador -->
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Enlace a la hoja de estilos externa CSS -->
+  </head>
+
+  <body>
+    <!-- Contenido visible de la página -->
+
+    <header>
+      <!-- Cabecera principal: incluye título y navegación -->
+
+      <h1>Portfolio de Gema</h1>
+      <!-- Título principal de la página, solo un h1 por SEO y accesibilidad -->
+
+      <nav>
+        <!-- Menú de navegación -->
+        <a href="#experiencia">Experiencia</a>
+        <!-- Enlace a la sección de experiencia -->
+        <a href="#proyectos-realizados">Proyectos realizados</a>
+        <!-- Enlace a la sección de proyectos -->
+        <a href="#faq">Preguntas</a>
+        <!-- Enlace a la sección de preguntas frecuentes -->
+        <a href="#contacto">Contacto</a>
+        <!-- Enlace al formulario de contacto -->
+      </nav>
+    </header>
+
+    <main>
+      <!-- Contenido principal de la página -->
+
+      <p>
+        Estudiante de 2º DAW
+        <strong>SIN Experiencia</strong>.
+        <!-- <strong> da importancia visual y semántica al texto -->
+        Con muchas ganas de aprender.
+      </p>
+
+      <h2 id="experiencia">Experiencia</h2>
+      <!-- Sección de experiencia laboral -->
+
+      <ul>
+        <!-- Lista no ordenada de experiencias -->
+        <li class="list-item">Alphabet España - 2008</li>
+        <li class="list-item">Banco Santander Particulares - 2017</li>
+      </ul>
+
+      <a download href="playa.jpg">
+        <!-- Enlace que permite descargar la imagen al hacer clic -->
+
+        <img
+          id="photo-image"
+          width="200"
+          height="200"
+          title="Foto de paisaje"
+          alt="Una fotografía de un paisaje"
+          src="playa.jpg"
+        />
+        <!-- Imagen del portfolio:
+                     - id para CSS o JavaScript
+                     - width/height define tamaño
+                     - title texto al pasar ratón
+                     - alt texto alternativo para accesibilidad
+                     - src ruta de la imagen -->
+      </a>
+
+      <h2 id="proyectos-realizados">Proyectos realizados</h2>
+      <!-- Sección de proyectos -->
+
+      <section>
+        <article>
+          <!-- Primer proyecto -->
+          <header>
+            <h3>Sitio Web Corporativo</h3>
+          </header>
+          <p>
+            Desarrollo de un sitio web corporativo con una interfaz amigable y
+            moderna.
+          </p>
+          <footer>
+            <small>Tecnologías utilizadas: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+
+        <article>
+          <!-- Segundo proyecto -->
+          <header>
+            <h3>Gestor de Tareas</h3>
+          </header>
+          <p>
+            Aplicación web para organizar tareas y mejorar la productividad
+            diaria.
+          </p>
+          <footer>
+            <small>Tecnologías utilizadas: HTML, CSS, Node.js</small>
+          </footer>
+        </article>
+      </section>
+
+      <section id="faq">
+        <h2>Preguntas frecuentes</h2>
+        <!-- Sección de preguntas frecuentes -->
+
+        <details>
+          <summary>¿Qué estudios tienes?</summary>
+          <p>
+            Estudié en la universidad de Vilanova una Ingeniería de Informática
+            durante 5 años
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Cuáles son tus hobbies?</summary>
+          <p>Me gusta mucho el deporte, sobre todo el fútbol y el baloncesto</p>
+        </details>
+
+        <details>
+          <summary>¿Cuál es tu lenguaje favorito?</summary>
+          <p>
+            Me encanta JavaScript, es un lenguaje muy versátil y con el que se
+            pueden hacer muchas cosas
+          </p>
+        </details>
+      </section>
+
+      <section id="contacto">
+        <h2>Formulario de contacto</h2>
+        <!-- Sección de contacto -->
+
+        <form method="post" action="/">
+          <!-- Formulario que envía datos mediante POST -->
+
+          <fieldset>
+            <!-- Agrupa campos relacionados: Información personal -->
+            <legend>Información personal</legend>
+
+            <label
+              >Nombre:
+              <input
+                type="text"
+                name="name"
+                placeholder="Miguel Perucha"
+                required
+              /> </label
+            ><br />
+            <!-- Campo de texto obligatorio -->
+
+            <label
+              >Email:
+              <input
+                type="email"
+                name="email"
+                placeholder="miguel@gmail.com"
+                required
+              />
+            </label>
+            <!-- Campo email obligatorio, validación automática -->
+          </fieldset>
+
+          <fieldset>
+            <!-- Información adicional -->
+            <legend>Información adicional</legend>
+
+            <div>
+              <label
+                >Teléfono:
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="666888999"
+                  pattern="[0-9]{9}"
+                  required
+                />
+              </label>
+              <!-- Campo teléfono con patrón de 9 números y obligatorio -->
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <!-- Otros campos -->
+            <legend>Otros</legend>
+
+            <div>
+              <label for="why">¿Por qué quieres contactar?</label>
+              <select name="why" id="why">
+                <option value="1">Trabajo</option>
+                <option value="2">Duda</option>
+                <option value="3">Más información</option>
+              </select>
+              <!-- Lista desplegable -->
+            </div>
+
+            <div>
+              <label for="language-input"
+                >¿Con qué lenguaje quieres que te ayude?</label
+              >
+              <input
+                list="languages"
+                id="language-input"
+                name="language-help"
+              />
+              <datalist id="languages">
+                <option value="JavaScript"></option>
+                <option value="Python"></option>
+                <option value="Java"></option>
+                <option value="C#"></option>
+              </datalist>
+              <!-- Lista de sugerencias para lenguaje de programación -->
+            </div>
+
+            <div>
+              <label for="terms">¿Aceptas los términos?</label>
+              <input type="checkbox" id="terms" name="terms" required />
+              <!-- Checkbox obligatorio -->
+            </div>
+          </fieldset>
+
+          <input type="submit" value="Enviar contacto" />
+          <!-- Botón de envío -->
+        </form>
+      </section>
+
+      <aside>
+        <!-- Contenido complementario -->
+        <header>
+          <h3>Mis tecnologías favoritas</h3>
+        </header>
+
+        <ol>
+          <!-- Lista ordenada -->
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Node.js</li>
+        </ol>
+      </aside>
+    </main>
+
+    <footer>
+      <!-- Pie de página con información de copyright y contacto -->
+      <p>© 2025 Portfolio de Miguel — Todos los derechos reservados.</p>
+
+      <a href="mailto:miguel@gmail.com">Envíame un correo</a> |
+      <a href="tel:+34688888899">Llamar por teléfono</a> |
+      <a href="whatsapp://send?text=Hola gema">Enviar mensaje por WhatsApp</a>
+    </footer>
+  </body>
+</html>

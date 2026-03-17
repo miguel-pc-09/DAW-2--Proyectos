@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selector id y class</title>
+    <style>
+      /* Selector de tipo: afecta a todos los elementos <body> */
+      body {
+        color: yellow; /* texto general del body en amarillo */
+      }
+
+      /* Selector de tipo: afecta a todos los <p> */
+      p {
+        color: blue; /* todos los párrafos serán azules por defecto */
+      }
+
+      /* Selector de id: afecta solo al elemento con id="resumen" */
+      #resumen {
+        color: green; /* sobrescribe el azul de p solo para este elemento */
+        font-style: italic; /* texto en cursiva */
+      }
+
+      /* Selector de clase: afecta a todos los elementos con class="destacado" */
+      .destacado {
+        color: red; /* sobrescribe el azul de p solo para los elementos con la clase */
+      }
+    </style>
+  </head>
+  <body>
+    hola
+
+    <!-- Resultado: verde e itálica, porque tiene id="resumen" -->
+    <p id="resumen">
+      Este es el resumen del texto y quiero que vaya en itálica.
+    </p>
+
+    <!-- Resultado: azul (p normal) -->
+    <p>Esto sería un párrafo de texto normal.</p>
+    <p>Esto sería otro párrafo de texto normal.</p>
+    <p>Un nuevo párrafo de texto normal.</p>
+
+    <!-- Resultado: rojo, porque tiene class="destacado" -->
+    <p class="destacado">Aquí va texto que quiero destacar.</p>
+
+    <!-- Resultado: azul (p normal) -->
+    <p>Esto sería otro párrafo de texto normal.</p>
+    <p>Más texto normal.</p>
+
+    <!-- Resultado: rojo (clase destacado) -->
+    <p class="destacado">Aquí iría más texto que quiero destacar.</p>
+
+    <!-- Resultado: azul (p normal) -->
+    <p>Esto sería otro párrafo de texto normal.</p>
+
+    <!-- Resultado: rojo (clase destacado) -->
+    <p class="destacado">Esto sería otro párrafo de texto normal.</p>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    En Flexbox, los elementos se muestran en el mismo orden que aparecen en el HTML.
+    La propiedad 'order' permite cambiar este orden visualmente, sin alterar el HTML.
+    - Puede tomar valores enteros positivos o negativos.
+    - Valor por defecto: 0
+    En este ejemplo, se ha asignado la clase "primero" al cuarto párrafo, 
+    y se le da order: -1 para que aparezca en primer lugar dentro del contenedor.
+  -->
+
+    <style>
+      /* Contenedor flexible en bloque */
+      div {
+        display: flex; /* Convierte el div en contenedor flexible; los hijos se alinean horizontalmente por defecto */
+      }
+
+      /* Estilo general de los párrafos */
+      p {
+        width: 100px; /* Ancho fijo de 100px */
+        border: black 1px solid; /* Borde negro para visualizar cada párrafo */
+        margin: 2px; /* Separación entre párrafos */
+      }
+
+      /* Párrafo con clase 'primero' */
+      p.primero {
+        order: -1; /* Se muestra antes que los demás elementos (orden menor que 0) */
+        color: red; /* Color rojo para destacarlo */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p class="primero">Cuarto parrafo</p>
+      <!-- Aparece primero visualmente gracias a order: -1 -->
+    </div>
+
+    <!-- Segundo contenedor flexible sin cambios en el orden -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

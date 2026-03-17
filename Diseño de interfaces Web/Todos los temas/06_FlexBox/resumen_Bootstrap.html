@@ -1,0 +1,183 @@
+<!-- 
+ 
+
+/* 12. BOOTSTRAP – CHULETA DE CLASES COMUNES           */
+
+
+
+/* 1. LAYOUT / CONTAINERS                               */
+
+/* Contenedores */
+.container {
+  /* Contenedor con ancho fijo responsivo y márgenes automáticos */
+}
+.container-fluid {
+  /* Contenedor de ancho completo, ocupa 100% del viewport */
+}
+
+/* Filas y columnas (grid) */
+.row {
+  /* Crea una fila de columnas usando flexbox */
+}
+.col {
+  /* Columna automática que ocupa espacio proporcional */
+}
+.col-6 {
+  /* Columna que ocupa la mitad de la fila */
+}
+.col-md-4 {
+  /* Columna que ocupa 4/12 en pantallas medianas o más grandes */
+}
+
+/* ===================================================== */
+/* 2. TIPOGRAFÍA Y TEXTOS                               */
+/* ===================================================== */
+.text-center { /* Centra el texto */ }
+.text-start { /* Alinea texto a la izquierda */ }
+.text-end { /* Alinea texto a la derecha */ }
+
+.fw-bold { /* Fuente en negrita */ }
+.fw-normal { /* Fuente normal */ }
+
+.fs-1 { /* Tamaño de fuente grande */ }
+.fs-2 { /* Tamaño de fuente mediano */ }
+.fs-3 { /* Tamaño de fuente más pequeño */ }
+
+/* Colores de texto */
+.text-primary { color: #0d6efd; }
+.text-success { color: #198754; }
+.text-danger { color: #dc3545; }
+.text-warning { color: #ffc107; }
+
+/* ===================================================== */
+/* 3. BOTONES                                           */
+/* ===================================================== */
+.btn { /* Estilo básico de botón */}
+.btn-primary { /* Botón azul principal */ }
+.btn-secondary { /* Botón gris */ }
+.btn-success { /* Botón verde */ }
+.btn-danger { /* Botón rojo */ }
+.btn-warning { /* Botón amarillo */ }
+.btn-lg { /* Botón grande */ }
+.btn-sm { /* Botón pequeño */ }
+
+/* ===================================================== */
+/* 4. MÁRGENES Y PADDING                               */
+/* ===================================================== */
+/* Bootstrap usa clases abreviadas: m = margin, p = padding */
+.m-0 { margin: 0 !important; }
+.mt-3 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+
+.p-2 { padding: 0.5rem; }
+.pt-4 { padding-top: 1.5rem; }
+.pb-1 { padding-bottom: 0.25rem; }
+
+/* ===================================================== */
+/* 5. DISPLAY Y UTILIDADES                              */
+/* ===================================================== */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+
+/* ===================================================== */
+/* 6. LISTAS Y NAVIGATION                               */
+/* ===================================================== */
+.nav { /* Barra de navegación básica */ }
+.nav-item { /* Cada item de nav */ }
+.nav-link { /* Enlaces dentro de nav */ }
+
+/* ===================================================== */
+/* 7. TAMAÑOS DE IMÁGENES                               */
+/* ===================================================== */
+.img-fluid { max-width: 100%; height: auto; } /* Imagen responsiva */
+.rounded { border-radius: 0.25rem; }          /* Bordes redondeados */
+.rounded-circle { border-radius: 50%; }      /* Imagen circular */
+
+/* ===================================================== */
+/* 8. TABLAS                                            */
+/* ===================================================== */
+.table { width: 100%; border-collapse: collapse; }
+.table-striped { /* Filas alternadas con color */ }
+.table-bordered { /* Bordes en todas las celdas */ }
+
+/* ===================================================== */
+/* 9. ALERTAS                                           */
+/* ===================================================== */
+.alert { padding: 0.75rem 1.25rem; border-radius: 0.25rem; }
+.alert-primary { background-color: #cfe2ff; color: #084298; }
+.alert-success { background-color: #d1e7dd; color: #0f5132; }
+.alert-danger { background-color: #f8d7da; color: #842029; }
+.alert-warning { background-color: #fff3cd; color: #664d03; }
+
+/* ===================================================== */
+/* 10. UTILIDADES VARIAS                                */
+/* ===================================================== */
+.text-truncate { 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+/* ===================================================== */
+/* 12. BOOTSTRAP – CHULETA DE CLASES COMUNES           */
+/* ===================================================== */
+
+/* 1. LAYOUT / CONTAINERS */
+.container { /* Contenedor con ancho fijo responsivo y márgenes automáticos */ }
+.container-fluid { /* Ancho completo */ }
+
+/* Filas y columnas */
+.row { /* Fila flex */ }
+.col { /* Columna automática */ }
+.col-6 { /* Mitad de la fila */ }
+.col-md-4 { /* 4/12 en pantallas medianas */ }
+
+/* 2. TIPOGRAFÍA Y TEXTOS */
+.text-center { text-align: center; }
+.text-start { text-align: left; }
+.text-end { text-align: right; }
+.fw-bold { font-weight: bold; }
+.fs-1 { font-size: 2rem; }
+
+/* 3. BOTONES */
+.btn { /* Botón base */ }
+.btn-primary { /* Azul */ }
+.btn-success { /* Verde */ }
+
+/* 4. MÁRGENES Y PADDING */
+.m-0 { margin: 0 !important; }
+.mt-3 { margin-top: 1rem; }
+.p-2 { padding: 0.5rem; }
+
+/* 5. DISPLAY Y FLEX */
+.d-flex { display: flex !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+
+/* 6. NAV / LISTAS */
+.nav { /* Barra de navegación */ }
+.nav-item { /* Item de nav */ }
+.nav-link { /* Enlace de nav */ }
+
+/* 7. IMÁGENES */
+.img-fluid { max-width: 100%; height: auto; }
+.rounded { border-radius: 0.25rem; }
+
+/* 8. TABLAS */
+.table { width: 100%; border-collapse: collapse; }
+.table-striped { /* Filas alternadas */ }
+
+/* 9. ALERTAS */
+.alert { padding: 0.75rem 1.25rem; border-radius: 0.25rem; }
+.alert-primary { background-color: #cfe2ff; color: #084298; }
+
+/* 10. UTILIDADES VARIAS */
+.text-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }

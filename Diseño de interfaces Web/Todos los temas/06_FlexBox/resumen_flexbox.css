@@ -1,0 +1,165 @@
+/* ===================================================== */
+/* 10. FLEXBOX                                           */
+/* ===================================================== */
+
+/* Contenedor flexible básico */
+.flex-container {
+  display: flex;            
+  /* Activa Flexbox en el contenedor.
+     Todos los elementos hijos serán flex items y podrán alinearse
+     y distribuirse usando las propiedades de Flexbox */
+}
+
+/* ----------------- Direcciones del eje principal ----------------- */
+/* El eje principal es la dirección en la que se colocan los items */
+.flex-row { flex-direction: row; }                 
+/* Items en fila horizontal (default) */
+.flex-row-reverse { flex-direction: row-reverse; } 
+/* Items en fila horizontal invertida (último primero) */
+.flex-column { flex-direction: column; }          
+/* Items en columna vertical */
+.flex-column-reverse { flex-direction: column-reverse; } 
+/* Items en columna invertida (último arriba) */
+
+/* ----------------- Control de salto de línea ----------------- */
+/* Define si los items pueden romper línea si no caben */
+.flex-nowrap { flex-wrap: nowrap; }               
+/* Todos los items en una sola línea, no se envuelven */
+.flex-wrap { flex-wrap: wrap; }                   
+/* Los items se envuelven a la siguiente línea si no caben */
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }  
+/* Items se envuelven pero la dirección de las líneas se invierte */
+
+/* ----------------- Justificación en eje principal ----------------- */
+/* Alinea los items a lo largo del eje principal (row o column) */
+.justify-start { justify-content: flex-start; }   
+/* Todos los items al inicio del eje principal */
+.justify-end { justify-content: flex-end; }       
+/* Todos los items al final del eje principal */
+.justify-center { justify-content: center; }     
+/* Centrado de todos los items en el eje principal */
+.justify-between { justify-content: space-between; } 
+/* Items separados equitativamente; primero y último al borde */
+.justify-around { justify-content: space-around; }   
+/* Espacio igual alrededor de cada item */
+.justify-evenly { justify-content: space-evenly; }   
+/* Espacios exactamente iguales entre items */
+
+/* ----------------- Alineación en eje secundario ----------------- */
+/* Alinea los items perpendicular al eje principal */
+.align-start { align-items: flex-start; }        
+/* Items alineados al inicio del eje secundario (arriba o izquierda) */
+.align-end { align-items: flex-end; }            
+/* Items alineados al final del eje secundario (abajo o derecha) */
+.align-center { align-items: center; }          
+/* Items centrados vertical u horizontalmente según eje principal */
+.align-stretch { align-items: stretch; }        
+/* Items se estiran para ocupar todo el contenedor en eje secundario */
+.align-baseline { align-items: baseline; }      
+/* Alineación según la línea base del texto */
+
+/* ----------------- Alineación de líneas (wrap) ----------------- */
+/* Solo se aplica cuando hay varias líneas de items (flex-wrap: wrap) */
+.align-content-start { align-content: flex-start; }
+/* Todas las líneas se alinean al inicio del contenedor */
+.align-content-end { align-content: flex-end; }
+/* Todas las líneas al final */
+.align-content-center { align-content: center; }
+/* Todas las líneas centradas */
+.align-content-between { align-content: space-between; }
+/* Líneas separadas equitativamente */
+.align-content-around { align-content: space-around; }
+/* Líneas con espacio igual alrededor */
+.align-content-stretch { align-content: stretch; }
+/* Líneas se estiran para ocupar todo el contenedor */
+
+/* ----------------- Flex items individuales ----------------- */
+/* Estilos generales de un item */
+.flex-item { 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  /* Espaciado interno y borde visible para identificar items */
+}
+
+/* ----------------- Orden de elementos ----------------- */
+/* Cambia el orden visual de los items, sin cambiar el HTML */
+.order-1 { order: 1; }
+.order--1 { order: -1; }
+
+/* ----------------- Crecimiento y encogimiento ----------------- */
+.flex-grow { flex-grow: 1; }       
+/* Permite que el item crezca si hay espacio disponible */
+.flex-shrink { flex-shrink: 1; }   
+/* Permite que el item se reduzca si falta espacio */
+.flex-basis { flex-basis: 200px; } 
+/* Tamaño base inicial del item */
+.flex-1 { flex: 1; }               
+/* Shorthand: flex-grow 1, flex-shrink 1, flex-basis 0 */
+
+/* ----------------- Alineación individual de items ----------------- */
+/* Sobrescribe align-items para este item concreto */
+.self-start { align-self: flex-start; }
+.self-end { align-self: flex-end; }
+.self-center { align-self: center; }
+.self-stretch { align-self: stretch; }
+
+/* ===================================================== */
+/* 11. EJEMPLOS DE USO COMÚN                             */
+/* ===================================================== */
+
+/* ----------------- Centrado horizontal y vertical ----------------- */
+.flex-center {
+  display: flex;              /* Activa Flexbox */
+  justify-content: center;    /* Centrado horizontal */
+  align-items: center;        /* Centrado vertical */
+}
+
+/* ----------------- Columna centrada horizontalmente ----------------- */
+.flex-column-center {
+  display: flex;
+  flex-direction: column;     /* Eje vertical */
+  align-items: center;        /* Centrado horizontal de cada item */
+}
+
+/* ----------------- Distribución con espacio entre elementos ----------------- */
+.flex-space-between {
+  display: flex;
+  justify-content: space-between; /* Separación máxima entre items */
+}
+
+/* ----------------- Elementos alineados al inicio ----------------- */
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ----------------- Elementos alineados al final ----------------- */
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ----------------- Centrado horizontal únicamente ----------------- */
+.flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+/* ----------------- Centrado vertical únicamente ----------------- */
+.flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+/* ----------------- Contenedor con salto de línea de items ----------------- */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;               /* Permite que los items se muevan a la siguiente línea si no caben */
+}
+
+/* ----------------- Barra de navegación horizontal ----------------- */
+.flex-nav {
+  display: flex;
+  justify-content: space-around; /* Distribuye items con espacio uniforme */
+  align-items: center;           /* Centrado vertical de items */
+}

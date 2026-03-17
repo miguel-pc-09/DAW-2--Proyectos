@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad flex-grow indica el **factor de expansión** de un elemento flexible dentro del contenedor.
+    - Hace que los elementos crezcan para ocupar el espacio disponible en la dirección principal.
+    - Toma valores enteros: el espacio se reparte según la proporción de estos valores.
+    - Ejemplo: 
+        flex-grow: 1 → ocupa 1 parte del espacio disponible
+        flex-grow: 2 → ocupa 2 partes del espacio disponible
+    - Si todos los elementos tienen el mismo valor, el espacio se reparte a partes iguales.
+  -->
+
+    <style>
+      /* Contenedor flexible en bloque */
+      div {
+        display: flex; /* Convierte el div en contenedor flexible; los hijos se alinean horizontalmente por defecto */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        flex-grow: 1; /* Cada párrafo crece para ocupar el espacio disponible en proporción 1 */
+        border: black 1px solid; /* Borde negro para visualizar cada elemento */
+        margin: 2px; /* Separación entre párrafos */
+      }
+
+      /* Párrafo que crece más */
+      p.mayor {
+        flex-grow: 2; /* Este párrafo ocupa el doble de espacio que los demás */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p class="mayor">Tercer Parrafo</p>
+      <!-- Ocupa el doble de espacio que los demás -->
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

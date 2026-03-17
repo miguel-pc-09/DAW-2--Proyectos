@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Título mostrado en la pestaña del navegador -->
+    <title>Ejemplos Bootstrap</title>
+
+    <!-- Codificación UTF-8 -->
+    <meta charset="utf-8" />
+
+    <!-- Configuración responsive -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Compatibilidad con IE -->
+    <meta http-equiv="x-ua-compatible" content="ie-edge" />
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3.2 JS Bundle (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style type="text/css">
+      /* Contenedor con altura fija y color de fondo */
+      .contenedor {
+        background-color: mediumturquoise;
+        height: 500px;
+      }
+
+      /* Fila personalizada para visualizar dimensiones */
+      .fila {
+        background-color: blueviolet;
+      }
+
+      /* Estilo aplicado al texto interno */
+      .texto {
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Título de la sección -->
+    <h3>Ejemplos tamaño</h3>
+
+    <!-- Explicación teórica:
+             w-*  → width (ancho en porcentaje)
+             h-*  → height (alto en porcentaje)
+             m-*  → margin
+             p-*  → padding
+             t = top
+             b = bottom
+             s = start (izquierda en LTR)
+             e = end (derecha en LTR)
+        -->
+    Podemos usar las clases "w" y "h" para designar un tamaño. También podemos
+    especificar padding y márgenes con las clases "m" y "p".
+    <br />
+
+    <!-- Contenedor principal Bootstrap -->
+    <div class="container contenedor">
+      <!-- 
+                row: fila del sistema grid
+                w-75: 75% del ancho del elemento padre
+                h-50: 50% del alto del elemento padre
+            -->
+      <div class="row fila w-75 h-50">
+        <!-- 
+                    mt-5: margin-top
+                    mb-5: margin-bottom
+                    ms-5: margin-start (izquierda en Bootstrap 5)
+                    me-5: margin-end (derecha en Bootstrap 5)
+
+                    pt-3: padding-top
+                    pb-3: padding-bottom
+                    ps-3: padding-start
+                    pe-3: padding-end
+                -->
+        <p class="texto mt-5 mb-5 ms-5 me-5 pt-3 pb-3 ps-3 pe-3">
+          Esta fila abarca el 75% del ancho del contenedor y el 50% del alto.
+          Tiene márgenes y padding aplicados en todas las direcciones.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

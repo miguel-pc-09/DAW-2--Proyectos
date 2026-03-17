@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplo Navbar Bootstrap</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JS (incluye Popper.js) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <!-- Logo redondo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="img/img1.jpg"
+            alt="Logo"
+            class="rounded-circle"
+            style="height: 50px"
+          />
+        </a>
+
+        <!-- Botón toggler para mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Contenido colapsable -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Links del navbar -->
+          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item"><a href="#" class="nav-link">Link 1</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Link 2</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Link 3
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Subitem 1</a></li>
+                <li><a class="dropdown-item" href="#">Subitem 2</a></li>
+                <li><a class="dropdown-item" href="#">Subitem 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Link 4</a></li>
+          </ul>
+
+          <!-- Formulario de búsqueda -->
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Escriba texto aquí"
+              aria-label="Search"
+            />
+            <button class="btn btn-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Espacio de separación para que el contenido no quede debajo del navbar fijo -->
+    <div style="margin-top: 80px">
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus...
+      </p>
+    </div>
+  </body>
+</html>

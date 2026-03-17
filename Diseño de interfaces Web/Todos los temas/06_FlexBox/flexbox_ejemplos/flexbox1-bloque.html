@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    Existen dos tipos de contenedores flexibles: de bloque y en-línea.
+    La propiedad display permite definir el tipo de contenedor flexible:
+    flex: el contenedor se comporta como un bloque (ocupa todo el ancho disponible) 
+  -->
+
+    <style>
+      /* Contenedor flexible de bloque */
+      div {
+        display: flex; /* Flexbox en bloque: los elementos hijos se distribuyen horizontalmente */
+        margin-bottom: 5px; /* Separación vertical entre contenedores div */
+        background-color: #eee; /* Fondo gris claro para visualizar el contenedor */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        width: 100px; /* Ancho fijo de 100px */
+        border: black 1px solid; /* Borde negro para diferenciar cada párrafo */
+        margin: 2px; /* Separación entre párrafos dentro del div */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

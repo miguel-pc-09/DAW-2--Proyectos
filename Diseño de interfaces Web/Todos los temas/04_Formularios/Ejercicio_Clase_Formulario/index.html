@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Complejo</title>
+  </head>
+  <body>
+    <h3>Un típico y complejo formulario</h3>
+
+    <table border="3">
+      <tr>
+        <td><label for="nombre">Nombre:</label></td>
+        <td><input type="text" id="nombre" name="nombre" size="20" /></td>
+
+        <td><label for="fnac">F.Nac:</label></td>
+        <td><input type="text" id="fnac" name="fnac" size="10" /></td>
+
+        <td><label for="dni">DNI:</label></td>
+        <td><input type="text" id="dni" name="dni" size="10" /></td>
+      </tr>
+
+      <tr>
+        <td><label for="apellidos">Apellidos:</label></td>
+        <td colspan="5">
+          <input type="text" id="apellidos" name="apellidos" size="80" />
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="direccion">Calle y número:</label></td>
+        <td colspan="10">
+          <input type="text" id="direccion" name="direccion" size="80" />
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="cp">Código Postal:</label></td>
+        <td><input type="text" id="cp" name="cp" size="10" /></td>
+
+        <td><label for="ciudad">Ciudad:</label></td>
+        <td colspan="3">
+          <input type="text" id="ciudad" name="ciudad" size="40" />
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="provincia">Provincia:</label></td>
+        <td colspan="3">
+          <input type="text" id="provincia" name="provincia" size="40" />
+        </td>
+
+        <td><label for="telefono">Teléfono:</label></td>
+        <td><input type="text" id="telefono" name="telefono" size="10" /></td>
+      </tr>
+
+      <tr>
+        <td>Opción:</td>
+        <td colspan="5">
+          <label for="opciones">Escoja una opción:</label>
+          <select name="opciones">
+            <option value="">OPCIÓN 1</option>
+            <option value="op2">Opción 2</option>
+            <option value="op3">Opción 3</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Comentarios personales:</td>
+        <td colspan="5">
+          <textarea name="comentarios" rows="4" cols="80"></textarea>
+        </td>
+      </tr>
+
+      <tr>
+        <td><b>Pulse aquí:</b></td>
+        <td colspan="5">
+          <input type="submit" value="Enviar datos" />
+          <input type="reset" value="Borrar los datos" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

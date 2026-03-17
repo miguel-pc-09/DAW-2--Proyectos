@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Resumen introductorio a HTML y XHTML" />
+    <meta name="keywords" content="HTML, XHTML, etiquetas, atributos, DAW" />
+    <meta name="author" content="Gema Rodríguez" />
+    <title>Resumen HTML / XHTML</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+      }
+      section {
+        background-color: #fff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      pre {
+        background-color: #ecf0f1;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+      code {
+        background-color: #ecf0f1;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resumen HTML / XHTML</h1>
+
+    <!-- Estructura básica de una página -->
+    <section>
+      <h2>Estructura básica</h2>
+      <p>Una página web HTML tiene la siguiente estructura:</p>
+      <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Contenido visible
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre
+      >
+      <p>
+        La declaración <code>&lt;!DOCTYPE&gt;</code> ayuda al navegador a
+        desplegar la página correctamente.
+      </p>
+    </section>
+
+    <!-- Reglas básicas XHTML -->
+    <section>
+      <h2>Reglas básicas XHTML</h2>
+      <ul>
+        <li>Todos los elementos deben estar correctamente jerarquizados.</li>
+        <li>
+          Los nombres de las etiquetas y atributos deben estar en minúsculas.
+        </li>
+        <li>
+          Todas las etiquetas deben cerrarse, incluso las vacías:
+          <code>&lt;br /&gt;</code>, <code>&lt;hr /&gt;</code>
+        </li>
+        <li>
+          Los valores de los atributos deben ir entre comillas dobles:
+          <code>&lt;img src="imagen.gif" /&gt;</code>
+        </li>
+        <li>
+          Todo documento debe estar bien formado:
+          <code
+            >&lt;html&gt;&lt;head&gt;...&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;</code
+          >
+        </li>
+      </ul>
+    </section>
+
+    <!-- Atributos HTML -->
+    <section>
+      <h2>Atributos HTML</h2>
+      <p>Los atributos proporcionan información adicional sobre un elemento:</p>
+      <ul>
+        <li>
+          Se escriben dentro de la etiqueta de apertura en formato
+          <code>name="value"</code>
+        </li>
+        <li>
+          Tipos de atributos:
+          <ul>
+            <li>
+              Opcionales: uso no obligatorio (ej. <code>width</code> en
+              <code>&lt;img&gt;</code>)
+            </li>
+            <li>
+              Requeridos: necesarios (ej. <code>href</code> en
+              <code>&lt;a&gt;</code>)
+            </li>
+            <li>
+              Globales: aplicables a cualquier elemento (ej. <code>id</code>,
+              <code>class</code>, <code>style</code>, <code>title</code>)
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Comentarios -->
+    <section>
+      <h2>Comentarios en HTML</h2>
+      <p>
+        Se utilizan para documentar el código y no se muestran en el navegador:
+      </p>
+      <pre>&lt;!-- Este es un comentario --&gt;</pre>
+    </section>
+
+    <!-- Etiquetas <head> -->
+    <section>
+      <h2>Elementos del &lt;head&gt;</h2>
+      <ul>
+        <li><code>&lt;title&gt;</code>: Título de la página, obligatorio.</li>
+        <li><code>&lt;style&gt;</code>: Definir estilos CSS internos.</li>
+        <li><code>&lt;base&gt;</code>: URL base para enlaces relativos.</li>
+        <li>
+          <code>&lt;link&gt;</code>: Vincular CSS u otros recursos externos.
+        </li>
+        <li>
+          <code>&lt;meta&gt;</code>: Metadatos (charset, keywords, descripción,
+          autor).
+        </li>
+        <li>
+          <code>&lt;script&gt;</code>: Scripts del lado del cliente
+          (JavaScript).
+        </li>
+      </ul>
+    </section>
+
+    <!-- Etiquetas <body> -->
+    <section>
+      <h2>Elementos del &lt;body&gt;</h2>
+      <ul>
+        <li><code>&lt;p&gt;</code>: Párrafos.</li>
+        <li><code>&lt;br /&gt;</code>: Salto de línea.</li>
+        <li><code>&lt;hr /&gt;</code>: Línea horizontal.</li>
+        <li>Encabezados: <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>.</li>
+        <li>
+          Formato de texto: <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>,
+          <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>,
+          <code>&lt;small&gt;</code>.
+        </li>
+        <li><code>&lt;pre&gt;</code>: Texto preformateado.</li>
+        <li>Enlaces: <code>&lt;a href="url"&gt;Texto&lt;/a&gt;</code></li>
+        <li>
+          Imágenes:
+          <code
+            >&lt;img src="imagen.jpg" alt="texto alternativo" width="300"
+            height="200" /&gt;</code
+          >
+        </li>
+      </ul>
+    </section>
+
+    <!-- Recursos -->
+    <section>
+      <h2>Recursos y desarrollo</h2>
+      <p>Para desarrollar páginas web necesitas:</p>
+      <ul>
+        <li>Editor de código (VS Code, Notepad++, Sublime, etc.)</li>
+        <li>
+          Navegador para visualizar tu página (Chrome, Firefox, Edge, Safari)
+        </li>
+        <li>Conocimiento básico de HTML, CSS y JavaScript</li>
+      </ul>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad align-items define cómo se alinean los elementos a lo largo de la dirección secundaria
+    (perpendicular a la dirección principal) dentro del contenedor flexible.
+
+    Valores posibles:
+    - flex-start: los elementos se alinean al principio de la dirección secundaria (arriba si la dirección secundaria es vertical)
+    - flex-end: los elementos se alinean al final de la dirección secundaria (abajo si la dirección secundaria es vertical)
+    - center: los elementos se alinean en el centro de la dirección secundaria
+    - stretch: los elementos se estiran para ocupar todo el espacio de la dirección secundaria
+    - baseline: los elementos se alinean según la línea base del texto
+  -->
+
+    <style>
+      /* Contenedor flexible */
+      div {
+        display: flex; /* Convierte el div en contenedor flexible */
+        align-items: flex-end; /* Alinea los elementos al final de la dirección secundaria (abajo) */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        flex: initial; /* Tamaño natural: no crece, puede comprimirse, tamaño según contenido */
+        border: black 1px solid; /* Borde negro para visualizar cada elemento */
+        margin: 2px; /* Separación entre los párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

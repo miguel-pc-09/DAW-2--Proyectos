@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad compuesta flex permite definir simultáneamente:
+      1. flex-grow → factor de expansión
+      2. flex-shrink → factor de compresión
+      3. flex-basis → tamaño inicial del elemento
+
+    Sintaxis: flex: <flex-grow> <flex-shrink> <flex-basis>;
+    - Si hay ambigüedad, los valores se interpretan en ese orden.
+    - Valores comunes predefinidos:
+        initial → equivale a 0 1 auto
+        auto    → equivale a 1 1 auto
+        none    → equivale a 0 0 auto
+  -->
+
+    <style>
+      /* Contenedor flexible en bloque */
+      div {
+        display: flex; /* Convierte el div en contenedor flexible */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        flex: initial; /* Equivale a flex-grow: 0; flex-shrink: 1; flex-basis: auto */
+        border: black 1px solid; /* Borde negro para ver cada párrafo */
+        margin: 2px; /* Separación entre párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

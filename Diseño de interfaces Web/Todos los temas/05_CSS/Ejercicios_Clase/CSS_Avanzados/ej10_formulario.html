@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Introducción formularios web</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Un formulario sirve para enviar datos a otra página que los recoge para usarlos o almacenarlos."
+    />
+
+    <style>
+      /* Aplica box-sizing:border-box a todos los elementos:
+	   Esto hace que el ancho y alto de los elementos incluya borde y padding */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Estilo general del formulario */
+      form {
+        width: 300px; /* ancho fijo */
+        padding: 10px; /* espacio interior */
+        border-radius: 10px; /* esquinas redondeadas */
+        margin: auto; /* centra horizontalmente */
+        background-color: #ca1; /* color de fondo */
+      }
+
+      /* Estilo de las etiquetas de los campos */
+      form label {
+        width: 72px; /* ancho fijo de la etiqueta */
+        font-weight: bold; /* texto en negrita */
+        display: inline-block; /* permite ancho fijo y alineación con input */
+      }
+
+      /* Estilo de los campos de texto y email */
+      form input[type="text"],
+      form input[type="email"] {
+        width: 180px; /* ancho del input */
+        padding: 10px; /* espacio interior */
+        border: 3px solid #f6f6f6; /* borde del input */
+        border-radius: 3px; /* esquinas ligeramente redondeadas */
+        background-color: #f6f6f6; /* color de fondo */
+        margin: 8px 0; /* margen vertical */
+        display: inline-block; /* para que se alinee junto al label */
+      }
+
+      /* Estilo del botón de enviar */
+      form input[type="submit"] {
+        width: 100%; /* ocupa todo el ancho del formulario */
+        padding: 8px 16px; /* espacio interior */
+        margin-top: 32px; /* separa del último input */
+        border: 1px solid #000; /* borde negro */
+        border-radius: 5px; /* esquinas redondeadas */
+        display: block; /* ocupa toda la línea */
+        color: #fff; /* texto blanco */
+        background-color: #000; /* fondo negro */
+        cursor: pointer; /* cambia cursor al pasar por encima */
+      }
+
+      /* Estilo del textarea */
+      textarea {
+        width: 100%; /* ocupa todo el ancho del formulario */
+        height: 100px; /* alto fijo */
+        border: 1px solid #f6f6f6; /* borde gris */
+        border-radius: 3px; /* esquinas redondeadas */
+        background-color: #f6f6f6; /* fondo gris */
+        margin: 8px 0; /* separación vertical */
+        resize: none; /* evita que el usuario cambie tamaño */
+        display: block; /* ocupa toda la línea */
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <!-- Campo de nombre -->
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" />
+
+      <!-- Campo de apellidos -->
+      <label for="apellidos">Apellidos</label>
+      <input type="text" name="apellidos" id="apellidos" />
+
+      <!-- Campo de email -->
+      <label for="email">Email</label>
+      <!-- corregido: cierre de label correcto -->
+      <input type="email" name="email" id="email" />
+
+      <!-- Campo de asunto -->
+      <label for="asunto">Asunto</label>
+      <input type="text" name="asunto" id="asunto" />
+
+      <!-- Campo de mensaje -->
+      <label for="mensaje">Mensaje</label>
+      <textarea name="mensaje" id="mensaje" maxlength="300"></textarea>
+
+      <!-- Botón de enviar -->
+      <input type="submit" name="enviar" value="enviar datos" />
+    </form>
+  </body>
+</html>

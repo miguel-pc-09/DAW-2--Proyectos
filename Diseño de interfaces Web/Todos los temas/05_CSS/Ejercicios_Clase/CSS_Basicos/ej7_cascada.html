@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Elementos en cascada</title>
+    <style>
+      /* Selector de tipo: todos los <p> tendrán color negro */
+      p {
+        color: black;
+      }
+
+      /* Selector de tipo: todos los <div> tendrán borde negro y texto rojo */
+      div {
+        border: black 3px solid;
+        color: red; /* este color se hereda por defecto a los elementos hijos que no tengan color definido */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Primer div: tiene un <p> dentro -->
+    <div>
+      <!-- El <p> tiene color negro definido explícitamente, por lo que sobrescribe el rojo heredado del div -->
+      <p>Esto es un párrafo dentro de una división.</p>
+      <!-- Este texto no está dentro de <p>, por lo que hereda el color del div → rojo -->
+      Texto fuera de p
+    </div>
+
+    <br />
+
+    <!-- Segundo div: sin <p> -->
+    <div>
+      <!-- Todo el texto dentro del div toma el color rojo definido en div -->
+      Otro div sin p
+    </div>
+  </body>
+</html>

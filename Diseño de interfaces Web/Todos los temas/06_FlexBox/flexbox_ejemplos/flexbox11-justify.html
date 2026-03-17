@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    La propiedad justify-content define cómo se reparte el espacio libre entre los elementos 
+    a lo largo de la dirección principal (fila por defecto).
+
+    Valores posibles:
+    - flex-start: los elementos se alinean al principio del contenedor; el espacio sobrante queda al final
+    - flex-end: los elementos se alinean al final del contenedor; el espacio sobrante queda al principio
+    - center: los elementos se centran; el espacio sobrante se reparte a ambos lados
+    - space-between: el espacio sobrante se reparte **solo entre los elementos**, sin incluir los extremos
+    - space-around: el espacio sobrante se reparte **entre los elementos y en los extremos**, dejando espacio igual a cada lado
+  -->
+    <style>
+      /* Contenedor flexible */
+      div {
+        display: flex;
+        justify-content: center; /* Centra los elementos en la dirección principal */
+      }
+
+      /* Párrafos dentro del contenedor */
+      p {
+        flex: initial; /* Tamaño natural: no crece, puede comprimirse, tamaño según contenido */
+        border: black 1px solid; /* Borde negro para ver los límites */
+        margin: 2px; /* Separación entre los párrafos */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Primer contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+
+    <!-- Segundo contenedor flexible -->
+    <div>
+      <p>Primer Parrafo</p>
+      <p>Segundo Parrafo</p>
+      <p>Tercer Parrafo Tercer Parrafo Tercer Parrafo Tercer Parrafo</p>
+      <p>Cuarto parrafo</p>
+    </div>
+  </body>
+</html>

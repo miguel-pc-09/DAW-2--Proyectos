@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unidades relativas</title>
+    <style>
+      /* Título con tamaño fijo en px */
+      h1 {
+        font-size: 42px; /* Tamaño absoluto del texto */
+      }
+
+      /* Párrafo con borde en 'em' */
+      p.borde-em {
+        border: red 1em solid; /* Borde rojo de 1em: relativo al tamaño de fuente del elemento */
+      }
+
+      /* Párrafo con borde en 'ex' */
+      p.borde-ex {
+        border: green 1ex solid; /* Borde verde de 1ex: altura de la letra "x" del tipo de letra actual */
+      }
+
+      /* Párrafo con borde en 'ch' */
+      p.borde-ch {
+        border: blue 1ch solid; /* Borde azul de 1ch: ancho de la cifra "0" del tipo de letra actual */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Titulo de la web</h1>
+
+    <!-- Borde basado en altura de fuente -->
+    <p class="borde-em">Este párrafo tiene un borde</p>
+  </body>
+</html>

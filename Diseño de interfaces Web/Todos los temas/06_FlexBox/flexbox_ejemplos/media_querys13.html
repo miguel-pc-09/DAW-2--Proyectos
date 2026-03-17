@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>min-width y max-width</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* 
+      Media queries permiten aplicar estilos CSS solo cuando se cumplen ciertas condiciones de la ventana.
+      En este caso, se cambia el color de fondo según el ancho de la pantalla.
+    */
+
+      /* Si la pantalla tiene un ancho máximo de 800px */
+      @media screen and (max-width: 800px) {
+        html {
+          background-color: lightblue; /* Fondo azul para pantallas pequeñas */
+        }
+      }
+
+      /* Si la pantalla tiene un ancho entre 801px y 900px */
+      @media screen and (min-width: 801px) and (max-width: 900px) {
+        html {
+          background-color: lightcoral; /* Fondo rojo para pantallas medianas */
+        }
+      }
+
+      /* Si la pantalla tiene un ancho mínimo de 900px */
+      @media screen and (min-width: 900px) {
+        html {
+          background-color: lightgreen; /* Fondo verde para pantallas grandes */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      El color de fondo de esta página cambia según el ancho de la pantalla:
+    </p>
+    <ul>
+      <li>si es menor de 800px, el color es azul</li>
+      <li>desde 800px hasta 900px, el color es rojo</li>
+      <li>si es mayor o igual a 900px, el color es verde</li>
+    </ul>
+
+    <p>
+      El ancho actual es <strong><span id="size"></span>px</strong>
+    </p>
+
+    <script>
+      // Obtener el ancho de la ventana y mostrarlo en el elemento con id="size"
+      var ancho = window.innerWidth;
+
+      // Seleccionamos el span usando selector por id (#size)
+      var texto = document.querySelector("#size");
+      texto.textContent = ancho;
+
+      // Actualizar el ancho si la ventana cambia de tamaño
+      window.onresize = function () {
+        var ancho = window.innerWidth;
+        // Usamos querySelector de nuevo
+        var texto = document.querySelector("#size");
+        texto.textContent = ancho;
+      };
+    </script>
+  </body>
+</html>

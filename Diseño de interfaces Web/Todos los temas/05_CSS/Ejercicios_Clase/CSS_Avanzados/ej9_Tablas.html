@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>caption-side (2). Tablas. CSS.</title>
+
+    <style>
+      table {
+        border: blue 1px solid; /* Borde azul para la tabla */
+        border-collapse: separate; /* Determina cómo se combinan los bordes de celdas:
+                                         separate → cada celda tiene su propio borde
+                                         collapse → bordes adyacentes se colapsan en uno solo */
+      }
+      td {
+        border: red 1px solid; /* Borde rojo para cada celda */
+        padding: 20px; /* Espacio interno de la celda (contenido ↔ borde) */
+      }
+      caption {
+        caption-side: bottom; /* Posición de la leyenda de la tabla:
+                                         bottom → debajo de la tabla
+                                         top    → encima de la tabla (valor por defecto) */
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <caption>
+        Esto es la leyenda
+      </caption>
+
+      <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+      </tr>
+      <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+      </tr>
+    </table>
+  </body>
+</html>

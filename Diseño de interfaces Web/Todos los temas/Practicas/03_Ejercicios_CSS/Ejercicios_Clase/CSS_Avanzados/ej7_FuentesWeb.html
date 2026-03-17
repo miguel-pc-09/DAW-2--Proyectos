@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fuentes web.</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+      /* ******************************************************
+       * MÉTODO 1: Fuentes Externas (@import rule)
+       ******************************************************
+       * La regla @import carga una hoja de estilos CSS de Google Fonts.
+       * Esta hoja de estilos contiene la regla @font-face que define la fuente "Indie Flower".
+      */
+
+      /* usar una fuente descargada*/
+      @font-face {
+        font-family: "Mystery Quest";
+        src: url("mystery-quest.woff2");
+      }
+      /* ******************************************************
+       * MÉTODO 2: Fuentes Locales (@font-face rule)
+       ******************************************************
+       * La regla @font-face define una fuente personalizada que debe ser cargada desde un archivo local.
+       * * font-family: Asigna un nombre a la fuente para usarla en CSS.
+       * src: Indica la ubicación del archivo de la fuente (aquí se usa el formato .woff2, moderno y comprimido).
+      */
+
+      /* Reglas de estilo para el PÁRRAFO con la fuente de Google Fonts */
+      .import {
+        font-family:
+          "Indie Flower", serif; /* font-family: Aplica la fuente "Indie Flower". Si falla, usa 'serif' como alternativa. */
+        font-size: 150%; /* font-size: Aumenta el tamaño de la fuente al 150% del tamaño base. */
+      }
+
+      /* Reglas de estilo para el PÁRRAFO con la fuente local */
+      .local {
+        font-family:
+          "Mystery Quest", serif; /* font-family: Aplica la fuente definida localmente por @font-face. Si falla, usa 'serif'. */
+        font-size: 150%; /* font-size: Aumenta el tamaño de la fuente al 150%. */
+      }
+    </style>
+  </head>
+  <body>
+    <p class="import">
+      Esto es un párrafo con fuente web Indie Flower al 150% alojada en Google
+      Fonts.
+    </p>
+    <p class="local">
+      Esto es un párrafo con fuente web Mystery Quest al 150% alojada
+      localmente.
+    </p>
+  </body>
+</html>

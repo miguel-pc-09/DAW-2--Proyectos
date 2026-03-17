@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ejemplos Bootstrap</title>
+
+    <!-- Configuración básica -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5.3.2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      /* Contenedor visual */
+      .contenedor {
+        background-color: mediumturquoise;
+        min-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Ejemplos Tipografía:</h3>
+
+    <!-- container: ancho adaptativo según breakpoint -->
+    <div class="container contenedor">
+      <!-- Cada row debe contener columnas -->
+      <div class="row">
+        <div class="col">
+          <!-- .mark aplica fondo resaltado -->
+          <p class="mark">class="mark"</p>
+        </div>
+      </div>
+
+      <!-- Display headings (tipografía destacada) -->
+      <div class="row">
+        <div class="col">
+          <p class="display-1">class="display-1"</p>
+          <p class="display-2">class="display-2"</p>
+          <p class="display-3">class="display-3"</p>
+          <p class="display-4">class="display-4"</p>
+        </div>
+      </div>
+
+      <!-- Elementos semánticos HTML -->
+      <div class="row">
+        <div class="col">
+          <!-- abbr: muestra tooltip nativo -->
+          <abbr title="Mensaje por debajo">Pasar mouse por aquí</abbr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <!-- kbd: estilo visual para teclas -->
+          Apretar <kbd>Ctrl + C</kbd> para copiar
+        </div>
+      </div>
+
+      <!-- Peso de fuente -->
+      <div class="row">
+        <div class="col">
+          <p class="fw-bold">Texto en negrilla</p>
+          <p class="fw-light">Texto ligero</p>
+        </div>
+      </div>
+
+      <!-- Tamaño y estilo -->
+      <div class="row">
+        <div class="col">
+          <p class="small">Texto pequeño</p>
+          <p class="fst-italic">Texto en itálico</p>
+        </div>
+      </div>
+
+      <!-- Control de flujo -->
+      <div class="row">
+        <div class="col">
+          <p class="text-nowrap">Texto sin salto de línea</p>
+        </div>
+      </div>
+
+      <!-- Transformaciones -->
+      <div class="row">
+        <div class="col">
+          <p class="text-lowercase">minúsculas</p>
+          <p class="text-uppercase">mayúsculas</p>
+          <p class="text-capitalize">capitalizado</p>
+        </div>
+      </div>
+
+      <!-- Colores contextuales -->
+      <div class="row">
+        <div class="col">
+          <p class="text-muted">Texto muted</p>
+          <p class="text-primary">Texto primary</p>
+          <p class="text-secondary">Texto secondary</p>
+          <p class="text-danger">Texto danger</p>
+          <p class="text-warning">Texto warning</p>
+          <p class="text-success">Texto success</p>
+          <p class="text-info">Texto info</p>
+          <p class="text-white bg-dark">Texto blanco (requiere fondo oscuro)</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
