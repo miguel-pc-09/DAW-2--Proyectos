@@ -1,24 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imagen Rotativa</title>
     <style>
-        #imagen-rotativa {
-            width: 200px;
-            height: 200px;
-            background-color: #3498db;
-            transition: transform 3s ease-in-out;
-        }
-        #imagen-rotativa:hover {
-            transform: rotate(90deg);
-        }
+      #imagen-rotativa {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db; /* Color azul */
+        transition: transform 3s ease-in-out; /* Suavizar el movimiento */
+      }
+      #imagen-rotativa:hover {
+        transform: rotate(180deg); /* Gira la imagen 180 grados */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ejemplo de Imagen Rotativa</h1>
     <div id="imagen-rotativa"></div>
     <p>Pasa el cursor sobre el cuadrado azul para verlo girar.</p>
-</body>
+  </body>
 </html>
