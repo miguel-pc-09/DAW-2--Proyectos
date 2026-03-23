@@ -6,8 +6,8 @@
 
 // Crear un objeto usando stdClass
 $persona = new stdClass();
-$persona->nombre = "Gema";
-$persona->apellido = "Rodríguez";
+$persona->nombre = "Miguel";
+$persona->apellido = "Perucha";
 $persona->edad = 37;
 $persona->carnet = true;
 
@@ -28,7 +28,7 @@ $mostrar = $persona->mostrarDatos;
 $mostrar($persona);
 
 // Crear propiedad dinámica
-$persona->altura = 1.73;
+$persona->altura = 1.90;
 echo "Altura añadida: " . $persona->altura . "\n";
 
 // Eliminar propiedad

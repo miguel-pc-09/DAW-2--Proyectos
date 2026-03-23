@@ -38,7 +38,7 @@ class Gato extends Animal {
   public function peleaCon($contrincante) {
     if ($this->getSexo() == "hembra") {
       return "No me gusta pelear";
-    } else if ($contrincante.getSexo() == Sexo.HEMBRA) {
+    } else if ($contrincante->getSexo() == "hembra") {
       return "No peleo contra gatitas";
     } else  {
       return "Ven aquí que te vas a enterar";

@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title></title>
-  </head>
-  <body>
-  <?php
+</head>
+
+<body>
+    <?php
 
     include_once 'Pinguino.php';
     include_once 'Gato.php';
     include_once 'Perro.php';
     include_once 'Lagarto.php';
+    include_once 'Ave.php';
+    
 
     $garfield = new Gato("macho", "romano");
-    $tom = new Gato("macho");
-    $lisa = new Gato("hembra");
-    $silvestre = new Gato();
+    $tom = new Gato("macho", "persa");
+    $lisa = new Gato("hembra", "persa");
+    $silvestre = new Gato("macho", "siamés");
 
     echo $garfield."<br>";
     echo $tom."<br>";
     echo $lisa."<br>";
     echo $silvestre."<br><hr>";
 
-    $miLoro = new Ave();
+    $miLoro = new Ave("macho");
     echo $miLoro->aseate()."<br>";
     echo $miLoro->vuela()."<br><hr>";
 
@@ -43,5 +47,6 @@
     echo $godzilla->duerme()."<br><hr>";
 
   ?>
-  </body>
+</body>
+
 </html>
