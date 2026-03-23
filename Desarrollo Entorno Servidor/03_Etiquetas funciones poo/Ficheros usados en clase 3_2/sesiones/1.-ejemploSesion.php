@@ -13,11 +13,13 @@
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title></title>
-  </head>
-  <body>
+</head>
+
+<body>
     <?php
       switch($_POST['accion']) {
         case "incA" :
@@ -39,19 +41,20 @@
     ?>
 
     <h1>
-    a = <?php echo $_SESSION['a'] ?><br>
-    b = <?php echo $_SESSION['b'];?>
-    </h1> 
-
+        a = <?php echo $_SESSION['a'] ?><br>
+        b = <?php echo $_SESSION['b'];?>
+    </h1>
+    <!-- Con # hacemos que se llame a si mismo volviendo arriba otra vez y se recargue la página -->
     <form action="#" method="POST">
-      <select name="accion">
-        <option value="incA">Incrementa a</option>
-        <option value="decA">Decrementa a</option>
-        <option value="incB">Incrementa b</option>
-        <option value="decB">Decrementa b</option>
-        <option value="cierra">Cierra sesión</option>
-      </select>
-      <input type="submit" value="OK">
+        <select name="accion">
+            <option value="incA">Incrementa a</option>
+            <option value="decA">Decrementa a</option>
+            <option value="incB">Incrementa b</option>
+            <option value="decB">Decrementa b</option>
+            <option value="cierra">Cierra sesión</option>
+        </select>
+        <input type="submit" value="OK">
     </form>
-  </body>
+</body>
+
 </html>

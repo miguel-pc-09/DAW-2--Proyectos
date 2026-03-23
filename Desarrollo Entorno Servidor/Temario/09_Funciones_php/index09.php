@@ -8,7 +8,7 @@
 function saludar($nombre) {
     return "Hola, $nombre!";
 }
-echo saludar("Gema") . "\n";
+echo saludar("Miguel") . "\n";
 
 // 2. Función con parámetros por defecto
 function sumar($a = 0, $b = 0) {
@@ -79,7 +79,7 @@ echo "Factorial de 5: " . factorial(5) . "\n";
 function obtenerDatos() {
     // Simula retraso de 2 segundos
     sleep(2);
-    return (object)[ 'usuario' => 'Gema', 'edad' => 37 ];
+    return (object)[ 'usuario' => 'Miguel ', 'edad' => 37 ];
 }
 
 $datos = obtenerDatos();

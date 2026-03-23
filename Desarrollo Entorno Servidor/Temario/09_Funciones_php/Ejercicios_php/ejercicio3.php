@@ -12,5 +12,5 @@ function saludo($nombre, $veces)
 
 // Llamadas a la función
 // Llama a la función "saludo" pasando "Jose " como nombre y 3 como número de veces.
-saludo("Gema ", 3);
+saludo("Miguel ", 3);
 ?>
