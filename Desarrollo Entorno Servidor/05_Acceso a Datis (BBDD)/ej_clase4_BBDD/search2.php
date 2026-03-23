@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Resultados de la Búsqueda</title>
 </head>
+
 <body>
     <h1>Resultados de la Búsqueda</h1>
     <?php
@@ -16,6 +18,7 @@
         $nombre = mysqli_real_escape_string($conn, $_POST['nombre']);
         $sql = "SELECT id, nombre FROM productos WHERE nombre LIKE '%$nombre%'";
         $result = mysqli_query($conn, $sql);
+        /* mysqli_num_rows() y mysqli_fetch_assoc() solo se usan con SELECT */
 
         if (mysqli_num_rows($result) > 0) {
             echo '<ul>';
@@ -32,4 +35,5 @@
     ?>
     <a href="indice.php">Volver al menú</a>
 </body>
+
 </html>
