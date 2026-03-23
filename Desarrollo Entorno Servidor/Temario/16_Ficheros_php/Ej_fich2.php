@@ -11,7 +11,7 @@ $nombres = array(
 );
 for($i=0;$i<=count($nombres);$i++)
 {
-	fwrite($archivo, $nombres[$i] . PHP_EOL);//End of Line
+	fwrite($archivo, $nombres[$i] . PHP_EOL);//End of Line. PHP_EOL(escribe 1 y mete enter y escribe otro)
 }
 //foreach ($nombres as $n){
   //  fwrite($archivo, $n . PHP_EOL);

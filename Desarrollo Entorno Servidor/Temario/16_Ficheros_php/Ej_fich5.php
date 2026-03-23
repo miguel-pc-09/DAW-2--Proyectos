@@ -12,7 +12,7 @@
   while(!feof($fd)){  // feof: end of file EOF
 	  $linea = fgets($fd); //lee del fichero una linea
       //echo $lectura."<br>";
-	  if (intval($linea) == intval($numero)) { 
+	  if (intval($linea) == intval($numero)) { // INTVAL convierte en entero
 		$cont++;
 	  }
 }

@@ -1,6 +1,6 @@
 <?php
 /*Leer archivo de texto con PHP*/
-$nombre_archivo = "gema.txt";
+$nombre_archivo = "casa.txt";
 $fd = fopen($nombre_archivo, "r"); # Modo r, read
 echo "El contenido del fichero es: <br>";  
 
