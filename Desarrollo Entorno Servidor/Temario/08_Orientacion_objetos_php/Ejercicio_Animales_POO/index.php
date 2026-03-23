@@ -15,16 +15,16 @@
     include_once 'Lagarto.php';
 
     $garfield = new Gato("macho", "romano");
-    $tom = new Gato("macho");
-    $lisa = new Gato("hembra");
-    $silvestre = new Gato();
+    $tom = new Gato("macho", "angora");
+    $lisa = new Gato("hembra", "persa");
+    $silvestre = new Gato("macho", "siames");
 
     echo $garfield."<br>";
     echo $tom."<br>";
     echo $lisa."<br>";
     echo $silvestre."<br><hr>";
 
-    $miLoro = new Ave();
+    $miLoro = new Ave("macho");
     echo $miLoro->aseate()."<br>";
     echo $miLoro->vuela()."<br><hr>";
 

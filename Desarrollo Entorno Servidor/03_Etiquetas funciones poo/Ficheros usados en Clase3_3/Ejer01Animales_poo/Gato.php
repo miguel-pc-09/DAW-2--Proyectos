@@ -6,6 +6,7 @@ class Gato extends Animal {
   
   private $raza;
   
+  /* podemos poner el constructor con valores por defecto ($s = "macho", $r = "siamés") */
   public function __construct($s, $r) {
     parent::__construct($s);
     if (isset($r)) {
