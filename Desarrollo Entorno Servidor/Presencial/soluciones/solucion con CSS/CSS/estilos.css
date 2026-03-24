@@ -1,0 +1,222 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* Contenedores */
+.contenedor-login,
+.contenedor-pedido,
+.contenedor-menu,
+.contenedor-calcular,
+.contenedor-sorteo {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Cabecera */
+.cabecera {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cabecera h1 {
+    color: #2c3e50;
+}
+
+.navegacion {
+    margin-top: 10px;
+}
+
+/* Tarjetas */
+.tarjeta-login,
+.tarjeta-pedido,
+.tarjeta-formulario,
+.tarjeta-resultado,
+.tarjeta-opcion,
+.tarjeta-precios {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Formularios */
+.formulario {
+    margin-top: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.grupo-campos {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.grupo-campos legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-primario {
+    background: #3498db;
+    color: white;
+}
+
+.btn-secundario {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-grande {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+/* Grid de opciones */
+.grid-opciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-opcion {
+    text-align: center;
+}
+
+.icono-opcion {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Tablas */
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabla-precios th,
+.tabla-precios td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-precios th {
+    background: #f8f9fa;
+}
+
+.tabla-precios .precio {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Resultados */
+.resultado {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.resultado-item {
+    margin: 10px 0;
+}
+
+.valor.destacado {
+    font-size: 20px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Sorteo */
+.contenedor-ruleta {
+    display: grid;
+    gap: 20px;
+}
+
+.tarjeta-ganador {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.ganador-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-ganador {
+    font-size: 40px;
+}
+
+/* Pie de página */
+.pie {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-login,
+    .contenedor-pedido,
+    .contenedor-menu,
+    .contenedor-calcular,
+    .contenedor-sorteo {
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    .grid-opciones {
+        grid-template-columns: 1fr;
+    }
+}

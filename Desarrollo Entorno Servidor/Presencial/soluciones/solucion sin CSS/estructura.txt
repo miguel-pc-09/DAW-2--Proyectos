@@ -1,0 +1,13 @@
+/tienda_online/
+│
+├── login.html
+├── verificar.php
+├── clave.txt
+├── pedido.php
+├── guardar_pedido.php
+├── pedidos.txt
+├── mostrar.php
+├── calcular.php
+├── sorteo.php
+├── css/
+│   └── estilos.css
