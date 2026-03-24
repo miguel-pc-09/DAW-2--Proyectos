@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Indico la codificación de caracteres para que se vean bien tildes y ñ -->
+    <!-- Se leería como: meta charset igual a UTF-8 -->
+    <meta charset="UTF-8">
+
+    <!-- Hago que la página se adapte bien a móvil, tablet y ordenador -->
+    <!-- Se leería como: viewport con ancho del dispositivo y escala inicial 1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparecerá en la pestaña del navegador -->
+    <!-- Se leería como: title igual a Login - Tienda Online -->
+    <title>Login - Tienda Online</title>
+
+    <!-- Enlazo el archivo CSS para dar estilo a la página -->
+    <!-- Se leería como: link rel stylesheet href css/estilos.css -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <!-- Contenedor principal de la pantalla de login -->
+    <div class="contenedor-login">
+
+        <!-- Cabecera visual de la página -->
+        <header class="cabecera">
+            <h1>Tienda Online</h1>
+            <p>Sistema de gestión de pedidos</p>
+        </header>
+
+        <!-- Parte principal del contenido -->
+        <main class="principal">
+            <div class="tarjeta-login">
+                <h2>Iniciar Sesión</h2>
+                <p class="descripcion">Introduce tus credenciales para acceder al sistema</p>
+
+                <!-- 
+                ACCIÓN: Este formulario debe enviar los datos a verificar.php
+                MÉTODO: POST
+                -->
+                <!-- El formulario manda usuario y clave a verificar.php usando POST -->
+                <!-- Se leería como: form action verificar.php method post -->
+                <form action="verificar.php" method="post" class="formulario">
+
+                    <!-- Grupo del campo usuario -->
+                    <div class="grupo-formulario">
+                        <!-- Etiqueta del input usuario -->
+                        <label for="usuario">Nombre de usuario:</label>
+
+                        <!-- Caja de texto para escribir el usuario -->
+                        <!-- id sirve para relacionarlo con el label -->
+                        <!-- name es el nombre con el que PHP recogerá el dato -->
+                        <!-- required obliga a rellenarlo -->
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+
+                    <!-- Grupo del campo clave -->
+                    <div class="grupo-formulario">
+                        <!-- Etiqueta del input contraseña -->
+                        <label for="clave">Contraseña:</label>
+
+                        <!-- Caja de contraseña -->
+                        <!-- type password hace que no se vea el texto escrito -->
+                        <input type="password" id="clave" name="clave" required>
+                    </div>
+
+                    <!-- Grupo donde coloco el botón de enviar -->
+                    <div class="grupo-formulario">
+                        <!-- Botón que envía el formulario -->
+                        <!-- Se leería como: button type submit -->
+                        <button type="submit" class="btn btn-primario">
+                            Ingresar al Sistema
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="pie">
+            <p>Sistema desarrollado para Gestión de Tienda Online</p>
+        </footer>
+    </div>
+</body>
+</html>

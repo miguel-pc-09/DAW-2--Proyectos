@@ -1,33 +1,48 @@
 <?php
 
 // Variables configurables por el administrador de la aplicación
-
+// Cargo el archivo config.php una sola vez.
+// "require_once" se leería como: requiere una vez este archivo.
+// Si no existe o falla, el programa se para.
 require_once "config.php";
 
 // Variables configurables por el programador de la aplicación
 
 // Nombres de las tablas
-
+// Aquí guardo en el array de configuración el nombre de la tabla que voy a usar.
+// Se leería como: en cfg, en la posición tablaPersonas, guardo "personas".
 $cfg["tablaPersonas"] = "personas";           // Nombre de la tabla Personas
 
 // FUNCIONES ESPECÍFICAS DE LA BASE DE DATOS MYSQL
 
 // MYSQL: FUNCIÓN DE CONEXIÓN CON LA BASE DE DATOS
 
+// FUNCIÓN DE CONEXIÓN CON LA BASE DE DATOS
+// Se leería como: función conectaDb
+// Esta función me devuelve la conexión con la base de datos.
 function conectaDb()
 {
+    // Voy a usar dentro de esta función una variable que está fuera
     global $cfg;
 
     try {
+        // Intento conectarme a la base de datos usando PDO
+        // Le paso host, nombre de la BD, usuario y contraseña
         $tmp = new PDO("mysql:host=$cfg[mysqlHost];dbname=$cfg[mysqlDatabase];charset=utf8mb4", $cfg["mysqlUser"], $cfg["mysqlPassword"]);
     } catch (PDOException $e) {
+        // Si falla la conexión con base de datos, intento conectarme solo al servidor MySQL (sin seleccionar BD)
         $tmp = new PDO("mysql:host=$cfg[mysqlHost];charset=utf8mb4", $cfg["mysqlUser"], $cfg["mysqlPassword"]);
     } catch (PDOException $e) {
+        // Si vuelve a fallar, muestro un error por pantalla
         print "    <p class=\"aviso\">Error: No puede conectarse con la base de datos. {$e->getMessage()}</p>\n";
+        // Termino la ejecución del programa
         exit;
     } finally {
+        // Configuro PDO para que no lance errores automáticamente
         $tmp->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+        // Activo consultas con buffer (me permite recorrer resultados mejor)
         $tmp->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
+        // Devuelvo la conexión creada
         return $tmp;
     }
 }
