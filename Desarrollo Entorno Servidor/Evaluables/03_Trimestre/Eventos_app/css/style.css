@@ -1,0 +1,221 @@
+/* ESTILOS GENERALES DE LA PÁGINA: Aquí dejo la base general de toda la aplicación */
+/* Con esto quito los márgenes por defecto del navegador */
+body {
+    margin: 0;
+
+    /* Quito también el relleno por defecto */
+    padding: 0;
+
+    /* Aquí marco la tipografía general de la web */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Este es el color base del texto */
+    color: #212529;
+
+    /* Pongo la página en columna para empujar bien el pie al final */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Esta clase la uso para el fondo general de la aplicación */
+.fondo-app {
+    /* Con esto hago que la página ocupe toda la pantalla */
+    min-height: 100vh;
+
+    /* Aquí pongo una capa oscura suave encima y debajo la imagen de fondo */
+    background: linear-gradient(rgba(23, 33, 74, 0.55), rgba(23, 33, 74, 0.55)),
+        url("../img/Fondo.png");
+
+    /* La imagen cubre toda la pantalla */
+    background-size: cover;
+
+    /* Centro la imagen */
+    background-position: center;
+
+    /* Dejo la imagen fija al hacer scroll */
+    background-attachment: fixed;
+}
+
+/* CABECERA Y BARRA DE NAVEGACIÓN: Aquí doy estilo a la parte superior de la aplicación */
+/* Esta clase la uso para la barra superior */
+.barra-app {
+    background: linear-gradient(90deg, #4d72f0, #4e6fe7);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Esto organiza mejor el contenido de la barra */
+.contenedor-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Esta clase la uso para la zona de la marca */
+.marca-app {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* Este es el icono de la cabecera */
+.icono-cabecera {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Este es el texto del logo */
+.texto-logo {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* Aquí separo mejor los botones de navegación */
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Esta clase la uso para dar una sombra ligera */
+.sombra-suave {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* CONTENIDO PRINCIPAL Y TÍTULOS: Aquí organizo la parte central de cada pantalla */
+/* Este contenedor central controla mejor la altura sin empujar tanto el pie */
+.contenedor-principal {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex: 1;
+}
+
+/* Esta clase la uso para el título de bienvenida del panel */
+.titulo-bienvenida {
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Esta clase la uso para los títulos principales de las páginas */
+.titulo-pagina {
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+
+    /* Esto hace que se vea nítido sobre el fondo */
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Esto separa mejor las tarjetas del panel */
+.fila-paneles {
+    margin-bottom: 30px;
+}
+
+/* TARJETAS Y BLOQUES VISUALES: Aquí doy el estilo principal a las tarjetas blancas */
+/* Esta clase la uso para dar estilo a las tarjetas */
+.tarjeta-app {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* El título de cada tarjeta */
+.tarjeta-app h3 {
+    margin-bottom: 18px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* El texto de cada tarjeta */
+.tarjeta-app p {
+    margin-bottom: 22px;
+    font-size: 18px;
+}
+
+/* TABLAS: Aquí dejo el estilo de la tabla del listado */
+/* Aquí doy fondo a la tabla para que se vea bien sobre la imagen */
+.table.tabla-app,
+.tabla-app {
+    background-color: rgba(255, 255, 255, 0.96);
+}
+
+/* Centro verticalmente el contenido de la tabla */
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* Esta clase la uso para separar los botones de acciones */
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+/* FORMULARIOS Y BOTONES: Aquí dejo pequeños retoques para inputs y botones */
+/* Redondeo campos de formulario */
+form .form-control,
+form .form-select,
+form textarea {
+    border-radius: 8px;
+}
+
+/* Redondeo botones */
+.btn {
+    border-radius: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+/* PIE DE PÁGINA: Aquí doy estilo al footer común */
+/* Este es el pie de página */
+.pie-app {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    margin-top: 0;
+}
+
+/* DISEÑO RESPONSIVE: Aquí ajusto la vista para móvil y tablet  */
+@media (max-width: 768px) {
+    .contenedor-barra {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .menu-navegacion {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .texto-logo {
+        font-size: 24px;
+    }
+
+    .titulo-bienvenida {
+        font-size: 42px;
+        margin-bottom: 35px;
+    }
+
+    .titulo-pagina {
+        font-size: 38px;
+    }
+
+    .contenedor-principal {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
