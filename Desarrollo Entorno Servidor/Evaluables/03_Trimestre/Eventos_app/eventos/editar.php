@@ -35,8 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['actualizar'])) {
     // Compruebo que nombre y fecha no estén vacíos
     if ($nombre == "" || $fecha == "") {
         $mensaje = "El nombre y la fecha son obligatorios.";
+    // Aquí compruebo que la capacidad sea un número válido y que no sea negativa
+    } elseif ($capacidad != "" && (!is_numeric($capacidad) || $capacidad < 0)) {
+        $mensaje = "La capacidad debe ser un número válido.";
     } else {
-
         // Hago la consulta para actualizar el evento
         $sql = "UPDATE eventos SET
                 nombre = ?,
@@ -87,7 +89,6 @@ if ($id > 0) {
 }
 
 // Esta variable la uso para ajustar las rutas dependiendo de desde qué carpeta llamo a la cabecera
-// Si estoy dentro de una carpeta (como paginas), necesito "../" para subir un nivel
 $rutaBase = "../";
 ?>
 

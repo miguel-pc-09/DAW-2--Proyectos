@@ -11,32 +11,44 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
     $usuario = trim($_POST['usuario']);
     $password = trim($_POST['password']);
 
-    // Leo todas las líneas del archivo de usuarios
-    $lineas = file("usuarios.txt");
+    // Compruebo si el archivo de usuarios existe antes de intentar leerlo
+    if (file_exists("usuarios.txt")) {
 
-    // Esta variable me sirve para saber si el login es correcto o no
-    $correcto = false;
+        // Leo todas las líneas del archivo de usuarios
+        $lineas = file("usuarios.txt");
 
-    // Recorro cada línea del archivo
-    foreach ($lineas as $linea) {
+        // Esta variable me sirve para saber si el login es correcto o no
+        $correcto = false;
 
-        // Separo usuario y contraseña usando los dos puntos
-        $datos = explode(":", trim($linea));
+        // Recorro cada línea del archivo
+        foreach ($lineas as $linea) {
 
-        // Si coinciden usuario y contraseña, el login es correcto
-        if ($datos[0] == $usuario && $datos[1] == $password) {
-            $correcto = true;
+            // Separo usuario y contraseña usando los dos puntos
+            $datos = explode(":", trim($linea));
+            // Compruebo que la línea tenga las dos partes antes de compararlas
+            if (count($datos) == 2) {
+
+                // Si coinciden usuario y contraseña, el login es correcto
+                if ($datos[0] == $usuario && $datos[1] == $password) {
+                    $correcto = true;
+                }
+
+            }
         }
-    }
 
-    // Si el login es correcto, guardo el usuario en sesión y lo mando al panel
-    if ($correcto) {
-        $_SESSION['usuario'] = $usuario;
-        header("Location: panel.php");
-        exit();
+        // Si el login es correcto, guardo el usuario en sesión y lo mando al panel
+        if ($correcto) {
+            $_SESSION['usuario'] = $usuario;
+            header("Location: panel.php");
+            exit();
+        } else {
+            // Si no coincide, guardo mensaje de error
+            $error = "Usuario o contraseña incorrectos";
+        }
+
     } else {
-        // Si no coincide, guardo mensaje de error
-        $error = "Usuario o contraseña incorrectos";
+        // Si el archivo no existe, aviso con un mensaje de error
+        $error = "No se encontró el archivo de usuarios";
     }
 }
 

@@ -48,7 +48,7 @@ $rutaBase = "";
 
         <?php
         // Aquí saludo al usuario que ha iniciado sesión
-        echo "<h1 class='titulo-bienvenida'>Bienvenido, $usuario</h1>";
+        echo "<h1 class='titulo-bienvenida'>Bienvenido, " . htmlspecialchars($usuario) . "</h1>";
         ?>
 
         <div class="row justify-content-center g-4 fila-paneles">

@@ -16,7 +16,6 @@ $resultado = mysqli_query($conexion, $consulta);
 
 
 // Esta variable la uso para ajustar las rutas dependiendo de desde qué carpeta llamo a la cabecera
-// Si estoy dentro de una carpeta (como paginas), necesito "../" para subir un nivel
 $rutaBase = "../";
 ?>
 
