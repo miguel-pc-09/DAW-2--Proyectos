@@ -1,18 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { tarea } from '../../model/tarea';
+import { Tareas } from '../../services/tareas';
+import { ImagenesPipe } from '../../pipes/imagenes-pipe';
+import { CardItem } from '../shared/card-item/card-item';
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CardItem],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
 export class List {
-  lista: string[] = [];
-  nombre?: string;
-  agregarTarea() {
-    /* Comprobacion de que lo que esta en el input no es undefined */
-    this.lista.push(this.nombre!!);
+  tareas: tarea[] = [];
+  // Ahora necesitamos traer el servicio y dentro del servicio necesitaremos un getAll
+  constructor(private servicio: Tareas) {
+    this.tareas = this.servicio.getAll();
   }
 }

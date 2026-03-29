@@ -1,9 +1,6 @@
-<input class="form-control mb-3" placeholder="Introduce nombre de tarea" [(ngModel)]="nombre" />
-
-<button class="btn btn-primary" (click)="agregarTarea()">Agregar datos</button>
-
-<ul class="list-group mt-2">
-  @for (item of lista; track $index) {
-    <li class="list-group-item">{{ item }}</li>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- Metemos la directiva for para repetir -->
+  @for (data of tareas; track $index) {
+    <app-card-item [item]="data"></app-card-item>
   }
-</ul>
+</div>
