@@ -24,6 +24,6 @@ export class ApiPosts {
 
   // Metodo para Identificador
   getPostById(id: string): Observable<Post> {
-    return this.gestorHttp.get<Post>(this.url);
+    return this.gestorHttp.get<Post>(this.url + `/${id}`);
   }
 }
