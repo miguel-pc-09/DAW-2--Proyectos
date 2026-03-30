@@ -1,0 +1,25 @@
+CREAR ELEMENTOS EN EL DOM
+
+Hasta ahora solo modificábamos HTML…
+
+Ahora vamos a CREARLO desde JavaScript.
+
+Sirve para:
+- añadir elementos nuevos
+- generar listas dinámicas
+- mostrar datos
+
+IDEA CLAVE:
+1. Crear elemento
+2. Modificarlo
+3. Insertarlo en el DOM
+
+FUNCIONES IMPORTANTES:
+
+- document.createElement() → crear elemento
+- appendChild() → añadir al DOM
+- remove() → eliminar
+- innerHTML → alternativa (menos recomendable)
+
+IMPORTANTE:
+Siempre hay que añadir el elemento al DOM, si no → no aparece

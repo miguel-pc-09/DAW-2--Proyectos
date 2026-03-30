@@ -1,0 +1,27 @@
+<!-- Cabecera -->
+<div class="mb-4">
+  <h2 class="fw-bold">Eventos en Angular</h2>
+  <p class="text-muted">Angular detecta acciones del usuario y ejecuta funciones.</p>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- CLICK -->
+
+    <h3 class="h5">1. Evento click</h3>
+
+    <!-- Cuando hago click, se ejecuta el método -->
+    <button class="btn btn-primary mb-3" (click)="hacerClick()">Haz click</button>
+
+    <p>{{ mensaje }}</p>
+
+    <hr />
+
+    <!-- INPUT -->
+
+    <h3 class="h5">2. Evento input</h3>
+
+    <!-- Cada vez que escribo, se ejecuta escribir() -->
+    <input type="text" class="form-control mb-3" (input)="escribir($event)" />
+  </div>
+</div>

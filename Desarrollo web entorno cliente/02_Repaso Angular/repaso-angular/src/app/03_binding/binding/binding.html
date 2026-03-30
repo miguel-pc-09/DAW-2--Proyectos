@@ -1,0 +1,52 @@
+<!-- Cabecera del tema -->
+<div class="mb-4">
+  <h2 class="fw-bold">{{ titulo }}</h2>
+  <p class="text-muted">{{ descripcion }}</p>
+</div>
+
+<!-- Tarjeta principal -->
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- INTERPOLACIÓN -->
+    <h3 class="h5 mb-3">1. Interpolación</h3>
+
+    <p>
+      <!-- Aquí Angular muestra el valor de una variable -->
+      Mi nombre es <strong>{{ nombre }}</strong>
+    </p>
+
+    <hr />
+
+    <!-- PROPERTY BINDING -->
+    <h3 class="h5 mb-3">2. Property Binding</h3>
+
+    <p>Aquí uso una propiedad del HTML que recibe un valor desde TypeScript.</p>
+
+    <!-- El atributo src recibe el valor de la variable imagen -->
+    <img [src]="imagen" alt="Imagen de ejemplo" class="img-fluid rounded mb-3" />
+
+    <hr />
+
+    <!-- EVENT BINDING -->
+    <h3 class="h5 mb-3">3. Event Binding</h3>
+
+    <p>{{ mensaje }}</p>
+
+    <!-- Al pulsar el botón se ejecuta el método cambiarMensaje() -->
+    <button class="btn btn-primary" (click)="cambiarMensaje()">Pulsar botón</button>
+
+    <hr />
+
+    <!-- TWO WAY BINDING -->
+    <h3 class="h5 mb-3">4. Two-way Binding</h3>
+
+    <p>Aquí escribo en el input y Angular actualiza la variable automáticamente.</p>
+
+    <!-- ngModel conecta el input con la variable nombre -->
+    <input type="text" class="form-control mb-3" [(ngModel)]="nombre" />
+
+    <p>
+      El valor actual del input es: <strong>{{ nombre }}</strong>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+LOCALSTORAGE EN JAVASCRIPT
+
+LocalStorage permite guardar datos en el navegador.
+
+Sirve para:
+- guardar información del usuario
+- recordar datos (nombre, preferencias, etc.)
+- mantener datos aunque recargues la página
+
+IDEA CLAVE:
+Los datos se guardan como pares:
+clave → valor
+
+IMPORTANTE:
+- Todo se guarda como texto (string)
+- Para objetos usamos JSON
+
+FUNCIONES PRINCIPALES:
+- setItem() → guardar
+- getItem() → obtener
+- removeItem() → eliminar
+- clear() → borrar todo

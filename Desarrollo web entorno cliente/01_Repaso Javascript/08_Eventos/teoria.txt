@@ -1,0 +1,28 @@
+EVENTOS EN JAVASCRIPT
+
+Un evento es algo que ocurre en la página:
+- click
+- escribir
+- enviar formulario
+- mover ratón
+- etc.
+
+JavaScript puede "escuchar" esos eventos y reaccionar.
+
+IDEA CLAVE:
+"Cuando pasa algo → hago algo"
+
+FORMATO:
+elemento.addEventListener("evento", función)
+
+EVENTOS MÁS IMPORTANTES:
+- click
+- input
+- change
+- submit
+- keyup / keydown
+
+IMPORTANTE:
+Siempre necesitas:
+1. seleccionar el elemento
+2. añadir el evento

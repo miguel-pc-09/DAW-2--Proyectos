@@ -1,0 +1,60 @@
+<!-- Cabecera del tema -->
+<div class="mb-4">
+  <h2 class="fw-bold">{{ titulo }}</h2>
+  <p class="text-muted">{{ descripcion }}</p>
+</div>
+
+<!-- Tarjeta principal -->
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- Explicación general -->
+    <h3 class="h5 mb-3">Elementos importantes de las rutas</h3>
+
+    <!-- Tabla con explicación -->
+    <div class="table-responsive mb-4">
+      <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Elemento</th>
+            <th>Qué hace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>app.routes.ts</strong></td>
+            <td>Define qué componente corresponde a cada ruta.</td>
+          </tr>
+          <tr>
+            <td><strong>routerLink</strong></td>
+            <td>Sirve para navegar desde el HTML.</td>
+          </tr>
+          <tr>
+            <td><strong>router-outlet</strong></td>
+            <td>Es el lugar donde Angular carga el componente de la ruta activa.</td>
+          </tr>
+          <tr>
+            <td><strong>redirectTo</strong></td>
+            <td>Redirige a otra ruta automáticamente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ejemplo -->
+    <h3 class="h5 mb-3">Ejemplo de ruta</h3>
+
+    <div class="alert alert-primary">
+      <p class="mb-2">En tu proyecto, una ruta como esta:</p>
+
+      <pre class="mb-0"><code>{{ '{' }}
+  path: '03-binding',
+  component: Binding
+{{ '}' }}</code></pre>
+    </div>
+
+    <p>
+      Significa que cuando la URL sea <strong>/03-binding</strong>, Angular mostrará el componente
+      <strong>Binding</strong>.
+    </p>
+  </div>
+</div>

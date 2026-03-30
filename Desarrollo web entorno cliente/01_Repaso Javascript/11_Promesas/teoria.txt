@@ -1,0 +1,22 @@
+PROMESAS EN JAVASCRIPT
+
+Una promesa representa una operación que se completará en el futuro.
+
+Sirve para:
+- trabajar con código asíncrono
+- esperar resultados (APIs, tiempo, etc.)
+
+IDEA CLAVE:
+"No tengo el resultado ahora, pero lo tendré después"
+
+ESTADOS DE UNA PROMESA:
+- pending (pendiente)
+- fulfilled (resuelta)
+- rejected (error)
+
+MÉTODOS PRINCIPALES:
+- then() → cuando todo va bien
+- catch() → cuando hay error
+
+IMPORTANTE:
+Las promesas NO bloquean el programa

@@ -1,0 +1,53 @@
+<div class="container py-4">
+  <!-- CABECERA -->
+  <div class="text-center mb-4">
+    <h1 class="display-5 fw-bold">{{ titulo }}</h1>
+    <p class="lead text-muted">{{ descripcion }}</p>
+  </div>
+
+  <!-- MENÚ -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h2 class="h4 mb-3">Menú de temas</h2>
+
+      <div class="d-flex flex-wrap gap-2">
+        <!-- Tema 01 -->
+        <a routerLink="/01-que-es-angular" class="btn btn-primary"> 01 - Qué es Angular </a>
+
+        <!-- Tema 02 -->
+        <a routerLink="/02-estructura" class="btn btn-outline-primary"> 02 - Estructura </a>
+
+        <!-- Tema 03 -->
+        <a routerLink="/03-binding" class="btn btn-outline-primary"> 03 - Binding </a>
+
+        <!-- Tema 04 -->
+        <a routerLink="/04-directivas" class="btn btn-outline-primary"> 04 - Directivas </a>
+
+        <!-- Tema 05 -->
+        <a routerLink="/05-eventos" class="btn btn-outline-primary"> 05 - Eventos </a>
+
+        <!-- Tema 06 -->
+        <a routerLink="/06-input-output" class="btn btn-outline-primary"> 06 - Input / Output </a>
+
+        <!-- Tema 07 -->
+        <a routerLink="/07-servicios" class="btn btn-outline-primary"> 07 - Servicios </a>
+
+        <!-- Tema 08 -->
+        <a routerLink="/08-rutas" class="btn btn-outline-primary"> 08 - Rutas </a>
+
+        <!-- Tema 09 -->
+        <a routerLink="/09-pipes" class="btn btn-outline-primary"> 09 - Pipes </a>
+
+        <!-- Tema 10 -->
+        <a routerLink="/10-fetch" class="btn btn-outline-primary"> 10 - Fetch </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

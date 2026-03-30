@@ -1,0 +1,25 @@
+FETCH EN JAVASCRIPT
+
+Fetch sirve para hacer peticiones a servidores (APIs).
+
+Permite:
+- obtener datos (GET)
+- enviar datos (POST)
+- trabajar con backend
+
+IDEA CLAVE:
+"Pido datos → el servidor responde"
+
+FORMATO:
+fetch(url)
+
+IMPORTANTE:
+- fetch devuelve una promesa
+- los datos vienen en formato JSON
+- hay que convertirlos con .json()
+
+FLUJO:
+1. fetch()
+2. await respuesta
+3. convertir a JSON
+4. usar datos

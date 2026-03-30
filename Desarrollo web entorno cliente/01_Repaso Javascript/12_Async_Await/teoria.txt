@@ -1,0 +1,16 @@
+ASYNC / AWAIT EN JAVASCRIPT
+
+Async/Await es una forma más sencilla de trabajar con promesas.
+
+Hace que el código asíncrono parezca síncrono (más fácil de leer).
+
+IDEA CLAVE:
+"Espero el resultado como si fuera inmediato"
+
+PALABRAS CLAVE:
+- async → define una función asíncrona
+- await → espera el resultado de una promesa
+
+IMPORTANTE:
+- await solo se puede usar dentro de funciones async
+- sigue siendo asincrónico (no bloquea realmente)

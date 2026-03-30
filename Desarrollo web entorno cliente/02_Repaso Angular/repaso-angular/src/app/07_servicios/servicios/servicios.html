@@ -1,0 +1,45 @@
+<!-- Cabecera del tema -->
+<div class="mb-4">
+  <h2 class="fw-bold">Servicios en Angular</h2>
+  <p class="text-muted">Un servicio permite guardar lógica reutilizable y compartir datos.</p>
+</div>
+
+<!-- Tarjeta principal -->
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- Explicación -->
+    <h3 class="h5 mb-3">Ejemplo de servicio con tareas</h3>
+
+    <p>
+      En este ejemplo las tareas no están guardadas dentro del componente, sino dentro de un
+      servicio.
+    </p>
+
+    <!-- Input para escribir tarea nueva -->
+    <div class="mb-3">
+      <label class="form-label">Nueva tarea</label>
+
+      <!-- Conecto el input con la variable nuevaTarea -->
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="nuevaTarea"
+        placeholder="Escribe una tarea"
+      />
+    </div>
+
+    <!-- Botón para añadir tarea -->
+    <button class="btn btn-primary mb-4" (click)="agregarTarea()">Añadir tarea</button>
+
+    <!-- Lista de tareas -->
+    <h4 class="h6">Lista de tareas</h4>
+
+    <ul class="list-group">
+      @for (tarea of listaTareas; track tarea) {
+        <li class="list-group-item">
+          {{ tarea }}
+        </li>
+      }
+    </ul>
+  </div>
+</div>

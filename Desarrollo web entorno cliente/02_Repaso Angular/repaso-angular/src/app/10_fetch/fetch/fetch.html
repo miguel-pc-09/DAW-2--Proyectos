@@ -1,0 +1,34 @@
+<!-- Cabecera -->
+<div class="mb-4">
+  <h2 class="fw-bold">Fetch en Angular</h2>
+  <p class="text-muted">Permite obtener datos desde una API externa.</p>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- Botón -->
+    <button class="btn btn-primary mb-3" (click)="obtenerUsuarios()">Cargar usuarios</button>
+
+    <!-- LOADING -->
+    @if (cargando) {
+      <p class="alert alert-info">Cargando datos...</p>
+    }
+
+    <!-- LISTA -->
+    <ul class="list-group">
+      @for (usuario of usuarios; track usuario.id) {
+        <li class="list-group-item">
+          <!-- Nombre -->
+          <strong>{{ usuario.name }}</strong>
+
+          <br />
+
+          <!-- Email -->
+          <small class="text-muted">
+            {{ usuario.email }}
+          </small>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

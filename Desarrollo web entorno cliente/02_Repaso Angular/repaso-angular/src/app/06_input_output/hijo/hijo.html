@@ -1,0 +1,13 @@
+<div class="card border-primary mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Componente Hijo</h5>
+
+    <!-- Recibo dato del padre -->
+    <p>
+      Nombre recibido: <strong>{{ nombre }}</strong>
+    </p>
+
+    <!-- Envío evento al padre -->
+    <button class="btn btn-primary" (click)="enviarMensaje()">Enviar mensaje al padre</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="mb-4">
+  <h2 class="fw-bold">Input / Output</h2>
+  <p class="text-muted">Comunicación entre componentes padre e hijo</p>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <!-- Muestro mensaje recibido -->
+    <p><strong>Mensaje del hijo:</strong> {{ mensaje }}</p>
+
+    <!-- ENVÍO dato y escucho evento -->
+    <app-hijo [nombre]="nombrePadre" (mensajeEnviado)="recibirMensaje($event)"> </app-hijo>
+  </div>
+</div>

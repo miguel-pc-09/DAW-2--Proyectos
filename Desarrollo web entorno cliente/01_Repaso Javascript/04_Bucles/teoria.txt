@@ -1,0 +1,21 @@
+BUCLES EN JAVASCRIPT
+
+Un bucle sirve para repetir código varias veces.
+
+En vez de escribir lo mismo muchas veces, usamos un bucle.
+
+TIPOS PRINCIPALES:
+- for → cuando sé cuántas veces quiero repetir
+- while → cuando no sé cuántas veces
+- do while → se ejecuta al menos una vez
+
+IDEA CLAVE:
+"Repite esto hasta que pase algo"
+
+PARTES DE UN FOR:
+1. inicio (contador)
+2. condición
+3. incremento
+
+IMPORTANTE:
+Si la condición nunca deja de cumplirse → bucle infinito ❌

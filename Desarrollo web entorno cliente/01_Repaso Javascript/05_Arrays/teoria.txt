@@ -1,0 +1,22 @@
+ARRAYS EN JAVASCRIPT
+
+Un array es una lista de datos.
+
+Sirve para:
+- guardar muchos valores en una sola variable
+- recorrer datos
+- trabajar con colecciones (usuarios, cartas, preguntas, etc.)
+
+IDEA CLAVE:
+Un array guarda elementos en posiciones (índices)
+
+IMPORTANTE:
+- Empieza en 0
+- array[0] es el primer elemento
+
+OPERACIONES MÁS IMPORTANTES:
+- acceder
+- recorrer
+- añadir (push)
+- eliminar (pop)
+- longitud (length)

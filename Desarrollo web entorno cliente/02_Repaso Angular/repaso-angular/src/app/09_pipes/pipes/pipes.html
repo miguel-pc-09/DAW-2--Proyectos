@@ -1,0 +1,52 @@
+<!-- Cabecera -->
+<div class="mb-4">
+  <h2 class="fw-bold">Pipes en Angular</h2>
+  <p class="text-muted">Los pipes transforman datos directamente en el HTML.</p>
+</div>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <!-- STRING -->
+
+    <h3 class="h5">1. Pipes de texto</h3>
+
+    <p>Original: {{ nombre }}</p>
+
+    <!-- Convierte a mayúsculas -->
+    <p>Uppercase: {{ nombre | uppercase }}</p>
+
+    <!-- Convierte a minúsculas -->
+    <p>Lowercase: {{ nombre | lowercase }}</p>
+
+    <!-- Capitaliza -->
+    <p>Titlecase: {{ texto | titlecase }}</p>
+
+    <hr />
+
+    <!-- NÚMEROS -->
+
+    <h3 class="h5">2. Pipes de números</h3>
+
+    <p>Precio original: {{ precio }}</p>
+
+    <!-- Formato moneda -->
+    <p>Currency: {{ precio | currency: 'EUR' }}</p>
+
+    <!-- Formato número -->
+    <p>Number: {{ precio | number: '1.2-2' }}</p>
+
+    <hr />
+
+    <!-- FECHA -->
+
+    <h3 class="h5">3. Pipes de fecha</h3>
+
+    <p>Fecha original: {{ fecha }}</p>
+
+    <!-- Formato corto -->
+    <p>Short: {{ fecha | date: 'short' }}</p>
+
+    <!-- Formato largo -->
+    <p>Full: {{ fecha | date: 'fullDate' }}</p>
+  </div>
+</div>

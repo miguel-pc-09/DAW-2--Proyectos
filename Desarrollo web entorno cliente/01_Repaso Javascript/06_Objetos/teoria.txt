@@ -1,0 +1,24 @@
+OBJETOS EN JAVASCRIPT
+
+Un objeto es una estructura que agrupa datos relacionados.
+
+Sirve para:
+- representar cosas reales (persona, coche, carta, usuario...)
+- organizar mejor la información
+- guardar datos + funciones
+
+IDEA CLAVE:
+Un objeto tiene:
+- propiedades → datos
+- métodos → funciones
+
+FORMA:
+nombreObjeto = {
+    propiedad: valor,
+    propiedad: valor,
+    metodo() {}
+}
+
+IMPORTANTE:
+- Se accede con punto → objeto.propiedad
+- "this" hace referencia al propio objeto

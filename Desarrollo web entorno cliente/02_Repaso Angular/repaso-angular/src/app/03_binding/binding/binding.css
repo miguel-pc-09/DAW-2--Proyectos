@@ -1,0 +1,4 @@
+/* Hago que el componente se comporte como un bloque */
+:host {
+  display: block;
+}

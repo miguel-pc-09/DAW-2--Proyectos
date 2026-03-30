@@ -1,0 +1,28 @@
+FUNCIONES EN JAVASCRIPT
+
+Una función es un bloque de código que se ejecuta cuando yo quiero.
+
+Sirve para:
+- no repetir código
+- organizar el programa
+- reutilizar lógica
+
+Idea clave:
+Una función puede:
+- recibir datos (parámetros)
+- hacer algo con esos datos
+- devolver un resultado (return)
+
+PARTES DE UNA FUNCIÓN:
+1. Declaración
+2. Parámetros (opcional)
+3. Código interno
+4. Return (opcional)
+
+TIPOS:
+- Función normal
+- Función con return
+- Función flecha (arrow function)
+
+IMPORTANTE:
+La función NO se ejecuta sola → hay que llamarla.

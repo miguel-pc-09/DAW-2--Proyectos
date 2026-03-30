@@ -1,0 +1,27 @@
+CONDICIONALES EN JAVASCRIPT
+
+Sirven para tomar decisiones en el programa.
+
+Permiten que el código haga una cosa u otra dependiendo de una condición.
+
+TIPOS PRINCIPALES:
+- if
+- if / else
+- if / else if / else
+- switch
+
+IDEA CLAVE:
+"Si pasa esto → hago esto"
+
+OPERADORES MÁS IMPORTANTES:
+>   mayor que
+<   menor que
+>=  mayor o igual
+<=  menor o igual
+==  igual (no estricto)
+=== igual (estricto, el correcto)
+!=  distinto
+!== distinto estricto
+
+IMPORTANTE:
+Siempre que puedas usa === en vez de ==

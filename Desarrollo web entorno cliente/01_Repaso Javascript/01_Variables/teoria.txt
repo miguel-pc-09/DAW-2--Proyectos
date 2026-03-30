@@ -1,0 +1,18 @@
+VARIABLES EN JAVASCRIPT
+
+Una variable es una caja donde guardo información.
+
+Sirve para:
+- guardar datos
+- usarlos más tarde
+- modificarlos
+
+Tipos principales:
+- let → se puede cambiar
+- const → no se puede cambiar
+
+Ejemplo real:
+Si guardo el nombre de un usuario, lo uso luego para mostrarlo.
+
+IMPORTANTE:
+Siempre usar nombres claros (nombre, edad, precio...)

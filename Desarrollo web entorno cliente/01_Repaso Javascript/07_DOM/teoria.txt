@@ -1,0 +1,30 @@
+DOM (Document Object Model)
+
+El DOM es la representación de la página HTML como objetos.
+
+Gracias al DOM podemos:
+- modificar texto
+- cambiar estilos
+- añadir o eliminar elementos
+- reaccionar a eventos
+
+IDEA CLAVE:
+JavaScript puede "tocar" el HTML
+
+PASOS BÁSICOS:
+1. Seleccionar elemento
+2. Modificarlo
+
+FORMAS DE SELECCIONAR:
+- document.getElementById()
+- document.querySelector()
+- document.querySelectorAll()
+
+PROPIEDADES IMPORTANTES:
+- textContent → cambia texto
+- innerHTML → cambia contenido HTML
+- classList → manejar clases CSS
+- style → cambiar estilos
+
+IMPORTANTE:
+Si no seleccionas bien el elemento → no funciona nada
