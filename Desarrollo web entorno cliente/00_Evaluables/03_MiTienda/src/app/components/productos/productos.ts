@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../model/producto';
 import { ApiProductos } from '../../services/api-productos';
@@ -14,22 +14,46 @@ declare const Swal: any;
   styleUrl: './productos.css',
 })
 export class Productos implements OnInit {
+  // Aquí guardo todos los productos completos
   productos: Product[] = [];
+
+  // Aquí guardo solo los productos que voy a mostrar tras filtrar
   productosFiltrados: Product[] = [];
+
+  // Aquí guardo la categoría elegida
   categoriaSeleccionada: string = 'todos';
 
   constructor(
+    // Servicio para pedir productos
     private servicio: ApiProductos,
+
+    // Servicio del carrito
     private servicioCarrito: ServicioCarrito,
+
+    // Esto me sirve para forzar que Angular repinte la vista
+    private detectorCambios: ChangeDetectorRef,
   ) {}
 
+  // Cargo los productos cuando el componente ya está creado
   ngOnInit(): void {
-    this.servicio.getAllProductos().subscribe((data) => {
-      this.productos = data.products;
-      this.productosFiltrados = data.products;
+    this.servicio.getAllProductos().subscribe({
+      next: (data) => {
+        // Guardo todos los productos
+        this.productos = data.products;
+
+        // Al principio muestro todos
+        this.productosFiltrados = data.products;
+
+        // Fuerzo que Angular refresque la vista en ese momento
+        this.detectorCambios.detectChanges();
+      },
+      error: (error) => {
+        console.error('Error al cargar los productos', error);
+      },
     });
   }
 
+  // Este método filtra productos por categoría
   filtrarProductos(categoria: string): void {
     this.categoriaSeleccionada = categoria;
 
@@ -42,6 +66,7 @@ export class Productos implements OnInit {
     }
   }
 
+  // Este método añade un producto al carrito
   agregarAlCarrito(producto: Product): void {
     this.servicioCarrito.agregarProducto(producto);
 
@@ -54,10 +79,12 @@ export class Productos implements OnInit {
     });
   }
 
+  // Este método devuelve el texto que enseño en el botón del filtro
   getTextoCategoria(): string {
     if (this.categoriaSeleccionada === 'todos') {
       return 'Todos los productos';
     }
+
     return this.categoriaSeleccionada;
   }
 }

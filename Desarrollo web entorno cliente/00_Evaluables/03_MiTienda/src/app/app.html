@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <!-- Nombre o logo de la tienda.
          Al pulsarlo me lleva a la página de inicio -->
-    <a class="navbar-brand" [routerLink]="['./inicio']">TiendaApp</a>
+    <a class="navbar-brand" [routerLink]="['/inicio']">TiendaApp</a>
 
     <!-- Botón que aparece en pantallas pequeñas para desplegar el menú -->
     <button
@@ -25,17 +25,17 @@
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <!-- Enlace para ir al inicio -->
-          <a class="nav-link" [routerLink]="['./inicio']">Inicio</a>
+          <a class="nav-link" [routerLink]="['/inicio']">Inicio</a>
         </li>
 
         <li class="nav-item">
           <!-- Enlace para ir al listado de productos -->
-          <a class="nav-link" [routerLink]="['./productos']"> Productos </a>
+          <a class="nav-link" [routerLink]="['/productos']"> Productos </a>
         </li>
 
         <li class="nav-item">
           <!-- Enlace para ir al carrito -->
-          <a class="nav-link" [routerLink]="['./carrito']">Carrito</a>
+          <a class="nav-link" [routerLink]="['/carrito']">Carrito</a>
         </li>
       </ul>
     </div>
