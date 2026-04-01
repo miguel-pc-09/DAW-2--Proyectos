@@ -1,0 +1,10 @@
+/* Le doy una altura mínima a la zona principal
+   para que la página no quede demasiado vacía */
+main {
+  min-height: calc(100vh - 70px);
+}
+/* Cuando un enlace del menú esté activo,
+   lo pongo en negrita para que se note más */
+.navbar .nav-link.active {
+  font-weight: bold;
+}

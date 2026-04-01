@@ -1,0 +1,87 @@
+<!-- Parte superior con el título y el filtro -->
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+  <div>
+    <!-- Título de la sección -->
+    <h2 class="mb-1">Productos</h2>
+
+    <!-- Texto explicativo -->
+    <p class="mb-0 text-muted">Aquí puedes filtrar por categoría y añadir productos al carrito.</p>
+  </div>
+
+  <!-- Menú desplegable para elegir la categoría -->
+  <div class="dropdown">
+    <button
+      class="btn btn-dark dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <!-- Aquí muestro el texto de la categoría actual -->
+      {{ getTextoCategoria() }}
+    </button>
+
+    <!-- Opciones del desplegable -->
+    <ul class="dropdown-menu">
+      <li>
+        <!-- Opción para mostrar todos los productos -->
+        <button class="dropdown-item" (click)="filtrarProductos('todos')">
+          Todos los productos
+        </button>
+      </li>
+      <li>
+        <!-- Opción para filtrar por beauty -->
+        <button class="dropdown-item" (click)="filtrarProductos('beauty')">Beauty</button>
+      </li>
+      <li>
+        <!-- Opción para filtrar por fragrances -->
+        <button class="dropdown-item" (click)="filtrarProductos('fragrances')">Fragrances</button>
+      </li>
+      <li>
+        <!-- Opción para filtrar por furniture -->
+        <button class="dropdown-item" (click)="filtrarProductos('furniture')">Furniture</button>
+      </li>
+      <li>
+        <!-- Opción para filtrar por groceries -->
+        <button class="dropdown-item" (click)="filtrarProductos('groceries')">Groceries</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contenedor de las tarjetas -->
+<div class="contenedor-tarjetas">
+  <!-- Recorro los productos ya filtrados -->
+  @for (producto of productosFiltrados; track producto.id) {
+    <div class="card tarjeta-producto shadow-sm">
+      <!-- Imagen del producto -->
+      <img [src]="producto.thumbnail" class="card-img-top imagen-producto" [alt]="producto.title" />
+
+      <div class="card-body cuerpo-tarjeta">
+        <!-- Título del producto -->
+        <h5 class="card-title titulo-producto">{{ producto.title }}</h5>
+
+        <!-- Categoría -->
+        <p class="mb-2"><strong>Categoría:</strong> {{ producto.category }}</p>
+
+        <!-- Precio -->
+        <p class="mb-2"><strong>Precio:</strong> {{ producto.price }} €</p>
+
+        <!-- Stock -->
+        <p class="mb-3"><strong>Stock:</strong> {{ producto.stock }}</p>
+
+        <!-- Botones de acciones -->
+        <div class="d-grid gap-2">
+          <!-- Botón para ir al detalle -->
+          <a class="btn btn-outline-primary" [routerLink]="['/detalle-producto', producto.id]">
+            Ver detalle
+          </a>
+
+          <!-- Botón para añadir al carrito -->
+          <button class="btn btn-success" (click)="agregarAlCarrito(producto)">
+            Añadir al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

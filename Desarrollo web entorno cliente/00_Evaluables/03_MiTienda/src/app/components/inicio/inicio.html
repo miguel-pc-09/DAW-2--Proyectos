@@ -1,0 +1,38 @@
+<!-- Cabecera de bienvenida de la página de inicio -->
+<div class="mb-4 text-center">
+  <!-- Título principal -->
+  <h1 class="mb-3">Bienvenido a TiendaApp</h1>
+
+  <!-- Texto explicativo -->
+  <p class="lead">
+    Aquí puedes ver todos los productos de la tienda. Si quieres comprar algo, o filtrar categorias,
+    entra en la pestaña Productos.
+  </p>
+</div>
+
+<!-- Contenedor general donde muestro todas las tarjetas -->
+<div class="contenedor-tarjetas">
+  <!-- Recorro el array de productos y pinto una tarjeta por cada producto -->
+  @for (producto of productos; track producto.id) {
+    <div class="card tarjeta-producto shadow-sm">
+      <!-- Imagen del producto -->
+      <img [src]="producto.thumbnail" class="card-img-top imagen-producto" [alt]="producto.title" />
+
+      <div class="card-body cuerpo-tarjeta">
+        <!-- Nombre del producto -->
+        <h5 class="card-title titulo-producto">{{ producto.title }}</h5>
+
+        <!-- Categoría del producto -->
+        <p class="mb-2"><strong>Categoría:</strong> {{ producto.category }}</p>
+
+        <!-- Precio del producto -->
+        <p class="mb-3"><strong>Precio:</strong> {{ producto.price }} €</p>
+
+        <!-- Botón para ir al detalle del producto -->
+        <a class="btn btn-outline-primary w-100" [routerLink]="['/detalle-producto', producto.id]">
+          Ver detalle
+        </a>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,48 @@
+<!-- Solo muestro el contenido si el producto ya existe -->
+@if (producto) {
+  <div class="card shadow-sm tarjeta-detalle">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <!-- Contenedor de la imagen -->
+        <div class="contenedor-imagen-detalle">
+          <img [src]="producto.thumbnail" class="imagen-detalle" [alt]="producto.title" />
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card-body">
+          <!-- Nombre del producto -->
+          <h2 class="card-title mb-3">{{ producto.title }}</h2>
+
+          <!-- Descripción -->
+          <p class="mb-3">{{ producto.description }}</p>
+
+          <!-- Datos repartidos en dos columnas -->
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Categoría:</strong> {{ producto.category }}</p>
+              <p><strong>Precio:</strong> {{ producto.price }} €</p>
+              <p><strong>Stock:</strong> {{ producto.stock }}</p>
+              <p><strong>Valoración:</strong> {{ producto.rating }}</p>
+            </div>
+
+            <div class="col-md-6">
+              <p><strong>Marca:</strong> {{ producto.brand }}</p>
+              <p><strong>Envío:</strong> {{ producto.shippingInformation }}</p>
+              <p><strong>Garantía:</strong> {{ producto.warrantyInformation }}</p>
+            </div>
+          </div>
+
+          <!-- Botones de acciones -->
+          <div class="d-flex gap-2 flex-wrap mt-4">
+            <!-- Botón para añadir al carrito -->
+            <button class="btn btn-success" (click)="agregarAlCarrito()">Añadir al carrito</button>
+
+            <!-- Botón para volver al listado -->
+            <a class="btn btn-outline-dark" [routerLink]="['/productos']">Volver a productos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}

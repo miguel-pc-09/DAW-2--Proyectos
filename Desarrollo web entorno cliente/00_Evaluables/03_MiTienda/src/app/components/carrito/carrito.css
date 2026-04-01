@@ -1,0 +1,29 @@
+/* Tarjeta individual de producto dentro del carrito */
+.tarjeta-carrito {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Contenedor de la imagen del producto en el carrito */
+.contenedor-imagen-carrito {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+}
+
+/* Imagen del producto en el carrito */
+.imagen-carrito {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* Tarjeta lateral del resumen */
+.resumen-carrito {
+  border-radius: 12px;
+  position: sticky;
+  top: 20px;
+}
