@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Product } from '../../model/producto';
 import { ApiProductos } from '../../services/api-productos';
@@ -13,7 +13,7 @@ declare const Swal: any;
   templateUrl: './detalle-producto.html',
   styleUrl: './detalle-producto.css',
 })
-export class DetalleProducto implements OnInit {
+export class DetalleProducto {
   // Aquí guardo el producto que recibo de la API.
   // Lo dejo en null al principio porque al entrar todavía no tengo datos.
   producto: Product | null = null;
@@ -27,14 +27,9 @@ export class DetalleProducto implements OnInit {
 
     // Servicio que uso para añadir productos al carrito
     private servicioCarrito: ServicioCarrito,
-
-    // Esto me sirve para forzar que Angular repinte la vista
-    private detectorCambios: ChangeDetectorRef,
-  ) {}
-
-  // Este método se ejecuta cuando el componente ya está cargado
-  ngOnInit(): void {
+  ) {
     // Escucho los parámetros de la ruta para recuperar el id del producto
+    // igual que en el ejemplo del profesor
     this.gestorRutas.paramMap.subscribe((params) => {
       const idProducto = params.get('id');
 
@@ -44,9 +39,6 @@ export class DetalleProducto implements OnInit {
           next: (respuesta) => {
             // Guardo el producto que devuelve la API
             this.producto = respuesta;
-
-            // Fuerzo a Angular a refrescar la vista en este momento
-            this.detectorCambios.detectChanges();
           },
           error: (error) => {
             console.error('Error al cargar el detalle del producto', error);

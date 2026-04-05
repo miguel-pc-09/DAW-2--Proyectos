@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../model/producto';
 import { ApiProductos } from '../../services/api-productos';
@@ -13,7 +13,7 @@ declare const Swal: any;
   templateUrl: './productos.html',
   styleUrl: './productos.css',
 })
-export class Productos implements OnInit {
+export class Productos {
   // Aquí guardo todos los productos completos
   productos: Product[] = [];
 
@@ -29,13 +29,9 @@ export class Productos implements OnInit {
 
     // Servicio del carrito
     private servicioCarrito: ServicioCarrito,
-
-    // Esto me sirve para forzar que Angular repinte la vista
-    private detectorCambios: ChangeDetectorRef,
-  ) {}
-
-  // Cargo los productos cuando el componente ya está creado
-  ngOnInit(): void {
+  ) {
+    // Cargo los productos directamente desde el constructor,
+    // igual que hace el profesor en su ejemplo con la API
     this.servicio.getAllProductos().subscribe({
       next: (data) => {
         // Guardo todos los productos
@@ -43,9 +39,6 @@ export class Productos implements OnInit {
 
         // Al principio muestro todos
         this.productosFiltrados = data.products;
-
-        // Fuerzo que Angular refresque la vista en ese momento
-        this.detectorCambios.detectChanges();
       },
       error: (error) => {
         console.error('Error al cargar los productos', error);
