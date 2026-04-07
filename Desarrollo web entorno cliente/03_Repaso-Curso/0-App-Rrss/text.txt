@@ -1,0 +1,1 @@
+Mejora del responsive, para pantallas pequeñas.

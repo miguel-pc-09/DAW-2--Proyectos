@@ -1,0 +1,82 @@
+/* *{
+margin: 0 0;
+padding: 0 0;
+width: 100%;
+} */
+
+body{
+    width: 100%;
+}
+
+header{
+text-align: center;
+padding: 20px;
+background-color: bisque;
+width: 100%;
+}
+
+
+.row{
+    margin: 0 auto;
+}
+
+.col-3{
+    margin: 0 2%;
+    padding: 10px;
+    text-align: center;
+    border: solid 1px;
+}
+.col-8{
+    margin: 0 2%;
+    padding: 10px;
+    text-align: center;
+    border: solid 1px;
+    
+}
+.mb-3{
+    text-align: left;
+}
+
+.prioridad{
+
+    background-color: rgba(172, 172, 172, 0.068);
+    padding: 5px;
+    border: solid 2px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+   
+    
+    text-align: center;
+}
+
+#descripInput{
+    min-height: 120px;
+}
+
+
+
+.guardar{
+text-align: center;
+}
+.completar{
+    padding: 5px;
+}
+.col-2 {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-10 {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#selectFiltrado{
+    text-align: center;
+   
+   
+}
