@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>jQuery UI Draggable - Constrain movement</title>
+  <script src="./dir/jquery-1.9.1.js"></script>
+  <script src="./dir/jquery-ui.js"></script>
+<style>
+.draggablex { 
+	cursor: e-resize; 
+}
+#caja {
+	width: 1000px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+</style>
+<script>
+  $(function() {
+     $( ".draggablex" ).draggable({ containment: "#caja", scroll: false }, { stack: "#caja img" });
+  });
+
+
+</script>
+</head>
+<body style="cursor: auto;">
+<div id="caja">
+	<img src="./dir/conejo.png" width="103" height="123" alt="conejo" class="draggablex ui-draggable" style="position: relative; z-index: 0;">
+ 	<img src="./dir/tortu.png" width="118" height="123" alt="tortuga" class="draggablex ui-draggable" style="position: relative; z-index: 2; left: 102px; top: 0px;">
+</div>
+
+
+</body></html>

@@ -1,0 +1,35 @@
+Permite acer arrastable a cualquier elemento:
+
+$(function() {
+$( "#nombre" ).draggable();
+});
+
+Movimientos limitados
+
+En el eje X o Y
+
+$(function() {
+$( "#draggable" ).draggable({ axis: "y" });
+$( "#draggable2" ).draggable({ axis: "x" });
+});
+
+En un contenedor o en el contenedor padre
+
+$(function() {
+$( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: false });
+$( "#draggable5" ).draggable({ containment: "parent" });
+});
+
+elegir una zona de arrastre
+
+$(function() {
+$( "#draggable" ).draggable({ handle: "p" });
+$( "#draggable2" ).draggable({ cancel: "p.clase" });
+$( "div, p" ).disableSelection();
+});
+
+Volver a la posición de inicio
+
+$(function() {
+$( "#draggable" ).draggable({ revert: true });
+});

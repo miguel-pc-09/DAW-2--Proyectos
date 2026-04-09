@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+ <html lang="es">
+ <head>
+  <meta charset="utf-8"> 
+  <title>Javascript: jQuery</title>
+  <script type="text/javascript" src="jquery-3.7.1.min.js">
+  </script>
+
+<style type="text/css">
+	.selected{
+		background-color: black;
+		color:red;
+	}
+	.inselected{
+		background-color: #088A68;
+		color:#EDEFEE;
+	}
+
+	#caja{
+		height: 125px;
+		width: 200px;
+		border: 1px solid red;
+		background: purple; 
+	}
+	
+	.cls3 {
+		color: black;
+		background-color: lime;
+	}
+
+	.clas4{
+		color: lime;
+		background-color: black;
+	}
+
+	.clas5{
+		color: yellow;
+		background-color: black;
+	}
+
+	.cls6{
+		color: gray;
+		background-color: brown;
+	}
+
+</style>
+
+  </head>
+  <body>
+  <h1>Programando con jQuery</h1>
+  <p>1. Uso de hide/show</p>
+  <script type="text/javascript"> 
+
+  	$(document).ready(function(){ 
+  		$("#ev0").click(function(){
+  			$("#id0").hide();
+  		});
+
+  		$("#ev1").click(function(){
+  			$("#id0").show();
+  		});
+
+  		$("body").css("background-color","#088A68");
+  		$("body").css("font-family","sans-serif");
+  		$("body").css("color","#EDEFEE");
+
+  	});
+  </script>
+  <div id="id0">Me ocultaré y me mostraré</div>
+  <button id="ev0">Ocultar</button>
+  <button id="ev1">Mostrar</button><br/>
+  <p>2. Uso de hide/show con parámetros</p>
+  <script type="text/javascript">
+  	$(document).ready(function (){
+  		$("#ev2").click(function(){
+  			$("#id1").hide(1000);//"easing"
+  		});
+
+  		$("#ev3").click(function(){
+  			$("#id1").show(1000);//"easing"
+  		});
+  	});
+  </script>
+  <div id="id1">Me ocultaré y mostraré</div>
+  <button id="ev2">Ocultar</button>
+  <button id="ev3">Mostrar</button><br/>
+  <p>3. Uso de toggle</p>
+  <script type="text/javascript">
+  	$(document).ready(function (){
+  		$("#ev4").click(function(){
+  			$("#id2").toggle();
+  		});
+  	});
+  </script>
+  <div id="id2">Me ocultaré y mostraré</div>
+  <button id="ev4">Ocultar/Mostrar</button>
+  <br/>
+<p>4. Uso de toggle con parámetros</p>
+  <script type="text/javascript">
+  	$(document).ready(function (){
+  		$("#ev5").click(function(){
+  			$("#id3").toggle(1000);
+  		});
+  	});
+  </script>
+  <div id="id3">Me ocultaré y mostraré</div>
+  <button id="ev5">Ocultar/Mostrar</button>
+  <br/>
+<p>5. Eventos con jQuery (click, dblclick, mouseenter,mouseleave)</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id4").click(function(){
+			alert("Evento click");
+		});
+
+		$("#id5").dblclick(function(){
+			alert("Evento dblclick");
+		});
+
+		$("#id6").mouseenter(function(){
+			//alert("Evento mouseenter");
+		});
+
+		$("#id7").mouseleave(function(){
+			//alert("Evento mouseleave");
+		});
+
+	});
+</script>
+<p id="id4">click</p>
+<p id="id5">dblclick</p>
+<p id="id6">mouseenter</p>
+<p id="id7">mouseleave</p>
+<p>6. Eventos con jQuery (keypress, keydown,keyup)</p>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#id8").keypress(function(){
+		$("#id9").css("background-color","steelblue");
+		console.log(" "+$("#id8").val());
+		if($("#id8").val() == ""){
+			$("#id9").css("background-color","#088A68");
+		}
+	});
+
+	$("#id11").keydown(function(){
+		$("#id10").css("color","red");
+		console.log(" "+$("#id11").val());
+		if($("#id11").val() == ""){
+			$("#id10").css("color","#EDEFEE");
+		}
+	});
+
+	$("#id13").keyup(function(){
+		$("#id12").css("background-color","red");
+		console.log(" "+$("#id13").val());
+		if($("#id13").val() == ""){
+			$("#id12").css("background-color","#088A68");
+		}
+	});
+
+
+});	
+</script>
+<div id="id9">Cambia de color al introducir texto abajo</div>
+<input type="text" id="id8" value=""/>Keypress<br/>
+<div id="id10">Cambia color al introducir texto abajo</div>
+<input type="text" id="id11" value=""/>Keydown<br/>
+<div id="id12">Cambia color al introducir texto abajo</div>
+<input type="text" id="id13" value=""/>Keyup<br/>
+<p>7. Múltiples eventos (on)</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id14").on({
+			mouseenter: function(){
+				$(this).css("background-color","lime");
+			},
+			mouseleave: function(){
+				$(this).css("background-color","gray");
+			},
+			click: function(){
+				$(this).css("background-color","magenta");
+			}
+		});
+	});
+</script>
+<div id="id14">Hola</div>
+<p>8. Uso de on (click, dblclick)</p>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#id15").on("dblclick",function(){
+		$("#id15").css("background-color","black");
+	});
+	$("#id15").on("click",function(){
+		$("#id15").css("background-color","#088A68");
+	});
+});	
+</script>
+<div id="id15">Este es un texto</div>
+<p>9. Creación de funciones (JS)</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		function suma(x,y){
+			return x+y;
+		}
+
+		$("#id16").click(function(){
+			alert(suma(4,3));
+		});
+
+
+	});
+</script>
+<button id="id16">Activar</button>
+<p>10. Creación de funciones (jQuery)</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.fn.hola=function(){
+			alert("Hola usuario");
+		}
+
+		$(".cls0").click(function(){
+			$.fn.hola();
+		});
+	});
+</script>
+<button class="cls0">Activar</button>
+<p>11. POO en jQuery</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var pers={
+			nombre: "María",
+			edad: 24
+		};
+
+		$(".cls1").click(function(){
+			alert("Hola "+pers.nombre+ " tienes "+pers.edad+" años de edad");
+		});
+	});
+</script>
+<button class="cls1">Activar</button>
+<p>12. Uso de call() y apply()</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.fn.ver=function(){
+			alert(this, arguments.size);
+		}
+
+		$(".cls2").click(function(){
+			$.fn.ver();
+			$.fn.ver.call("Foo",[1,2]);
+			$.fn.ver.apply("Bar",[1,2]);
+		});
+	});
+</script>
+<button class="cls2">Activar</button>
+<p>13. Uso de addClass</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id17").mouseenter(function(){
+			$("#id17").addClass("selected");
+		});
+
+		$("#id17").mouseleave(function(){
+			$("#id17").addClass("inselected");
+		});
+	});
+</script>
+<div id="id17">Hola usuario</div>
+<p>14. Uso de hide().show()</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id18").click(function(){
+			$("#id19").hide(2000).show(1000);
+		});
+	});
+</script>
+<div id="id18">
+<span id="id19">Presiona aquí</span>
+</div>
+<p>15. Manipular ids</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id22").click(function(){
+			$("*").hide(2000).show(1000);
+		});
+	});
+</script>
+<div id="id20">Panel
+<span id="id21">Presiona aquí</span>
+</div>
+<button id="id22">Activar evento</button>
+<p>16. Manipular ids</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id24").click(function(){
+			var dt0= $("#id23").val();
+			alert(dt0);
+			$("#id23").val("");
+		});
+	});
+</script>
+<input type="text" id="id23"/>
+<input type="submit" id="id24" value="enviar"/>
+<p>16. Manipular ids</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id25").click(function(){
+			$(this).hide(2000).show(3000);
+		});
+	});
+</script>
+<button id="id25">Botón</button>
+<p>17. Listas</p>
+<ul>
+	<li>CSS</li>
+	<li>HTML</li>
+	<li>Javascript</li>
+</ul>
+<ul>
+	<li>Windows 11</li>
+	<li>Linux</li>
+	<li>Mac OS</li>
+</ul>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id26").click(function(){
+			$("ul li:first-child").hide(3000).show(600);
+			$("ul li:last-child").hide(3000).show(600);
+		});
+	});
+</script>
+<button id="id26">Activar</button>
+<p>18. Conversor euros a dólar</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id28").click(function(){
+			var dt1=$("#id27").val();
+			$("#id29").text(dt1+" pesos es igual a "+ (dt1 * 166+ " euros"));
+			$("#id27").val("");
+		});
+	});
+</script>
+Pesos: <input type="text" id="id27" value="">
+<input type="submit" id="id28" value="Convertir a dólar">
+<label id="id29"></label>
+<p>19. Selectores even/odd</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id30").click(function(){
+			$("tr:even").css("background-color","black");
+			$("tr:odd").css("background-color","lime");
+		});
+	});
+</script>
+<table border="1">
+	<tr>
+		<td>Ana</td>
+		<td>26</td>
+	</tr>
+		<tr>
+		<td>Luis</td>
+		<td>33</td>
+	</tr>
+		<tr>
+		<td>Esther</td>
+		<td>5</td>
+	</tr>
+	</tr>
+		<tr>
+		<td>Daniel</td>
+		<td>28</td>
+	</tr>
+</table>
+<button id="id30">Activar</button>
+<p>20. Uso de text/html</p>
+<p id="id31">El Caso de interfaces </p>
+<p id="id32">El uso de HTML5</p><br/>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id33").click(function(){
+			$("#id31").text("<font color='black'> Siempre desconfia</font>");
+		});
+
+		$("#id34").click(function(){
+			$("#id32").html("<font color='black'> La luz siempre brilla más fuerte</font>");
+		});
+	});
+</script>
+<button id="id33">Usar text</button>
+<button id="id34">Usar html</button>
+<p>21. Uso de with y height</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id35").mouseenter(function(){
+			var dt2="";
+			dt2+="Ancho: "+$("#caja").width()+ "px , Alto: ";
+			dt2+=$("#caja").height()+"px";
+			$("#detalles").html(dt2);
+		});
+
+		$("#id35").mouseleave(function(){
+			$("#detalles").html("");
+		});
+	});
+</script>
+<div id="detalles"></div>
+<div id="caja"></div>
+<label id="id35">Mostrar dimensiones</label>
+<p>22. Uso de attr</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id38").click(function(){
+			var dt3= "El valor del atributo es: "+ $("#id36").attr("value"); //attr("id"); //attr("type");
+			$("#id37").html(dt3);
+			$("#id36").attr("id","nuevoId");
+
+		});
+	});
+</script>
+<input id="id36" type="text" value="El extraño caso del Dr. Heller">
+<div id="id37"></div>
+<button id="id38">Activar</button>
+<p>23. Uso de addClass</p>
+<p id="id39">Etiqueta 1</p>
+<p id="id40">Etiqueta 2</p>
+<p id="id41">Etiqueta 3</p>
+<p id="id42">Etiqueta 4</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id43").click(function(){
+			$("#id39").addClass("cls3");
+			$("#id40").addClass("cls4");
+			$("#id41").addClass("cls5");
+			$("#id42").addClass("cls6");
+		});
+	});
+</script>
+<button id="id43">Activar</button>
+<p>24. Uso de removeClass/removeAttr</p>
+<p id="id44" class="cls6">Quitar clase</p>
+<p id="id45" class="cls5">Quitar atributo</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id46").click(function(){
+			$("#id44").removeClass("cl6");
+			$("#id45").removeAttr("id");
+		});
+	});
+</script>
+<button id="id46">Remover clase y atributo</button>
+</body>
+</html>

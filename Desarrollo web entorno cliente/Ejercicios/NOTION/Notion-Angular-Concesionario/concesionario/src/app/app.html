@@ -1,0 +1,167 @@
+<div class="contenedor-principal">
+  <!-- Parte izquierda -->
+  <section class="zona-izquierda">
+    <h1>Gestión de coches</h1>
+    <p class="subtitulo">Introduce los datos del coche en el formulario</p>
+
+    @if (coches.length > 0) {
+      <div class="alerta alerta-info">
+        Actualmente hay <strong>{{ coches.length }}</strong> coche(s) en la lista.
+      </div>
+    }
+
+    @if (mostrarExito) {
+      <div class="alerta alerta-exito">Coche agregado correctamente.</div>
+    }
+
+    @if (mostrarError) {
+      <div class="alerta alerta-error">
+        <span>{{ mensajeError }}</span>
+        <button type="button" class="boton-cerrar" (click)="cerrarError()">Cerrar</button>
+      </div>
+    }
+
+    <form (ngSubmit)="agregarCoche()" class="formulario">
+      <div class="grupo">
+        <label for="marca">Marca</label>
+        <input
+          type="text"
+          id="marca"
+          name="marca"
+          [(ngModel)]="cocheFormulario.marca"
+          placeholder="Ejemplo: Toyota"
+        />
+      </div>
+
+      <div class="grupo">
+        <label for="modelo">Modelo</label>
+        <input
+          type="text"
+          id="modelo"
+          name="modelo"
+          [(ngModel)]="cocheFormulario.modelo"
+          placeholder="Ejemplo: Corolla"
+        />
+      </div>
+
+      <div class="grupo">
+        <label for="cv">CV</label>
+        <input
+          type="number"
+          id="cv"
+          name="cv"
+          [(ngModel)]="cocheFormulario.cv"
+          placeholder="Ejemplo: 140"
+        />
+      </div>
+
+      <div class="grupo">
+        <label for="cc">CC</label>
+        <input
+          type="number"
+          id="cc"
+          name="cc"
+          [(ngModel)]="cocheFormulario.cc"
+          placeholder="Ejemplo: 1800"
+        />
+      </div>
+
+      <div class="grupo">
+        <label for="tipoMotor">Tipo de motor</label>
+        <select id="tipoMotor" name="tipoMotor" [(ngModel)]="cocheFormulario.tipoMotor">
+          <option value="">Selecciona una opción</option>
+          <option value="Híbrido">Híbrido</option>
+          <option value="Eléctrico">Eléctrico</option>
+        </select>
+      </div>
+
+      <div class="grupo">
+        <label for="matricula">Matrícula</label>
+        <input
+          type="text"
+          id="matricula"
+          name="matricula"
+          [(ngModel)]="cocheFormulario.matricula"
+          placeholder="Ejemplo: 1234ABC"
+        />
+      </div>
+
+      <div class="grupo">
+        <label for="precio">Precio</label>
+        <input
+          type="number"
+          id="precio"
+          name="precio"
+          [(ngModel)]="cocheFormulario.precio"
+          placeholder="Ejemplo: 25000"
+        />
+      </div>
+
+      <button type="submit" class="boton-agregar">Agregar coche</button>
+    </form>
+  </section>
+
+  <!-- Parte derecha -->
+  <section class="zona-derecha">
+    <h2>Filtrar coches</h2>
+
+    <form (ngSubmit)="filtrarCoches()" class="formulario">
+      <div class="grupo">
+        <label for="tipoMotorFiltro">Tipo de motor</label>
+        <select
+          id="tipoMotorFiltro"
+          name="tipoMotorFiltro"
+          [(ngModel)]="filtroFormulario.tipoMotor"
+        >
+          <option value="">Todos</option>
+          <option value="Híbrido">Híbrido</option>
+          <option value="Eléctrico">Eléctrico</option>
+        </select>
+      </div>
+
+      <div class="grupo">
+        <label for="precioMinimo">Precio mínimo</label>
+        <input
+          type="number"
+          id="precioMinimo"
+          name="precioMinimo"
+          [(ngModel)]="filtroFormulario.precioMinimo"
+          placeholder="Ejemplo: 20000"
+        />
+      </div>
+
+      <button type="submit" class="boton-agregar">Filtrar</button>
+    </form>
+
+    @if (busquedaRealizada) {
+      <div class="alerta alerta-info margen-superior">
+        Se han encontrado <strong>{{ resultadosFiltro.length }}</strong> resultado(s).
+      </div>
+
+      @if (resultadosFiltro.length > 0) {
+        <button class="boton-mostrar" (click)="mostrarResultados()">Mostrar</button>
+      }
+    }
+
+    @if (cochesMostrados.length === 0 && busquedaRealizada) {
+      <p class="sin-coches">No hay coches para mostrar con ese filtro.</p>
+    }
+
+    <div class="contenedor-tarjetas">
+      @for (coche of cochesMostrados; track coche.matricula) {
+        <article class="tarjeta">
+          <img [src]="coche.imagen" [alt]="coche.modelo" class="imagen-coche" />
+
+          <div class="contenido-tarjeta">
+            <h3>{{ coche.marca }} {{ coche.modelo }}</h3>
+            <p><strong>CV:</strong> {{ coche.cv }}</p>
+            <p><strong>CC:</strong> {{ coche.cc }}</p>
+            <p><strong>Motor:</strong> {{ coche.tipoMotor }}</p>
+            <p><strong>Matrícula:</strong> {{ coche.matricula }}</p>
+            <p class="precio"><strong>Precio:</strong> {{ coche.precio }} €</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</div>
