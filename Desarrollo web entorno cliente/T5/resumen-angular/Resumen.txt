@@ -1,0 +1,444 @@
+1. Qué es Angular
+    Angular es un framework para hacer aplicaciones web por piezas.
+    - component = una parte visible de la página
+    - service = la lógica o los datos que reutilizas
+    - model = cómo es un objeto de datos
+    - routes = a qué componente ir según la URL
+    - pipe = transformar datos para mostrarlos mejor
+    - HttpClient = hablar con APIs
+    - forms = recoger datos de formularios
+
+    Angular además usa inyección de dependencias, 
+    que significa que un componente puede “pedir” un servicio y Angular se lo da, 
+    en vez de crearlo a mano. Eso es justo la base de cómo funcionan los services.
+--------------------------------------------------------------------
+2. Estructura típica de un proyecto Angular
+
+    carpetas y archivos más comunes.
+
+    - src/
+
+    Es la carpeta principal del código fuente.
+    Dentro suele estar casi todo lo importante del proyecto.
+
+src/app/
+
+Aquí vive la aplicación Angular.
+
+Es la carpeta donde normalmente metes:
+
+    - componentes
+    - servicios
+    - modelos
+    - pipes
+    - rutas
+    - configuración principal
+-------------------------------------------------------------------
+3. Qué hace cada carpeta
+
+    - components/
+
+Esta es de las más importantes.
+Aquí se guardan las partes visibles de tu aplicación.
+
+Por ejemplo:
+
+    - home
+    - list
+    - detail
+    - add
+    - search
+  Cada componente suele tener 3 archivos:
+
+    - .ts → lógica
+    - .html → estructura
+    - .css → estilos
+ Qué hace un component
+
+Un componente:
+
+  pinta datos en pantalla
+  recoge clics, inputs y eventos
+  llama a servicios
+  decide qué mostrar
+
+Ejemplo real:
+Si se hace una app de productos:
+
+    - list muestra todos los productos
+    - detail muestra un producto concreto
+    - add añade uno nuevo
+    - search busca productos
+    - Idea importante
+
+Un componente no debería guardar toda la lógica del mundo.
+Debe encargarse sobre todo de la parte visual y de conectar con el servicio.
+---------------------------------------------------------------------------------
+           services/
+
+  Esto es la lógica reutilizable.
+  Un servicio sirve para:
+
+    - hacer peticiones a una API
+    - guardar datos temporalmente
+    - compartir información entre componentes
+    - centralizar lógica
+
+Angular recomienda crear servicios e inyectarlos donde los necesites. 
+El patrón normal es marcar el servicio con @Injectable({ providedIn: 'root' }) para que Angular lo pueda reutilizar en toda la aplicación.
+
+    => Ejemplo 1: servicio con API
+
+En el proyecto tengo algo como api-posts.ts.
+Ese servicio hace esto:
+
+    - guarda la URL de la API
+    - usa HttpClient
+    - tiene métodos como:
+        - getAllPost()
+        - getPostById(id)
+
+Esto es correcto porque el componente no necesita saber cómo se hace la petición.
+Solo llama al servicio.
+
+Ejemplo 2: servicio local
+También tengo tareas.ts.
+Ese servicio:
+    - guarda un array de tareas
+    - añade tareas
+    - lista tareas
+    - busca por responsable
+    - busca por id
+
+Eso también es un buen ejemplo de servicio, aunque no use API.
+Qué debo pensar siempre
+
+"Si una lógica se va a usar en más de un sitio, o no quieres meterla toda en el componente, probablemente va en un service."
+---------------------------------------------------------------------------------
+           models/
+    Aquí defino cómo son tus datos.
+    Esto es muy importante porque Angular trabaja mucho con objetos.
+
+    En model puedo tener:
+
+    - interfaces
+    - clases
+
+  ------------------ Interfaz -----------------------
+Sirve para decir qué forma tiene un objeto.
+
+Ejemplo:
+    export interface Producto {
+        id: number;
+        title: string;
+        price: number;
+        description: string;
+    }
+
+    Eso significa:
+“cualquier producto tiene estas propiedades”.
+
+   ----------------- Clase -------------------------
+
+Sirve si además quieres constructor, getters, setters o métodos.
+
+Ejemplo:
+    export class Usuario {
+     constructor(
+        public nombre: string,
+        public email: string
+     ) {}
+    }
+Cuándo usar cada uno
+    -> interface → cuando solo quieres tipar datos
+    -> class → cuando además quieres comportamiento
+
+-------------------------------------------------------------------------------------------
+
+------------------------ pipes/ -----------------------
+
+Un pipe sirve para transformar un valor antes de mostrarlo en HTML.
+
+Ejemplos típicos:
+
+    - poner una fecha bonita
+    - poner texto en mayúsculas
+    - filtrar una imagen
+    - cambiar un número
+
+Ejemplo:
+    <p>{{ precio | currency:'EUR' }}</p>
+O uno personalizado.
+En el proyecto tengo imagenes-pipe.ts,  lo uso para transformar rutas o imágenes antes de pintarlas.
+Cuándo usar pipe:
+    - Cuando el cambio es solo de visualización.
+No usarlo para meter lógica pesada de negocio.
+
+----------------------------------------------------------------------------------------------
+---------------------- app.routes.ts --------------------------
+
+Aquí defino las rutas.
+Es decir:
+
+    - si la URL es /home, enseña Home
+    - si la URL es /detail/4, enseña el detalle del id 4
+
+Angular Router es el sistema oficial para navegar entre vistas en una SPA.
+
+Ejemplo:
+    export const routes: Routes = [
+        { path: 'home', component: Home },
+        { path: 'detail/:id', component: Detail },
+        { path: '**', redirectTo: 'home' }
+    ];
+Qué significa :id
+Es un parámetro de ruta.
+Sirve para pasar el identificador del objeto.
+
+    Ejemplo:
+    /detail/7
+Entonces en el componente lees ese 7.
+
+----------------------------------------------------------------------------------------------------
+------------------------ app.config.ts ---------------------------
+
+En Angular moderno, sobre todo con standalone, aquí se ponen providers generales.
+Por ejemplo:
+
+    - router
+    - HttpClient
+    - configuraciones globales
+Si voy a usar peticiones HTTP, necesito provideHttpClient(...). Angular también permite activar withFetch() para que HttpClient use la API fetch.
+-----------------------------------------------------------------------------------------------------
+------------------------- app.ts, app.html, app.css ------------------------
+
+Esto sería el componente raíz.
+Es el primero que carga.
+Normalmente aquí se pone:
+
+    - la estructura general
+    - menú o navbar
+    - <router-outlet> o equivalente para que cambien las vistas
+
+------------------------------------------------------------------------------------------
+------------ public/ -------------------------
+
+Suele usarse para archivos estáticos.
+
+Por ejemplo:
+
+    - imágenes
+    - iconos
+    - ficheros que no cambian
+
+---------------------------------------------------------------------
+4. Cómo se relacionan entre sí
+
+    1.El usuario entra a una ruta
+    2.Angular carga un componente
+    3.El componente llama a un servicio
+    4.El servicio trae datos de una API o de memoria
+    5.Los datos siguen la forma del model
+    6.El HTML del componente los pinta
+    7.Si hace falta, un pipe los transforma visualmente
+
+---------------------------------------------------------------------
+ada método HTTP tiene una idea clara: 
+    - GET para leer, 
+    - POST para crear, 
+    - PUT/PATCH para actualizar, 
+    - DELETE para borrar. 
+Angular HttpClient tiene métodos para todos ellos y cada llamada devuelve un Observable.
+
+--------------------------------------------------------------------
+--------------- Crear el model ---------------------
+Si trabajas con productos, usuarios o tareas, crea una interfaz.
+    export interface Producto {
+        id: number;
+        title: string;
+        description: string;
+        price: number;
+        category: string;
+        thumbnail: string;
+    }
+------------ Crear el service ---------------------
+
+Aquí meto las peticiones.
+add(producto: any) {
+    return this.http.post(`${this.url}/add`, producto);
+  }
+
+  update(id: number, producto: any) {
+    return this.http.put(`${this.url}/${id}`, producto);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  search(texto: string) {
+    return this.http.get<{ products: Producto[] }>(
+      `${this.url}/search?q=${texto}`
+    );
+  }
+}
+
+------------------ Crear componentes según lo que te pidan------------- 
+
+Ejemplo típico:
+
+    - list → listar
+    - detail → detalle
+    - add → añadir
+    - search → buscar
+
+----------------- Configurar las rutas -------------------------
+export const routes: Routes = [
+  { path: 'list', component: ListComponent },
+  { path: 'detail/:id', component: DetailComponent },
+  { path: 'add', component: AddComponent },
+  { path: 'search', component: SearchComponent },
+  { path: '**', redirectTo: 'list' }
+];
+------------------- Hacer el HTML simple y claro ---------------- 
+-------------------------------------------------------------------------------------------------
+6. Cómo hacer cada operación típica
+    A. Listar datos ------------------------------------------------>
+Qué necesito:
+    - servicio con getAll()
+    - componente list
+    - variable array en el componente
+
+productos: Producto[] = [];
+ngOnInit() {
+  this.productosService.getAll().subscribe(respuesta => {
+    this.productos = respuesta.products;
+  });
+}
+Qué hace: 
+    - llama a la API
+    - guarda el resultado
+    - el HTML lo recorre con @for o con la sintaxis que uses
+    @for (item of productos; track item.id) {
+        <div>
+           <h3>{{ item.title }}</h3>
+           <p>{{ item.price }}</p>
+        </div>
+    }
+
+    B. Ver detalle ------------------------------------------------>
+Qué necesito:
+    - ruta con :id
+    - leer ese id
+    - llamar a getById(id)
+
+    id!: number;
+    producto!: Producto;
+
+    constructor(
+      private ruta: ActivatedRoute,
+      private productosService: ProductosService
+    ) {}
+
+    ngOnInit() {
+       this.id = Number(this.ruta.snapshot.paramMap.get('id'));
+       this.productosService.getById(this.id).subscribe(respuesta => {
+         this.producto = respuesta;
+        });
+    }
+
+    Qué hace:
+        - recoge el id de la URL
+        - pide ese producto a la API
+        - lo muestra en pantalla
+
+    C. Añadir ------------------------------------------------>
+Qué necesito:
+    - formulario
+    - variables ligadas al formulario
+    - método add()
+
+nuevoProducto = {
+  title: '',
+  description: '',
+  price: 0
+};
+
+guardar() {
+  this.productosService.add(this.nuevoProducto).subscribe(respuesta => {
+    console.log('Producto añadido', respuesta);
+  });
+}
+
+HTML: 
+    <input type="text" [(ngModel)]="nuevoProducto.title">
+    <input type="text" [(ngModel)]="nuevoProducto.description">
+    <input type="number" [(ngModel)]="nuevoProducto.price">
+    <button (click)="guardar()">Guardar</button>
+
+    D. Buscar ------------------------------------------------>
+Qué necesit:
+    - input
+    - botón o evento
+    - método search(texto)
+
+texto: string = '';
+resultados: Producto[] = [];
+
+buscar() {
+  this.productosService.search(this.texto).subscribe(respuesta => {
+    this.resultados = respuesta.products;
+  });
+}
+
+    E. Editar ------------------------------------------------>
+Qué necesito:
+    - cargar primero el dato existente
+    - mostrarlo en formulario
+    - enviar update(id, datos)
+Idea:
+    1.entras a editar un producto
+    2.cargas los datos
+    3.modificas inputs
+    4.pulsas guardar
+    5.mandas PUT o PATCH
+
+    F. Eliminar ------------------------------------------------>
+Qué necesit:
+    - botón borrar
+    - método delete(id)
+
+    borrar(id: number) {
+        this.productosService.delete(id).subscribe(() => {
+           this.productos = this.productos.filter(item => item.id !== id);
+        });
+    }
+
+----------------------------------------------------------------------------------------------
+7. Qué debo hacer siempre antes de programar
+“¿Qué objeto manejo?” -------------------->
+    - Ejemplo:
+    - producto, tarea, usuario, post...
+
+“¿Qué operaciones me piden?” -------------------->
+    - Ejemplo:
+    - listar, detalle, añadir, buscar...
+
+“¿Qué componentes necesito?” -------------------->
+    - Ejemplo:
+    - list, detail, add, search
+
+“¿Qué métodos necesita el service?” -------------------->
+    - Ejemplo:
+    - getAll, getById, add, update, delete, search
+
+“¿Qué rutas necesito?” -------------------->
+    - Ejemplo:
+    - /list, /detail/:id, /add
+-------------------------------------------------------------------------------------------------
+8. Comandos útiles
+ng g c components/list
+ng g c components/detail
+ng g c components/add
+ng g c components/search
+ng g s services/productos
