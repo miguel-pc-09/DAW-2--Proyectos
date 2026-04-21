@@ -1,72 +1,106 @@
-/* Selectores  */
+/* Selectores */
 let btnBajo = document.querySelector("#botonBajo");
 let btnAlto = document.querySelector("#botonAlto");
 let categoria = document.querySelector("#categoria");
 let marca = document.querySelector("#marca");
+let precioMinimo = document.querySelector("#precioMinimo");
+let precioMaximo = document.querySelector("#precioMaximo");
 let btnFiltrar = document.querySelector("#btnFiltrar");
+let btnLimpiarFiltros = document.querySelector("#btnLimpiarFiltros");
+let buscador = document.querySelector("#buscador");
+let tituloProductos = document.querySelector("#tituloProductos");
 
 const listaCarrito = document.querySelector("#lista-carrito");
 const totalCarrito = document.querySelector("#total-carrito");
 const btnComprarCarrito = document.querySelector("#btnComprarCarrito");
 const btnEliminarCarrito = document.querySelector("#btnEliminarCarrito");
-
-let productos = []; // Guardo los productos
-let productosFiltrados = []; // Guardo los productos filtrados
-let productosMostrados = []; // Guardo los productos mostrados
-let carrito = [];
-let animacionActual = "animate__fadeInDown";
-
-/* para poner las cartas */
 const lista = document.querySelector("#lista-productos");
+const botonesCategorias = document.querySelectorAll(".btn-categoria");
 
-/* ----- Funciones --------   */
+let productos = [];
+let productosMostrados = [];
+let carrito = [];
+let filtroNavbarActual = "todas";
+let animacionActual = "animate__fadeInUp";
+
+/* Relación entre categorías del navbar y categorías reales de la API */
+const mapaCategoriasNavbar = {
+  todas: [],
+  cosmetica: ["beauty", "fragrances"],
+  alimentacion: ["groceries"],
+  muebles: ["furniture"],
+};
+
+/* Función para traducir la categoría del navbar a título */
+function obtenerTituloCategoriaNavbar(valor) {
+  if (valor === "cosmetica") {
+    return "Cosmética";
+  }
+
+  if (valor === "alimentacion") {
+    return "Alimentación";
+  }
+
+  if (valor === "muebles") {
+    return "Muebles";
+  }
+
+  return "Productos";
+}
+
+/* Función para pintar productos */
 function ponerProductos(arrayProductos) {
-  productosMostrados = arrayProductos;
-  lista.innerHTML = ""; // para limpiar antes
+  productosMostrados = [...arrayProductos];
+  lista.innerHTML = "";
+
+  if (arrayProductos.length === 0) {
+    lista.innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-light border text-center">
+          No se han encontrado productos con esos filtros.
+        </div>
+      </div>
+    `;
+    return;
+  }
 
   arrayProductos.forEach((element) => {
     lista.innerHTML += `
-        <div class="col animate__animated ${animacionActual}">
-          <div class="card h-100">
-            <img src="${element.thumbnail}" class="card-img-top" alt="${element.title}">
-            <div class="card-body text-center">
-              <h5 class="card-title">${element.title}</h5>
-              <p class="card-text">Precio: ${element.price} €</p>
-              <button class="btn btn-success btn-anadir-carrito" value="${element.id}">
-              Añadir
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3 animate__animated ${animacionActual}">
+        <div class="tarjeta-producto">
+          <img src="${element.thumbnail}" class="imagen-producto" alt="${element.title}">
+          <div class="cuerpo-tarjeta">
+            <div class="etiqueta-categoria">${element.category}</div>
+            <h5 class="nombre-producto">${element.title}</h5>
+            <p class="marca-producto">Marca: ${element.brand}</p>
+            <p class="precio-producto">${Number(element.price).toFixed(2)} €</p>
+            <button class="btn btn-principal btn-anadir-carrito" value="${element.id}">
+              Añadir al carrito
             </button>
-            </div>
           </div>
         </div>
-        `;
+      </div>
+    `;
   });
 }
 
-// funcion para poner el carrito
+/* Función para pintar carrito */
 function ponerCarrito() {
   listaCarrito.innerHTML = "";
 
   if (carrito.length === 0) {
-    listaCarrito.innerHTML += `
-        <li class="list-group-item text-center">
-            <div>
-                <h6 class="my-0">Carrito vacio</h6>
-            </div>
-        </li>
-        `;
+    listaCarrito.innerHTML = `
+      <li class="list-group-item text-center">Carrito vacío</li>
+    `;
     totalCarrito.textContent = "Total: 0.00 €";
     return;
   }
+
   carrito.forEach((item) => {
     listaCarrito.innerHTML += `
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span class="me-2 flex-grow-1">${item.getNombre()}</span>
+        <span class="me-2">${item.getNombre()}</span>
         <span class="fw-bold me-2">${Number(item.getPrecio()).toFixed(2)} €</span>
-
-        <!-- botón eliminar por línea -->
-        <button class="btn btn-sm btn-outline-danger btn-eliminar-linea" value="${item.getId()}">
-          X
-        </button>
       </li>
     `;
   });
@@ -74,150 +108,184 @@ function ponerCarrito() {
   actualizarTotal();
 }
 
-// funcion para calcular el total
+/* Calcular total */
 function calcularTotal() {
   let total = 0;
+
   carrito.forEach((item) => {
     total += Number(item.getPrecio());
   });
+
   return total;
 }
 
-// funcion para actualizar el total
+/* Actualizar total */
 function actualizarTotal() {
   let total = calcularTotal();
   totalCarrito.textContent = `Total: ${total.toFixed(2)} €`;
 }
 
-/* ----- Eventos ------  */
-/* Boton del precio mas bajo */
+/* Cargar categorías reales en el select */
+function cargarCategorias() {
+  let categoriasUnicas = [
+    ...new Set(productos.map((producto) => producto.category)),
+  ];
+  categoriasUnicas.sort();
+
+  categoria.innerHTML = `<option value="">Todas</option>`;
+
+  categoriasUnicas.forEach((categoriaActual) => {
+    categoria.innerHTML += `<option value="${categoriaActual}">${categoriaActual}</option>`;
+  });
+}
+
+/* Cargar marcas */
+function cargarMarcas() {
+  let marcasUnicas = [...new Set(productos.map((producto) => producto.brand))];
+  marcasUnicas.sort();
+
+  marca.innerHTML = `<option value="">Todas</option>`;
+
+  marcasUnicas.forEach((marcaActual) => {
+    marca.innerHTML += `<option value="${marcaActual}">${marcaActual}</option>`;
+  });
+}
+
+/* Aplicar todos los filtros juntos */
+function aplicarFiltros() {
+  let resultado = [...productos];
+
+  let textoBuscador = buscador.value.trim().toLowerCase();
+  let categoriaSelec = categoria.value;
+  let marcaSelec = marca.value;
+  let precioMin = precioMinimo.value.trim();
+  let precioMax = precioMaximo.value.trim();
+
+  /* Filtro del navbar */
+  if (filtroNavbarActual !== "todas") {
+    let categoriasPermitidas = mapaCategoriasNavbar[filtroNavbarActual];
+    resultado = resultado.filter((producto) =>
+      categoriasPermitidas.includes(producto.category),
+    );
+  }
+
+  /* Filtro del buscador */
+  if (textoBuscador !== "") {
+    resultado = resultado.filter((producto) =>
+      producto.title.toLowerCase().includes(textoBuscador),
+    );
+  }
+
+  /* Filtro por categoría del select */
+  if (categoriaSelec !== "") {
+    resultado = resultado.filter(
+      (producto) => producto.category === categoriaSelec,
+    );
+  }
+
+  /* Filtro por marca */
+  if (marcaSelec !== "") {
+    resultado = resultado.filter((producto) => producto.brand === marcaSelec);
+  }
+
+  /* Filtro por precio mínimo */
+  if (precioMin !== "" && !isNaN(precioMin)) {
+    let minimo = parseFloat(precioMin);
+    resultado = resultado.filter(
+      (producto) => parseFloat(producto.price) >= minimo,
+    );
+  }
+
+  /* Filtro por precio máximo */
+  if (precioMax !== "" && !isNaN(precioMax)) {
+    let maximo = parseFloat(precioMax);
+    resultado = resultado.filter(
+      (producto) => parseFloat(producto.price) <= maximo,
+    );
+  }
+
+  tituloProductos.textContent =
+    obtenerTituloCategoriaNavbar(filtroNavbarActual);
+  animacionActual = "animate__fadeInUp";
+  ponerProductos(resultado);
+}
+
+/* Eventos ordenar */
 btnBajo.addEventListener("click", () => {
-  animacionActual = "animate__zoomIn";
-  let ordenBajo = [...productosMostrados].sort((a, b) => a.price - b.price); // [...productosMostrados] es para copiar el array
-  ponerProductos(ordenBajo);
+  let ordenados = [...productosMostrados].sort((a, b) => a.price - b.price);
+  animacionActual = "animate__fadeInLeft";
+  ponerProductos(ordenados);
 });
 
-/* Boton del precio mas alto */
 btnAlto.addEventListener("click", () => {
-  animacionActual = "animate__slideInUp";
-  let ordenAlto = [...productosMostrados].sort((a, b) => b.price - a.price);
-  ponerProductos(ordenAlto);
+  let ordenados = [...productosMostrados].sort((a, b) => b.price - a.price);
+  animacionActual = "animate__fadeInRight";
+  ponerProductos(ordenados);
 });
 
-/* Boton de compra */
-btnComprarCarrito.addEventListener("click", () => {
-  // Si el carrito esta vacio, alerta
-  if (carrito.length === 0) {
-    Swal.fire({
-      icon: "info",
-      title: "Carrito vacío",
-      text: "No hay productos para comprar",
+/* Aplicar filtros */
+btnFiltrar.addEventListener("click", () => {
+  aplicarFiltros();
+});
+
+/* Limpiar filtros */
+btnLimpiarFiltros.addEventListener("click", () => {
+  precioMinimo.value = "";
+  precioMaximo.value = "";
+  categoria.value = "";
+  marca.value = "";
+  buscador.value = "";
+  filtroNavbarActual = "todas";
+
+  botonesCategorias.forEach((boton) => {
+    boton.classList.remove("activo");
+    if (boton.dataset.categoria === "todas") {
+      boton.classList.add("activo");
+    }
+  });
+
+  tituloProductos.textContent = "Productos";
+  animacionActual = "animate__fadeInUp";
+  ponerProductos(productos);
+});
+
+/* Navbar categorías */
+botonesCategorias.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    botonesCategorias.forEach((item) => {
+      item.classList.remove("activo");
     });
-    return;
-  }
 
-  // usamos la función calcularTotal()
-  let total = calcularTotal();
-
-  //  confirmación con texto del enunciado
-  Swal.fire({
-    icon: "question",
-    title: "Confirmación",
-    text: `Vas a realizar una compra por valor de ${total.toFixed(2)} €. ¿Estás seguro?`,
-    showCancelButton: true,
-    confirmButtonText: "Aceptar",
-    cancelButtonText: "Cancelar",
-  }).then((result) => {
-    if (!result.isConfirmed) return;
-
-    //  vaciar el carrito si acepta
-    carrito = [];
-    ponerCarrito();
-
-    Swal.fire({
-      icon: "success",
-      title: "Compra realizada",
-      timer: 900,
-      showConfirmButton: false,
-    });
+    boton.classList.add("activo");
+    filtroNavbarActual = boton.dataset.categoria;
+    aplicarFiltros();
   });
 });
 
-/* botones de categoria y marca */
-/* filtrado por categoria */
-categoria.addEventListener("change", () => {
-  // No hago nada para que funcione el filtro
-  /* let categoriaSelec = categoria.value;
-
-  if (categoriaSelec === "") {
-    ponerProductos(productos);
-    return;
-  }
-
-  let filtrados = productos.filter(
-    (producto) => producto.category === categoriaSelec,
-  );
-  ponerProductos(filtrados); */
+/* Buscar al escribir */
+buscador.addEventListener("input", () => {
+  aplicarFiltros();
 });
 
-// Boton eliminar carrito
-btnEliminarCarrito.addEventListener("click", () => {
-  if (carrito.length === 0) {
-    Swal.fire({
-      icon: "info",
-      title: "Carrito vacío",
-      text: "No hay productos para eliminar",
-    });
-    return;
-  }
-
-  Swal.fire({
-    icon: "warning",
-    title: "¿Eliminar cesta?",
-    text: "Se borrarán todos los productos del carrito",
-    showCancelButton: true,
-    confirmButtonText: "Sí, eliminar",
-    cancelButtonText: "Cancelar",
-  }).then((result) => {
-    if (!result.isConfirmed) return;
-
-    // animacion todos los li saliendo a la derecha
-    let items = listaCarrito.querySelectorAll("li");
-    items.forEach((li) => {
-      li.classList.add("animate__animated", "animate__backOutRight");
-    });
-
-    // cuando acabe, vaciamos y repintamos vacío
-    setTimeout(() => {
-      carrito = [];
-      ponerCarrito();
-
-      Swal.fire({
-        icon: "success",
-        title: "Cesta eliminada",
-        timer: 800,
-        showConfirmButton: false,
-      });
-    }, 700);
-  });
-});
-
+/* Añadir al carrito */
 lista.addEventListener("click", (e) => {
-  e.preventDefault();
-
   let boton = e.target.closest(".btn-anadir-carrito");
-  if (!boton) return;
+
+  if (!boton) {
+    return;
+  }
 
   let idProducto = Number(boton.value);
 
-  // Buscamos el producto por id
   let producto = productos.find((p) => p.id === idProducto);
-  if (!producto) return;
 
-  // Creamos objeto Producto sin imagen
+  if (!producto) {
+    return;
+  }
+
   let prodCarrito = new Producto(
     producto.id,
-    null,
+    producto.thumbnail,
     producto.title,
     producto.price,
     producto.brand,
@@ -228,93 +296,101 @@ lista.addEventListener("click", (e) => {
 
   Swal.fire({
     icon: "success",
-    title: "Añadido al carrito",
+    title: "Producto añadido",
     text: producto.title,
-    timer: 800,
+    timer: 1000,
     showConfirmButton: false,
   });
 });
 
-// Para poder eliminar el producto y no toda la lista
-listaCarrito.addEventListener("click", (e) => {
-  let btnEliminarLinea = e.target.closest(".btn-eliminar-linea");
-  if (!btnEliminarLinea) return;
-
-  let idBorrar = Number(btnEliminarLinea.value);
-  let li = btnEliminarLinea.closest("li");
-
-  // animación del elemento eliminado "me gusto, se que tarda mucho. "
-  li.classList.add("animate__animated", "animate__hinge");
-
-  // cuando termine la animación, quitamos del array y del DOM
-  setTimeout(() => {
-    let index = carrito.findIndex((p) => p.getId() === idBorrar);
-    if (index !== -1) {
-      carrito.splice(index, 1);
-    }
-
-    li.remove(); // quitamos solo el li del DOM selecionado
-    actualizarTotal();
-
-    // Si se queda vacío, sale el mensaje "Carrito vacío"
-    if (carrito.length === 0) {
-      ponerCarrito();
-    }
-  }, 2000);
-});
-
-/* filtrado por marca */
-marca.addEventListener("change", () => {
-  // No hago nada para que el filtro funcione
-  /* let marcaSelec = marca.value;
-
-  if (marcaSelec === "") {
-    ponerProductos(productos);
+/* Comprar */
+btnComprarCarrito.addEventListener("click", () => {
+  if (carrito.length === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "Carrito vacío",
+      text: "No hay productos para comprar.",
+      confirmButtonColor: "#b27764",
+    });
     return;
   }
 
-  let filtrados = productos.filter((producto) => producto.brand === marcaSelec);
-  ponerProductos(filtrados); */
+  let total = calcularTotal();
+
+  Swal.fire({
+    icon: "question",
+    title: "Confirmar compra",
+    text: `Vas a realizar una compra por valor de ${total.toFixed(2)} €. ¿Estás seguro?`,
+    showCancelButton: true,
+    confirmButtonText: "Aceptar",
+    cancelButtonText: "Cancelar",
+    confirmButtonColor: "#b27764",
+    cancelButtonColor: "#8b6b60",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      carrito = [];
+      ponerCarrito();
+
+      Swal.fire({
+        icon: "success",
+        title: "Compra realizada",
+        text: "El carrito se ha vaciado correctamente.",
+        confirmButtonColor: "#b27764",
+      });
+    }
+  });
 });
 
-/* Boton para aplicar el filtro */
-btnFiltrar.addEventListener("click", () => {
-  let categoriaSelec = categoria.value;
-  let marcaSelec = marca.value;
-
-  let resultado = productos;
-
-  // Filtro de categoria
-  if (categoriaSelec !== "") {
-    resultado = resultado.filter(
-      (producto) => producto.category === categoriaSelec,
-    );
+/* Vaciar carrito */
+btnEliminarCarrito.addEventListener("click", () => {
+  if (carrito.length === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "Carrito vacío",
+      text: "No hay productos para eliminar.",
+      confirmButtonColor: "#b27764",
+    });
+    return;
   }
 
-  // Filtro de marca
-  if (marcaSelec !== "") {
-    resultado = resultado.filter((producto) => producto.brand === marcaSelec);
-  }
+  carrito = [];
+  ponerCarrito();
 
-  productosFiltrados = resultado;
-  ponerProductos(productosFiltrados);
+  Swal.fire({
+    icon: "success",
+    title: "Carrito vaciado",
+    timer: 900,
+    showConfirmButton: false,
+  });
 });
 
-// Llamada a la api
-let url = "https://dummyjson.com/products";
+/* Llamada a la API */
+let url = "https://dummyjson.com/products?limit=100";
+
 fetch(url)
   .then((res) => {
-    // console.log(res);
+    if (!res.ok) {
+      throw new Error("La respuesta de la API no ha sido correcta");
+    }
     return res.json();
   })
-  .then((res1) => {
-    // console.log(res1);
-    productos = res1.products;
+  .then((datos) => {
+    console.log("Productos cargados correctamente:", datos);
+
+    productos = datos.products;
+    cargarCategorias();
+    cargarMarcas();
     ponerProductos(productos);
     ponerCarrito();
-    // console.log(element.category); // Para saber las categorias
-    // console.log(element.brand); // para saber las marcas
   })
   .catch((error) => {
-    console.log("Error en el servidor");
+    console.error("Error al cargar la API:", error);
+
+    lista.innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-danger text-center">
+          No se han podido cargar los productos.
+        </div>
+      </div>
+    `;
   });
