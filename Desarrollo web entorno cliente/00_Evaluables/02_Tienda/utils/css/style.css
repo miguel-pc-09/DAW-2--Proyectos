@@ -257,6 +257,10 @@ body {
   text-align: center;
 }
 
+#lista-carrito span {
+  white-space: nowrap;
+}
+
 /* Botón vaciar */
 .btn-carrito-vaciar {
   background-color: white;
@@ -284,4 +288,49 @@ body {
   .panel-carrito {
     position: static;
   }
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.nombre-item-carrito {
+  flex: 1;
+  font-size: 14px;
+  color: #3f312d;
+  word-break: break-word;
+}
+
+.acciones-item-carrito {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.precio-item-carrito {
+  font-weight: bold;
+  white-space: nowrap;
+  color: #3f312d;
+}
+
+.btn-eliminar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #dc3545;
+  background-color: white;
+  color: #dc3545;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+  background-color: #dc3545;
+  color: white;
 }

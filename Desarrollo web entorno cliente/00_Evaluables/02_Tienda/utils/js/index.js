@@ -98,11 +98,15 @@ function ponerCarrito() {
 
   carrito.forEach((item) => {
     listaCarrito.innerHTML += `
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span class="me-2">${item.getNombre()}</span>
-        <span class="fw-bold me-2">${Number(item.getPrecio()).toFixed(2)} €</span>
-      </li>
-    `;
+  <li class="list-group-item item-carrito">
+    <span class="nombre-item-carrito">${item.getNombre()}</span>
+
+    <div class="acciones-item-carrito">
+      <span class="precio-item-carrito">${Number(item.getPrecio()).toFixed(2)} €</span>
+      <button class="btn-eliminar" value="${item.getId()}">X</button>
+    </div>
+  </li>
+`;
   });
 
   actualizarTotal();
@@ -362,6 +366,22 @@ btnEliminarCarrito.addEventListener("click", () => {
     timer: 900,
     showConfirmButton: false,
   });
+});
+
+/* Eliminar producto individual del carrito */
+listaCarrito.addEventListener("click", (e) => {
+  let boton = e.target.closest(".btn-eliminar");
+
+  if (!boton) return;
+
+  let id = Number(boton.value);
+
+  let index = carrito.findIndex((p) => p.getId() === id);
+
+  if (index !== -1) {
+    carrito.splice(index, 1);
+    ponerCarrito();
+  }
 });
 
 /* Llamada a la API */
