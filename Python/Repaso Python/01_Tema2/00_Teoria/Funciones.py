@@ -1,3 +1,4 @@
+import datetime
 # Definir una funcion simple 
 def saludar():
     print("Hola desde la primera funcion")
@@ -112,3 +113,11 @@ print(ordenados)
 """ ============================== Modularidad ====================================== """
 # Fichero operaciones.py
 #  Lo llamamos en el fichero calculadora.py
+
+
+""" ============== Importacion datetime para obtener la fecha y hora actual ============================= """
+now = datetime.datetime.now()
+print("Fecha y hora actual: ", now)
+
+date = datetime.datetime(2025, 5, 15)
+print("Fecha personalizada:", date.strftime("%d/%m/%Y"))

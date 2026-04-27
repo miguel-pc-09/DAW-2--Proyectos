@@ -1,5 +1,6 @@
 import operaciones
 
+
 operando1 = int(input("Introduce el operando 1: "))
 operando2 = int(input("Introduce el operando 2: "))
 operacion = input("Indica la operación a realizar: ").strip()
@@ -47,3 +48,4 @@ else:
     resultado = None
     
 print(f"El resultado de la operación es: {resultado}")
+
