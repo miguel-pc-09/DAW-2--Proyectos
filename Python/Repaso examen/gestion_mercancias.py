@@ -116,3 +116,4 @@ mercancias.append(carne2)
 # Aquí se usa polimorfismo, porque cada objeto ejecuta su propio mostrar_info()
 for mercancia in mercancias:
     mercancia.mostrar_info()
+    
