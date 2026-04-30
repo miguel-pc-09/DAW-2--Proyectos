@@ -1,0 +1,4 @@
+Ana,8.5
+Luis,9.0
+Carlos,mal
+Maria,7.2
