@@ -22,14 +22,19 @@ const Form = () => {
     });
   };
 
+  // Funcion para guardar los datos
   const changeHandler = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     // console.log(e.currentTarget.value);
     // Creamos variable con las dos varibles que nos queremos quedar.
+    // Recoge el input que se ha cambiado. name nombre de campo ej "nombre", "apellido". value lo que se ha escrito
     const { name, value } = e.currentTarget;
+    // Actualiza el objeto user
     setUser((data) => ({
+      // Mantiene los datos anteriores
       ...data,
+      // Agrega el nuevo par clave valor
       [name]: value,
     }));
   };
@@ -78,8 +83,9 @@ const Form = () => {
       </select>
       <button
         onClick={() => {
-          // captura los datos de cada uno de los inputs
+          // captura los datos de cada uno de los inputs. Añade el usuario a la lista
           setUsers((data) => [...data, user]);
+          // Funcion que limpiar el formulario
           clearData();
         }}
         className="btn btn-primary w-100"
@@ -87,6 +93,7 @@ const Form = () => {
         Agregar
       </button>
       <ul className="list-group">
+        {/* Recorre la lista. Muestra cada uno en pantalla */}
         {users.map((user) => (
           <li className="list-group-item">
             {user.nombre}
