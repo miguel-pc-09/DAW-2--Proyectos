@@ -318,57 +318,307 @@
   ],
 
   "dj": [
-    {
-      "id": 1,
-      "question": "¿Qué es la digitalización en una empresa?",
-      "options": [
-        { "id": "a", "text": "Cambiar el logo", "correct": false },
-        { "id": "b", "text": "Pasar procesos a herramientas digitales para mejorar eficiencia", "correct": true },
-        { "id": "c", "text": "Comprar más papel", "correct": false },
-        { "id": "d", "text": "Trabajar sin internet", "correct": false }
-      ]
-    },
-    {
-      "id": 2,
-      "question": "¿Qué es un KPI?",
-      "options": [
-        { "id": "a", "text": "Una contraseña", "correct": false },
-        { "id": "b", "text": "Un indicador clave para medir resultados", "correct": true },
-        { "id": "c", "text": "Un programa de dibujo", "correct": false },
-        { "id": "d", "text": "Un tipo de servidor", "correct": false }
-      ]
-    },
-    {
-      "id": 3,
-      "question": "¿Para qué sirve un CRM normalmente?",
-      "options": [
-        { "id": "a", "text": "Gestionar clientes y relaciones", "correct": true },
-        { "id": "b", "text": "Crear videojuegos", "correct": false },
-        { "id": "c", "text": "Reparar ordenadores", "correct": false },
-        { "id": "d", "text": "Hacer presentaciones", "correct": false }
-      ]
-    },
-    {
-      "id": 4,
-      "question": "¿Qué ventaja tiene automatizar tareas repetitivas?",
-      "options": [
-        { "id": "a", "text": "Se tarda más", "correct": false },
-        { "id": "b", "text": "Reduce errores y ahorra tiempo", "correct": true },
-        { "id": "c", "text": "Obliga a imprimir todo", "correct": false },
-        { "id": "d", "text": "Hace la web más lenta", "correct": false }
-      ]
-    },
-    {
-      "id": 5,
-      "question": "¿Qué es la nube (cloud) en informática?",
-      "options": [
-        { "id": "a", "text": "Guardar datos en servidores accesibles por internet", "correct": true },
-        { "id": "b", "text": "Guardar datos solo en un USB", "correct": false },
-        { "id": "c", "text": "Un antivirus", "correct": false },
-        { "id": "d", "text": "Un tipo de monitor", "correct": false }
-      ]
-    }
-  ],
+  {
+    "id": 1,
+    "question": "¿Qué tipo de sistemas suelen formar parte del entorno OT?",
+    "options": [
+      { "id": "a", "text": "Aplicaciones de ofimática.", "correct": false },
+      { "id": "b", "text": "Sistemas de control industrial.", "correct": true },
+      { "id": "c", "text": "Redes sociales corporativas.", "correct": false },
+      { "id": "d", "text": "Servidores web.", "correct": false }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "¿Cuál es un ejemplo típico de IT en una empresa?",
+    "options": [
+      { "id": "a", "text": "Sensores de temperatura en fábrica.", "correct": false },
+      { "id": "b", "text": "Sistemas SCADA.", "correct": false },
+      { "id": "c", "text": "Servidores de correo electrónico.", "correct": true },
+      { "id": "d", "text": "Robots industriales.", "correct": false }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "¿Qué papel tienen las tecnologías digitales habilitadoras en la industria?",
+    "options": [
+      { "id": "a", "text": "Sustituir completamente a los trabajadores.", "correct": false },
+      { "id": "b", "text": "Servir como base para desarrollar otros servicios tecnológicos.", "correct": true },
+      { "id": "c", "text": "Limitar el uso de datos.", "correct": false },
+      { "id": "d", "text": "Reducir la conectividad entre sistemas.", "correct": false }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "¿Qué permite la virtualización en un servidor físico?",
+    "options": [
+      { "id": "a", "text": "Reducir la memoria RAM.", "correct": false },
+      { "id": "b", "text": "Ejecutar varios sistemas operativos de forma independiente.", "correct": true },
+      { "id": "c", "text": "Eliminar el uso de redes.", "correct": false },
+      { "id": "d", "text": "Evitar el uso de almacenamiento.", "correct": false }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "¿Qué ofrece principalmente el modelo SaaS a los usuarios?",
+    "options": [
+      { "id": "a", "text": "Acceso a hardware remoto.", "correct": false },
+      { "id": "b", "text": "Plataformas de desarrollo.", "correct": false },
+      { "id": "c", "text": "Programas accesibles desde Internet sin instalación local.", "correct": true },
+      { "id": "d", "text": "Control total del sistema operativo.", "correct": false }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "¿Qué ventaja proporciona PaaS a los desarrolladores?",
+    "options": [
+      { "id": "a", "text": "Acceso a dispositivos físicos.", "correct": false },
+      { "id": "b", "text": "Un entorno preparado para crear y desplegar aplicaciones.", "correct": true },
+      { "id": "c", "text": "Eliminación de bases de datos.", "correct": false },
+      { "id": "d", "text": "Control directo del hardware.", "correct": false }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "¿Qué recurso se proporciona en el modelo IaaS?",
+    "options": [
+      { "id": "a", "text": "Aplicaciones listas para usar.", "correct": false },
+      { "id": "b", "text": "Bases de datos preconfiguradas.", "correct": false },
+      { "id": "c", "text": "Infraestructura virtual como servidores y redes.", "correct": true },
+      { "id": "d", "text": "Interfaces gráficas de usuario.", "correct": false }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "¿Qué característica común tienen los servicios cloud?",
+    "options": [
+      { "id": "a", "text": "Funcionan sin conexión a Internet.", "correct": false },
+      { "id": "b", "text": "Eliminan la necesidad de software.", "correct": false },
+      { "id": "c", "text": "Permiten acceso remoto a recursos informáticos.", "correct": true },
+      { "id": "d", "text": "Sustituyen completamente los sistemas locales.", "correct": false }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "¿Qué tipo de problema resuelve Big Data?",
+    "options": [
+      { "id": "a", "text": "Falta de almacenamiento físico.", "correct": false },
+      { "id": "b", "text": "Gestión de pequeños conjuntos de datos.", "correct": false },
+      { "id": "c", "text": "Procesamiento de grandes volúmenes de información.", "correct": true },
+      { "id": "d", "text": "Eliminación de bases de datos.", "correct": false }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "¿Qué etapa forma parte del tratamiento de datos?",
+    "options": [
+      { "id": "a", "text": "Eliminación del hardware.", "correct": false },
+      { "id": "b", "text": "Visualización de resultados.", "correct": true },
+      { "id": "c", "text": "Instalación del sistema operativo.", "correct": false },
+      { "id": "d", "text": "Configuración de red.", "correct": false }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "¿Qué objetivo tiene la preparación de datos en análisis?",
+    "options": [
+      { "id": "a", "text": "Reducir la velocidad del sistema.", "correct": false },
+      { "id": "b", "text": "Transformar datos para facilitar su uso en modelos.", "correct": true },
+      { "id": "c", "text": "Eliminar toda la información disponible.", "correct": false },
+      { "id": "d", "text": "Evitar el uso de algoritmos.", "correct": false }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "¿Qué utilidad tiene representar datos mediante gráficos?",
+    "options": [
+      { "id": "a", "text": "Aumentar la cantidad de datos.", "correct": false },
+      { "id": "b", "text": "Facilitar la interpretación de la información.", "correct": true },
+      { "id": "c", "text": "Sustituir los modelos matemáticos.", "correct": false },
+      { "id": "d", "text": "Reducir la memoria utilizada.", "correct": false }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "¿Qué caracteriza a los datos almacenados en frío (cold)?",
+    "options": [
+      { "id": "a", "text": "Acceso constante y rápido.", "correct": false },
+      { "id": "b", "text": "Uso frecuente por el sistema.", "correct": false },
+      { "id": "c", "text": "Acceso poco frecuente y menor coste.", "correct": true },
+      { "id": "d", "text": "Uso exclusivo en tiempo real.", "correct": false }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "¿Qué tipo de almacenamiento es ideal para datos de uso diario?",
+    "options": [
+      { "id": "a", "text": "Cold storage.", "correct": false },
+      { "id": "b", "text": "Warm storage.", "correct": false },
+      { "id": "c", "text": "Hot storage.", "correct": true },
+      { "id": "d", "text": "Offline storage.", "correct": false }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "¿Qué factor influye en el coste del almacenamiento de datos?",
+    "options": [
+      { "id": "a", "text": "El tipo de sistema operativo.", "correct": false },
+      { "id": "b", "text": "La frecuencia de acceso a los datos.", "correct": true },
+      { "id": "c", "text": "El número de usuarios del sistema.", "correct": false },
+      { "id": "d", "text": "El lenguaje de programación utilizado.", "correct": false }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "¿Por qué se utilizan diferentes niveles de almacenamiento?",
+    "options": [
+      { "id": "a", "text": "Para eliminar redundancia.", "correct": false },
+      { "id": "b", "text": "Para mejorar el equilibrio entre coste y acceso.", "correct": true },
+      { "id": "c", "text": "Para reducir la seguridad.", "correct": false },
+      { "id": "d", "text": "Para evitar el uso de redes.", "correct": false }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "¿Qué caracteriza a una red blockchain?",
+    "options": [
+      { "id": "a", "text": "Control centralizado.", "correct": false },
+      { "id": "b", "text": "Almacenamiento en un único servidor.", "correct": false },
+      { "id": "c", "text": "Distribución de datos entre múltiples nodos.", "correct": true },
+      { "id": "d", "text": "Acceso exclusivo de administradores.", "correct": false }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "¿Qué información contiene un bloque en blockchain?",
+    "options": [
+      { "id": "a", "text": "Código fuente del sistema.", "correct": false },
+      { "id": "b", "text": "Conjunto de transacciones verificadas.", "correct": true },
+      { "id": "c", "text": "Usuarios registrados.", "correct": false },
+      { "id": "d", "text": "Direcciones IP de la red.", "correct": false }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "¿Qué efecto tiene alterar un bloque en una cadena blockchain?",
+    "options": [
+      { "id": "a", "text": "No produce cambios.", "correct": false },
+      { "id": "b", "text": "Se actualiza automáticamente.", "correct": false },
+      { "id": "c", "text": "Invalida la cadena por cambio de hash.", "correct": true },
+      { "id": "d", "text": "Se elimina el bloque.", "correct": false }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "¿Qué garantiza la conexión entre bloques?",
+    "options": [
+      { "id": "a", "text": "La base de datos compartida.", "correct": false },
+      { "id": "b", "text": "El uso de redes privadas.", "correct": false },
+      { "id": "c", "text": "La referencia al hash del bloque anterior.", "correct": true },
+      { "id": "d", "text": "El uso de claves públicas.", "correct": false }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "¿Qué objetivo tiene el mecanismo de prueba de trabajo?",
+    "options": [
+      { "id": "a", "text": "Reducir el número de transacciones.", "correct": false },
+      { "id": "b", "text": "Facilitar cambios en los bloques.", "correct": false },
+      { "id": "c", "text": "Aumentar la seguridad de la red.", "correct": true },
+      { "id": "d", "text": "Eliminar nodos.", "correct": false }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "¿Qué propiedad tienen las funciones hash?",
+    "options": [
+      { "id": "a", "text": "Son reversibles fácilmente.", "correct": false },
+      { "id": "b", "text": "Generan valores aleatorios sin relación.", "correct": false },
+      { "id": "c", "text": "Cambian completamente ante pequeñas variaciones.", "correct": true },
+      { "id": "d", "text": "Eliminan datos duplicados.", "correct": false }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "¿Qué necesitan los sistemas de inteligencia artificial para aprender?",
+    "options": [
+      { "id": "a", "text": "Solo hardware potente.", "correct": false },
+      { "id": "b", "text": "Grandes cantidades de datos.", "correct": true },
+      { "id": "c", "text": "Redes sin conexión.", "correct": false },
+      { "id": "d", "text": "Software sin algoritmos.", "correct": false }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "¿Qué caracteriza al aprendizaje supervisado?",
+    "options": [
+      { "id": "a", "text": "No utiliza datos previos.", "correct": false },
+      { "id": "b", "text": "Trabaja con datos sin etiquetas.", "correct": false },
+      { "id": "c", "text": "Utiliza ejemplos con resultados conocidos.", "correct": true },
+      { "id": "d", "text": "Funciona sin entrenamiento.", "correct": false }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "¿Qué busca el aprendizaje no supervisado?",
+    "options": [
+      { "id": "a", "text": "Clasificar datos etiquetados.", "correct": false },
+      { "id": "b", "text": "Encontrar patrones sin información previa.", "correct": true },
+      { "id": "c", "text": "Ejecutar programas automáticamente.", "correct": false },
+      { "id": "d", "text": "Sustituir redes neuronales.", "correct": false }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "¿Qué es una red neuronal artificial?",
+    "options": [
+      { "id": "a", "text": "Una base de datos distribuida.", "correct": false },
+      { "id": "b", "text": "Un modelo inspirado en el cerebro humano.", "correct": true },
+      { "id": "c", "text": "Un sistema operativo avanzado.", "correct": false },
+      { "id": "d", "text": "Un tipo de servidor web.", "correct": false }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "¿Por qué es importante el Big Data en IA?",
+    "options": [
+      { "id": "a", "text": "Reduce el uso de algoritmos.", "correct": false },
+      { "id": "b", "text": "Permite entrenar modelos más precisos.", "correct": true },
+      { "id": "c", "text": "Elimina la necesidad de datos.", "correct": false },
+      { "id": "d", "text": "Sustituye la programación.", "correct": false }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "¿Qué método utiliza recompensas para aprender?",
+    "options": [
+      { "id": "a", "text": "Aprendizaje supervisado.", "correct": false },
+      { "id": "b", "text": "Aprendizaje no supervisado.", "correct": false },
+      { "id": "c", "text": "Aprendizaje por refuerzo.", "correct": true },
+      { "id": "d", "text": "Aprendizaje estadístico.", "correct": false }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "¿Qué indica una recompensa en aprendizaje por refuerzo?",
+    "options": [
+      { "id": "a", "text": "Un error del sistema.", "correct": false },
+      { "id": "b", "text": "Una acción incorrecta.", "correct": false },
+      { "id": "c", "text": "Una señal de éxito o fracaso.", "correct": true },
+      { "id": "d", "text": "Un conjunto de datos.", "correct": false }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "¿Qué representa el entorno en aprendizaje por refuerzo?",
+    "options": [
+      { "id": "a", "text": "El algoritmo utilizado.", "correct": false },
+      { "id": "b", "text": "El sistema con el que interactúa el agente.", "correct": true },
+      { "id": "c", "text": "Los datos de entrenamiento.", "correct": false },
+      { "id": "d", "text": "La memoria del sistema.", "correct": false }
+    ]
+  }
+],
 
   "ipe": [
     {
