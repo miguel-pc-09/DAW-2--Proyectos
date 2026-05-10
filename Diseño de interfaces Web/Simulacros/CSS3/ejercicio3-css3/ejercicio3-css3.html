@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario CSS3</title>
+    <link rel="stylesheet" href="ejercicio3-css3.css" />
+  </head>
+
+  <body>
+    <div class="form-card">
+      <div class="form-header">
+        <h1>Crear cuenta</h1>
+        <p>Completa tus datos para registrarte</p>
+      </div>
+
+      <form>
+        <div class="fila">
+          <div class="input-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Juan" />
+          </div>
+
+          <div class="input-group">
+            <label>Apellido</label>
+            <input type="text" placeholder="Pérez" />
+          </div>
+        </div>
+
+        <div class="input-group completo">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="ejemplo@correo.com" />
+        </div>
+
+        <div class="fila">
+          <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+
+          <div class="input-group">
+            <label>Confirmar contraseña</label>
+            <input type="password" placeholder="••••••••" />
+          </div>
+        </div>
+
+        <div class="terms-row">
+          <input type="checkbox" />
+          <label
+            >Acepto los términos y condiciones y la política de
+            privacidad</label
+          >
+        </div>
+
+        <button type="submit">Registrarse</button>
+
+        <p class="login">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+      </form>
+    </div>
+  </body>
+</html>

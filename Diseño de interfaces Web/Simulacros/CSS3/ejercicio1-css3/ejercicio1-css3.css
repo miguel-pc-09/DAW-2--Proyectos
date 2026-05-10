@@ -1,0 +1,70 @@
+/* Reset básico */
+* {
+  margin: 0; /* Quita márgenes por defecto */
+  padding: 0; /* Quita rellenos por defecto */
+  box-sizing: border-box; /* El padding y border cuentan dentro del ancho */
+}
+
+/* Cuerpo de la página */
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Fuente sencilla */
+  background-color: #f8f9fa; /* Fondo gris muy claro */
+  text-align: center; /* Centra elementos inline e inline-block */
+  padding-top: 100px; /* Baja el panel desde arriba */
+}
+
+/* Panel que contiene las tarjetas */
+.stats-panel {
+  width: 90%; /* Ocupa casi todo el ancho */
+  max-width: 1000px; /* Máximo ancho del panel */
+  margin: 0 auto; /* Centra el panel */
+  padding: 20px; /* Espacio interior */
+}
+
+/* Tarjeta individual */
+.stat-card {
+  display: inline-block; /* Coloca las tarjetas una al lado de otra */
+  width: 280px; /* Ancho de cada tarjeta */
+  background-color: white; /* Fondo blanco */
+  margin: 15px; /* Separación entre tarjetas */
+  padding: 25px; /* Espacio interior */
+  border-radius: 8px; /* Bordes redondeados */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* Sombra suave */
+}
+
+/* Borde izquierdo azul */
+.card-1 {
+  border-left: 5px solid #007bff;
+}
+
+/* Borde izquierdo verde */
+.card-2 {
+  border-left: 5px solid #28a745;
+}
+
+/* Borde izquierdo naranja */
+.card-3 {
+  border-left: 5px solid #fd7e14;
+}
+
+/* Título de la tarjeta */
+.stat-card h3 {
+  color: #666; /* Gris */
+  font-size: 18px; /* Tamaño del título */
+  margin-bottom: 12px; /* Separación inferior */
+}
+
+/* Número grande */
+.number {
+  font-size: 38px; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
+  color: #333; /* Gris oscuro */
+  margin-bottom: 8px; /* Separación inferior */
+}
+
+/* Descripción */
+.description {
+  color: #999; /* Gris claro */
+  font-size: 16px; /* Tamaño normal */
+}

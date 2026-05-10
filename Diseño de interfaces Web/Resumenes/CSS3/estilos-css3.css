@@ -1,0 +1,181 @@
+/* Quitamos márgenes y rellenos que trae el navegador por defecto */
+* {
+  margin: 0; /* Quita el margen exterior de todos los elementos */
+  padding: 0; /* Quita el relleno interior de todos los elementos */
+  box-sizing: border-box; /* Hace que width incluya padding y border */
+}
+
+/* Estilos generales del body */
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Tipo de letra general */
+  background-color: #f4f4f4; /* Color de fondo de la página */
+  color: #222; /* Color general del texto */
+  padding: 30px; /* Espacio interior alrededor de toda la página */
+}
+
+/* Título principal */
+h1 {
+  text-align: center; /* Centra el texto */
+  margin-bottom: 40px; /* Espacio inferior */
+}
+
+/* Cada bloque grande del resumen */
+.bloque {
+  width: 85%; /* Ancho del bloque */
+  margin: 0 auto 50px auto; /* Centrado horizontal y separación inferior */
+  background-color: white; /* Fondo blanco */
+  padding: 25px; /* Espacio interior */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Títulos de cada bloque */
+.bloque h2 {
+  margin-bottom: 25px; /* Separación debajo del título */
+  color: #333; /* Color gris oscuro */
+}
+
+/* ===================================================== */
+/* BLOQUE 1: TARJETAS DE ESTADÍSTICAS */
+/* ===================================================== */
+
+.panel-estadisticas {
+  background-color: #eef1f4; /* Fondo gris claro */
+  padding: 50px; /* Espacio interior */
+  text-align: center; /* Centra elementos inline */
+}
+
+/* Tarjeta individual */
+.tarjeta {
+  display: inline-block; /* Coloca las tarjetas una al lado de otra */
+  width: 280px; /* Ancho de cada tarjeta */
+  background-color: white; /* Fondo blanco */
+  margin: 15px; /* Separación entre tarjetas */
+  padding: 25px; /* Espacio interior */
+  border-radius: 10px; /* Esquinas redondeadas */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Sombra */
+}
+
+/* Borde izquierdo azul */
+.tarjeta-azul {
+  border-left: 6px solid #3b82f6; /* Línea azul a la izquierda */
+}
+
+/* Borde izquierdo verde */
+.tarjeta-verde {
+  border-left: 6px solid #22c55e; /* Línea verde a la izquierda */
+}
+
+/* Borde izquierdo naranja */
+.tarjeta-naranja {
+  border-left: 6px solid #f59e0b; /* Línea naranja a la izquierda */
+}
+
+/* Título de la tarjeta */
+.tarjeta h3 {
+  color: #666; /* Color gris */
+  font-size: 22px; /* Tamaño del texto */
+  margin-bottom: 12px; /* Separación inferior */
+}
+
+/* Número grande */
+.numero {
+  font-size: 45px; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 12px; /* Separación inferior */
+}
+
+/* Texto pequeño de descripción */
+.descripcion {
+  color: #888; /* Color gris claro */
+  font-size: 18px; /* Tamaño del texto */
+}
+
+/* ===================================================== */
+/* BLOQUE 2: ARTÍCULO CON IMAGEN FLOTANTE */
+/* ===================================================== */
+
+.articulo {
+  background-color: #e89bad; /* Fondo rosa */
+  border: 8px solid #b8325b; /* Borde rosa oscuro */
+  padding: 20px; /* Espacio interior */
+  overflow: hidden; /* Evita que el float rompa la caja */
+}
+
+/* Imagen del artículo */
+.articulo img {
+  width: 250px; /* Ancho de imagen */
+  height: 300px; /* Alto de imagen */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+  float: left; /* Coloca la imagen a la izquierda */
+  margin-right: 25px; /* Separación entre imagen y texto */
+  margin-bottom: 15px; /* Separación inferior */
+  border: 4px solid white; /* Borde blanco */
+}
+
+/* Título del artículo */
+.articulo h3 {
+  font-size: 28px; /* Tamaño del título */
+  margin-bottom: 15px; /* Separación inferior */
+}
+
+/* Párrafos del artículo */
+.articulo p {
+  font-size: 18px; /* Tamaño del texto */
+  line-height: 1.5; /* Altura entre líneas */
+  text-align: justify; /* Justifica el texto */
+  margin-bottom: 15px; /* Separación entre párrafos */
+}
+
+/* ===================================================== */
+/* BLOQUE 3: FORMULARIO BÁSICO */
+/* ===================================================== */
+
+.formulario {
+  width: 500px; /* Ancho del formulario */
+  background-color: #d6d6d6; /* Fondo gris */
+  padding: 25px; /* Espacio interior */
+  border-radius: 15px; /* Esquinas redondeadas */
+}
+
+/* Labels del formulario */
+.formulario label {
+  display: block; /* Hace que cada label ocupe una línea */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 8px; /* Espacio debajo del label */
+}
+
+/* Inputs y textarea */
+.formulario input,
+.formulario textarea {
+  width: 100%; /* Ocupan todo el ancho del formulario */
+  padding: 10px; /* Espacio interior */
+  margin-bottom: 15px; /* Separación inferior */
+  border: none; /* Quita borde por defecto */
+  border-radius: 6px; /* Esquinas redondeadas */
+  font-size: 15px; /* Tamaño del texto */
+}
+
+/* Textarea */
+.formulario textarea {
+  height: 120px; /* Alto del textarea */
+  resize: none; /* Evita que se pueda agrandar */
+}
+
+/* Botón */
+.formulario button {
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px; /* Espacio interior */
+  border-radius: 8px; /* Esquinas redondeadas */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Mano al pasar por encima */
+}
+
+/* Botón al pasar el ratón */
+.formulario button:hover {
+  background-color: #222; /* Negro un poco más claro */
+}

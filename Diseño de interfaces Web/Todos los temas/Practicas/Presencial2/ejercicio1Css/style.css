@@ -1,0 +1,85 @@
+body {
+  margin: 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: rgb(45, 165, 20);
+  text-align: center;
+  color: white;
+}
+header h1{
+    margin: 20px 20px 0;
+}
+header ul {
+    margin: 10px;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 15px;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+section{
+    padding: 15px;
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 25px;
+}
+
+.animales{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-animales{
+    display: flex;
+    flex-direction: roew;
+    justify-content: space-between;
+}
+
+.animal{
+    display: flex;
+    flex-direction: column;
+    max-width: 33%;
+    
+    text-align: center;
+    border: solid rgb(204, 204, 204);
+    margin-bottom: 15px;
+}
+
+.animal p{
+    background-color: rgb(232, 232, 232);
+    padding: 5px;
+}
+
+.juego, .puntajes, .contacto{
+    margin-bottom: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+form button{
+    background-color: rgb(45, 165, 20);
+    color: white;
+    border: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 60px;
+}
+ footer p{
+    margin: 0 0 5px;
+ }

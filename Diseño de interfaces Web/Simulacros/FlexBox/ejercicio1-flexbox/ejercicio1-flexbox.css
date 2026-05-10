@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+  margin: 0; /* Quita márgenes */
+  padding: 0; /* Quita rellenos */
+  box-sizing: border-box; /* Controla mejor los tamaños */
+}
+
+/* Cuerpo */
+body {
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  font-family: Arial, Helvetica, sans-serif; /* Fuente sencilla */
+  background-color: #f8f9fa; /* Fondo claro */
+
+  display: flex; /* Activa FlexBox */
+  justify-content: center; /* Centra horizontalmente el panel */
+  align-items: center; /* Centra verticalmente el panel */
+}
+
+/* Panel principal */
+.stats-panel {
+  width: 90%; /* Ancho del panel */
+  max-width: 1000px; /* Ancho máximo */
+
+  display: flex; /* Coloca las tarjetas en fila */
+  justify-content: center; /* Centra las tarjetas */
+  gap: 30px; /* Separación entre tarjetas */
+}
+
+/* Tarjeta */
+.stat-card {
+  flex: 1; /* Todas ocupan el mismo espacio */
+  max-width: 300px; /* No crecen demasiado */
+  background-color: white; /* Fondo blanco */
+  padding: 25px; /* Espacio interior */
+  border-radius: 8px; /* Bordes redondeados */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* Sombra */
+}
+
+/* Colores laterales */
+.card-1 {
+  border-left: 5px solid #007bff;
+}
+
+.card-2 {
+  border-left: 5px solid #28a745;
+}
+
+.card-3 {
+  border-left: 5px solid #fd7e14;
+}
+
+/* Título */
+.stat-card h3 {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* Número */
+.number {
+  font-size: 38px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Descripción */
+.description {
+  color: #999;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .stats-panel {
+    flex-direction: column; /* En móvil, una tarjeta debajo de otra */
+    align-items: center; /* Centra las tarjetas */
+  }
+
+  .stat-card {
+    width: 100%; /* Ocupa el ancho disponible */
+  }
+}

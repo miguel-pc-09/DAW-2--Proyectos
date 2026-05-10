@@ -1,0 +1,9 @@
+ul{
+    gap: 40px;
+    
+}
+
+
+ul li{
+    list-style: none;
+}

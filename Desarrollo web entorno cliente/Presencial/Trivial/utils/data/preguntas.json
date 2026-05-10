@@ -265,57 +265,307 @@
   ],
 
   "sos": [
-    {
-      "id": 1,
-      "question": "¿Qué es la economía circular?",
-      "options": [
-        { "id": "a", "text": "Producir y tirar sin reciclar", "correct": false },
-        { "id": "b", "text": "Reutilizar, reparar y reciclar para reducir residuos", "correct": true },
-        { "id": "c", "text": "Usar solo plástico", "correct": false },
-        { "id": "d", "text": "Gastar más energía", "correct": false }
-      ]
-    },
-    {
-      "id": 2,
-      "question": "¿Qué acción suele reducir más residuos en general?",
-      "options": [
-        { "id": "a", "text": "Reutilizar", "correct": true },
-        { "id": "b", "text": "Comprar más", "correct": false },
-        { "id": "c", "text": "Tirar sin separar", "correct": false },
-        { "id": "d", "text": "Duplicar envases", "correct": false }
-      ]
-    },
-    {
-      "id": 3,
-      "question": "¿Qué es la huella de carbono?",
-      "options": [
-        { "id": "a", "text": "La marca del pie en el suelo", "correct": false },
-        { "id": "b", "text": "Emisiones asociadas a una actividad", "correct": true },
-        { "id": "c", "text": "El gasto de agua", "correct": false },
-        { "id": "d", "text": "El ruido de una ciudad", "correct": false }
-      ]
-    },
-    {
-      "id": 4,
-      "question": "¿Qué significa 'reducir' en las 3R/7R?",
-      "options": [
-        { "id": "a", "text": "Usar más recursos", "correct": false },
-        { "id": "b", "text": "Consumir menos y generar menos residuos", "correct": true },
-        { "id": "c", "text": "Tirar más rápido", "correct": false },
-        { "id": "d", "text": "Cambiar de color el envase", "correct": false }
-      ]
-    },
-    {
-      "id": 5,
-      "question": "¿Qué práctica ayuda a alargar la vida de un producto?",
-      "options": [
-        { "id": "a", "text": "Repararlo", "correct": true },
-        { "id": "b", "text": "Tirarlo al primer fallo", "correct": false },
-        { "id": "c", "text": "Cambiarlo por moda", "correct": false },
-        { "id": "d", "text": "Comprar 2 por si acaso", "correct": false }
-      ]
-    }
-  ],
+  {
+    "id": 1,
+    "question": "¿Cuál de las siguientes acciones contribuye directamente a la descarbonización?",
+    "options": [
+      { "id": "a", "text": "Reemplazar sistemas de energía fósil por fuentes renovables como solar o eólica", "correct": true },
+      { "id": "b", "text": "Utilizar únicamente materias primas vírgenes", "correct": false },
+      { "id": "c", "text": "Reducir la eficiencia energética para disminuir costes", "correct": false },
+      { "id": "d", "text": "Incrementar el uso de carbón en procesos industriales", "correct": false }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "¿Qué describe mejor el concepto de ecosistema?",
+    "options": [
+      { "id": "a", "text": "Un espacio geográfico sin influencia de factores abióticos", "correct": false },
+      { "id": "b", "text": "Un conjunto de especies que compiten entre sí por recursos limitados", "correct": false },
+      { "id": "c", "text": "La interacción entre organismos vivos y los factores físicos del entorno en un área determinada", "correct": true },
+      { "id": "d", "text": "Un lugar donde solo existen plantas y microorganismos", "correct": false }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "¿Qué impacto puede tener el cambio climático en los costes de las empresas?",
+    "options": [
+      { "id": "a", "text": "Reducción de costes energéticos", "correct": false },
+      { "id": "b", "text": "Ninguna es correcta", "correct": false },
+      { "id": "c", "text": "Incremento por adaptación y seguros", "correct": true },
+      { "id": "d", "text": "Incrementa porque suben los impuestos", "correct": false }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "¿Cómo puede afectar la desmaterialización a la sostenibilidad de una empresa?",
+    "options": [
+      { "id": "a", "text": "Aumentando obligatoriamente la huella de carbono", "correct": false },
+      { "id": "b", "text": "Incrementando el uso de recursos físicos y logísticos", "correct": false },
+      { "id": "c", "text": "Dependiendo exclusivamente de proveedores externos de papel", "correct": false },
+      { "id": "d", "text": "Reduciendo el consumo de materiales y la generación de residuos", "correct": true }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "¿Qué práctica se asocia directamente con la desmaterialización dentro de una empresa o administración pública?",
+    "options": [
+      { "id": "a", "text": "Migrar servicios y comunicaciones a plataformas digitales para minimizar recursos físicos", "correct": true },
+      { "id": "b", "text": "Aumentar el número de envíos postales para mejorar la comunicación interna", "correct": false },
+      { "id": "c", "text": "Almacenar todas las facturas en archivadores tradicionales", "correct": false },
+      { "id": "d", "text": "Requerir que todos los informes se entreguen impresos y firmados en papel", "correct": false }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "¿Qué objetivo persigue la descarbonización en el contexto corporativo y público?",
+    "options": [
+      { "id": "a", "text": "Reducir o eliminar las emisiones de gases de efecto invernadero mediante cambios estructurales, tecnológicos y de consumo energético", "correct": true },
+      { "id": "b", "text": "Lograr un aumento gradual del uso de carbón y gas para asegurar el suministro", "correct": false },
+      { "id": "c", "text": "Mantener las emisiones en niveles actuales para evitar costes adicionales", "correct": false },
+      { "id": "d", "text": "Establecer un sistema de compensaciones que permita seguir emitiendo sin cambios operativos", "correct": false }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "¿Cuál es el principal instrumento adoptado por la ONU para impulsar el desarrollo sostenible a escala global?",
+    "options": [
+      { "id": "a", "text": "La Declaración de Estocolmo", "correct": false },
+      { "id": "b", "text": "La Agenda 2030 y sus Objetivos de Desarrollo Sostenible (ODS)", "correct": true },
+      { "id": "c", "text": "El Acuerdo de Basilea", "correct": false },
+      { "id": "d", "text": "El Protocolo de Montreal", "correct": false }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "¿Qué papel desempeña la ONU en materia de sostenibilidad?",
+    "options": [
+      { "id": "a", "text": "Sustituir a los gobiernos nacionales en la toma de decisiones ambientales", "correct": false },
+      { "id": "b", "text": "Coordinar esfuerzos internacionales, establecer marcos globales y promover metas comunes para el desarrollo sostenible", "correct": true },
+      { "id": "c", "text": "Controlar directamente los recursos naturales de los países miembros", "correct": false },
+      { "id": "d", "text": "Elaborar leyes obligatorias para todos los países sin excepción", "correct": false }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "¿Cuál de las siguientes áreas forma parte de las iniciativas clave del Pacto Verde Europeo?",
+    "options": [
+      { "id": "a", "text": "Incentivar el uso de carbón para reducir costes energéticos", "correct": false },
+      { "id": "b", "text": "Reducir la inversión en innovación tecnológica ambiental", "correct": false },
+      { "id": "c", "text": "Eliminar gradualmente las energías renovables del mercado europeo", "correct": false },
+      { "id": "d", "text": "Transformar sectores como energía, transporte, agricultura e industria hacia modelos más sostenibles", "correct": true }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "No es una dimensión como tal de los ODS.",
+    "options": [
+      { "id": "a", "text": "La cultural", "correct": true },
+      { "id": "b", "text": "La ecológica", "correct": false },
+      { "id": "c", "text": "La económica", "correct": false },
+      { "id": "d", "text": "La social", "correct": false }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "¿Cuál es el propósito general de los 17 ODS establecidos por la ONU?",
+    "options": [
+      { "id": "a", "text": "Promover únicamente el crecimiento económico mundial", "correct": false },
+      { "id": "b", "text": "Reemplazar las leyes nacionales de desarrollo", "correct": false },
+      { "id": "c", "text": "Crear un marco global para abordar desafíos sociales, ambientales y económicos antes de 2030", "correct": true },
+      { "id": "d", "text": "Establecer metas solo para países en desarrollo", "correct": false }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "¿Qué enfoque adoptan los ODS para enfrentar los desafíos globales?",
+    "options": [
+      { "id": "a", "text": "Plantean un enfoque integrado que combina lo social, lo ambiental y lo económico", "correct": true },
+      { "id": "b", "text": "Abordan un único ámbito (económico) para simplificar su implementación", "correct": false },
+      { "id": "c", "text": "Se centran exclusivamente en la cooperación internacional", "correct": false },
+      { "id": "d", "text": "Proponen acciones compartimentadas sin conexión entre sí", "correct": false }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "¿Cuántos ODS hay?",
+    "options": [
+      { "id": "a", "text": "Depende del país", "correct": false },
+      { "id": "b", "text": "17", "correct": true },
+      { "id": "c", "text": "30", "correct": false },
+      { "id": "d", "text": "50", "correct": false }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "¿Por qué son esenciales los indicadores de desempeño para implementar los ODS?",
+    "options": [
+      { "id": "a", "text": "Porque permiten aplicar los ODS sin necesidad de recopilar datos ni realizar análisis continuos", "correct": false },
+      { "id": "b", "text": "Porque ayudan a comparar avances, identificar brechas y orientar decisiones de políticas públicas y estrategias privadas", "correct": true },
+      { "id": "c", "text": "Porque eliminan la necesidad de establecer metas concretas", "correct": false },
+      { "id": "d", "text": "Porque hacen que los ODS sean obligatorios para todos los países", "correct": false }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "La integración de aspectos ASG en la empresa suele implicar para ella:",
+    "options": [
+      { "id": "a", "text": "Una mejora de la reputación corporativa y de la percepción de la marca", "correct": true },
+      { "id": "b", "text": "Una reducción del rendimiento y competitividad a largo plazo", "correct": false },
+      { "id": "c", "text": "Un acceso más limitado a financiación sostenible", "correct": false },
+      { "id": "d", "text": "Una mayor dificultad para atraer y retener talento", "correct": false }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "La huella ecológica debe ser:",
+    "options": [
+      { "id": "a", "text": "Inferior a la biocapacidad, garantizando que los ecosistemas puedan regenerar los recursos utilizados", "correct": true },
+      { "id": "b", "text": "Superior a la biocapacidad disponible", "correct": false },
+      { "id": "c", "text": "Un factor irrelevante", "correct": false },
+      { "id": "d", "text": "Exactamente igual a la biocapacidad", "correct": false }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Una marca de moda implementa un sistema blockchain para rastrear materiales, fábricas y condiciones laborales en toda su cadena de valor. ¿Qué aspecto ASG se ve más afectado?",
+    "options": [
+      { "id": "a", "text": "Gobernanza", "correct": true },
+      { "id": "b", "text": "Ambiental", "correct": false },
+      { "id": "c", "text": "Financiero", "correct": false },
+      { "id": "d", "text": "Social", "correct": false }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Una empresa de transporte anuncia que sustituirá su flota diésel por vehículos eléctricos y utilizará energía 100% renovable en sus centros. ¿Qué aspecto ASG mejora principalmente?",
+    "options": [
+      { "id": "a", "text": "Financiero", "correct": false },
+      { "id": "b", "text": "Gobernanza", "correct": false },
+      { "id": "c", "text": "Ambiental", "correct": true },
+      { "id": "d", "text": "Social", "correct": false }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Una empresa de transporte anuncia que implementará un programa integral para mejorar la seguridad y el bienestar de sus conductores, incluyendo formación especializada, reducción de horas de trabajo excesivas y apoyo psicológico. ¿Qué aspecto ASG mejora principalmente?",
+    "options": [
+      { "id": "a", "text": "Ambiental", "correct": false },
+      { "id": "b", "text": "Financiero", "correct": false },
+      { "id": "c", "text": "Gobernanza", "correct": false },
+      { "id": "d", "text": "Social", "correct": true }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Los criterios ASG sirven para:",
+    "options": [
+      { "id": "a", "text": "Exigir automáticamente una auditoría interna anual", "correct": false },
+      { "id": "b", "text": "Incrementar los beneficios de la empresa como único objetivo", "correct": false },
+      { "id": "c", "text": "Reemplazar por completo las funciones de la dirección y la alta gerencia", "correct": false },
+      { "id": "d", "text": "Evaluar de manera integral las prácticas empresariales y orientar decisiones sostenibles en materia ambiental, social y de gobernanza", "correct": true }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "¿Qué riesgo puede asumir una empresa que ignora los criterios ASG en su gestión?",
+    "options": [
+      { "id": "a", "text": "Aumentar su capacidad de anticipar riesgos regulatorios", "correct": false },
+      { "id": "b", "text": "Incrementar su resiliencia frente a cambios sociales y ambientales", "correct": false },
+      { "id": "c", "text": "Enfrentar sanciones, pérdida de confianza y menor acceso a financiación sostenible", "correct": true },
+      { "id": "d", "text": "Mejorar automáticamente su competitividad internacional", "correct": false }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Señala la afirmación falsa acerca de los grupos de interés:",
+    "options": [
+      { "id": "a", "text": "Siempre son externos a la empresa, sin formar parte de ella en ningún caso", "correct": true },
+      { "id": "b", "text": "Las decisiones que toma la empresa pueden afectarles directa o indirectamente", "correct": false },
+      { "id": "c", "text": "Son colectivos humanos con algún grado de relación o impacto con la organización", "correct": false },
+      { "id": "d", "text": "Son capaces de influir en las decisiones y estrategias de la empresa", "correct": false }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "¿Cuál es una ventaja clave de la economía circular respecto al modelo lineal tradicional?",
+    "options": [
+      { "id": "a", "text": "Reduce la necesidad de materias primas vírgenes al fomentar la reutilización y el reciclaje", "correct": true },
+      { "id": "b", "text": "Genera más residuos para mantener la actividad económica", "correct": false },
+      { "id": "c", "text": "Incrementa la dependencia de combustibles fósiles", "correct": false },
+      { "id": "d", "text": "Obliga a producir a mayor velocidad sin controles ambientales", "correct": false }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "¿Cuál es un beneficio ambiental directo de adoptar una economía circular?",
+    "options": [
+      { "id": "a", "text": "La extracción continua e intensiva de recursos naturales sin límites", "correct": false },
+      { "id": "b", "text": "Una mayor producción de residuos y vertidos", "correct": false },
+      { "id": "c", "text": "La disminución de la generación de residuos al mantener los materiales en uso durante más tiempo, aprovechando estrategias como la reutilización, reparación, refabricación y reciclaje eficiente", "correct": true },
+      { "id": "d", "text": "Un incremento de la contaminación del agua y del suelo", "correct": false }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "La economía circular busca:",
+    "options": [
+      { "id": "a", "text": "Limitar la colaboración con proveedores", "correct": false },
+      { "id": "b", "text": "Aumentar el uso de productos desechables", "correct": false },
+      { "id": "c", "text": "Acortar el ciclo de vida del producto", "correct": false },
+      { "id": "d", "text": "Mantener el valor de los recursos el mayor tiempo posible", "correct": true }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Un principio del ecodiseño es:",
+    "options": [
+      { "id": "a", "text": "Aumentar el consumo energético", "correct": false },
+      { "id": "b", "text": "Facilitar la reparabilidad", "correct": true },
+      { "id": "c", "text": "Aumentar la cantidad de residuos para así poder reciclarlos", "correct": false },
+      { "id": "d", "text": "Fomentar una producción con mayor cantidad de emisiones", "correct": false }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Un producto puede considerarse mal diseñado desde la perspectiva del ecodiseño cuando:",
+    "options": [
+      { "id": "a", "text": "Emplea materiales difíciles de separar o no reciclables", "correct": true },
+      { "id": "b", "text": "Reduce el consumo energético", "correct": false },
+      { "id": "c", "text": "Presenta elevada durabilidad y reparabilidad", "correct": false },
+      { "id": "d", "text": "Tiene un envase compostable", "correct": false }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "¿Cuál es el objetivo principal de la evaluación del desempeño ambiental?",
+    "options": [
+      { "id": "a", "text": "Obtener automáticamente certificaciones ambientales sin procesos adicionales", "correct": false },
+      { "id": "b", "text": "Diseñar campañas de marketing verde sin evaluar el rendimiento real de la empresa", "correct": false },
+      { "id": "c", "text": "Detectar ineficiencias y desviaciones únicamente con fines administrativos", "correct": false },
+      { "id": "d", "text": "Analizar de forma sistemática el impacto ambiental de la organización para identificar áreas de mejora continua", "correct": true }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Un certificado de sostenibilidad es...",
+    "options": [
+      { "id": "a", "text": "Una auditoría interna realizada únicamente por el propio equipo de la empresa", "correct": false },
+      { "id": "b", "text": "Una prueba de cumplimiento de ciertos estándares ambientales o sociales", "correct": true },
+      { "id": "c", "text": "Un informe financiero centrado exclusivamente en ingresos, gastos y rentabilidad", "correct": false },
+      { "id": "d", "text": "Un documento legal obligatorio que todas las empresas deben obtener", "correct": false }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "El plan de sostenibilidad se caracteriza por ser...",
+    "options": [
+      { "id": "a", "text": "Un documento que aborda únicamente las emisiones de la empresa", "correct": false },
+      { "id": "b", "text": "Un informe obligatorio para todas las empresas", "correct": false },
+      { "id": "c", "text": "Una auditoría realizada exclusivamente por una consultora externa", "correct": false },
+      { "id": "d", "text": "Un documento de planificación estratégica a medio y largo plazo, que define objetivos, acciones y compromisos en materia ambiental, social y de gobernanza para la organización", "correct": true }
+    ]
+  }
+],
 
   "dj": [
   {

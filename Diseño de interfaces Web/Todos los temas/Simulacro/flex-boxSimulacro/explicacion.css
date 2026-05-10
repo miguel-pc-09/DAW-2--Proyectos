@@ -1,0 +1,36 @@
+/* Centrar una caja */
+body{
+    display: flex;
+    justify-content: center;  /* Horizontal */
+    align-items: center;      /* Vertical */
+} 
+
+/* Poner elementos en fila Como nombre y apellido   [Nombre]   [Apellido]*/
+.name-row{
+    display: flex;
+    gap: 15px; 
+}
+
+/* Ocupen mismo tamaño */
+.input-group{
+    flex:1;   /* Reparte espacio autómaticamente */
+}
+
+/* Cambiar de fila a columna */
+fex-direction: column; 
+/* 
+FILA:
+[A] [B]
+
+COLUMNA:
+[A]
+[B]
+
+*/
+
+/* Responsive con media query */
+@media (max-width: 480px) {
+    .name-row{
+        flex-direction: column;
+    }
+}

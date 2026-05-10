@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Caja grande morada */
+.contenedor {
+  width: 80%;
+  margin: 60px auto;
+  background-color: #c9a8f5;
+  padding: 10px 25px 25px 25px;
+}
+
+/* Menú superior */
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
+  margin-bottom: 20px;
+}
+
+.menu a {
+  color: #4b00b5;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 4px dashed #4b00b5;
+  padding: 8px 14px;
+  font-size: 18px;
+}
+
+/* Zona blanca interior */
+.contenido {
+  background-color: white;
+}
+
+/* Cabecera con imagen y título */
+.cabecera {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.cabecera img {
+  width: 45px;
+  margin-right: 15px;
+}
+
+.cabecera h1 {
+  color: #4b00b5;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+/* Línea morada */
+.linea {
+  height: 4px;
+  background-color: #4b00b5;
+}
+
+/* Contenedor de las 3 cajas */
+.chistes {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 10px 35px 15px 35px;
+}
+
+/* Cada caja */
+.chiste {
+  width: 250px;
+  min-height: 220px;
+  border: 4px solid #4b00b5;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.chiste p {
+  margin-bottom: 16px;
+}

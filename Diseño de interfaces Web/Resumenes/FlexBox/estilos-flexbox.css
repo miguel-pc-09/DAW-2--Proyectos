@@ -1,0 +1,204 @@
+/* RESET BÁSICO */
+* {
+  margin: 0; /* Quita márgenes por defecto */
+  padding: 0; /* Quita rellenos por defecto */
+  box-sizing: border-box; /* Hace que el ancho incluya padding y borde */
+}
+
+/* CUERPO DE LA PÁGINA */
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Tipo de letra */
+  background-color: #f4f4f4; /* Fondo gris claro */
+  color: #222; /* Color del texto */
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor-principal {
+  width: 85%; /* Ancho de la página */
+  margin: 40px auto; /* Centra el contenedor */
+}
+
+/* TÍTULO PRINCIPAL */
+h1 {
+  text-align: center; /* Centra el título */
+  margin-bottom: 40px; /* Separación inferior */
+}
+
+/* BLOQUES DEL RESUMEN */
+.bloque {
+  background-color: white; /* Fondo blanco */
+  padding: 25px; /* Espacio interior */
+  margin-bottom: 40px; /* Separación entre bloques */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* TÍTULOS DE CADA BLOQUE */
+.bloque h2 {
+  margin-bottom: 20px; /* Separación inferior */
+}
+
+/* ===================================================== */
+/* BLOQUE 1: CENTRAR UNA CAJA */
+/* ===================================================== */
+
+.zona-centrada {
+  height: 250px; /* Alto para que se note el centrado vertical */
+  background-color: #e8e8e8; /* Fondo gris */
+
+  display: flex; /* Activa FlexBox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.caja-centrada {
+  background-color: #0d6efd; /* Fondo azul */
+  color: white; /* Texto blanco */
+  padding: 30px; /* Espacio interior */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+/* ===================================================== */
+/* BLOQUE 2: MENÚ HORIZONTAL */
+/* ===================================================== */
+
+.menu-horizontal {
+  background-color: #333; /* Fondo oscuro */
+  padding: 15px; /* Espacio interior */
+
+  display: flex; /* Coloca los enlaces en fila */
+  justify-content: center; /* Centra los enlaces horizontalmente */
+  gap: 30px; /* Separación entre enlaces */
+}
+
+.menu-horizontal a {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Quita subrayado */
+  font-weight: bold; /* Negrita */
+}
+
+/* ===================================================== */
+/* BLOQUE 3: TRES TARJETAS EN FILA */
+/* ===================================================== */
+
+.fila-tarjetas {
+  display: flex; /* Coloca las tarjetas en fila */
+  gap: 25px; /* Separación entre tarjetas */
+  justify-content: space-between; /* Reparte el espacio entre tarjetas */
+}
+
+.tarjeta {
+  flex: 1; /* Todas las tarjetas ocupan el mismo ancho */
+  background-color: #ffffff; /* Fondo blanco */
+  border: 2px solid #ddd; /* Borde gris */
+  padding: 40px; /* Espacio interior */
+  text-align: center; /* Texto centrado */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); /* Sombra */
+}
+
+/* ===================================================== */
+/* BLOQUE 4: FORMULARIO EN DOS COLUMNAS */
+/* ===================================================== */
+
+.formulario-flex {
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario */
+  background-color: white; /* Fondo blanco */
+  padding: 30px; /* Espacio interior */
+  border-radius: 12px; /* Esquinas redondeadas */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra */
+
+  display: flex; /* Activa FlexBox */
+  flex-direction: column; /* Coloca los elementos uno debajo de otro */
+  gap: 20px; /* Separación entre elementos */
+}
+
+.fila-formulario {
+  display: flex; /* Coloca Nombre y Apellido en fila */
+  gap: 15px; /* Separación entre los dos inputs */
+}
+
+.grupo-input {
+  flex: 1; /* Cada grupo ocupa el mismo ancho */
+  display: flex; /* Activa FlexBox dentro del grupo */
+  flex-direction: column; /* Label arriba e input abajo */
+  gap: 6px; /* Separación entre label e input */
+}
+
+.grupo-input label {
+  font-weight: bold; /* Label en negrita */
+}
+
+.grupo-input input {
+  padding: 12px; /* Espacio interior */
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 8px; /* Esquinas redondeadas */
+}
+
+.formulario-flex button {
+  background-color: #0d6efd; /* Fondo azul */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 14px; /* Espacio interior */
+  border-radius: 8px; /* Esquinas redondeadas */
+  font-weight: bold; /* Texto en negrita */
+  cursor: pointer; /* Mano al pasar el ratón */
+}
+
+/* ===================================================== */
+/* BLOQUE 5: IMAGEN + TEXTO EN DOS COLUMNAS */
+/* ===================================================== */
+
+.producto-flex {
+  display: flex; /* Coloca imagen y texto en fila */
+  align-items: center; /* Centra verticalmente imagen y texto */
+  gap: 30px; /* Separación entre imagen y texto */
+}
+
+.producto-flex img {
+  width: 300px; /* Ancho de la imagen */
+  height: 250px; /* Alto de la imagen */
+  object-fit: cover; /* Recorta sin deformar */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.info-producto {
+  flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.info-producto h3 {
+  font-size: 28px; /* Tamaño del título */
+  margin-bottom: 15px; /* Separación inferior */
+}
+
+.info-producto p {
+  margin-bottom: 20px; /* Separación inferior */
+  line-height: 1.5; /* Altura entre líneas */
+}
+
+.info-producto button {
+  background-color: #0d6efd; /* Fondo azul */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px 25px; /* Espacio interior */
+  border-radius: 8px; /* Esquinas redondeadas */
+  cursor: pointer; /* Mano al pasar */
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 700px) {
+  .fila-tarjetas,
+  .fila-formulario,
+  .producto-flex {
+    flex-direction: column; /* En pantallas pequeñas pasa todo a columna */
+  }
+
+  .producto-flex img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+  }
+}

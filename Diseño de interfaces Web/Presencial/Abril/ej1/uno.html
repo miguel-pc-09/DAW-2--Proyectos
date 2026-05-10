@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aventuras Animales - ¡Aprende Jugando!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Aventuras Animales - ¡Aprende Jugando!</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#animales">Animales</a></li>
+          <li><a href="#juego">¡Juega!</a></li>
+          <li><a href="#puntajes">Puntajes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="inicio">
+        <h2>¡Bienvenido a Aventuras Animales!</h2>
+        <p>
+          ¿Te gusta aprender sobre los animales? En este sitio podrás conocer
+          especies increíbles y divertirte jugando.
+        </p>
+        <img src="animal.jpg" alt="Animales salvajes" />
+      </section>
+      <section id="animales">
+        <h2>Conoce a nuestros amigos:</h2>
+        <div class="contenedor-animales">
+          <div class="animal" data-animal="leon">
+            <img src="leon.jpg" alt="León" />
+            <h3>León</h3>
+            <p>
+              El rey de la selva, con una melena majestuosa y un rugido
+              poderoso.
+            </p>
+          </div>
+          <div class="animal" data-animal="elefante">
+            <img src="elefante.jpg" alt="Elefante" />
+            <h3>Elefante</h3>
+            <p>
+              El mamífero terrestre más grande, con una memoria increíble y una
+              trompa muy útil.
+            </p>
+          </div>
+        </div>
+        <a href="#juego">¡Juega y aprende con ellos!</a>
+      </section>
+      <section id="juego">
+        <h2>¡A divertirse!</h2>
+        <p>
+          Intenta asociar cada animal con su nombre. Haz clic en la imagen para
+          voltearla.
+        </p>
+        <div class="contenedor-juego"></div>
+        <p id="mensaje-juego"></p>
+      </section>
+      <section id="puntajes">
+        <h2>Tabla de Puntajes</h2>
+        <p>
+          Aquí podrás ver tu mejor puntaje y el de otros jugadores (requiere
+          conexión).
+        </p>
+        <p>¡Próximamente!</p>
+      </section>
+      <section id="contacto">
+        <h2>¿Tienes alguna pregunta?</h2>
+        <p>
+          No dudes en contactarnos. Envíanos un mensaje y te responderemos a la
+          brevedad.
+        </p>
+        <form>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" required />
+          <br />
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" required />
+          <br />
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="5" required></textarea>
+          <br />
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; Aventuras Animales 2024</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen FlexBox</title>
+    <link rel="stylesheet" href="estilos-flexbox.css" />
+  </head>
+
+  <body>
+    <main class="contenedor-principal">
+      <h1>Resumen FlexBox para examen</h1>
+
+      <!-- BLOQUE 1 -->
+      <section class="bloque">
+        <h2>1. Centrar una caja</h2>
+
+        <div class="zona-centrada">
+          <div class="caja-centrada">Caja centrada</div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 2 -->
+      <section class="bloque">
+        <h2>2. Menú horizontal</h2>
+
+        <nav class="menu-horizontal">
+          <a href="#">Inicio</a>
+          <a href="#">Productos</a>
+          <a href="#">Contacto</a>
+        </nav>
+      </section>
+
+      <!-- BLOQUE 3 -->
+      <section class="bloque">
+        <h2>3. Tres tarjetas en fila</h2>
+
+        <div class="fila-tarjetas">
+          <div class="tarjeta">Tarjeta 1</div>
+          <div class="tarjeta">Tarjeta 2</div>
+          <div class="tarjeta">Tarjeta 3</div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 4 -->
+      <section class="bloque">
+        <h2>4. Formulario en dos columnas</h2>
+
+        <form class="formulario-flex">
+          <div class="fila-formulario">
+            <div class="grupo-input">
+              <label>Nombre</label>
+              <input type="text" placeholder="Juan" />
+            </div>
+
+            <div class="grupo-input">
+              <label>Apellido</label>
+              <input type="text" placeholder="Pérez" />
+            </div>
+          </div>
+
+          <div class="grupo-input">
+            <label>Email</label>
+            <input type="email" placeholder="correo@email.com" />
+          </div>
+
+          <button type="submit">Registrarse</button>
+        </form>
+      </section>
+
+      <!-- BLOQUE 5 -->
+      <section class="bloque">
+        <h2>5. Imagen + texto en dos columnas</h2>
+
+        <div class="producto-flex">
+          <img src="imagen.jpg" alt="Imagen de ejemplo" />
+
+          <div class="info-producto">
+            <h3>Producto ejemplo</h3>
+            <p>
+              Este bloque sirve para poner una imagen a la izquierda y un texto
+              a la derecha usando FlexBox.
+            </p>
+            <button>Comprar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
