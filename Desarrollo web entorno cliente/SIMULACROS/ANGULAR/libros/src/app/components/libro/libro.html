@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row row-cols-4 row-cols-md-4 g-4">
+    @for (item of libros; track $index) {
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.Title }}</h5>
+            @if (item.villains.length > 0) {
+              <ul>
+                @for (villano of item.villains; track $index) {
+                  <li>{{ villano.name }}</li>
+                }
+              </ul>
+            } @else {
+              <p>No tiene Villanos</p>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
