@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="row row-cols-4 row-cols-md-4 g-4">
+    @for (item of paises; track $index) {
+      <div class="col">
+        <div class="card">
+          <img [src]="item.flags.png" class="card-img-top" [alt]="item.flags.alt" />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name.common }}</h5>
+            <ul>
+              @for (idioma of item.languages | keyvalue; track $index) {
+                <li>{{ idioma.value }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
