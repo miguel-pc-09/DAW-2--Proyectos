@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <ol class="list-group">
+    @for (item of libros; track $index) {
+      <li class="list-group-item">
+        <h5>{{ item.Title }}</h5>
+
+        <p>{{ item.Pages }} páginas</p>
+
+        @if (item.villains.length > 0) {
+          <ul>
+            @for (villano of item.villains; track $index) {
+              <li>{{ villano.name }}</li>
+            }
+          </ul>
+        } @else {
+          <p>No tiene villanos</p>
+        }
+      </li>
+    }
+  </ol>
+</div>
