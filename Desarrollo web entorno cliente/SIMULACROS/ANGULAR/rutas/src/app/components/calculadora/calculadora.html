@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6">
+    <h2 class="text-center">Calculadora</h2>
+
+    <input type="number" [(ngModel)]="numero1" placeholder="Número 1" />
+    <input type="number" [(ngModel)]="numero2" placeholder="Número 2" />
+
+    <br /><br />
+
+    <button (click)="sumar()">Sumar</button>
+    <button (click)="restar()">Restar</button>
+    <button (click)="multiplicar()">Multiplicar</button>
+    <button (click)="dividir()">Dividir</button>
+
+    <p>Resultado: {{ resultado }}</p>
+  </div>
+
+  <div class="col-6">
+    <h3>Historial</h3>
+
+    <ul>
+      @for (operacion of historial; track $index) {
+        <li>{{ operacion }}</li>
+      }
+    </ul>
+  </div>
+</div>
