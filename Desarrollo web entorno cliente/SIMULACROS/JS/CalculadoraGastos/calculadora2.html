@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-5 text-center">Calculadora de Gastos de Viaje</h1>
+
+      <!-- FILA -->
+      <div class="row">
+        <!-- IZQUIERDA -->
+        <div class="col-md-8">
+          <div class="p-4">
+            <h3 class="mb-4">Calculadora</h3>
+
+            <!-- Alojamiento -->
+            <div class="mb-3">
+              <label class="form-label">Gastos de alojamiento (€)</label>
+
+              <input type="number" id="alojamiento" class="form-control" />
+            </div>
+
+            <!-- Alimentación -->
+            <div class="mb-3">
+              <label class="form-label">Gastos de alimentación (€)</label>
+
+              <input type="number" id="alimentacion" class="form-control" />
+            </div>
+
+            <!-- Entretenimiento -->
+            <div class="mb-3">
+              <label class="form-label">Gastos de entretenimiento (€)</label>
+
+              <input type="number" id="entretenimiento" class="form-control" />
+            </div>
+
+            <!-- Botón -->
+            <button id="btnCalcular" class="btn btn-primary">
+              Calcular Total
+            </button>
+
+            <!-- Resultado -->
+            <h4 id="resultado" class="mt-4"></h4>
+          </div>
+        </div>
+
+        <!-- DERECHA -->
+        <div class="col-md-4">
+          <div class="p-4 h-100">
+            <h3 class="mb-4">Historial</h3>
+
+            <ul id="historial" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Seleccionamos los elementos
+      const alojamiento = document.querySelector("#alojamiento");
+      const alimentacion = document.querySelector("#alimentacion");
+      const entretenimiento = document.querySelector("#entretenimiento");
+      const btnCalcular = document.querySelector("#btnCalcular");
+      const resultado = document.querySelector("#resultado");
+      const historial = document.querySelector("#historial");
+
+      // Evento del boton
+      btnCalcular.addEventListener("click", () => {
+        // Sumamos gastos
+        const total =
+          Number(alojamiento.value) +
+          Number(alimentacion.value) +
+          Number(entretenimiento.value);
+
+        // Mostrar el resultado
+        resultado.textContent = `Total de gastos: ${total} €`;
+
+        // Elemento historial
+        const nuevoRegistro = document.createElement("li");
+
+        // Le añadimos clases de bootstrap
+        nuevoRegistro.classList.add("list-group-item");
+
+        // Escribimos dentro del historial el cálculo realizado
+        nuevoRegistro.textContent = `Alojamiento: ${alojamiento.value} €, Alimentación: ${alimentacion.value} €, Entretenimiento: ${entretenimiento.value} €, Total: ${total} €`;
+
+        // añadimos el registro al historial
+        historial.append(nuevoRegistro);
+
+        // Limpiamos inputs
+        alojamiento.value = "";
+        alimentacion.value = "";
+        entretenimiento.value = "";
+      });
+    </script>
+  </body>
+</html>

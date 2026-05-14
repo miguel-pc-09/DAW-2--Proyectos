@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container mt-3">
+      <h1>Generador de numeros primos</h1>
+
+      <div class="form-control mt-3">
+        <input type="number" id="numero" placeholder="Introduce un número" />
+
+        <button id="btnGenerar" class="btn btn-primary ms-2">
+          Generar primos
+        </button>
+      </div>
+
+      <ul id="listaPrimos" class="list-group mt-3"></ul>
+    </div>
+
+    <script>
+      const inputNumero = document.querySelector("#numero");
+      const btnGenerar = document.querySelector("#btnGenerar");
+      const listaPrimos = document.querySelector("#listaPrimos");
+
+      // Funcion para comprobar si un numero es primo
+      function esPrimo(numero) {
+        if (numero < 2) {
+          return false;
+        }
+
+        // Probar si el numero se puede dividir entre otros
+        for (let i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      // Evento del boton
+      btnGenerar.addEventListener("click", () => {
+        listaPrimos.innerHTML = "";
+
+        // Convertimos el valor del input
+        const numeroUsuario = Number(inputNumero.value);
+
+        // Recorremos desde 2 hasta el numero introducido
+        for (let i = 2; i <= numeroUsuario; i++) {
+          if (esPrimo(i)) {
+            const li = document.createElement("li");
+
+            li.classList.add("list-group-item");
+            li.textContent = i;
+
+            listaPrimos.appendChild(li);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

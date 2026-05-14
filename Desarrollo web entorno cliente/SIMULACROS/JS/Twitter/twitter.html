@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-4">Twitter</h1>
+      <div class="row mb-3">
+        <div class="col-5">
+          <h2>Escribe tu tuit</h2>
+
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            placeholder="Escribe tu tuit..."
+          />
+
+          <textarea
+            id="mensaje"
+            class="form-control mt-4 mb-3"
+            maxlength="255"
+          ></textarea>
+
+          <div id="contador" class="form-control mb-3">0/255</div>
+
+          <button id="enviar" class="btn btn-primary">Twitear</button>
+        </div>
+        <div class="col-5">
+          <h2>Publicaciones</h2>
+          <div id="historial"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let tituloInput = document.querySelector("#titulo");
+      let mensajeInput = document.querySelector("#mensaje");
+      let contador = document.querySelector("#contador");
+      let btnEnviar = document.querySelector("#enviar");
+      let historial = document.querySelector("#historial");
+
+      mensajeInput.addEventListener("input", () => {
+        contador.textContent = `${mensajeInput.value.length}/255`;
+      });
+
+      btnEnviar.addEventListener("click", () => {
+        let titulo = tituloInput.value.trim();
+        let mensaje = mensajeInput.value.trim();
+
+        if (titulo == "" || mensaje == "") {
+          Swal.fire({
+            icon: "error",
+            title: "Campos vacios",
+            text: "No puedes dejar ninguno de los campos vacios",
+          });
+        } else {
+          let card = document.createElement("div");
+
+          card.innerHTML = `
+            <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">${titulo}</h5>
+              <p class="card-text">${mensaje}</p>
+            </div>
+          </div>
+            `;
+
+          historial.prepend(card);
+
+          mensajeInput.value = "";
+          tituloInput.value = "";
+          contador.textContent = "0/255";
+        }
+      });
+    </script>
+  </body>
+</html>

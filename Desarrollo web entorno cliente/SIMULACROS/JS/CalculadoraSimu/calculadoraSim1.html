@@ -63,24 +63,44 @@
       btnSumar.addEventListener("click", () => {
         const suma = Number(numero1.value) + Number(numero2.value);
         resultado.textContent = `Total: ${suma}`;
+        agregarHistorial(`Suma: ${numero1.value} + ${numero2.value} = ${suma}`);
       });
       btnRestar.addEventListener("click", () => {
         const resta = Number(numero1.value) - Number(numero2.value);
         resultado.textContent = `Total: ${resta}`;
+        agregarHistorial(
+          `Resta: ${numero1.value} - ${numero2.value} = ${resta}`,
+        );
       });
       btnMultiplicar.addEventListener("click", () => {
         const multiplicacion = Number(numero1.value) * Number(numero2.value);
         resultado.textContent = `Total: ${multiplicacion}`;
+        agregarHistorial(
+          `Multiplicación: ${numero1.value} * ${numero2.value} = ${multiplicacion}`,
+        );
       });
       btnDividir.addEventListener("click", () => {
         const division = Number(numero1.value) / Number(numero2.value);
+        if (numero2.value === "0") {
+          resultado.textContent = "No se puede dividir por cero";
+          agregarHistorial(
+            `División: ${numero1.value} / ${numero2.value} = Error (división por cero)`,
+          );
+          return;
+        }
         resultado.textContent = `Total: ${division}`;
+        agregarHistorial(
+          `División: ${numero1.value} / ${numero2.value} = ${division}`,
+        );
       });
 
-      const nuevoRegistro = document.createElement("li");
-      nuevoRegistro.classList.add("list-group-item");
-      nuevoRegistro.textContent = `Número 1: ${numero1.value}, Número 2: ${numero2.value}`;
-      historial.append(nuevoRegistro);
+      function agregarHistorial(texto) {
+        const nuevoRegistro = document.createElement("li");
+
+        nuevoRegistro.classList.add("list-group-item");
+        nuevoRegistro.textContent = texto;
+        historial.append(nuevoRegistro);
+      }
     </script>
   </body>
 </html>

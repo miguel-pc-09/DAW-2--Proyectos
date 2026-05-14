@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Lista de tareas</h1>
+      <div class="row">
+        <div class="col-5">
+          <h2>Escribe tu tarea</h2>
+          <input
+            id="tarea"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Tarea a guardar"
+          />
+          <button id="enviar" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="col-5">
+          <h2 class="text-center">Listado de tareas</h2>
+          <ul class="list-group" id="listaTareas"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let tarea = document.querySelector("#tarea");
+      let btnEnviar = document.querySelector("#enviar");
+      let listaTareas = document.querySelector("#listaTareas");
+
+      btnEnviar.addEventListener("click", () => {
+        if (tarea.value.trim() === "") {
+          alert("No se pueden guardar tareas vacías");
+        } else {
+          let card = document.createElement("li");
+          card.classList.add("list-group-item");
+          card.innerHTML = `
+          <div class="row">
+            <div class="card mb-3 col-8">
+                <h5 class="card-title">${tarea.value}</h5>
+            </div>
+            <div class="col-3">
+            <button class="btn btn-danger eliminar " >Eliminar</button>
+            </div>
+            </div>`;
+
+          let btnEliminar = card.querySelector(".eliminar");
+          btnEliminar.addEventListener("click", () => {
+            card.remove();
+          });
+
+          listaTareas.prepend(card);
+
+          tarea.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

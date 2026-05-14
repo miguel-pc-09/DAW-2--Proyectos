@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora IMC</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-5">Calculadora IMC</h1>
+
+      <div class="row">
+        <div class="col-6">
+          <h2>Calcular IMC</h2>
+
+          <input
+            type="number"
+            id="peso"
+            class="form-control mb-3"
+            placeholder="Introduce tu peso (kg)"
+          />
+
+          <input
+            type="number"
+            id="altura"
+            class="form-control mb-3"
+            placeholder="Introduce tu altura (m)"
+          />
+
+          <button id="btnCalcular" class="btn btn-primary">Calcular IMC</button>
+
+          <h3 id="resultado" class="mt-4"></h3>
+        </div>
+
+        <div class="col-6">
+          <h2>Historial IMC</h2>
+
+          <ul id="historial" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const peso = document.querySelector("#peso");
+      const altura = document.querySelector("#altura");
+      const btnCalcular = document.querySelector("#btnCalcular");
+      const resultado = document.querySelector("#resultado");
+      const historial = document.querySelector("#historial");
+
+      btnCalcular.addEventListener("click", () => {
+        const pesoUsuario = Number(peso.value);
+        const alturaUsuario = Number(altura.value);
+
+        const imc = pesoUsuario / (alturaUsuario * alturaUsuario);
+
+        let estado = "";
+
+        if (imc < 18.5) {
+          estado = "Bajo peso";
+        } else if (imc >= 18.5 && imc < 25) {
+          estado = "Peso normal";
+        } else if (imc >= 25 && imc < 30) {
+          estado = "Sobrepeso";
+        } else {
+          estado = "Obesidad";
+        }
+
+        resultado.textContent = `Tu IMC es ${imc.toFixed(2)} - ${estado}`;
+
+        const nuevoRegistro = document.createElement("li");
+
+        nuevoRegistro.classList.add("list-group-item");
+
+        nuevoRegistro.textContent = `Peso: ${pesoUsuario}kg | Altura: ${alturaUsuario}m | IMC: ${imc.toFixed(2)} | ${estado}`;
+
+        historial.prepend(nuevoRegistro);
+
+        peso.value = "";
+        altura.value = "";
+      });
+    </script>
+  </body>
+</html>
