@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-3">Conversor Monedas Notion</h1>
+
+      <div class="row">
+        <div class="col-6">
+          <h2>Historial</h2>
+          <ul id="historial" class="list-group"></ul>
+        </div>
+
+        <div class="col-6">
+          <h2>Conversor</h2>
+
+          <input
+            type="number"
+            id="cantidad"
+            class="form-control mb-3"
+            placeholder="Introduce cantidad"
+          />
+
+          <select id="origen" class="form-control mb-3">
+            <option value="EUR">EURO</option>
+            <option value="USD">Dólar</option>
+            <option value="GBP">Libra</option>
+            <option value="JPY">Yen japónes</option>
+          </select>
+
+          <select id="destino" class="form-control mb-3">
+            <option value="EUR">EURO</option>
+            <option value="USD">Dólar</option>
+            <option value="GBP">Libra</option>
+            <option value="JPY">Yen japónes</option>
+          </select>
+
+          <button id="btnConvertir" class="btn btn-primary">Convertir</button>
+
+          <button id="btnIntercambiar" class="btn btn-danger">
+            Intercambiar
+          </button>
+
+          <h3 id="resultado" class="mt-4"></h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const cantidad = document.querySelector("#cantidad");
+      const origen = document.querySelector("#origen");
+      const destino = document.querySelector("#destino");
+      const btnConvertir = document.querySelector("#btnConvertir");
+      const btnIntercambiar = document.querySelector("#btnIntercambiar");
+      const resultado = document.querySelector("#resultado");
+      const historial = document.querySelector("#historial");
+
+      btnConvertir.addEventListener("click", async () => {
+        const cantidadUsuario = Number(cantidad.value);
+        const divisaOrigen = origen.value;
+        const divisaDestino = destino.value;
+
+        if (cantidadUsuario <= 0) {
+          resultado.textContent = "Introduce una cantidad mayor que 0";
+          return;
+        }
+
+        resultado.textContent = "Cargando conversión...";
+
+        try {
+          const url = `https://api.frankfurter.dev/v1/latest?base=${divisaOrigen}&symbols=${divisaDestino}`;
+
+          const respuesta = await fetch(url);
+
+          if (!respuesta.ok) {
+            throw new Error("Error en la petición");
+          }
+
+          const datos = await respuesta.json();
+
+          const tasa = datos.rates[divisaDestino];
+
+          const conversion = cantidadUsuario * tasa;
+
+          resultado.textContent = `${cantidadUsuario} ${divisaOrigen} = ${conversion.toFixed(2)} ${divisaDestino}`;
+
+          const nuevoRegistro = document.createElement("li");
+
+          nuevoRegistro.classList.add("list-group-item");
+
+          nuevoRegistro.textContent = `${cantidadUsuario} ${divisaOrigen} → ${conversion.toFixed(2)} ${divisaDestino}`;
+
+          historial.prepend(nuevoRegistro);
+
+          localStorage.setItem("ultimaConversion", nuevoRegistro.textContent);
+
+          cantidad.value = "";
+        } catch (error) {
+          resultado.textContent =
+            "No se pudo realizar la conversión. Revisa tu conexión o inténtalo más tarde.";
+        }
+      });
+
+      btnIntercambiar.addEventListener("click", () => {
+        const temporal = origen.value;
+
+        origen.value = destino.value;
+
+        destino.value = temporal;
+      });
+
+      const ultimaConversion = localStorage.getItem("ultimaConversion");
+
+      if (ultimaConversion !== null) {
+        const nuevoRegistro = document.createElement("li");
+
+        nuevoRegistro.classList.add("list-group-item");
+
+        nuevoRegistro.textContent = ultimaConversion;
+
+        historial.prepend(nuevoRegistro);
+      }
+    </script>
+  </body>
+</html>
