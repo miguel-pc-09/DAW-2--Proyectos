@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Calculadora</h1>
+      <div class="row mt-5">
+        <h4>Operaciones</h4>
+        <div class="col-6">
+          <input
+            type="number"
+            id="numero1"
+            class="form-control mb-3"
+            placeholder="Introduce el primer numero"
+          />
+          <input
+            type="number"
+            id="numero2"
+            class="form-control"
+            placeholder="Introduce el segundo numero"
+          />
+          <div class="mt-4">
+            <button class="btn btn-primary" id="btnSumar">Sumar</button>
+            <button class="btn btn-secondary" id="btnRestar">Restar</button>
+            <button class="btn btn-danger" id="btnMultiplicar">
+              Multiplicar
+            </button>
+            <button class="btn btn-warning" id="btnDividir">Dividir</button>
+          </div>
+          <h2 id="resultado" class="mt-4"></h2>
+        </div>
+        <div class="col-6 text-center">
+          <h4>Historial</h4>
+          <ul id="historial" class="list-group mb-4"></ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      const numero1 = document.querySelector("#numero1");
+      const numero2 = document.querySelector("#numero2");
+      const btnSumar = document.querySelector("#btnSumar");
+      const btnRestar = document.querySelector("#btnRestar");
+      const btnMultiplicar = document.querySelector("#btnMultiplicar");
+      const btnDividir = document.querySelector("#btnDividir");
+      const resultado = document.querySelector("#resultado");
+      const historial = document.querySelector("#historial");
+
+      btnSumar.addEventListener("click", () => {
+        const suma = Number(numero1.value) + Number(numero2.value);
+        resultado.textContent = `Total: ${suma}`;
+      });
+      btnRestar.addEventListener("click", () => {
+        const resta = Number(numero1.value) - Number(numero2.value);
+        resultado.textContent = `Total: ${resta}`;
+      });
+      btnMultiplicar.addEventListener("click", () => {
+        const multiplicacion = Number(numero1.value) * Number(numero2.value);
+        resultado.textContent = `Total: ${multiplicacion}`;
+      });
+      btnDividir.addEventListener("click", () => {
+        const division = Number(numero1.value) / Number(numero2.value);
+        resultado.textContent = `Total: ${division}`;
+      });
+
+      const nuevoRegistro = document.createElement("li");
+      nuevoRegistro.classList.add("list-group-item");
+      nuevoRegistro.textContent = `Número 1: ${numero1.value}, Número 2: ${numero2.value}`;
+      historial.append(nuevoRegistro);
+    </script>
+  </body>
+</html>
