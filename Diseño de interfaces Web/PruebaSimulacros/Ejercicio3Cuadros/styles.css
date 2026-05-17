@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor{
+    /* width: 80%; /* Ancho del elemento padre body/pantalla */ 
+    width: fit-content;
+    margin: 80px auto; /* 50px arriba y abajo, auto a los lados */
+    background-color: #f1f5f9; /* Color de fondo */
+    padding: 50px; /* espacio interior */
+}
+
+.tarjeta{
+    width:250px;
+    height:130px;
+    background-color:white;
+    display:inline-block; /* Las cajas puedan estar en línea, PERO manteniendo el ancho y alto [TARJETA] [TARJETA] [TARJETA] */
+    /* Diferencia con display:block -> ocupa toda la linea resultado
+     [TARJETA]
+     [TARJETA]
+     [TARJETA]
+     */
+    margin-right:20px; /* separa las tarjetas una de la otra */
+    text-align:center; /* Centra el texto horizontalmente */
+    border-left:5px solid blue; /* Borde izquierdo de 5px, linea solida, azul  */
+    /* border-right:5px solid blue;  Borde derecho */
+    /* border-radius:10px; /* Borde redondeado */
+    border-radius:5px; /* Las esquinas dejan de ser cuadradas. */
+
+    box-shadow:0px 2px 8px rgb(148, 147, 147); /* Sombra */
+    /* se lee : horizontal vertical desenfoque color */
+}
+.azul{
+    border-left-color: blue ;
+}
+.verde{
+    border-left-color: green ;
+}
+.naranja{
+    border-left-color: orange; 
+}
+.numero{
+    font-size:35px; /* Tamaño de la letra */
+    font-weight:bold; /* Negrita */
+}

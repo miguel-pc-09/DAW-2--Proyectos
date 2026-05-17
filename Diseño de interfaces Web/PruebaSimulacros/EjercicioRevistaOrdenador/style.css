@@ -1,0 +1,82 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Quiero que TODA la página use esta fuente */
+}
+
+/* 1º Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* altura visible de pantalla. */
+    margin: 0;
+    background-color: rgb(255, 196, 203);  /* Toda la pagina de rosa */ 
+    padding: 25px; /* Esto crea espacio interior */
+}
+
+/* Caja exterior  */
+.container{
+    border: solid 15px rgb(177, 82, 93); /* Borde solido, 15px y rosa oscuro */
+    width: 90%; 
+    height: 100%;
+    display: flex; /* Container organiza */
+    flex-direction: column; /* Aqui los pone primero Header y luego Main como en el html */
+}
+
+
+/* Cabecera CUSTOM */
+header{
+    background-color:  rgb(209, 97, 110);
+    padding: 5px 25px;
+        /* Cuando salen dos colores. padding: arriba-abajo  izquierda-derecha */
+    color: white; /* color blanco letra */
+}
+
+/* Imagen y Texto  */
+main{
+    padding: 20px;
+    flex-grow: 1; /* “Ocupa el espacio restante” */
+    background-color:  rgb(243, 165, 174);
+    display: flex; /* Hace: IMAGEN | TEXTO */
+}
+
+/* El borde blanco alrededor de la portada. */
+.borde{
+    
+    padding: 5px; /* el borde tocaría la imagen */
+    border: 2px white solid;
+}
+
+.texto{
+    
+    padding: 0 25px; /* arriba-abajo, izquierda-derecha */
+}
+.texto p{
+    margin-top: 0; /* Quita el espacio superior. */
+    /* Los <p> tienen márgenes automáticos. Entonces el texto bajaba demasiado. */
+}
+.span1{
+    border-bottom: 2px green solid; /* Las líneas verdes arriba y abajo de: */
+    border-top: 2px green solid;
+}
+
+.strong2{
+    color: red;
+}
+
+.span2{
+font-style: italic; /* Pone el texto en cursiva. */
+}
+.divFle{
+    
+    max-width: fit-content;
+    overflow: hidden;
+
+    border-radius: 8px;
+
+}
+.flecha{
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: aliceblue;
+    color: blue;
+}

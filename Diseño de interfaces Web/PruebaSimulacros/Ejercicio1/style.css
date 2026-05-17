@@ -1,0 +1,73 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* altura visible de pantalla. */
+    background-color: rgb(255, 196, 203); /* Toda la pagina de rosa */
+    padding: 25px; /* Esto crea espacio interior */
+}
+.container{
+    border: solid 15px rgb(177, 82, 93);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header{
+    background-color:  rgb(209, 97, 110);
+    padding: 5px 25px;
+    color: white;
+}
+main{
+    padding: 20px;
+    flex-grow: 1;
+    background-color:  rgb(243, 165, 174);
+    display: flex;
+}
+
+
+.borde{
+    
+    padding: 5px;
+    border: 2px white solid;
+}
+
+.texto{
+    
+    padding: 0 25px;
+}
+.texto p{
+    margin-top: 0;
+}
+.span1{
+    border-bottom: 2px green solid;
+    border-top: 2px green solid;
+}
+
+.strong2{
+    color: red;
+}
+
+.span2{
+font-style: italic;
+}
+.divFle{
+    
+    max-width: fit-content;
+    overflow: hidden;
+
+    border-radius: 8px;
+
+}
+.flecha{
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: aliceblue;
+    color: blue;
+}

@@ -1,0 +1,21 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    background-color: rgb(255, 196, 203);
+}
+.m-0{
+    border: solid 8px rgb(177, 82, 93);
+}
+
+header{
+    background-color:  rgb(209, 97, 110);
+}
+main{
+    background-color:  rgb(243, 165, 174);
+}
+
+.text-bg-light{
+    max-width: fit-content;
+}
