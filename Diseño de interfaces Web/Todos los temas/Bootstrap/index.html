@@ -81,7 +81,7 @@
 
   <body>
     <div class="contenedor">
-      <h1>Chuleta Bootstrap para el examen</h1>
+      <h1>Bootstrap</h1>
 
       <h2>1. CDN Bootstrap</h2>
 
@@ -572,8 +572,217 @@ style="background-color:#484e51"&gt;
           <td>Bootstrap shadows</td>
         </tr>
       </table>
+      <h2>13. Imágenes</h2>
 
-      <h2>13. Errores típicos</h2>
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>img-fluid</code></td>
+          <td>Hace que la imagen se adapte al tamaño del contenedor.</td>
+        </tr>
+
+        <tr>
+          <td><code>rounded</code></td>
+          <td>Redondea las esquinas de la imagen.</td>
+        </tr>
+
+        <tr>
+          <td><code>shadow</code></td>
+          <td>Añade sombra a la imagen.</td>
+        </tr>
+
+        <tr>
+          <td><code>w-50</code></td>
+          <td>Hace que el elemento ocupe el 50% de ancho.</td>
+        </tr>
+
+        <tr>
+          <td><code>w-100</code></td>
+          <td>Hace que el elemento ocupe todo el ancho disponible.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;img
+src="auriculares.jpg"
+alt="Auriculares Supreme"
+class="img-fluid rounded shadow"
+/&gt;
+</pre
+      >
+
+      <div class="nota">
+        IMPORTANTE:
+        <br />
+        <code>w-50</code> cambia el ancho, NO el tamaño del texto.
+      </div>
+
+      <h2>14. Tamaños de texto</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>display-1</code></td>
+          <td>Texto muy grande.</td>
+        </tr>
+
+        <tr>
+          <td><code>display-4</code></td>
+          <td>Texto grande, útil para precios destacados.</td>
+        </tr>
+
+        <tr>
+          <td><code>display-5</code></td>
+          <td>Título grande.</td>
+        </tr>
+
+        <tr>
+          <td><code>display-6</code></td>
+          <td>Título algo más pequeño.</td>
+        </tr>
+
+        <tr>
+          <td><code>fs-1</code></td>
+          <td>Texto grande. Lo usamos para emojis o iconos.</td>
+        </tr>
+
+        <tr>
+          <td><code>fs-5</code></td>
+          <td>Texto mediano.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;h1 class="fw-bold display-5"&gt;
+Auriculares Supreme
+&lt;/h1&gt;
+
+&lt;div class="text-primary fw-bold display-4"&gt;
+$299.99
+&lt;/div&gt;
+
+&lt;div class="text-center fs-1"&gt;
+🎧
+&lt;/div&gt;
+</pre
+      >
+
+      <div class="nota">
+        Para hacer grande un precio no usar <code>w-50</code>.
+        <br />
+        Usar mejor <code>display-4</code>, <code>display-5</code> o
+        <code>fs-1</code>.
+      </div>
+
+      <h2>15. Textos grises o más claros</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>text-secondary</code></td>
+          <td>Pone el texto gris. Muy útil para subtítulos y descripciones.</td>
+        </tr>
+
+        <tr>
+          <td><code>text-muted</code></td>
+          <td>Pone el texto apagado o más suave.</td>
+        </tr>
+
+        <tr>
+          <td><code>small</code></td>
+          <td>Hace el texto más pequeño.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;p class="text-secondary fs-5"&gt;
+Experiencia de sonido inigualable con cancelación de ruido
+&lt;/p&gt;
+
+&lt;p class="text-secondary"&gt;
+Audio de alta definición con graves profundos
+&lt;/p&gt;
+
+&lt;p class="text-center text-secondary small"&gt;
+© 2026 Tienda de Tecnología.
+&lt;/p&gt;
+</pre
+      >
+
+      <h2>16. Bordes y tarjetas sin sombra</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>border</code></td>
+          <td>Añade un borde fino gris.</td>
+        </tr>
+
+        <tr>
+          <td><code>rounded</code></td>
+          <td>Redondea las esquinas.</td>
+        </tr>
+
+        <tr>
+          <td><code>p-4</code></td>
+          <td>Añade espacio interior.</td>
+        </tr>
+
+        <tr>
+          <td><code>h-100</code></td>
+          <td>Hace que las tarjetas tengan la misma altura.</td>
+        </tr>
+
+        <tr>
+          <td><code>g-4</code></td>
+          <td>Separa las columnas entre sí.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;div class="row g-4"&gt;
+
+  &lt;div class="col-4"&gt;
+    &lt;div class="rounded border p-4 h-100"&gt;
+
+      &lt;div class="text-center fs-1"&gt;🎧&lt;/div&gt;
+
+      &lt;h5 class="text-center"&gt;Sonido HD&lt;/h5&gt;
+
+      &lt;p class="text-center text-secondary"&gt;
+        Audio de alta definición con graves profundos
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</pre
+      >
+
+      <div class="nota">
+        Para hacer tarjetas como las del ejercicio de auriculares:
+        <br />
+        usa <code>border</code> y no usar <code>shadow</code>.
+      </div>
+
+      <h2>17. Errores típicos</h2>
 
       <table>
         <tr>
