@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bootstrap</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 30px;
+        line-height: 1.6;
+      }
+
+      .contenedor {
+        width: 90%;
+        margin: auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        border-bottom: 3px solid black;
+        padding-bottom: 10px;
+      }
+
+      h2 {
+        margin-top: 40px;
+        background-color: #343a40;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      h3 {
+        margin-top: 25px;
+        color: #343a40;
+      }
+
+      pre {
+        background-color: #eeeeee;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      code {
+        color: darkred;
+        font-weight: bold;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+
+      th,
+      td {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #343a40;
+        color: white;
+      }
+
+      .nota {
+        background-color: #fff3cd;
+        border-left: 5px solid orange;
+        padding: 10px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <h1>Chuleta Bootstrap para el examen</h1>
+
+      <h2>1. CDN Bootstrap</h2>
+
+      <p>Esto se pone siempre dentro del head para usar Bootstrap.</p>
+
+      <pre>
+&lt;link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+rel="stylesheet"
+/&gt;
+
+&lt;script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+&gt;&lt;/script&gt;
+            </pre
+      >
+
+      <h2>2. Contenedores</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>container</code></td>
+          <td>Centra el contenido y deja márgenes laterales.</td>
+        </tr>
+
+        <tr>
+          <td><code>container-fluid</code></td>
+          <td>Ocupa todo el ancho de pantalla.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;div class="container"&gt;
+    contenido
+&lt;/div&gt;
+            </pre
+      >
+
+      <h2>3. Grid Bootstrap</h2>
+
+      <p>Bootstrap divide la pantalla en 12 columnas.</p>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>row</code></td>
+          <td>Crea una fila.</td>
+        </tr>
+
+        <tr>
+          <td><code>col-12</code></td>
+          <td>Ocupa toda la fila.</td>
+        </tr>
+
+        <tr>
+          <td><code>col-6</code></td>
+          <td>Media fila.</td>
+        </tr>
+
+        <tr>
+          <td><code>col-4</code></td>
+          <td>Un tercio. Perfecto para 3 tarjetas.</td>
+        </tr>
+
+        <tr>
+          <td><code>col-3</code></td>
+          <td>Un cuarto.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;div class="row"&gt;
+
+    &lt;div class="col-4"&gt;
+        tarjeta
+    &lt;/div&gt;
+
+    &lt;div class="col-4"&gt;
+        tarjeta
+    &lt;/div&gt;
+
+    &lt;div class="col-4"&gt;
+        tarjeta
+    &lt;/div&gt;
+
+&lt;/div&gt;
+            </pre
+      >
+
+      <div class="nota">
+        IMPORTANTE:
+        <br />
+        container → row → col
+      </div>
+
+      <h2>4. Márgenes y padding</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>m-3</code></td>
+          <td>Margen general.</td>
+        </tr>
+
+        <tr>
+          <td><code>mt-5</code></td>
+          <td>Margen arriba.</td>
+        </tr>
+
+        <tr>
+          <td><code>mb-4</code></td>
+          <td>Margen abajo.</td>
+        </tr>
+
+        <tr>
+          <td><code>mx-auto</code></td>
+          <td>Centra horizontalmente.</td>
+        </tr>
+
+        <tr>
+          <td><code>p-3</code></td>
+          <td>Padding interior.</td>
+        </tr>
+
+        <tr>
+          <td><code>g-4</code></td>
+          <td>Separación entre columnas.</td>
+        </tr>
+      </table>
+
+      <h2>5. Texto</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Qué hace</th>
+        </tr>
+
+        <tr>
+          <td><code>text-center</code></td>
+          <td>Centra texto.</td>
+        </tr>
+
+        <tr>
+          <td><code>text-white</code></td>
+          <td>Texto blanco.</td>
+        </tr>
+
+        <tr>
+          <td><code>text-dark</code></td>
+          <td>Texto negro.</td>
+        </tr>
+
+        <tr>
+          <td><code>text-secondary</code></td>
+          <td>Texto gris.</td>
+        </tr>
+
+        <tr>
+          <td><code>fw-bold</code></td>
+          <td>Negrita.</td>
+        </tr>
+
+        <tr>
+          <td><code>fs-1</code></td>
+          <td>Texto enorme.</td>
+        </tr>
+
+        <tr>
+          <td><code>fs-4</code></td>
+          <td>Texto mediano/grande.</td>
+        </tr>
+      </table>
+
+      <pre>
+&lt;h1 class="text-center fw-bold fs-1"&gt;
+    Título
+&lt;/h1&gt;
+            </pre
+      >
+
+      <h2>6. Fondos</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Color</th>
+        </tr>
+
+        <tr>
+          <td><code>bg-dark</code></td>
+          <td>Oscuro.</td>
+        </tr>
+
+        <tr>
+          <td><code>bg-light</code></td>
+          <td>Claro.</td>
+        </tr>
+
+        <tr>
+          <td><code>bg-primary</code></td>
+          <td>Azul.</td>
+        </tr>
+
+        <tr>
+          <td><code>bg-success</code></td>
+          <td>Verde.</td>
+        </tr>
+
+        <tr>
+          <td><code>bg-danger</code></td>
+          <td>Rojo.</td>
+        </tr>
+
+        <tr>
+          <td><code>bg-body-tertiary</code></td>
+          <td>Gris claro Bootstrap.</td>
+        </tr>
+      </table>
+
+      <div class="nota">Si Bootstrap no tiene el color exacto:</div>
+
+      <pre>
+style="background-color:#484e51"
+            </pre
+      >
+
+      <h2>7. Navbar</h2>
+
+      <pre>
+&lt;nav class="navbar navbar-expand-lg"
+style="background-color:#484e51"&gt;
+
+    &lt;div class="container-fluid"&gt;
+
+        &lt;div class="collapse navbar-collapse
+        justify-content-center"&gt;
+
+            &lt;ul class="navbar-nav"&gt;
+
+                &lt;li class="nav-item"&gt;
+                    &lt;a class="nav-link text-white"
+                    href="#"&gt;
+                        Mamíferos
+                    &lt;/a&gt;
+                &lt;/li&gt;
+
+            &lt;/ul&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;
+            </pre
+      >
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>navbar</code></td>
+          <td>Crea navbar.</td>
+        </tr>
+
+        <tr>
+          <td><code>justify-content-center</code></td>
+          <td>Centra enlaces.</td>
+        </tr>
+
+        <tr>
+          <td><code>text-white</code></td>
+          <td>Texto blanco.</td>
+        </tr>
+
+        <tr>
+          <td><code>mx-3</code></td>
+          <td>Separación horizontal.</td>
+        </tr>
+      </table>
+
+      <div class="nota">
+        text-center NO centra elementos flex.
+        <br />
+        Para flex usar:
+        <br /><br />
+        justify-content-center
+      </div>
+
+      <h2>8. Cards</h2>
+
+      <pre>
+&lt;div class="card shadow p-3"&gt;
+
+    &lt;img
+    src="./img/leon.jpg"
+    class="card-img-top"
+    alt="León"
+    /&gt;
+
+    &lt;div class="card-body"&gt;
+
+        &lt;h5 class="text-center"&gt;
+            León
+        &lt;/h5&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;
+            </pre
+      >
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>card</code></td>
+          <td>Crea tarjeta.</td>
+        </tr>
+
+        <tr>
+          <td><code>card-img-top</code></td>
+          <td>Imagen arriba.</td>
+        </tr>
+
+        <tr>
+          <td><code>card-body</code></td>
+          <td>Contenido interior.</td>
+        </tr>
+
+        <tr>
+          <td><code>shadow</code></td>
+          <td>Sombra.</td>
+        </tr>
+
+        <tr>
+          <td><code>shadow-sm</code></td>
+          <td>Sombra pequeña.</td>
+        </tr>
+
+        <tr>
+          <td><code>p-3</code></td>
+          <td>Espacio interior.</td>
+        </tr>
+      </table>
+
+      <h2>9. Flex útiles</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>justify-content-center</code></td>
+          <td>Centra horizontal.</td>
+        </tr>
+
+        <tr>
+          <td><code>justify-content-between</code></td>
+          <td>Separa elementos.</td>
+        </tr>
+
+        <tr>
+          <td><code>align-items-center</code></td>
+          <td>Centra vertical.</td>
+        </tr>
+      </table>
+
+      <h2>10. Sombras</h2>
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>shadow-sm</code></td>
+          <td>Sombra pequeña.</td>
+        </tr>
+
+        <tr>
+          <td><code>shadow</code></td>
+          <td>Sombra normal.</td>
+        </tr>
+
+        <tr>
+          <td><code>shadow-lg</code></td>
+          <td>Sombra grande.</td>
+        </tr>
+      </table>
+
+      <h2>11. Formularios</h2>
+
+      <pre>
+&lt;input type="text" class="form-control"&gt;
+            </pre
+      >
+
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Uso</th>
+        </tr>
+
+        <tr>
+          <td><code>form-control</code></td>
+          <td>Input bonito Bootstrap.</td>
+        </tr>
+
+        <tr>
+          <td><code>btn</code></td>
+          <td>Botón Bootstrap.</td>
+        </tr>
+
+        <tr>
+          <td><code>btn-primary</code></td>
+          <td>Botón azul.</td>
+        </tr>
+
+        <tr>
+          <td><code>btn-success</code></td>
+          <td>Botón verde.</td>
+        </tr>
+      </table>
+
+      <h2>12. Cómo buscar rápido en Bootstrap</h2>
+
+      <table>
+        <tr>
+          <th>Quiero hacer...</th>
+          <th>Buscar</th>
+        </tr>
+
+        <tr>
+          <td>Navbar</td>
+          <td>Bootstrap navbar</td>
+        </tr>
+
+        <tr>
+          <td>Tarjetas</td>
+          <td>Bootstrap cards</td>
+        </tr>
+
+        <tr>
+          <td>Columnas</td>
+          <td>Bootstrap grid</td>
+        </tr>
+
+        <tr>
+          <td>Centrar cosas</td>
+          <td>Bootstrap justify content</td>
+        </tr>
+
+        <tr>
+          <td>Separaciones</td>
+          <td>Bootstrap spacing</td>
+        </tr>
+
+        <tr>
+          <td>Texto</td>
+          <td>Bootstrap text utilities</td>
+        </tr>
+
+        <tr>
+          <td>Sombras</td>
+          <td>Bootstrap shadows</td>
+        </tr>
+      </table>
+
+      <h2>13. Errores típicos</h2>
+
+      <table>
+        <tr>
+          <th>Error</th>
+          <th>Solución</th>
+        </tr>
+
+        <tr>
+          <td>Cards una debajo de otra</td>
+          <td>Faltan cols.</td>
+        </tr>
+
+        <tr>
+          <td>Navbar no centra</td>
+          <td>Usar justify-content-center.</td>
+        </tr>
+
+        <tr>
+          <td>Separación rara</td>
+          <td>No mezclar col pequeñas con width manual.</td>
+        </tr>
+
+        <tr>
+          <td>Fondo claro raro navbar</td>
+          <td>Quitar bg-body-tertiary.</td>
+        </tr>
+
+        <tr>
+          <td>Cards pegadas arriba</td>
+          <td>Usar mt-5.</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
