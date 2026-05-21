@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <h2>Lista de personas</h2>
+
+  <ul class="list-group">
+    @for (persona of personas; track persona.id) {
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>{{ persona.nombre }}</strong>
+          <br />
+          {{ persona.correo }}
+        </div>
+
+        <a class="btn btn-info" [routerLink]="['/detalle', persona.id]"> Información </a>
+      </li>
+    }
+  </ul>
+</div>

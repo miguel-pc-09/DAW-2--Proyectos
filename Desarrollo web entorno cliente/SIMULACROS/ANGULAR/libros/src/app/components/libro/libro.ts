@@ -5,6 +5,7 @@ import { Dato } from '../../service/dato';
 @Component({
   selector: 'app-libro',
   imports: [],
+  /* KeyvaluePipe si tiene mas cosas como paises */
   templateUrl: './libro.html',
   styleUrl: './libro.css',
 })
@@ -12,6 +13,7 @@ export class Libro {
   libros: Datum[] = [];
   constructor(private servicio: Dato) {
     this.servicio.gestAllLibros().subscribe((respuesta) => {
+      /* Sin data si es sin array */
       this.libros = respuesta.data;
     });
   }

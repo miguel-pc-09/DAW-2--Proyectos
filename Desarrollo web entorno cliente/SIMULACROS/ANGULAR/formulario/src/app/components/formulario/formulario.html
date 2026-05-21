@@ -1,0 +1,11 @@
+<div class="container mt-4">
+  <h2>Formulario</h2>
+
+  <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="nombre" />
+
+  <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="correo" />
+
+  <input type="number" class="form-control" placeholder="Años" [(ngModel)]="anios" />
+
+  <button class="btn btn-primary" (click)="enviar()">Enviar</button>
+</div>

@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h1>Recetas</h1>
+
+  <select class="form-select" [(ngModel)]="tagSeleccionado">
+    <option value="">Selecciona una opción</option>
+
+    @for (tag of tags; track tag) {
+      <option [value]="tag">
+        {{ tag }}
+      </option>
+    }
+  </select>
+
+  <button class="btn btn-primary mt-3" (click)="buscarRecetas()">Buscar recetas</button>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+    @for (receta of recetas; track receta.id) {
+      <div class="col">
+        <div class="card h-100">
+          <img [src]="receta.image" class="card-img-top" />
+
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ receta.name }}
+            </h5>
+
+            <p class="card-text">Dificultad: {{ receta.difficulty }}</p>
+
+            <p class="card-text">Tiempo: {{ receta.prepTimeMinutes }} minutos</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/formulario">Ejercicio Angular</a>
+
+    <div>
+      <a class="btn btn-outline-light me-2" [routerLink]="['/formulario']">Formulario</a>
+      <a class="btn btn-outline-light" [routerLink]="['/lista']">Lista</a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
