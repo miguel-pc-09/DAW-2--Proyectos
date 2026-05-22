@@ -1,0 +1,113 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── BODY: fondo rosa y centrado con Flexbox ── */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: rgb(255, 196, 203);
+    padding: 25px;
+}
+
+/* ── CONTENEDOR principal: columna con borde rojo oscuro ── */
+.container {
+    border: solid 15px rgb(177, 82, 93);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── HEADER: fondo rosa más oscuro ── */
+header {
+    background-color: rgb(209, 97, 110);
+    padding: 5px 25px;
+    color: white;
+}
+
+header h1 {
+    font-variant: small-caps;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* ── MAIN: fila con imagen a la izquierda y texto a la derecha ── */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: rgb(243, 165, 174);
+}
+
+/* ── CARTEL: columna que contiene el borde blanco + imagen ── */
+.cartel {
+    display: flex;
+    flex-shrink: 0;
+}
+
+/* ── BORDE blanco alrededor de la imagen ── */
+.borde {
+    padding: 5px;
+    border: 2px solid white;
+}
+
+.borde img {
+    display: block;
+    width: 220px;
+    height: auto;
+}
+
+/* ── TEXTO: columna derecha, crece para ocupar el espacio restante ── */
+.texto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.texto p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ── Estilos de texto específicos ── */
+.strong1 {
+    font-weight: bold;
+}
+
+.span1 {
+    border-bottom: 2px solid green;
+    border-top: 2px solid green;
+}
+
+.strong2 {
+    color: red;
+}
+
+.span2 {
+    font-style: italic;
+}
+
+/* ── Icono de flecha en caja azul claro ── */
+.divFle {
+    max-width: fit-content;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.flecha {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: aliceblue;
+    color: blue;
+    padding: 4px 10px;
+}
