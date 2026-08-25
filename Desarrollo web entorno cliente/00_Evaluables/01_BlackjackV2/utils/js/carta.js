@@ -28,7 +28,6 @@ class Banca {
 
         const imagenCarta = document.createElement("img");
         imagenCarta.src = carta.imagen;
-        imagenCarta.style.width = "90px";
         tapeteBanca.appendChild(imagenCarta);
 
         puntosBancaContainer.textContent = this.puntos;
@@ -116,7 +115,6 @@ class Player {
   agregarImagen(carta, tapete) {
     const imagenCarta = document.createElement("img");
     imagenCarta.src = carta.imagen;
-    imagenCarta.style.width = "90px";
     tapete.appendChild(imagenCarta);
   }
 }
