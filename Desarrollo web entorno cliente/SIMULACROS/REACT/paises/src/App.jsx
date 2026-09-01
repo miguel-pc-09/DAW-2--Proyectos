@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [paises, setPaises] = useState([]);
+
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all?fields=name,flags,languages,cca3")
+    fetch(
+      "https://api.restcountries.com/countries/v5?limit=100&response_fields=names.common,codes.alpha_3,flag,languages",
+    )
       .then((respuesta) => respuesta.json())
-      .then((datos) => setPaises(datos));
+      .then((datos) => setPaises(datos.data.objects));
   }, []);
 
   return (
@@ -13,14 +16,19 @@ function App() {
       <h1>Países del mundo</h1>
 
       {paises.map((pais) => (
-        <div className="card col-3" key={pais.cca3}>
-          <img src={pais.flags.png} alt={pais.name.common} />
-          <h2>{pais.name.common}</h2>
+        <div className="card col-3" key={pais.codes.alpha_3}>
+          {pais.flag?.image && (
+            <img src={pais.flag.image} alt={pais.names.common} />
+          )}
+
+          <h2>{pais.names.common}</h2>
+
           <h3>Lenguajes:</h3>
-          {pais.languages ? (
+
+          {pais.languages?.length > 0 ? (
             <ul>
-              {Object.values(pais.languages).map((lenguaje, index) => (
-                <li key={index}>{lenguaje}</li>
+              {pais.languages.map((lenguaje, index) => (
+                <li key={index}>{lenguaje.name}</li>
               ))}
             </ul>
           ) : (
